@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
     <nav className="relative z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
@@ -12,7 +15,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/b9fa448c-cd57-4a40-a46c-33ee5a78bdcf.png" 
+              src={isHomePage ? "/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png" : "/lovable-uploads/b9fa448c-cd57-4a40-a46c-33ee5a78bdcf.png"}
               alt="OPONMETA Logo" 
               className="h-12 w-12 animate-spin-3d"
               style={{
