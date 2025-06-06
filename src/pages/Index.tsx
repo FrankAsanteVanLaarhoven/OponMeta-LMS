@@ -1342,12 +1342,12 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Future?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join thousands of learners who are advancing their careers with our world-class education platform
-          </p>
+           <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-2xl">
+             Ready to Transform Your Future?
+           </h2>
+           <p className="text-2xl text-white font-semibold mb-8 drop-shadow-lg max-w-4xl mx-auto">
+             Join thousands of learners who are advancing their careers with our world-class education platform
+           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
               Start Learning Today

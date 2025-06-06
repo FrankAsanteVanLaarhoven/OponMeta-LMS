@@ -66,29 +66,43 @@ const SuccessStoriesCarousel = () => {
   return (
     <section className="py-20 px-4 bg-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Real Life Success Stories</h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Learn how leading brands leverage Global Learning for online training & learning
-          </p>
-        </div>
+         <div className="text-center mb-16">
+           <h2 className="text-5xl font-bold text-white mb-4 drop-shadow-2xl">Real Life Success Stories</h2>
+           <p className="text-2xl text-white font-semibold max-w-3xl mx-auto drop-shadow-lg">
+             Learn how leading brands leverage Global Learning for online training & learning
+           </p>
+         </div>
         
         <div className="overflow-hidden mb-12" ref={emblaRef}>
           <div className="flex gap-8">
             {/* Duplicate the stories array for seamless loop */}
             {[...successStories, ...successStories].map((story, index) => (
               <div key={index} className="flex-none w-80">
-                <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
+                <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                  {/* Neon Halo Effect */}
+                  <div 
+                    className="absolute inset-0 rounded-lg opacity-30 pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.6) 0%, rgba(147, 51, 234, 0.4) 30%, rgba(59, 130, 246, 0.2) 70%, transparent 100%)',
+                      filter: 'blur(8px)',
+                    }}
+                  />
+                  <div 
+                    className="absolute inset-0 rounded-lg opacity-20 pointer-events-none"
+                    style={{
+                      boxShadow: '0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6), inset 0 0 20px rgba(59, 130, 246, 0.3)',
+                    }}
+                  />
+                  <CardContent className="p-6 relative z-10">
                     <img 
                       src={story.image}
                       alt={story.alt}
                       className="w-full h-48 object-cover rounded-lg mb-4"
                     />
-                    <h3 className="text-xl font-semibold text-white mb-3">
+                    <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
                       {story.title}
                     </h3>
-                    <p className="text-blue-100">
+                    <p className="text-white/90 font-medium drop-shadow-md">
                       {story.description}
                     </p>
                   </CardContent>
