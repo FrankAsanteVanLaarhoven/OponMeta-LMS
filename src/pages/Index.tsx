@@ -475,20 +475,20 @@ const Index = () => {
             <CardContent className="p-12">
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">50,000+</div>
-                  <div className="text-cyan-100">Active Learners</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">50,000+</div>
+                  <div className="text-slate-800 font-semibold">Active Learners</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">1,200+</div>
-                  <div className="text-cyan-100">Expert Instructors</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">1,200+</div>
+                  <div className="text-slate-800 font-semibold">Expert Instructors</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">5,000+</div>
-                  <div className="text-cyan-100">Courses Available</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">5,000+</div>
+                  <div className="text-slate-800 font-semibold">Courses Available</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">54</div>
-                  <div className="text-cyan-100">African Countries</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">54</div>
+                  <div className="text-slate-800 font-semibold">African Countries</div>
                 </div>
               </div>
             </CardContent>
