@@ -68,9 +68,6 @@ const SuccessStoriesCarousel = () => {
       <div className="max-w-7xl mx-auto">
          <div className="text-center mb-16">
            <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">Real Life Success Stories</h2>
-           <p className="text-2xl text-slate-800 font-bold max-w-3xl mx-auto drop-shadow-lg">
-             Learn how leading brands leverage Global Learning for online training & learning
-           </p>
          </div>
         
         <div className="overflow-hidden mb-12" ref={emblaRef}>
