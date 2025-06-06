@@ -82,7 +82,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">Advance Your Career. Learn In-demand Skills.</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground font-semibold mb-8 max-w-3xl mx-auto">
             Upskill in business analytics, health care, graphic design, management and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -334,7 +334,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Meet AI - Video Calling Powered by AI Agents</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground font-semibold max-w-3xl mx-auto">
               Experience the future of online learning with AI-powered video calls, real-time coaching, and personalized learning assistance.
             </p>
           </div>
@@ -354,7 +354,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">Real-time AI Coaching</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground font-medium">
                     Get instant feedback and guidance from AI agents trained for specific roles and subjects.
                   </p>
                 </div>
@@ -366,7 +366,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Learning Sessions</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground font-medium">
                     Participate in live AI-powered sessions with language tutors, interview coaches, and subject experts.
                   </p>
                 </div>
@@ -378,7 +378,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">Personalized Career Plans</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground font-medium">
                     Answer a few questions and receive a customized Career Ready Plan tailored to your goals.
                   </p>
                 </div>
@@ -1255,12 +1255,12 @@ const Index = () => {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-foreground mb-6">
               Empowering African Talent Through World-Class Education
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-xl text-foreground max-w-4xl mx-auto font-medium">
               We believe that quality education should be accessible to everyone, everywhere. Our platform connects African learners 
-              with <span className="text-cyan-600">global experts</span> and <span className="text-cyan-600">industry leaders</span>, 
+              with <span className="text-cyan-600 font-semibold">global experts</span> and <span className="text-cyan-600 font-semibold">industry leaders</span>, 
               providing skills that drive real career growth. From tech to business, we're building the future workforce through 
               innovative learning experiences designed for the modern professional.
             </p>
@@ -1295,16 +1295,16 @@ const Index = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
           </div>
           
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   What is instructional design in eLearning?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-foreground font-medium">
                   Instructional design in eLearning is the organized process of designing and developing eLearning courses. 
                   Instructional designers analyze the learning needs of a target audience and design content to achieve specific 
                   learning objectives. The idea is to build engaging online courses for positive learning experiences.
@@ -1314,10 +1314,10 @@ const Index = () => {
             
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   How long does it take to develop a custom course?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-foreground font-medium">
                   The development timeline varies based on course complexity, content length, and requirements. 
                   Typically, a standard course takes 4-8 weeks from initial consultation to final delivery.
                 </p>
@@ -1326,10 +1326,10 @@ const Index = () => {
             
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   What formats do you support for course content?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-foreground font-medium">
                   We support various formats including videos, interactive presentations, documents, quizzes, 
                   assessments, and SCORM-compliant packages that work across different LMS platforms.
                 </p>

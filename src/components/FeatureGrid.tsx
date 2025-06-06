@@ -262,7 +262,7 @@ const FeatureGrid = ({ className = "", cardClassName = "", showCategories = fals
               <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed font-medium">
+              <p className="text-foreground leading-relaxed font-semibold">
                 {feature.description}
               </p>
             </div>
