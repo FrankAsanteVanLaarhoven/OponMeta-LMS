@@ -4,7 +4,7 @@ import PageNavigation from "@/components/PageNavigation";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 flex w-full">
+    <div className="min-h-screen bg-background text-foreground flex w-full">
       <DashboardSidebar />
       <main className="flex-1 p-6">
         <Outlet />

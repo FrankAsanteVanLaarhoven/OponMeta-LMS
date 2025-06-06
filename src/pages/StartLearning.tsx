@@ -120,16 +120,16 @@ const StartLearning = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       <div className="max-w-7xl mx-auto px-4 py-20">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Start Learning Today
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Join millions of learners worldwide and unlock your potential with our expert-led courses and AI-powered learning paths
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -158,8 +158,8 @@ const StartLearning = () => {
         {/* Featured Courses */}
         <section className="mb-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-white">Featured Courses</h2>
-            <Button variant="ghost" className="text-white hover:bg-white/10" onClick={() => navigate("/courses")}>
+            <h2 className="text-3xl font-bold text-foreground">Featured Courses</h2>
+            <Button variant="ghost" className="text-foreground hover:bg-muted" onClick={() => navigate("/courses")}>
               View All <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </div>
@@ -232,8 +232,8 @@ const StartLearning = () => {
         {/* Learning Paths */}
         <section className="mb-16">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4">Structured Learning Paths</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Structured Learning Paths</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Follow our carefully designed learning paths to master complete skill sets
             </p>
           </div>

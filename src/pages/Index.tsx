@@ -71,7 +71,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <Hero />
       
@@ -81,8 +81,8 @@ const Index = () => {
       {/* Career Advancement Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Advance Your Career. Learn In-demand Skills.</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-foreground mb-6">Advance Your Career. Learn In-demand Skills.</h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Upskill in business analytics, health care, graphic design, management and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -97,16 +97,16 @@ const Index = () => {
           {/* Course Categories */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">Popular Courses</div>
+              <div className="text-2xl font-bold text-foreground">Popular Courses</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">Top Diplomas</div>
+              <div className="text-2xl font-bold text-foreground">Top Diplomas</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">Top Certificates</div>
+              <div className="text-2xl font-bold text-foreground">Top Certificates</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">New Courses</div>
+              <div className="text-2xl font-bold text-foreground">New Courses</div>
             </div>
           </div>
           
@@ -120,8 +120,8 @@ const Index = () => {
       <section className="py-20 px-4 bg-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Explore 5,500+ Free Online Courses</h2>
-            <p className="text-xl text-blue-100">Learn From The World's Leading Experts</p>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Explore 5,500+ Free Online Courses</h2>
+            <p className="text-xl text-muted-foreground">Learn From The World's Leading Experts</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -268,8 +268,8 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Featured Courses</h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Featured Courses</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Discover high-quality courses from verified African educators and global partners
             </p>
           </div>
@@ -296,8 +296,8 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Meet AI - Video Calling Powered by AI Agents</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Meet AI - Video Calling Powered by AI Agents</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Experience the future of online learning with AI-powered video calls, real-time coaching, and personalized learning assistance.
             </p>
           </div>
@@ -316,8 +316,8 @@ const Index = () => {
                   <Play className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Real-time AI Coaching</h3>
-                  <p className="text-blue-100">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Real-time AI Coaching</h3>
+                  <p className="text-muted-foreground">
                     Get instant feedback and guidance from AI agents trained for specific roles and subjects.
                   </p>
                 </div>
@@ -328,8 +328,8 @@ const Index = () => {
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Interactive Learning Sessions</h3>
-                  <p className="text-blue-100">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Learning Sessions</h3>
+                  <p className="text-muted-foreground">
                     Participate in live AI-powered sessions with language tutors, interview coaches, and subject experts.
                   </p>
                 </div>
@@ -340,8 +340,8 @@ const Index = () => {
                   <Star className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Personalized Career Plans</h3>
-                  <p className="text-blue-100">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Personalized Career Plans</h3>
+                  <p className="text-muted-foreground">
                     Answer a few questions and receive a customized Career Ready Plan tailored to your goals.
                   </p>
                 </div>
@@ -355,8 +355,8 @@ const Index = () => {
       <section className="py-20 px-4 bg-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">FREE. All Features. FOREVER!</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-foreground mb-4">FREE. All Features. FOREVER!</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Try our Forever FREE account for small teams with all premium features!
             </p>
           </div>

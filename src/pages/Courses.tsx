@@ -184,16 +184,16 @@ const Courses = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       {/* Header */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Explore Our Courses
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover thousands of courses from expert instructors across Africa and beyond
           </p>
         </div>
@@ -243,7 +243,7 @@ const Courses = () => {
       {/* Course Grid */}
       <section className="px-4 pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-6 text-white">
+          <div className="mb-6 text-foreground">
             Showing {filteredCourses.length} courses
           </div>
           
@@ -255,9 +255,9 @@ const Courses = () => {
           
           {filteredCourses.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-blue-100">No courses found matching your criteria.</p>
+              <p className="text-xl text-muted-foreground">No courses found matching your criteria.</p>
               <Button 
-                className="mt-4 bg-white text-purple-900 hover:bg-gray-100"
+                className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={handleResetFilters}
               >
                 Reset Filters

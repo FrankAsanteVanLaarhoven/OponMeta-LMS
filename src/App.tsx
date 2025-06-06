@@ -50,14 +50,14 @@ const CreateCourse = lazy(() => import("./pages/CreateCourse"));
 
 // Loading component for suspense fallback
 const PageLoader = () => (
-  <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 flex items-center justify-center">
+  <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
     <div className="space-y-4 w-full max-w-md mx-auto p-6">
-      <Skeleton className="h-8 w-3/4 bg-white/20" />
-      <Skeleton className="h-4 w-full bg-white/20" />
-      <Skeleton className="h-4 w-2/3 bg-white/20" />
+      <Skeleton className="h-8 w-3/4 bg-muted" />
+      <Skeleton className="h-4 w-full bg-muted" />
+      <Skeleton className="h-4 w-2/3 bg-muted" />
       <div className="space-y-2">
-        <Skeleton className="h-12 w-full bg-white/20" />
-        <Skeleton className="h-12 w-full bg-white/20" />
+        <Skeleton className="h-12 w-full bg-muted" />
+        <Skeleton className="h-12 w-full bg-muted" />
       </div>
     </div>
   </div>
