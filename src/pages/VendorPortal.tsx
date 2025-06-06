@@ -269,10 +269,12 @@ const VendorPortal = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-2 mt-4">
-                      <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
-                        <Edit className="h-4 w-4 mr-1" />
-                        Edit
-                      </Button>
+                      <Link to={`/course-management/${course.id}`}>
+                        <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
+                          <Edit className="h-4 w-4 mr-1" />
+                          Edit
+                        </Button>
+                      </Link>
                       <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
                         <Eye className="h-4 w-4" />
                       </Button>
@@ -287,15 +289,337 @@ const VendorPortal = () => {
           </div>
         )}
 
-        {/* Other tabs placeholder */}
-        {activeTab !== "overview" && activeTab !== "courses" && (
-          <Card className="bg-white/10 backdrop-blur-md border-white/20">
-            <CardContent className="p-8 text-center">
-              <FileText className="h-16 w-16 text-blue-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">{tabs.find(t => t.id === activeTab)?.label}</h3>
-              <p className="text-blue-200">This section is coming soon. Stay tuned for updates!</p>
-            </CardContent>
-          </Card>
+        {/* Students Tab */}
+        {activeTab === "students" && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-white">Student Management</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <Users className="h-5 w-5" />
+                    Active Students
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-white mb-2">1,847</div>
+                  <p className="text-sm text-green-400">+127 this week</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Completion Rate</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-white mb-2">78%</div>
+                  <Progress value={78} className="h-2" />
+                  <p className="text-sm text-green-400 mt-2">+5% improvement</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Engagement Score</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-white mb-2">8.4/10</div>
+                  <p className="text-sm text-blue-200">Based on activity metrics</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white">Recent Student Activity</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {[
+                    { name: "Sarah Johnson", course: "Advanced React Development", progress: 85, lastActive: "2 hours ago" },
+                    { name: "Mike Chen", course: "JavaScript Fundamentals", progress: 92, lastActive: "5 hours ago" },
+                    { name: "Emma Davis", course: "UI/UX Design Principles", progress: 67, lastActive: "1 day ago" },
+                    { name: "Alex Rodriguez", course: "Advanced React Development", progress: 73, lastActive: "2 days ago" }
+                  ].map((student, index) => (
+                    <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-blue-600/20 rounded-full flex items-center justify-center">
+                          <span className="text-blue-300 font-semibold">{student.name.charAt(0)}</span>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-white">{student.name}</h4>
+                          <p className="text-sm text-blue-200">{student.course}</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-sm text-white mb-1">{student.progress}% complete</div>
+                        <div className="text-xs text-blue-200">{student.lastActive}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {/* Revenue Tab */}
+        {activeTab === "revenue" && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-white">Revenue Analytics</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <DollarSign className="h-5 w-5" />
+                    Total Revenue
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-white mb-2">$24,500</div>
+                  <p className="text-sm text-green-400">+12% vs last month</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Monthly Revenue</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-white mb-2">$4,200</div>
+                  <p className="text-sm text-green-400">+8% this month</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Average Course Price</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-white mb-2">$89</div>
+                  <p className="text-sm text-blue-200">Across all courses</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Conversion Rate</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-white mb-2">6.8%</div>
+                  <p className="text-sm text-green-400">+1.2% improvement</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white">Revenue by Course</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {recentCourses.map((course) => (
+                    <div key={course.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <img 
+                          src={course.thumbnail} 
+                          alt={course.title}
+                          className="w-12 h-12 rounded-lg object-cover"
+                        />
+                        <div>
+                          <h4 className="font-medium text-white">{course.title}</h4>
+                          <p className="text-sm text-blue-200">{course.students} students enrolled</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-lg font-semibold text-green-400">${course.revenue}</div>
+                        <div className="text-sm text-blue-200">Total earned</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {/* Settings Tab */}
+        {activeTab === "settings" && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-white">Settings</h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Profile Settings */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Profile Settings</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-blue-200">Display Name</label>
+                    <input 
+                      type="text" 
+                      className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-blue-200"
+                      placeholder="Your instructor name"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-blue-200">Bio</label>
+                    <textarea 
+                      className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-blue-200 h-24"
+                      placeholder="Tell students about yourself..."
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-blue-200">Expertise Areas</label>
+                    <input 
+                      type="text" 
+                      className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-blue-200"
+                      placeholder="React, JavaScript, UI/UX..."
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Course Defaults */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Course Defaults</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-blue-200">Default Course Category</label>
+                    <select className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white">
+                      <option value="">Select category</option>
+                      <option value="programming">Programming</option>
+                      <option value="design">Design</option>
+                      <option value="business">Business</option>
+                      <option value="marketing">Marketing</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-blue-200">Default Price Range</label>
+                    <select className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white">
+                      <option value="">Select range</option>
+                      <option value="free">Free</option>
+                      <option value="basic">$29-$49</option>
+                      <option value="standard">$50-$99</option>
+                      <option value="premium">$100+</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-blue-200">Course Language</label>
+                    <select className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white">
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                    </select>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Advanced Features */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Advanced Features</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">VR/AR Integration</h4>
+                      <p className="text-sm text-blue-200">Enable immersive learning experiences</p>
+                    </div>
+                    <Badge className="bg-purple-600 text-white">Beta</Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">AI-Powered Analytics</h4>
+                      <p className="text-sm text-blue-200">Get insights on student performance</p>
+                    </div>
+                    <Badge className="bg-blue-600 text-white">Active</Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">Live Streaming</h4>
+                      <p className="text-sm text-blue-200">Host live classes and Q&A sessions</p>
+                    </div>
+                    <Badge className="bg-green-600 text-white">Available</Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">Interactive Whiteboards</h4>
+                      <p className="text-sm text-blue-200">Collaborative learning tools</p>
+                    </div>
+                    <Badge className="bg-green-600 text-white">Available</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Notification Settings */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white">Notifications</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">New Student Enrollments</h4>
+                      <p className="text-sm text-blue-200">Get notified when students enroll</p>
+                    </div>
+                    <button className="w-12 h-6 bg-green-600 rounded-full relative">
+                      <div className="w-4 h-4 bg-white rounded-full absolute right-1 top-1"></div>
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">Course Completion</h4>
+                      <p className="text-sm text-blue-200">When students complete your courses</p>
+                    </div>
+                    <button className="w-12 h-6 bg-green-600 rounded-full relative">
+                      <div className="w-4 h-4 bg-white rounded-full absolute right-1 top-1"></div>
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">Revenue Updates</h4>
+                      <p className="text-sm text-blue-200">Monthly revenue reports</p>
+                    </div>
+                    <button className="w-12 h-6 bg-gray-600 rounded-full relative">
+                      <div className="w-4 h-4 bg-white rounded-full absolute left-1 top-1"></div>
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-white">Marketing Opportunities</h4>
+                      <p className="text-sm text-blue-200">Platform promotions and features</p>
+                    </div>
+                    <button className="w-12 h-6 bg-green-600 rounded-full relative">
+                      <div className="w-4 h-4 bg-white rounded-full absolute right-1 top-1"></div>
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex items-center gap-4">
+              <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white">
+                Save Settings
+              </Button>
+              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                Reset to Defaults
+              </Button>
+            </div>
+          </div>
         )}
       </div>
     </div>
