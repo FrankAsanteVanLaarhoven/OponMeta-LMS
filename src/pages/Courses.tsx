@@ -184,7 +184,7 @@ const Courses = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
+    <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
       <Navigation />
       
       {/* Header */}

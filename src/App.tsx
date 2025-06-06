@@ -50,7 +50,7 @@ const CreateCourse = lazy(() => import("./pages/CreateCourse"));
 
 // Loading component for suspense fallback
 const PageLoader = () => (
-  <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500 flex items-center justify-center">
+  <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 flex items-center justify-center">
     <div className="space-y-4 w-full max-w-md mx-auto p-6">
       <Skeleton className="h-8 w-3/4 bg-white/20" />
       <Skeleton className="h-4 w-full bg-white/20" />

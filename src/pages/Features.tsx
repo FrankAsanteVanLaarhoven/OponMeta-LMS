@@ -22,7 +22,7 @@ const Features = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
+    <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
