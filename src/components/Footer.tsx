@@ -32,6 +32,10 @@ const Footer = () => {
                 <span className="text-blue-100">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-blue-300" />
+                <span className="text-blue-100">+2348055254643</span>
+              </div>
+              <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-blue-300" />
                 <span className="text-blue-100">info@oponmeta.com</span>
               </div>
