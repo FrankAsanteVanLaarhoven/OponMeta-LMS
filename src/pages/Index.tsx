@@ -75,6 +75,143 @@ const Index = () => {
       <Navigation />
       <Hero />
       
+      {/* OPONMETA Features Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center mb-8">
+            <img 
+              src="/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png"
+              alt="OPONMETA Logo" 
+              className="h-16 w-16 mr-4"
+            />
+            <h2 className="text-5xl font-bold text-white">OPONMETA Features</h2>
+          </div>
+          <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto">
+            Comprehensive global learning platform with cutting-edge technology, inclusive education, and industry partnerships
+          </p>
+          
+          {/* Feature Tags */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Global Knowledge Accessibility
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Innovation & Future-Ready Skills
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Collaborative Learning Environment
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Industry-Relevant Training
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Professional Growth & Leadership Development
+            </span>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Networking & Global Partnerships
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Inclusivity & Diversity in Learning
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Continuous Learning Culture
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Digital Branding & Market Positioning
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Monetization & Business Sustainability
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Emerging Technology Integration
+            </span>
+            <span className="bg-blue-500/20 text-white px-6 py-3 rounded-full border border-blue-300/30 backdrop-blur-sm">
+              Community-Driven Marketing
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Comprehensive Approach Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Comprehensive Approach</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              From multilingual accessibility to emerging technology integration, OPONMETA covers every aspect of modern education
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* Multilingual Platform */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Multilingual platform, scholarships, and inclusive education
+              </h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">•</span>
+                  <span>Multiple language support</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">•</span>
+                  <span>Free learning materials</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">•</span>
+                  <span>Cultural adaptation</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* AI-Powered Learning */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                AI-powered learning, VR/AR integration, and immersive experiences
+              </h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-3">•</span>
+                  <span>AI-powered courses</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-3">•</span>
+                  <span>Blockchain certifications</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-3">•</span>
+                  <span>Virtual campuses</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Corporate Training */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Corporate training, industry collaboration, and professional growth
+              </h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-purple-600 mr-3">•</span>
+                  <span>Corporate certifications</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-600 mr-3">•</span>
+                  <span>Research partnerships</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-600 mr-3">•</span>
+                  <span>Global conferences</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Trusted By Carousel */}
       <TrustedByCarousel />
       
