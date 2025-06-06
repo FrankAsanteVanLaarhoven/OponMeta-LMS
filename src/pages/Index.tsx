@@ -292,42 +292,6 @@ const Index = () => {
       {/* Success Stories Section */}
       <SuccessStoriesCarousel />
 
-      {/* OPONMETA Overview Section */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-cyan-500 to-teal-500"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-blue-900/50 to-gray-800/60"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left">
-              <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">
-                OPONMETA Overview
-              </h2>
-              <p className="text-xl text-white/90 mb-8 max-w-xl drop-shadow-md">
-                Discover the future of global education through our comprehensive learning platform designed for African talent and worldwide collaboration.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100 shadow-lg">
-                  Explore Platform
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 shadow-lg">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative group">
-                <img 
-                  src="/lovable-uploads/7c79407f-7808-403c-9a03-10f13c475bd9.png" 
-                  alt="Professional educator"
-                  className="w-full h-auto object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/10 rounded-2xl"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* AI-Powered Features Section */}
       <section className="py-20 px-4">
