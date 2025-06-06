@@ -2,27 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Users, Clock, Play } from "lucide-react";
-
-interface Course {
-  id: number;
-  title: string;
-  instructor: string;
-  price: number;
-  originalPrice?: number;
-  rating: number;
-  students: number;
-  image: string;
-  category: string;
-  duration: string;
-  level: string;
-  lessonsCount: number;
-  description: string;
-  progress?: number;
-  isBestseller?: boolean;
-  lastUpdated: string;
-  language: string;
-  hasSubtitles: boolean;
-}
+import { Course } from "@/data/coursesData";
 
 interface CourseCardProps {
   course: Course;
