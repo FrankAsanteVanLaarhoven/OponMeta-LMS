@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import ForceRefresh from "./components/ForceRefresh";
 
 // Lazy load all page components for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -79,6 +80,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <ForceRefresh />
       <BrowserRouter>
         <Suspense fallback={<PageLoader />}>
           <Routes>

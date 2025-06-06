@@ -12,7 +12,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img 
-              src="/oponmeta-uploads/792e4b6a-d1ef-4fa3-a582-17350a146c08.png" 
+              src="/lovable-uploads/b9fa448c-cd57-4a40-a46c-33ee5a78bdcf.png" 
               alt="OPONMETA Logo" 
               className="h-12 w-12 animate-spin-3d"
               style={{
