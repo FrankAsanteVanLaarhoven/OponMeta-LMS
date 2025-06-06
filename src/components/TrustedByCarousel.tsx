@@ -37,7 +37,7 @@ const TrustedByCarousel = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-white/5">
+    <section className="py-16 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-4">Trusted by Leading Companies</h2>

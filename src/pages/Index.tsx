@@ -117,11 +117,11 @@ const Index = () => {
       </section>
 
       {/* Course Statistics Section */}
-      <section className="py-20 px-4 bg-white/5">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Explore 5,500+ Free Online Courses</h2>
-            <p className="text-xl text-muted-foreground">Learn From The World's Leading Experts</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Explore 5,500+ Free Online Courses</h2>
+            <p className="text-xl text-blue-100">Learn From The World's Leading Experts</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -265,11 +265,11 @@ const Index = () => {
       />
       
       {/* Featured Courses Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Featured Courses</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-4">Featured Courses</h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
               Discover high-quality courses from verified African educators and global partners
             </p>
           </div>
@@ -352,11 +352,11 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 bg-white/5">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">FREE. All Features. FOREVER!</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-4">FREE. All Features. FOREVER!</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               Try our Forever FREE account for small teams with all premium features!
             </p>
           </div>
