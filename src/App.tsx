@@ -51,6 +51,7 @@ const StudentPortal = lazy(() => import("./pages/StudentPortal"));
 const CourseViewer = lazy(() => import("./pages/CourseViewer"));
 const VendorPortal = lazy(() => import("./pages/VendorPortal"));
 const CourseManagement = lazy(() => import("./pages/CourseManagement"));
+const AdvertiserPortal = lazy(() => import("./pages/AdvertiserPortal"));
 
 // Loading component for suspense fallback
 const PageLoader = () => (
@@ -190,6 +191,7 @@ const App = () => (
             <Route path="/student-portal" element={<StudentPortal />} />
             <Route path="/course-viewer/:courseId" element={<CourseViewer />} />
             <Route path="/vendor-portal" element={<VendorPortal />} />
+            <Route path="/advertiser-portal" element={<AdvertiserPortal />} />
             <Route path="/course-management/:courseId" element={<CourseManagement />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

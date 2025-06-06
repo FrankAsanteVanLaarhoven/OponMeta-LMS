@@ -61,6 +61,9 @@ const Navigation = () => {
             <a href="/vendor-portal" className="text-white hover:text-blue-200 transition-colors">
               Vendor Portal
             </a>
+            <a href="/advertiser-portal" className="text-white hover:text-blue-200 transition-colors">
+              Advertiser Portal
+            </a>
           </div>
 
           {/* Desktop Auth Buttons */}
@@ -147,6 +150,12 @@ const Navigation = () => {
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
               >
                 Vendor Portal
+              </a>
+              <a
+                href="/advertiser-portal"
+                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+              >
+                Advertiser Portal
               </a>
               <div className="pt-4 space-y-2">
                 <Button variant="ghost" className="w-full text-white hover:bg-white/10">
