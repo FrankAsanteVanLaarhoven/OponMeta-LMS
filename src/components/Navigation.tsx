@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,40 +38,78 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-white hover:text-blue-200 transition-colors">
-              Home
-            </a>
-            <a href="/courses" className="text-white hover:text-blue-200 transition-colors">
-              Courses
-            </a>
-            <a href="/vendors" className="text-white hover:text-blue-200 transition-colors">
-              Vendors
-            </a>
-            <a href="/features" className="text-white hover:text-blue-200 transition-colors">
-              Features
-            </a>
-            <a href="/meet-ai" className="text-white hover:text-blue-200 transition-colors">
-              Meet AI
-            </a>
-            <a href="/about" className="text-white hover:text-blue-200 transition-colors">
-              About
-            </a>
-            <a href="/contact" className="text-white hover:text-blue-200 transition-colors">
-              Contact
-            </a>
-            <a href="/dashboard" className="text-white hover:text-blue-200 transition-colors">
-              Dashboard
-            </a>
-            <a href="/student-portal" className="text-white hover:text-blue-200 transition-colors">
-              Student Portal
-            </a>
-            <a href="/vendor-portal" className="text-white hover:text-blue-200 transition-colors">
-              Vendor Portal
-            </a>
-            <a href="/advertiser-portal" className="text-white hover:text-blue-200 transition-colors">
-              Advertiser Portal
-            </a>
+          <div className="hidden md:flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList className="space-x-6">
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
+                    Home
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white hover:text-blue-200 transition-colors bg-transparent hover:bg-white/10">
+                    Courses
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-48 p-2 bg-popover">
+                      <NavigationMenuLink href="/courses" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                        Courses
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/meet-ai" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                        Meet AI
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/features" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
+                    Features
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white hover:text-blue-200 transition-colors bg-transparent hover:bg-white/10">
+                    Resources
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-48 p-2 bg-popover">
+                      <NavigationMenuLink href="/vendors" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                        Vendors
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/student-portal" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                        Student Portal
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/vendor-portal" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                        Vendor Portal
+                      </NavigationMenuLink>
+                      <NavigationMenuLink href="/advertiser-portal" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                        Advertiser Portal
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/about" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
+                    About
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/contact" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
+                    Contact
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/dashboard" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
+                    Dashboard
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           {/* Desktop Auth Buttons */}
@@ -97,30 +143,60 @@ const Navigation = () => {
               >
                 Home
               </a>
-              <a
-                href="/courses"
-                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-              >
-                Courses
-              </a>
-              <a
-                href="/vendors"
-                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-              >
-                Vendors
-              </a>
+              
+              {/* Courses Section */}
+              <div className="border-t border-white/20 pt-2 mt-2">
+                <div className="px-3 py-1 text-xs font-semibold text-blue-200">COURSES</div>
+                <a
+                  href="/courses"
+                  className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+                >
+                  Courses
+                </a>
+                <a
+                  href="/meet-ai"
+                  className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+                >
+                  Meet AI
+                </a>
+              </div>
+              
               <a
                 href="/features"
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
               >
                 Features
               </a>
-              <a
-                href="/meet-ai"
-                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-              >
-                Meet AI
-              </a>
+              
+              {/* Resources Section */}
+              <div className="border-t border-white/20 pt-2 mt-2">
+                <div className="px-3 py-1 text-xs font-semibold text-blue-200">RESOURCES</div>
+                <a
+                  href="/vendors"
+                  className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+                >
+                  Vendors
+                </a>
+                <a
+                  href="/student-portal"
+                  className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+                >
+                  Student Portal
+                </a>
+                <a
+                  href="/vendor-portal"
+                  className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+                >
+                  Vendor Portal
+                </a>
+                <a
+                  href="/advertiser-portal"
+                  className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+                >
+                  Advertiser Portal
+                </a>
+              </div>
+              
               <a
                 href="/about"
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
@@ -139,24 +215,7 @@ const Navigation = () => {
               >
                 Dashboard
               </a>
-              <a
-                href="/student-portal"
-                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-              >
-                Student Portal
-              </a>
-              <a
-                href="/vendor-portal"
-                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-              >
-                Vendor Portal
-              </a>
-              <a
-                href="/advertiser-portal"
-                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-              >
-                Advertiser Portal
-              </a>
+              
               <div className="pt-4 space-y-2">
                 <Button variant="ghost" className="w-full text-white hover:bg-white/10">
                   Sign In
