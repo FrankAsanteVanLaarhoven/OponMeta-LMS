@@ -17,6 +17,7 @@ import {
   Home
 } from "lucide-react";
 import { useParams, Link } from "react-router-dom";
+import PageNavigation from "@/components/PageNavigation";
 
 const CourseViewer = () => {
   const { courseId } = useParams();
@@ -314,6 +315,8 @@ const CourseViewer = () => {
           </Card>
         </div>
       </div>
+      
+      <PageNavigation />
     </div>
   );
 };
