@@ -4,84 +4,84 @@
 
 @layer base {
   :root {
-    /* OponMeta Blue Theme - Light Mode - Updated to deeper blue */
-    --background: 210 100% 99%;
-    --foreground: 228 50% 15%;
+    /* OponMeta Deep Blue Theme - Light Mode - Darker gradient blues */
+    --background: 220 100% 97%;
+    --foreground: 230 60% 12%;
 
-    --card: 210 100% 98%;
-    --card-foreground: 228 50% 15%;
+    --card: 220 100% 96%;
+    --card-foreground: 230 60% 12%;
 
-    --popover: 210 100% 98%;
-    --popover-foreground: 228 50% 15%;
+    --popover: 220 100% 96%;
+    --popover-foreground: 230 60% 12%;
 
-    --primary: 228 85% 35%;
-    --primary-foreground: 210 100% 98%;
+    --primary: 230 85% 25%;
+    --primary-foreground: 220 100% 97%;
 
-    --secondary: 225 90% 88%;
-    --secondary-foreground: 228 50% 20%;
+    --secondary: 225 75% 78%;
+    --secondary-foreground: 230 60% 15%;
 
-    --muted: 225 85% 90%;
-    --muted-foreground: 225 15% 45%;
+    --muted: 225 70% 85%;
+    --muted-foreground: 225 25% 40%;
 
-    --accent: 220 85% 80%;
-    --accent-foreground: 228 50% 20%;
+    --accent: 220 70% 70%;
+    --accent-foreground: 230 60% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 220 100% 97%;
 
-    --border: 225 50% 85%;
-    --input: 225 50% 85%;
-    --ring: 228 85% 45%;
+    --border: 225 60% 80%;
+    --input: 225 60% 80%;
+    --ring: 230 85% 35%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 210 100% 97%;
-    --sidebar-foreground: 228 50% 25%;
-    --sidebar-primary: 228 85% 40%;
-    --sidebar-primary-foreground: 210 100% 98%;
-    --sidebar-accent: 225 90% 88%;
-    --sidebar-accent-foreground: 228 50% 25%;
-    --sidebar-border: 225 50% 82%;
-    --sidebar-ring: 220 100% 50%;
+    --sidebar-background: 220 100% 95%;
+    --sidebar-foreground: 230 60% 20%;
+    --sidebar-primary: 230 85% 30%;
+    --sidebar-primary-foreground: 220 100% 97%;
+    --sidebar-accent: 225 75% 83%;
+    --sidebar-accent-foreground: 230 60% 20%;
+    --sidebar-border: 225 60% 77%;
+    --sidebar-ring: 230 85% 40%;
   }
 
   .dark {
-    /* OponMeta Blue Theme - Dark Mode - Updated to deeper blue */
-    --background: 228 50% 8%;
-    --foreground: 210 100% 95%;
+    /* OponMeta Deep Blue Theme - Dark Mode - Darker gradient blues */
+    --background: 230 70% 5%;
+    --foreground: 220 100% 95%;
 
-    --card: 228 40% 10%;
-    --card-foreground: 210 100% 95%;
+    --card: 230 60% 7%;
+    --card-foreground: 220 100% 95%;
 
-    --popover: 228 40% 10%;
-    --popover-foreground: 210 100% 95%;
+    --popover: 230 60% 7%;
+    --popover-foreground: 220 100% 95%;
 
-    --primary: 220 100% 65%;
-    --primary-foreground: 228 50% 8%;
+    --primary: 220 100% 55%;
+    --primary-foreground: 230 70% 5%;
 
-    --secondary: 228 30% 15%;
-    --secondary-foreground: 210 100% 85%;
+    --secondary: 230 50% 12%;
+    --secondary-foreground: 220 100% 85%;
 
-    --muted: 228 30% 12%;
-    --muted-foreground: 210 20% 65%;
+    --muted: 230 50% 9%;
+    --muted-foreground: 220 30% 65%;
 
-    --accent: 225 80% 25%;
-    --accent-foreground: 210 100% 85%;
+    --accent: 225 70% 20%;
+    --accent-foreground: 220 100% 85%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 220 100% 95%;
 
-    --border: 228 30% 18%;
-    --input: 228 30% 18%;
-    --ring: 220 100% 55%;
-    --sidebar-background: 228 50% 6%;
-    --sidebar-foreground: 210 100% 90%;
-    --sidebar-primary: 220 100% 60%;
-    --sidebar-primary-foreground: 228 50% 8%;
-    --sidebar-accent: 228 30% 12%;
-    --sidebar-accent-foreground: 210 100% 85%;
-    --sidebar-border: 228 30% 15%;
-    --sidebar-ring: 220 100% 55%;
+    --border: 230 50% 15%;
+    --input: 230 50% 15%;
+    --ring: 220 100% 50%;
+    --sidebar-background: 230 80% 4%;
+    --sidebar-foreground: 220 100% 90%;
+    --sidebar-primary: 220 100% 50%;
+    --sidebar-primary-foreground: 230 80% 4%;
+    --sidebar-accent: 230 50% 9%;
+    --sidebar-accent-foreground: 220 100% 85%;
+    --sidebar-border: 230 50% 12%;
+    --sidebar-ring: 220 100% 50%;
   }
 }
 
