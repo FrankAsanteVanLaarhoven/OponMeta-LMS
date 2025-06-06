@@ -243,17 +243,26 @@ const FeatureGrid = ({ className = "", cardClassName = "", showCategories = fals
       {features.map((feature) => (
         <Card 
           key={feature.id}
-          className={`bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 group ${cardClassName}`}
+          className={`bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 group relative ${cardClassName}`}
+          style={{
+            boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)',
+          }}
         >
-          <CardContent className="p-8">
+          <div 
+            className="absolute inset-0 rounded-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
+            }}
+          />
+          <CardContent className="p-8 relative z-10">
             <div className="text-center space-y-4">
-              <div className="inline-flex p-3 rounded-full bg-white/10 group-hover:scale-110 transition-transform duration-300">
+              <div className="inline-flex p-3 rounded-full bg-primary/20 group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
                 <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
               </div>
-              <h3 className="text-xl font-semibold text-white group-hover:text-blue-200 transition-colors">
+              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-blue-100 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed font-medium">
                 {feature.description}
               </p>
             </div>

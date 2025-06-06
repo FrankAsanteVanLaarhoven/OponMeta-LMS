@@ -65,13 +65,24 @@ const Features = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-white mb-4">Global Accessibility</h3>
-                <p className="text-blue-100 mb-4">
+            <Card 
+              className="bg-white/10 backdrop-blur-md border-white/20 relative"
+              style={{
+                boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)',
+              }}
+            >
+              <div 
+                className="absolute inset-0 rounded-lg opacity-20 hover:opacity-30 transition-opacity duration-300"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
+                }}
+              />
+              <CardContent className="p-8 relative z-10">
+                <h3 className="text-xl font-semibold text-white mb-4 drop-shadow-sm">Global Accessibility</h3>
+                <p className="text-blue-100 mb-4 font-medium">
                   Multilingual platforms, scholarships, and inclusive education for all
                 </p>
-                <ul className="text-sm text-blue-200 space-y-1">
+                <ul className="text-sm text-blue-200 space-y-1 font-medium">
                   <li>• Multiple language support</li>
                   <li>• Free learning materials</li>
                   <li>• Cultural adaptation</li>
@@ -79,13 +90,24 @@ const Features = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-white mb-4">Future-Ready Technology</h3>
-                <p className="text-blue-100 mb-4">
+            <Card 
+              className="bg-white/10 backdrop-blur-md border-white/20 relative"
+              style={{
+                boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)',
+              }}
+            >
+              <div 
+                className="absolute inset-0 rounded-lg opacity-20 hover:opacity-30 transition-opacity duration-300"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
+                }}
+              />
+              <CardContent className="p-8 relative z-10">
+                <h3 className="text-xl font-semibold text-white mb-4 drop-shadow-sm">Future-Ready Technology</h3>
+                <p className="text-blue-100 mb-4 font-medium">
                   AI-powered learning, Web3 integration, and metaverse experiences
                 </p>
-                <ul className="text-sm text-blue-200 space-y-1">
+                <ul className="text-sm text-blue-200 space-y-1 font-medium">
                   <li>• AI-powered courses</li>
                   <li>• Blockchain certifications</li>
                   <li>• Virtual campuses</li>
@@ -93,13 +115,24 @@ const Features = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-white mb-4">Industry Partnerships</h3>
-                <p className="text-blue-100 mb-4">
+            <Card 
+              className="bg-white/10 backdrop-blur-md border-white/20 relative"
+              style={{
+                boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)',
+              }}
+            >
+              <div 
+                className="absolute inset-0 rounded-lg opacity-20 hover:opacity-30 transition-opacity duration-300"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
+                }}
+              />
+              <CardContent className="p-8 relative z-10">
+                <h3 className="text-xl font-semibold text-white mb-4 drop-shadow-sm">Industry Partnerships</h3>
+                <p className="text-blue-100 mb-4 font-medium">
                   Corporate training, university alliances, and professional networks
                 </p>
-                <ul className="text-sm text-blue-200 space-y-1">
+                <ul className="text-sm text-blue-200 space-y-1 font-medium">
                   <li>• Corporate certifications</li>
                   <li>• Research partnerships</li>
                   <li>• Global conferences</li>
