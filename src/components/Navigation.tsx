@@ -52,11 +52,11 @@ const Navigation = () => {
                     Courses
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-48 p-2 bg-popover">
-                      <NavigationMenuLink href="/courses" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                    <div className="w-48 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
+                      <NavigationMenuLink href="/courses" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Courses
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/meet-ai" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                      <NavigationMenuLink href="/meet-ai" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Meet AI
                       </NavigationMenuLink>
                     </div>
@@ -74,17 +74,17 @@ const Navigation = () => {
                     Resources
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-48 p-2 bg-popover">
-                      <NavigationMenuLink href="/vendors" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                    <div className="w-52 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
+                      <NavigationMenuLink href="/vendors" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Vendors
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/student-portal" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                      <NavigationMenuLink href="/student-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Student Portal
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/vendor-portal" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                      <NavigationMenuLink href="/vendor-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Vendor Portal
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/advertiser-portal" className="block px-3 py-2 text-popover-foreground hover:bg-accent hover:text-accent-foreground rounded-sm transition-colors">
+                      <NavigationMenuLink href="/advertiser-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Advertiser Portal
                       </NavigationMenuLink>
                     </div>
