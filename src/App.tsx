@@ -47,6 +47,8 @@ const StartLearning = lazy(() => import("./pages/StartLearning"));
 const BecomeInstructor = lazy(() => import("./pages/BecomeInstructor"));
 const CareerGuidance = lazy(() => import("./pages/CareerGuidance"));
 const CreateCourse = lazy(() => import("./pages/CreateCourse"));
+const StudentPortal = lazy(() => import("./pages/StudentPortal"));
+const CourseViewer = lazy(() => import("./pages/CourseViewer"));
 
 // Loading component for suspense fallback
 const PageLoader = () => (
@@ -183,6 +185,8 @@ const App = () => (
             <Route path="/become-instructor" element={<BecomeInstructor />} />
             <Route path="/career-guidance" element={<CareerGuidance />} />
             <Route path="/create-course" element={<CreateCourse />} />
+            <Route path="/student-portal" element={<StudentPortal />} />
+            <Route path="/course-viewer/:courseId" element={<CourseViewer />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
