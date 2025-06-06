@@ -243,7 +243,7 @@ const FeatureGrid = ({ className = "", cardClassName = "", showCategories = fals
       {features.map((feature) => (
         <Card 
           key={feature.id}
-          className={`bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300 group ${cardClassName}`}
+          className={`bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 group ${cardClassName}`}
         >
           <CardContent className="p-8">
             <div className="text-center space-y-4">
