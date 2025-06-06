@@ -430,8 +430,298 @@ const AdvertiserPortal = () => {
           </div>
         )}
 
+        {/* Settings Tab */}
+        {activeTab === "settings" && (
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Account Settings */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <Settings className="h-5 w-5" />
+                    Account Settings
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Company Name</label>
+                    <Input placeholder="Your Company Name" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Business Email</label>
+                    <Input type="email" placeholder="business@company.com" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Industry</label>
+                    <Select>
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                        <SelectValue placeholder="Select industry" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="technology">Technology</SelectItem>
+                        <SelectItem value="education">Education</SelectItem>
+                        <SelectItem value="healthcare">Healthcare</SelectItem>
+                        <SelectItem value="finance">Finance</SelectItem>
+                        <SelectItem value="retail">Retail</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Billing Settings */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <DollarSign className="h-5 w-5" />
+                    Billing & Payments
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="p-4 bg-white/5 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-blue-200">Current Plan</span>
+                      <Badge className="bg-green-600 text-white">Pro</Badge>
+                    </div>
+                    <p className="text-white font-semibold">$299/month</p>
+                    <p className="text-blue-200 text-sm">Next billing: Jan 15, 2025</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Monthly Budget Limit</label>
+                    <Input type="number" placeholder="5000" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Auto-reload Budget</label>
+                    <div className="flex items-center gap-2">
+                      <Input type="checkbox" className="w-4 h-4" />
+                      <span className="text-white text-sm">Automatically reload when budget is 80% used</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Campaign Defaults */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <Target className="h-5 w-5" />
+                    Campaign Defaults
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Default Daily Budget</label>
+                    <Input type="number" placeholder="100" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Default Audience</label>
+                    <Select>
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                        <SelectValue placeholder="Select default audience" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="students">Students (18-25)</SelectItem>
+                        <SelectItem value="professionals">Professionals (25-45)</SelectItem>
+                        <SelectItem value="all">All Users</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Default Ad Format</label>
+                    <Select>
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                        <SelectValue placeholder="Select default format" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="banner">Banner Ad</SelectItem>
+                        <SelectItem value="video">Video Ad</SelectItem>
+                        <SelectItem value="native">Native Ad</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Notifications */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <Users className="h-5 w-5" />
+                    Notification Preferences
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white">Campaign Performance Alerts</span>
+                      <input type="checkbox" className="w-4 h-4" defaultChecked />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-white">Budget Threshold Warnings</span>
+                      <input type="checkbox" className="w-4 h-4" defaultChecked />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-white">Weekly Performance Reports</span>
+                      <input type="checkbox" className="w-4 h-4" defaultChecked />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-white">New Feature Announcements</span>
+                      <input type="checkbox" className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Email Notifications</label>
+                    <Select>
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                        <SelectValue placeholder="Select frequency" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="realtime">Real-time</SelectItem>
+                        <SelectItem value="daily">Daily Digest</SelectItem>
+                        <SelectItem value="weekly">Weekly Summary</SelectItem>
+                        <SelectItem value="never">Never</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* API & Integrations */}
+            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <Settings className="h-5 w-5" />
+                  API & Integrations
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">API Key</label>
+                    <div className="flex items-center gap-2">
+                      <Input 
+                        value="adv_sk_1234567890abcdef..." 
+                        readOnly 
+                        className="bg-white/10 border-white/20 text-white" 
+                      />
+                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                        Copy
+                      </Button>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-blue-200 block mb-2">Webhook URL</label>
+                    <Input 
+                      placeholder="https://your-app.com/webhooks/ads" 
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <h4 className="text-white font-medium">Connected Integrations</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="p-4 bg-white/5 rounded-lg flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                          <BarChart3 className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-white">Google Analytics</span>
+                      </div>
+                      <Badge className="bg-green-600 text-white">Connected</Badge>
+                    </div>
+                    <div className="p-4 bg-white/5 rounded-lg flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">
+                          <Target className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-white">Facebook Pixel</span>
+                      </div>
+                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                        Connect
+                      </Button>
+                    </div>
+                    <div className="p-4 bg-white/5 rounded-lg flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
+                          <TrendingUp className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-white">HubSpot</span>
+                      </div>
+                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                        Connect
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Privacy & Security */}
+            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <Settings className="h-5 w-5" />
+                  Privacy & Security
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <h4 className="text-white font-medium">Data Retention</h4>
+                    <div>
+                      <label className="text-sm font-medium text-blue-200 block mb-2">Campaign Data Retention</label>
+                      <Select>
+                        <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                          <SelectValue placeholder="Select retention period" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="1year">1 Year</SelectItem>
+                          <SelectItem value="2years">2 Years</SelectItem>
+                          <SelectItem value="5years">5 Years</SelectItem>
+                          <SelectItem value="forever">Forever</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <input type="checkbox" className="w-4 h-4" defaultChecked />
+                      <span className="text-white text-sm">Enable two-factor authentication</span>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-white font-medium">Compliance</h4>
+                    <div className="flex items-center gap-2">
+                      <input type="checkbox" className="w-4 h-4" defaultChecked />
+                      <span className="text-white text-sm">GDPR Compliance</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <input type="checkbox" className="w-4 h-4" defaultChecked />
+                      <span className="text-white text-sm">CCPA Compliance</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <input type="checkbox" className="w-4 h-4" />
+                      <span className="text-white text-sm">COPPA Compliance</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="flex items-center gap-4">
+              <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
+                Save Settings
+              </Button>
+              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                Reset to Defaults
+              </Button>
+            </div>
+          </div>
+        )}
+
         {/* Other tabs placeholder */}
-        {![ "overview", "campaigns", "create"].includes(activeTab) && (
+        {!["overview", "campaigns", "create", "settings"].includes(activeTab) && (
           <Card className="bg-white/10 backdrop-blur-md border-white/20">
             <CardContent className="p-8 text-center">
               <BarChart3 className="h-16 w-16 text-blue-300 mx-auto mb-4" />
