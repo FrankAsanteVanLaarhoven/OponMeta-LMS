@@ -49,32 +49,16 @@ const Navigation = () => {
                 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-white hover:text-blue-200 transition-colors bg-transparent hover:bg-white/10">
-                    Courses
+                    Resources
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-48 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
+                    <div className="w-52 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
                       <NavigationMenuLink href="/courses" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Courses
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/meet-ai" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Meet AI
                       </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="/features" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
-                    Features
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-blue-200 transition-colors bg-transparent hover:bg-white/10">
-                    Resources
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-52 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
                       <NavigationMenuLink href="/vendors" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Vendors
                       </NavigationMenuLink>
@@ -89,6 +73,12 @@ const Navigation = () => {
                       </NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/features" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
+                    Features
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
@@ -144,9 +134,9 @@ const Navigation = () => {
                 Home
               </a>
               
-              {/* Courses Section */}
+              {/* Resources Section */}
               <div className="border-t border-white/20 pt-2 mt-2">
-                <div className="px-3 py-1 text-xs font-semibold text-blue-200">COURSES</div>
+                <div className="px-3 py-1 text-xs font-semibold text-blue-200">RESOURCES</div>
                 <a
                   href="/courses"
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
@@ -159,18 +149,6 @@ const Navigation = () => {
                 >
                   Meet AI
                 </a>
-              </div>
-              
-              <a
-                href="/features"
-                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-              >
-                Features
-              </a>
-              
-              {/* Resources Section */}
-              <div className="border-t border-white/20 pt-2 mt-2">
-                <div className="px-3 py-1 text-xs font-semibold text-blue-200">RESOURCES</div>
                 <a
                   href="/vendors"
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
@@ -196,6 +174,13 @@ const Navigation = () => {
                   Advertiser Portal
                 </a>
               </div>
+              
+              <a
+                href="/features"
+                className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+              >
+                Features
+              </a>
               
               <a
                 href="/about"
