@@ -68,7 +68,7 @@ const About = () => {
               {" "}OPONMETA
             </span>
           </h1>
-          <p className="text-xl text-blue-100 leading-relaxed">
+          <p className="text-xl text-slate-800 leading-relaxed">
             OPONMETA was born from a vision to unlock global intellectual potential through comprehensive, 
             innovative, and inclusive education. We believe that when minds worldwide are equipped with 
             cutting-edge technology, multilingual accessibility, and industry partnerships, 
@@ -86,7 +86,7 @@ const About = () => {
                 <Target className="h-8 w-8 text-blue-400" />
                 <h2 className="text-2xl font-bold text-white">Our Mission</h2>
               </div>
-              <p className="text-blue-100 text-lg leading-relaxed">
+              <p className="text-slate-800 text-lg leading-relaxed">
                 To democratize access to high-quality global education through multilingual platforms, 
                 AI-powered learning, Web3 integration, industry partnerships, and inclusive programs 
                 that empower learners, educators, and organizations worldwide with future-ready skills.
@@ -100,7 +100,7 @@ const About = () => {
                 <Eye className="h-8 w-8 text-purple-400" />
                 <h2 className="text-2xl font-bold text-white">Our Vision</h2>
               </div>
-              <p className="text-blue-100 text-lg leading-relaxed">
+              <p className="text-slate-800 text-lg leading-relaxed">
                 A future where every learner globally has access to comprehensive, technology-enhanced 
                 education, where diverse expertise is recognized and celebrated, and where innovative 
                 learning solutions serve as the foundation for sustainable development and global collaboration.
@@ -115,7 +115,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Our Values</h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-800 max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
@@ -128,7 +128,7 @@ const About = () => {
                     <value.icon className="h-8 w-8 text-blue-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-3">{value.title}</h3>
-                  <p className="text-blue-100 text-sm leading-relaxed">{value.description}</p>
+                  <p className="text-slate-800 text-sm leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -143,24 +143,24 @@ const About = () => {
             <CardContent className="p-12">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-white mb-4">Our Impact</h2>
-                <p className="text-xl text-blue-100">Making comprehensive education accessible globally through innovative technology</p>
+                <p className="text-xl text-slate-800">Making comprehensive education accessible globally through innovative technology</p>
               </div>
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">50,000+</div>
-                  <div className="text-blue-100">Lives Transformed</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">50,000+</div>
+                  <div className="text-slate-800">Lives Transformed</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">54</div>
-                  <div className="text-blue-100">Countries Reached</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">54</div>
+                  <div className="text-slate-800">Countries Reached</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">1,200+</div>
-                  <div className="text-blue-100">Expert Instructors</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">1,200+</div>
+                  <div className="text-slate-800">Expert Instructors</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">89%</div>
-                  <div className="text-blue-100">Career Advancement</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-2">89%</div>
+                  <div className="text-slate-800">Career Advancement</div>
                 </div>
               </div>
             </CardContent>
@@ -173,7 +173,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Meet Our Team</h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-800 max-w-2xl mx-auto">
               Passionate educators and technologists dedicated to transforming global education through innovation
             </p>
           </div>
@@ -189,7 +189,7 @@ const About = () => {
                   />
                   <h3 className="text-lg font-semibold text-white mb-1">{member.name}</h3>
                   <p className="text-blue-400 font-medium mb-3">{member.role}</p>
-                  <p className="text-blue-100 text-sm leading-relaxed">{member.bio}</p>
+                  <p className="text-slate-800 text-sm leading-relaxed">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -203,7 +203,7 @@ const About = () => {
           <h2 className="text-4xl font-bold text-white mb-6">
             Join Our Mission
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-slate-800 mb-8">
             Whether you're a learner, educator, or partner, there's a place for you in our community
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

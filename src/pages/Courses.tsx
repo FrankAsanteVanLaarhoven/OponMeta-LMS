@@ -190,10 +190,10 @@ const Courses = () => {
       {/* Header */}
       <section className="py-16 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-7xl mx-auto text-center">
-           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+           <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
              Explore Our Courses
            </h1>
-           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+           <p className="text-xl text-slate-800 max-w-2xl mx-auto">
             Discover thousands of courses from expert instructors across Africa and beyond
           </p>
         </div>
@@ -222,7 +222,7 @@ const Courses = () => {
               <Button
                 size="sm"
                 variant={viewMode === "grid" ? "default" : "ghost"}
-                className={viewMode === "grid" ? "bg-white text-purple-900" : "text-white hover:bg-white/10"}
+                className={viewMode === "grid" ? "bg-slate-900 text-white" : "text-slate-900 hover:bg-slate-100"}
                 onClick={() => setViewMode("grid")}
               >
                 <Grid className="h-4 w-4" />
@@ -230,7 +230,7 @@ const Courses = () => {
               <Button
                 size="sm"
                 variant={viewMode === "list" ? "default" : "ghost"}
-                className={viewMode === "list" ? "bg-white text-purple-900" : "text-white hover:bg-white/10"}
+                className={viewMode === "list" ? "bg-slate-900 text-white" : "text-slate-900 hover:bg-slate-100"}
                 onClick={() => setViewMode("list")}
               >
                 <List className="h-4 w-4" />

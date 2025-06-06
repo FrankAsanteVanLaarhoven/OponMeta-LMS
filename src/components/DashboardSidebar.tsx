@@ -45,7 +45,7 @@ const DashboardSidebar = () => {
               <Button
                 variant={isActive ? "default" : "ghost"}
                 className={`w-full justify-start ${
-                  isActive ? "bg-white/20 text-white backdrop-blur-sm" : "text-blue-100 hover:bg-white/10 hover:text-white"
+                  isActive ? "bg-white/20 text-white backdrop-blur-sm" : "text-slate-800 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 <Icon className="mr-3 h-5 w-5" />
