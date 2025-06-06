@@ -297,9 +297,6 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Partner With OPONMETA</h2>
-            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-              Reach millions of learners worldwide through strategic partnerships, advertising, and sponsorship opportunities
-            </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -1285,9 +1282,6 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Case Studies</h2>
-            <p className="text-xl text-gray-600">
-              Learn how leading brands changed the rules of online training with Global Learning.
-            </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
