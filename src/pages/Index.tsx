@@ -81,8 +81,8 @@ const Index = () => {
       {/* Career Advancement Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Advance Your Career. Learn In-demand Skills.</h2>
-          <p className="text-xl text-foreground font-semibold mb-8 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">Advance Your Career. Learn In-demand Skills.</h2>
+          <p className="text-xl text-slate-800 font-bold mb-8 max-w-3xl mx-auto">
             Upskill in business analytics, health care, graphic design, management and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -97,16 +97,16 @@ const Index = () => {
           {/* Course Categories */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">Popular Courses</div>
+              <div className="text-2xl font-bold text-slate-900">Popular Courses</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">Top Diplomas</div>
+              <div className="text-2xl font-bold text-slate-900">Top Diplomas</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">Top Certificates</div>
+              <div className="text-2xl font-bold text-slate-900">Top Certificates</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">New Courses</div>
+              <div className="text-2xl font-bold text-slate-900">New Courses</div>
             </div>
           </div>
           
@@ -333,8 +333,8 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Meet AI - Video Calling Powered by AI Agents</h2>
-            <p className="text-xl text-foreground font-semibold max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Meet AI - Video Calling Powered by AI Agents</h2>
+            <p className="text-xl text-slate-800 font-bold max-w-3xl mx-auto">
               Experience the future of online learning with AI-powered video calls, real-time coaching, and personalized learning assistance.
             </p>
           </div>
@@ -353,8 +353,8 @@ const Index = () => {
                   <Play className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Real-time AI Coaching</h3>
-                  <p className="text-foreground font-medium">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Real-time AI Coaching</h3>
+                  <p className="text-slate-800 font-bold">
                     Get instant feedback and guidance from AI agents trained for specific roles and subjects.
                   </p>
                 </div>
@@ -365,8 +365,8 @@ const Index = () => {
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Learning Sessions</h3>
-                  <p className="text-foreground font-medium">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Interactive Learning Sessions</h3>
+                  <p className="text-slate-800 font-bold">
                     Participate in live AI-powered sessions with language tutors, interview coaches, and subject experts.
                   </p>
                 </div>
@@ -1255,10 +1255,10 @@ const Index = () => {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">
               Empowering African Talent Through World-Class Education
             </h2>
-            <p className="text-xl text-foreground max-w-4xl mx-auto font-medium">
+            <p className="text-xl text-slate-800 max-w-4xl mx-auto font-bold">
               We believe that quality education should be accessible to everyone, everywhere. Our platform connects African learners 
               with <span className="text-cyan-600 font-semibold">global experts</span> and <span className="text-cyan-600 font-semibold">industry leaders</span>, 
               providing skills that drive real career growth. From tech to business, we're building the future workforce through 
@@ -1295,16 +1295,16 @@ const Index = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
           </div>
           
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
                   What is instructional design in eLearning?
                 </h3>
-                <p className="text-foreground font-medium">
+                <p className="text-slate-800 font-bold">
                   Instructional design in eLearning is the organized process of designing and developing eLearning courses. 
                   Instructional designers analyze the learning needs of a target audience and design content to achieve specific 
                   learning objectives. The idea is to build engaging online courses for positive learning experiences.
@@ -1314,10 +1314,10 @@ const Index = () => {
             
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
                   How long does it take to develop a custom course?
                 </h3>
-                <p className="text-foreground font-medium">
+                <p className="text-slate-800 font-bold">
                   The development timeline varies based on course complexity, content length, and requirements. 
                   Typically, a standard course takes 4-8 weeks from initial consultation to final delivery.
                 </p>
@@ -1326,10 +1326,10 @@ const Index = () => {
             
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
                   What formats do you support for course content?
                 </h3>
-                <p className="text-foreground font-medium">
+                <p className="text-slate-800 font-bold">
                   We support various formats including videos, interactive presentations, documents, quizzes, 
                   assessments, and SCORM-compliant packages that work across different LMS platforms.
                 </p>
@@ -1342,10 +1342,10 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-           <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-2xl">
+           <h2 className="text-5xl font-bold text-slate-900 mb-6 drop-shadow-2xl">
              Ready to Transform Your Future?
            </h2>
-           <p className="text-2xl text-white font-semibold mb-8 drop-shadow-lg max-w-4xl mx-auto">
+           <p className="text-2xl text-slate-800 font-bold mb-8 drop-shadow-lg max-w-4xl mx-auto">
              Join thousands of learners who are advancing their careers with our world-class education platform
            </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

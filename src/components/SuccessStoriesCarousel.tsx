@@ -67,8 +67,8 @@ const SuccessStoriesCarousel = () => {
     <section className="py-20 px-4 bg-white/5">
       <div className="max-w-7xl mx-auto">
          <div className="text-center mb-16">
-           <h2 className="text-5xl font-bold text-white mb-4 drop-shadow-2xl">Real Life Success Stories</h2>
-           <p className="text-2xl text-white font-semibold max-w-3xl mx-auto drop-shadow-lg">
+           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">Real Life Success Stories</h2>
+           <p className="text-2xl text-slate-800 font-bold max-w-3xl mx-auto drop-shadow-lg">
              Learn how leading brands leverage Global Learning for online training & learning
            </p>
          </div>
@@ -99,12 +99,12 @@ const SuccessStoriesCarousel = () => {
                       alt={story.alt}
                       className="w-full h-48 object-cover rounded-lg mb-4"
                     />
-                    <h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
-                      {story.title}
-                    </h3>
-                    <p className="text-white/90 font-medium drop-shadow-md">
-                      {story.description}
-                    </p>
+                     <h3 className="text-xl font-bold text-slate-900 mb-3 drop-shadow-lg">
+                       {story.title}
+                     </h3>
+                     <p className="text-slate-800 font-bold drop-shadow-md">
+                       {story.description}
+                     </p>
                   </CardContent>
                 </Card>
               </div>

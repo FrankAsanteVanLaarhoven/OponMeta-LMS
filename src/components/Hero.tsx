@@ -13,13 +13,13 @@ const Hero = memo(() => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight drop-shadow-2xl">
               Unlock Your
-              <span className="bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text text-transparent font-extrabold drop-shadow-lg" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.2)' }}>
+              <span className="bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent font-extrabold drop-shadow-lg">
                 {" "}Potential
               </span>
             </h1>
-            <p className="text-2xl text-white font-semibold mb-8 max-w-2xl drop-shadow-lg">
+            <p className="text-2xl text-slate-800 font-bold mb-8 max-w-2xl drop-shadow-lg">
               Access world-class education from African experts and global partners. 
               Learn at your own pace with courses designed for the modern professional.
             </p>
@@ -45,11 +45,11 @@ const Hero = memo(() => {
                     />
                   ))}
                 </div>
-                <span className="text-white font-semibold drop-shadow-md">50,000+ students</span>
+                <span className="text-slate-900 font-bold drop-shadow-md">50,000+ students</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-white font-semibold drop-shadow-md">4.9/5 rating</span>
+                <span className="text-slate-900 font-bold drop-shadow-md">4.9/5 rating</span>
               </div>
             </div>
           </div>
