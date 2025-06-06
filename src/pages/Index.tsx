@@ -430,9 +430,9 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="/lovable-uploads/11270d30-1131-42d8-8edf-2499c8ed8041.png" 
+                src="/lovable-uploads/d99ab232-3a11-4b33-9acd-e42a3d898a3e.png" 
                 alt="Collaborative Learning Environment"
-                className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl hover:brightness-110 cursor-pointer transform hover:-translate-y-2"
+                className="w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-4xl hover:brightness-110 cursor-pointer transform hover:-translate-y-4 hover:rotate-1 hover:z-10 relative"
               />
             </div>
             <div className="space-y-6">
