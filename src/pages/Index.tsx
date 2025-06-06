@@ -430,9 +430,9 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" 
-                alt="AI Video Call Interface"
-                className="w-full rounded-2xl shadow-2xl"
+                src="/lovable-uploads/11270d30-1131-42d8-8edf-2499c8ed8041.png" 
+                alt="Collaborative Learning Environment"
+                className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl hover:brightness-110 cursor-pointer transform hover:-translate-y-2"
               />
             </div>
             <div className="space-y-6">
