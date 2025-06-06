@@ -292,6 +292,130 @@ const Index = () => {
       {/* Success Stories Section */}
       <SuccessStoriesCarousel />
 
+      {/* Advertisers & Partners Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-700 via-purple-800 to-indigo-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Partner With OPONMETA</h2>
+            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+              Reach millions of learners worldwide through strategic partnerships, advertising, and sponsorship opportunities
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="bg-blue-600 rounded-full p-4 inline-block mb-4">
+                  <Globe className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">Global Reach</h3>
+                <p className="text-purple-100 mb-4">
+                  Connect with 10M+ learners across 193 countries
+                </p>
+                <div className="text-2xl font-bold text-blue-400">193 Countries</div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="bg-green-600 rounded-full p-4 inline-block mb-4">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">Engaged Audience</h3>
+                <p className="text-purple-100 mb-4">
+                  Highly engaged professionals and students
+                </p>
+                <div className="text-2xl font-bold text-green-400">10M+ Users</div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all">
+              <CardContent className="p-8 text-center">
+                <div className="bg-orange-600 rounded-full p-4 inline-block mb-4">
+                  <Star className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">Premium Content</h3>
+                <p className="text-purple-100 mb-4">
+                  High-quality educational environment
+                </p>
+                <div className="text-2xl font-bold text-orange-400">5,500+ Courses</div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-4">Advertising Opportunities</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Banner placements across course pages</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Sponsored course recommendations</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Email marketing to targeted segments</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Video pre-roll advertising</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-4">Partnership Benefits</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Co-branded course development</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Corporate training solutions</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Certification program partnerships</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                    <span className="text-purple-100">Global conference collaborations</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" 
+                alt="Partnership Meeting"
+                className="w-full rounded-2xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-16">
+            <h3 className="text-2xl font-bold text-white mb-4">Ready to Partner With Us?</h3>
+            <p className="text-purple-100 mb-8 max-w-2xl mx-auto">
+              Join leading brands and organizations who trust OPONMETA to reach their target audience through strategic partnerships
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100" onClick={() => window.open('/advertiser-portal', '_self')}>
+                Become an Advertiser
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" onClick={() => window.open('/contact', '_self')}>
+                Partnership Inquiry
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* AI-Powered Features Section */}
       <section className="py-20 px-4">
