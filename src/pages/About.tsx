@@ -60,9 +60,9 @@ const About = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Empowering Global Learning Through
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {" "}OPONMETA

@@ -9,7 +9,7 @@ const Navigation = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <nav className="relative z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+    <nav className="relative z-50 bg-white/10 backdrop-blur-md border-b border-white/20"  style={{background: "linear-gradient(to bottom right, rgb(29 78 216), rgb(30 64 175), rgb(67 56 202))"}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

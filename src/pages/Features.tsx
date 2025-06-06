@@ -24,12 +24,12 @@ const Features = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-6">
-            OPONMETA Features
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
+           <h1 className="text-5xl font-bold text-white mb-6">
+             OPONMETA Features
+           </h1>
+           <p className="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
             Comprehensive global learning platform with cutting-edge technology, 
             inclusive education, and industry partnerships
           </p>
