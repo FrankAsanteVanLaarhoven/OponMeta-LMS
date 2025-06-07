@@ -9,9 +9,35 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { Palette, User, Upload, Shield, Bell, Settings, Download, BarChart3 } from "lucide-react";
+import { Palette, User, Upload, Shield, Bell, Settings, Download, BarChart3, BookOpen, Zap } from "lucide-react";
 
 const DashboardSettings = () => {
+  const [profileSettings, setProfileSettings] = useState({
+    displayName: "Your instructor name",
+    bio: "Tell students about yourself...",
+    expertiseAreas: "React, JavaScript, UI/UX...",
+  });
+
+  const [courseDefaults, setCourseDefaults] = useState({
+    defaultCategory: "programming",
+    defaultPriceRange: "50-100",
+    courseLanguage: "english",
+  });
+
+  const [advancedFeatures, setAdvancedFeatures] = useState({
+    vrArIntegration: false,
+    aiAnalytics: true,
+    liveStreaming: true,
+    interactiveWhiteboards: true,
+  });
+
+  const [notificationSettings, setNotificationSettings] = useState({
+    newStudentEnrollments: true,
+    courseCompletion: true,
+    revenueUpdates: false,
+    marketingOpportunities: true,
+  });
+
   const [brandingData, setBrandingData] = useState({
     vendorName: "My Awesome Courses Inc.",
     vendorDescription: "",
@@ -28,13 +54,6 @@ const DashboardSettings = () => {
     apiKey: "gcp_live_sk_123456789",
     webhookUrl: "https://mysite.com/webhook",
     rateLimitEnabled: true,
-  });
-
-  const [notificationSettings, setNotificationSettings] = useState({
-    emailNotifications: true,
-    pushNotifications: false,
-    weeklyReports: true,
-    marketingEmails: false,
   });
 
   const [securitySettings, setSecuritySettings] = useState({
@@ -74,14 +93,271 @@ const DashboardSettings = () => {
         </div>
       </div>
 
-      <Tabs defaultValue="branding" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="branding">Branding</TabsTrigger>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="api">API & Integrations</TabsTrigger>
+      <Tabs defaultValue="profile" className="space-y-6">
+        <TabsList className="grid w-full grid-cols-7">
+          <TabsTrigger value="profile">Profile</TabsTrigger>
+          <TabsTrigger value="courses">Course Defaults</TabsTrigger>
+          <TabsTrigger value="advanced">Advanced</TabsTrigger>
           <TabsTrigger value="notifications">Notifications</TabsTrigger>
+          <TabsTrigger value="branding">Branding</TabsTrigger>
+          <TabsTrigger value="api">API</TabsTrigger>
           <TabsTrigger value="security">Security</TabsTrigger>
         </TabsList>
+
+        <TabsContent value="profile">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3">
+                <User className="h-6 w-6 text-blue-600" />
+                <CardTitle>Profile Settings</CardTitle>
+              </div>
+              <p className="text-gray-600">
+                Manage your instructor profile and personal information.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="displayName">Display Name</Label>
+                  <Input
+                    id="displayName"
+                    value={profileSettings.displayName}
+                    onChange={(e) => setProfileSettings({ ...profileSettings, displayName: e.target.value })}
+                    placeholder="Your instructor name"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="bio">Bio</Label>
+                  <Textarea
+                    id="bio"
+                    value={profileSettings.bio}
+                    onChange={(e) => setProfileSettings({ ...profileSettings, bio: e.target.value })}
+                    placeholder="Tell students about yourself..."
+                    rows={4}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="expertiseAreas">Expertise Areas</Label>
+                  <Input
+                    id="expertiseAreas"
+                    value={profileSettings.expertiseAreas}
+                    onChange={(e) => setProfileSettings({ ...profileSettings, expertiseAreas: e.target.value })}
+                    placeholder="React, JavaScript, UI/UX..."
+                  />
+                </div>
+              </div>
+
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Save Profile Settings
+              </Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="courses">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3">
+                <BookOpen className="h-6 w-6 text-blue-600" />
+                <CardTitle>Course Defaults</CardTitle>
+              </div>
+              <p className="text-gray-600">
+                Set default preferences for new courses you create.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="defaultCategory">Default Course Category</Label>
+                  <Select value={courseDefaults.defaultCategory} onValueChange={(value) => setCourseDefaults({ ...courseDefaults, defaultCategory: value })}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="programming">Programming</SelectItem>
+                      <SelectItem value="design">Design</SelectItem>
+                      <SelectItem value="business">Business</SelectItem>
+                      <SelectItem value="marketing">Marketing</SelectItem>
+                      <SelectItem value="data-science">Data Science</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="defaultPriceRange">Default Price Range</Label>
+                  <Select value={courseDefaults.defaultPriceRange} onValueChange={(value) => setCourseDefaults({ ...courseDefaults, defaultPriceRange: value })}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select range" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="free">Free</SelectItem>
+                      <SelectItem value="1-25">$1 - $25</SelectItem>
+                      <SelectItem value="26-50">$26 - $50</SelectItem>
+                      <SelectItem value="51-100">$51 - $100</SelectItem>
+                      <SelectItem value="100+">$100+</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="courseLanguage">Course Language</Label>
+                <Select value={courseDefaults.courseLanguage} onValueChange={(value) => setCourseDefaults({ ...courseDefaults, courseLanguage: value })}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select language" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="english">English</SelectItem>
+                    <SelectItem value="spanish">Spanish</SelectItem>
+                    <SelectItem value="french">French</SelectItem>
+                    <SelectItem value="german">German</SelectItem>
+                    <SelectItem value="chinese">Chinese</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Save Course Defaults
+              </Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="advanced">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3">
+                <Zap className="h-6 w-6 text-blue-600" />
+                <CardTitle>Advanced Features</CardTitle>
+              </div>
+              <p className="text-gray-600">
+                Enable advanced features and integrations for your courses.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>VR/AR Integration</Label>
+                    <p className="text-sm text-gray-500">Enable immersive learning experiences</p>
+                    <Badge variant="secondary" className="mt-1">Beta</Badge>
+                  </div>
+                  <Switch
+                    checked={advancedFeatures.vrArIntegration}
+                    onCheckedChange={(checked) => setAdvancedFeatures({ ...advancedFeatures, vrArIntegration: checked })}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>AI-Powered Analytics</Label>
+                    <p className="text-sm text-gray-500">Get insights on student performance</p>
+                    <Badge variant="default" className="mt-1">Active</Badge>
+                  </div>
+                  <Switch
+                    checked={advancedFeatures.aiAnalytics}
+                    onCheckedChange={(checked) => setAdvancedFeatures({ ...advancedFeatures, aiAnalytics: checked })}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>Live Streaming</Label>
+                    <p className="text-sm text-gray-500">Host live classes and Q&A sessions</p>
+                    <Badge variant="outline" className="mt-1">Available</Badge>
+                  </div>
+                  <Switch
+                    checked={advancedFeatures.liveStreaming}
+                    onCheckedChange={(checked) => setAdvancedFeatures({ ...advancedFeatures, liveStreaming: checked })}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>Interactive Whiteboards</Label>
+                    <p className="text-sm text-gray-500">Collaborative learning tools</p>
+                    <Badge variant="outline" className="mt-1">Available</Badge>
+                  </div>
+                  <Switch
+                    checked={advancedFeatures.interactiveWhiteboards}
+                    onCheckedChange={(checked) => setAdvancedFeatures({ ...advancedFeatures, interactiveWhiteboards: checked })}
+                  />
+                </div>
+              </div>
+
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Save Advanced Settings
+              </Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="notifications">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-3">
+                <Bell className="h-6 w-6 text-blue-600" />
+                <CardTitle>Notifications</CardTitle>
+              </div>
+              <p className="text-gray-600">
+                Control how and when you receive notifications about your courses and students.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>New Student Enrollments</Label>
+                    <p className="text-sm text-gray-500">Get notified when students enroll</p>
+                  </div>
+                  <Switch
+                    checked={notificationSettings.newStudentEnrollments}
+                    onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, newStudentEnrollments: checked })}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>Course Completion</Label>
+                    <p className="text-sm text-gray-500">When students complete your courses</p>
+                  </div>
+                  <Switch
+                    checked={notificationSettings.courseCompletion}
+                    onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, courseCompletion: checked })}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>Revenue Updates</Label>
+                    <p className="text-sm text-gray-500">Monthly revenue reports</p>
+                  </div>
+                  <Switch
+                    checked={notificationSettings.revenueUpdates}
+                    onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, revenueUpdates: checked })}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label>Marketing Opportunities</Label>
+                    <p className="text-sm text-gray-500">Platform promotions and features</p>
+                  </div>
+                  <Switch
+                    checked={notificationSettings.marketingOpportunities}
+                    onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, marketingOpportunities: checked })}
+                  />
+                </div>
+              </div>
+
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Save Notification Settings
+              </Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
         <TabsContent value="branding">
           <Card>
@@ -378,78 +654,6 @@ const DashboardSettings = () => {
           </Card>
         </TabsContent>
 
-        <TabsContent value="notifications">
-          <Card>
-            <CardHeader>
-              <div className="flex items-center space-x-3">
-                <Bell className="h-6 w-6 text-blue-600" />
-                <CardTitle>Notification Preferences</CardTitle>
-              </div>
-              <p className="text-gray-600">
-                Control how and when you receive notifications about your courses and students.
-              </p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Email Notifications</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Label>Course Enrollments</Label>
-                      <p className="text-sm text-gray-500">Get notified when students enroll in your courses</p>
-                    </div>
-                    <Switch
-                      checked={notificationSettings.emailNotifications}
-                      onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, emailNotifications: checked })}
-                    />
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Label>Weekly Reports</Label>
-                      <p className="text-sm text-gray-500">Receive weekly performance summaries</p>
-                    </div>
-                    <Switch
-                      checked={notificationSettings.weeklyReports}
-                      onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, weeklyReports: checked })}
-                    />
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Label>Marketing Emails</Label>
-                      <p className="text-sm text-gray-500">Platform updates and promotional content</p>
-                    </div>
-                    <Switch
-                      checked={notificationSettings.marketingEmails}
-                      onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, marketingEmails: checked })}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <Separator />
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Push Notifications</h3>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Label>Browser Notifications</Label>
-                    <p className="text-sm text-gray-500">Real-time alerts in your browser</p>
-                  </div>
-                  <Switch
-                    checked={notificationSettings.pushNotifications}
-                    onCheckedChange={(checked) => setNotificationSettings({ ...notificationSettings, pushNotifications: checked })}
-                  />
-                </div>
-              </div>
-
-              <Button className="bg-blue-600 hover:bg-blue-700">
-                Save Notification Settings
-              </Button>
-            </CardContent>
-          </Card>
-        </TabsContent>
 
         <TabsContent value="security">
           <Card>
