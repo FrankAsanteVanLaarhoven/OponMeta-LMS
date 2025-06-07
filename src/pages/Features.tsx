@@ -28,7 +28,7 @@ const Features = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex justify-center mb-8">
             <img 
-              src="/public/oponmeta-uploads/792e4b6a-d1ef-4fa3-a582-17350a146c08.png" 
+              src="/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png" 
               alt="OPONMETA Logo" 
               className="h-16 w-auto"
             />
