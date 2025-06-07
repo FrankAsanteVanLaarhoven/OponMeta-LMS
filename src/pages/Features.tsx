@@ -33,10 +33,10 @@ const Features = () => {
               className="h-16 w-auto"
             />
           </div>
-           <h1 className="text-5xl font-bold text-white drop-shadow-lg mb-6">
+           <h1 className="text-5xl font-bold text-slate-800 drop-shadow-lg mb-6">
              OPONMETA Features
            </h1>
-           <p className="text-xl text-white/90 max-w-4xl mx-auto mb-8 drop-shadow-md font-medium">
+           <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8 drop-shadow-md font-medium">
             Comprehensive global learning platform with cutting-edge technology, 
             inclusive education, and industry partnerships
           </p>
