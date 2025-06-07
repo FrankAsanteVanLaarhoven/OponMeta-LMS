@@ -45,7 +45,7 @@ const Features = () => {
               <Badge 
                 key={category} 
                 variant="secondary" 
-                className="bg-secondary/20 text-secondary-foreground border-secondary/30 hover:bg-secondary/30"
+                className="bg-card/90 text-card-foreground border-border backdrop-blur-sm hover:bg-card hover:shadow-md transition-all duration-200"
               >
                 {category}
               </Badge>
