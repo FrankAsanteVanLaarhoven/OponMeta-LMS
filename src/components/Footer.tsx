@@ -9,14 +9,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png" 
-                alt="OPONMETA Logo" 
-                className="h-10 w-10"
-              />
+              <a href="/">
+                <img 
+                  src="/logo.png" 
+                  alt="OponMeta Logo" 
+                  className="h-10 w-10 animate-swivel"
+                />
+              </a>
               <div className="flex flex-col">
                 <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-600 bg-clip-text text-transparent">OPONMETA</span>
-                <span className="text-xs text-blue-200">GLOBAL LEARNING</span>
+                <span className="text-xs text-blue-200">GLOBAL EDTech PowerHouse</span>
               </div>
             </div>
             <p className="text-blue-100 text-sm">

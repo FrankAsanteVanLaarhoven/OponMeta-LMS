@@ -9,6 +9,7 @@ import TrustedByCarousel from "@/components/TrustedByCarousel";
 import SuccessStoriesCarousel from "@/components/SuccessStoriesCarousel";
 import PageNavigation from "@/components/PageNavigation";
 import Footer from "@/components/Footer";
+import TeamCarousel from "@/components/TeamCarousel";
 
 const Index = () => {
   const featuredCourses = [
@@ -303,8 +304,8 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="/placeholder.png" 
-                alt="Partner With OPONMETA - Team Collaboration"
+                src="https://tse2.mm.bing.net/th?id=OIP.b2TGJlmxEdjYI39ZFNzPKwHaHa&pid=Api&P=0&h=180" 
+                alt="AI-Powered Learning"
                 className="w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-4xl hover:brightness-110 cursor-pointer transform hover:-translate-y-4 hover:rotate-1 hover:z-10 relative"
               />
             </div>
@@ -563,7 +564,7 @@ const Index = () => {
             <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => alert('Opening video: How to Set up Your Virtual Classroom')}>
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+                  src="https://images.unsplash.com/photo-1584697964192-860eee694d7b" 
                   alt="Virtual Classroom"
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
@@ -584,7 +585,7 @@ const Index = () => {
             <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => alert('Opening video: How to Choose the Best LMS Software for Employee Training')}>
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" 
+                  src="https://images.unsplash.com/photo-1518081461904-9be7c1e48c31" 
                   alt="LMS Software"
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
@@ -896,7 +897,7 @@ const Index = () => {
                 </p>
                 <div className="mb-6">
                   <img 
-                    src="/placeholder.png" 
+                    src="https://images.unsplash.com/photo-1513258496099-48168024aec0" 
                     alt="Virtual Classroom Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
@@ -944,7 +945,7 @@ const Index = () => {
                 </p>
                 <div className="mb-6">
                   <img 
-                    src="/placeholder.png" 
+                    src="https://images.unsplash.com/photo-1503676382389-4809596d5290" 
                     alt="Quiz Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
@@ -992,7 +993,7 @@ const Index = () => {
                 </p>
                 <div className="mb-6">
                   <img 
-                    src="/placeholder.png" 
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
                     alt="Authoring Tool Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
@@ -1209,43 +1210,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - Carousel */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Empowering African Talent Through World-Class Education
-            </h2>
-            <p className="text-xl text-slate-800 max-w-4xl mx-auto font-bold">
-              We believe that quality education should be accessible to everyone, everywhere. Our platform connects African learners 
-              with <span className="text-cyan-600 font-semibold">global experts</span> and <span className="text-cyan-600 font-semibold">industry leaders</span>, 
-              providing skills that drive real career growth. From tech to business, we're building the future workforce through 
-              innovative learning experiences designed for the modern professional.
-            </p>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-slate-800">Meet Our Team</h3>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <img 
-              src="https://images.unsplash.com/photo-1494790108755-2616b612b898" 
-              alt="Team member"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
-              alt="Team member"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
-              alt="Team member"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <img 
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" 
-              alt="Team member"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-          </div>
+          <TeamCarousel />
         </div>
       </section>
 

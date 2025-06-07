@@ -27,6 +27,26 @@
   }
 }
 
+@keyframes logo-swivel {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: logo-spin 6s linear infinite;
+}
+
+.animate-swivel {
+  animation: logo-swivel 2.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

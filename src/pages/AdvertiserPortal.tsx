@@ -50,7 +50,6 @@ const AdvertiserPortal = () => {
       clicks: 1089,
       conversions: 43,
       ctr: 3.2,
-      thumbnail: "/lovable-uploads/b9fa448c-cd57-4a40-a46c-33ee5a78bdcf.png"
     },
     {
       id: 2,
@@ -63,7 +62,6 @@ const AdvertiserPortal = () => {
       clicks: 823,
       conversions: 31,
       ctr: 2.9,
-      thumbnail: "/lovable-uploads/7c79407f-7808-403c-9a03-10f13c475bd9.png"
     },
     {
       id: 3,
@@ -76,7 +74,6 @@ const AdvertiserPortal = () => {
       clicks: 567,
       conversions: 28,
       ctr: 3.0,
-      thumbnail: "/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png"
     }
   ];
 

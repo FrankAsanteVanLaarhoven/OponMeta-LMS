@@ -22,18 +22,16 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png"
-              alt="OPONMETA Logo" 
-              className="h-12 w-12 animate-spin-3d"
-              style={{
-                animation: 'spin3d 4s linear infinite',
-                transformStyle: 'preserve-3d'
-              }}
-            />
+            <a href="/">
+              <img 
+                src="/logo.png" 
+                alt="OponMeta Logo" 
+                className="h-12 w-12 animate-swivel"
+              />
+            </a>
             <div className="flex flex-col">
               <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-600 bg-clip-text text-transparent">OPONMETA</span>
-              <span className="text-xs text-blue-200">GLOBAL LEARNING</span>
+              <span className="text-xs text-blue-200">GLOBAL EDTech PowerHouse</span>
             </div>
           </div>
 
