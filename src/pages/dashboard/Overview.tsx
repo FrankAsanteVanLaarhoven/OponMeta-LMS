@@ -19,6 +19,44 @@ const Overview = () => {
   const [activeUsers] = useState(1);
   const [totalUsers] = useState(10);
 
+  // Vendor/Instructor Stats
+  const courseStats = {
+    totalCourses: 12,
+    totalStudents: 1847,
+    totalRevenue: 24500,
+    completionRate: 78
+  };
+
+  const recentCourses = [
+    {
+      id: 1,
+      title: "Advanced React Development",
+      students: 324,
+      revenue: 4800,
+      status: "published",
+      completion: 85,
+      thumbnail: "/lovable-uploads/b9fa448c-cd57-4a40-a46c-33ee5a78bdcf.png"
+    },
+    {
+      id: 2,
+      title: "JavaScript Fundamentals",
+      students: 567,
+      revenue: 8200,
+      status: "published", 
+      completion: 92,
+      thumbnail: "/lovable-uploads/7c79407f-7808-403c-9a03-10f13c475bd9.png"
+    },
+    {
+      id: 3,
+      title: "UI/UX Design Principles",
+      students: 234,
+      revenue: 3600,
+      status: "draft",
+      completion: 45,
+      thumbnail: "/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png"
+    }
+  ];
+
   const quickActions = [
     { icon: Bell, label: "Announcements", description: "Manage announcements" },
     { icon: Users, label: "Instructors", description: "Instructor management" },
@@ -129,33 +167,45 @@ const Overview = () => {
         </div>
       </div>
       
-      {/* Course Progress Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="hover:shadow-lg transition-shadow">
-          <CardHeader>
-            <CardTitle className="text-lg text-gray-600">Course Pending</CardTitle>
+      {/* Vendor Stats Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">Total Courses</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center space-x-4">
-              <div className="text-6xl font-bold text-gray-800">{coursePending}</div>
-              <div className="p-4 bg-red-100 rounded-full">
-                <Clock className="h-8 w-8 text-red-600" />
-              </div>
-            </div>
+            <div className="text-2xl font-bold text-foreground">{courseStats.totalCourses}</div>
+            <p className="text-xs text-green-600 mt-1">+2 this month</p>
           </CardContent>
         </Card>
 
-        <Card className="hover:shadow-lg transition-shadow">
-          <CardHeader>
-            <CardTitle className="text-lg text-gray-600">Course Completed</CardTitle>
+        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">Total Students</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center space-x-4">
-              <div className="text-6xl font-bold text-gray-800">{courseCompleted}</div>
-              <div className="p-4 bg-green-100 rounded-full">
-                <Award className="h-8 w-8 text-green-600" />
-              </div>
-            </div>
+            <div className="text-2xl font-bold text-foreground">{courseStats.totalStudents.toLocaleString()}</div>
+            <p className="text-xs text-green-600 mt-1">+127 this week</p>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">Total Revenue</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold text-foreground">${courseStats.totalRevenue.toLocaleString()}</div>
+            <p className="text-xs text-green-600 mt-1">+12% vs last month</p>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">Completion Rate</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold text-foreground">{courseStats.completionRate}%</div>
+            <p className="text-xs text-green-600 mt-1">+5% improvement</p>
           </CardContent>
         </Card>
       </div>
@@ -261,6 +311,51 @@ const Overview = () => {
           </CardContent>
         </Card>
       </div>
+
+      {/* Recent Courses */}
+      <Card className="bg-card/95 backdrop-blur-md border-border">
+        <CardHeader>
+          <CardTitle className="text-foreground">Recent Courses</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {recentCourses.map((course) => (
+              <div key={course.id} className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg">
+                <img 
+                  src={course.thumbnail} 
+                  alt={course.title}
+                  className="w-16 h-16 rounded-lg object-cover"
+                />
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground">{course.title}</h3>
+                  <div className="flex items-center gap-4 mt-1">
+                    <span className="text-sm text-muted-foreground">{course.students} students</span>
+                    <span className="text-sm text-green-600">${course.revenue}</span>
+                    <Badge 
+                      variant={course.status === "published" ? "default" : "secondary"}
+                      className={course.status === "published" ? "bg-green-600 text-white" : "bg-yellow-600 text-white"}
+                    >
+                      {course.status}
+                    </Badge>
+                  </div>
+                  <div className="mt-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-muted-foreground">Progress:</span>
+                      <Progress value={course.completion} className="flex-1 h-2" />
+                      <span className="text-xs text-foreground">{course.completion}%</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Button size="sm" variant="ghost" className="text-foreground hover:bg-muted">
+                    <TrendingUp className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Enhanced Top Performing Courses */}
       <Card className="hover:shadow-lg transition-shadow duration-300">

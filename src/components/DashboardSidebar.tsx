@@ -32,7 +32,7 @@ const DashboardSidebar = () => {
   return (
     <div className="w-64 bg-blue-900/20 backdrop-blur-md border-r border-blue-400/30 p-6">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-white">Vendor Dashboard</h2>
+        <h2 className="text-2xl font-bold text-white">Instructor Dashboard</h2>
       </div>
       
       <nav className="space-y-2">
