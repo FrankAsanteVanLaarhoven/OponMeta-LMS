@@ -65,9 +65,6 @@ const Navigation = () => {
                       <NavigationMenuLink href="/student-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Student Portal
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/vendor-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
-                        Vendor Portal
-                      </NavigationMenuLink>
                       <NavigationMenuLink href="/advertiser-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
                         Advertiser Portal
                       </NavigationMenuLink>
@@ -160,12 +157,6 @@ const Navigation = () => {
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
                 >
                   Student Portal
-                </a>
-                <a
-                  href="/vendor-portal"
-                  className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
-                >
-                  Vendor Portal
                 </a>
                 <a
                   href="/advertiser-portal"
