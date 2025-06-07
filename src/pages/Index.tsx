@@ -303,7 +303,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="/lovable-uploads/a30d307e-0173-4e88-b308-b1c4333e5c36.png" 
+                src="/placeholder.png" 
                 alt="Partner With OPONMETA - Team Collaboration"
                 className="w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-4xl hover:brightness-110 cursor-pointer transform hover:-translate-y-4 hover:rotate-1 hover:z-10 relative"
               />
@@ -896,7 +896,7 @@ const Index = () => {
                 </p>
                 <div className="mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                    src="/placeholder.png" 
                     alt="Virtual Classroom Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
@@ -944,7 +944,7 @@ const Index = () => {
                 </p>
                 <div className="mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                    src="/placeholder.png" 
                     alt="Quiz Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
@@ -992,7 +992,7 @@ const Index = () => {
                 </p>
                 <div className="mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" 
+                    src="/placeholder.png" 
                     alt="Authoring Tool Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                   />

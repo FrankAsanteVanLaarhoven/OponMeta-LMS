@@ -35,7 +35,7 @@ const Overview = () => {
       revenue: 4800,
       status: "published",
       completion: 85,
-      thumbnail: "/lovable-uploads/b9fa448c-cd57-4a40-a46c-33ee5a78bdcf.png"
+      thumbnail: ""
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ const Overview = () => {
       revenue: 8200,
       status: "published", 
       completion: 92,
-      thumbnail: "/lovable-uploads/7c79407f-7808-403c-9a03-10f13c475bd9.png"
+      thumbnail: ""
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ const Overview = () => {
       revenue: 3600,
       status: "draft",
       completion: 45,
-      thumbnail: "/lovable-uploads/68565b99-d611-46e4-af99-07eeb06cb8cb.png"
+      thumbnail: ""
     }
   ];
 
