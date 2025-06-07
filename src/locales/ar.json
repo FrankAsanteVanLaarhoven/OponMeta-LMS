@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "features": "الميزات",
+    "pricing": "التسعير",
+    "about": "حول",
+    "signIn": "تسجيل الدخول",
+    "getStarted": "ابدأ"
+  },
+  "common": {
+    "loading": "جار التحميل...",
+    "error": "خطأ"
+  }
+} 

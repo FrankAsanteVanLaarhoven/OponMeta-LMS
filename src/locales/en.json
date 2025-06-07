@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
+  }
+} 

@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "signIn": "Entrar",
+    "getStarted": "Começar"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro"
+  }
+} 

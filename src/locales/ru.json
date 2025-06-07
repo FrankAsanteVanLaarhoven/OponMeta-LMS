@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "features": "Функции",
+    "pricing": "Цены",
+    "about": "О нас",
+    "signIn": "Войти",
+    "getStarted": "Начать"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка"
+  }
+} 

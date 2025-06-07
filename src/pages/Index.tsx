@@ -516,11 +516,11 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700" onClick={() => window.open('/free-trial', '_self')}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 w-full max-w-md mx-auto">
+                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 w-full sm:w-auto">
                   Get Started Free
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50" onClick={() => window.open('/get-demo', '_self')}>
+                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 w-full sm:w-auto">
                   Get a Demo →
                 </Button>
               </div>
@@ -631,35 +631,35 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 w-full max-w-md mx-auto">
+            <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 w-full sm:w-auto">
               Get a Quote
             </Button>
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 w-full sm:w-auto">
               Talk to Sales →
             </Button>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-8 relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
             
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4 text-center">
                 Stages of the Custom Elearning Development Process
               </h3>
-              <p className="text-gray-600 text-center mb-12 text-lg">
+              <p className="text-gray-600 text-center mb-6 sm:mb-12 text-base sm:text-lg">
                 The standard steps that our instructional designers follow are:
               </p>
               
               {/* Interactive Process Demo */}
               <div className="max-w-4xl mx-auto">
                 {/* Progress Bar */}
-                <div className="mb-12">
-                  <div className="relative">
-                    <div className="flex justify-between mb-2">
+                <div className="mb-8 sm:mb-12">
+                  <div className="relative overflow-x-auto">
+                    <div className="flex justify-between min-w-[600px] sm:min-w-0 mb-2 px-2 sm:px-0">
                       {[1, 2, 3, 4, 5, 6].map((step) => (
-                        <div key={step} className="text-sm font-medium text-gray-500">
+                        <div key={step} className="text-xs sm:text-sm font-medium text-gray-500 whitespace-nowrap">
                           Step {step}
                         </div>
                       ))}
@@ -674,7 +674,7 @@ const Index = () => {
                 </div>
 
                 {/* Interactive Steps */}
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {[
                     {
                       number: 1,
@@ -727,7 +727,7 @@ const Index = () => {
                   ].map((step, index) => (
                     <div 
                       key={step.number}
-                      className={`group cursor-pointer transition-all duration-500 hover:scale-105 animate-fade-in ${step.bgColor} rounded-xl p-6 shadow-sm hover:shadow-lg`}
+                      className={`group cursor-pointer transition-all duration-500 hover:scale-105 animate-fade-in ${step.bgColor} rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-lg`}
                       style={{ animationDelay: `${index * 150}ms` }}
                       onClick={() => {
                         const element = document.getElementById(`step-${step.number}`);
@@ -736,29 +736,29 @@ const Index = () => {
                         }
                       }}
                     >
-                      <div className="flex items-start space-x-6">
+                      <div className="flex flex-col xs:flex-row items-start xs:items-center space-y-4 xs:space-y-0 xs:space-x-6">
                         {/* Step Number & Icon */}
-                        <div className="flex-shrink-0">
-                          <div className={`w-16 h-16 bg-gradient-to-r ${step.color} text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                            <span className="text-2xl">{step.icon}</span>
+                        <div className="flex-shrink-0 flex flex-col items-center">
+                          <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${step.color} text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                            <span className="text-xl sm:text-2xl">{step.icon}</span>
                           </div>
                           <div className="text-center mt-2">
-                            <span className="text-sm font-semibold text-gray-600">Step {step.number}</span>
+                            <span className="text-xs sm:text-sm font-semibold text-gray-600">Step {step.number}</span>
                           </div>
                         </div>
                         
                         {/* Content */}
                         <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-blue-600 transition-colors duration-300">
+                          <h4 className="font-bold text-gray-900 mb-2 sm:mb-3 text-base sm:text-lg group-hover:text-blue-600 transition-colors duration-300">
                             {step.title}
                           </h4>
-                          <p className="text-gray-600 text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                             {step.description}
                           </p>
                           
                           {/* Interactive Elements */}
-                          <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                            <div className="flex items-center space-x-4">
+                          <div className="mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                               <div className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                                 <span className="text-xs text-gray-500">Interactive Demo Available</span>
@@ -771,8 +771,8 @@ const Index = () => {
                         </div>
                         
                         {/* Progress Indicator */}
-                        <div className="flex-shrink-0">
-                          <div className="w-1 h-20 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="flex-shrink-0 hidden xs:block">
+                          <div className="w-1 h-12 sm:h-20 bg-gray-200 rounded-full overflow-hidden">
                             <div 
                               className={`w-full bg-gradient-to-b ${step.color} transition-all duration-1000 ease-out`}
                               style={{ height: '100%', animationDelay: `${index * 200}ms` }}
@@ -783,7 +783,7 @@ const Index = () => {
                       
                       {/* Connection Line */}
                       {index < 5 && (
-                        <div className="ml-8 mt-4">
+                        <div className="ml-8 mt-4 hidden xs:block">
                           <div className="w-px h-8 bg-gradient-to-b from-gray-300 to-transparent mx-auto"></div>
                           <div className="w-2 h-2 bg-gray-400 rounded-full mx-auto animate-bounce" style={{ animationDelay: `${index * 300}ms` }}></div>
                         </div>
@@ -793,18 +793,18 @@ const Index = () => {
                 </div>
                 
                 {/* Call to Action */}
-                <div className="text-center mt-12 p-6 bg-white/70 backdrop-blur-sm rounded-xl border border-blue-200">
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Ready to Start Your Custom Course?</h4>
-                  <p className="text-gray-600 mb-6">Let our expert team guide you through this proven process</p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="text-center mt-8 sm:mt-12 p-4 sm:p-6 bg-white/70 backdrop-blur-sm rounded-xl border border-blue-200">
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-4">Ready to Start Your Custom Course?</h4>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Let our expert team guide you through this proven process</p>
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <button 
-                      className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                      className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto"
                       onClick={() => alert('Starting course development process...')}
                     >
                       🚀 Start Your Project
                     </button>
                     <button 
-                      className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300"
+                      className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 w-full sm:w-auto"
                       onClick={() => alert('Scheduling consultation...')}
                     >
                       📅 Schedule Consultation

@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "features": "功能",
+    "pricing": "定价",
+    "about": "关于",
+    "signIn": "登录",
+    "getStarted": "开始"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误"
+  }
+} 

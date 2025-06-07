@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 
 
 // Lazy load all page components for better performance
@@ -81,125 +83,127 @@ const queryClient = new QueryClient({
 });
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      
-      <BrowserRouter>
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/vendors" element={<Vendors />} />
-            <Route path="/features" element={<Features />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/contact-form" element={<ContactForm />} />
-            <Route path="/dashboard" element={<Dashboard />}>
-              <Route index element={
-                <Suspense fallback={<PageLoader />}>
-                  <Overview />
-                </Suspense>
-              } />
-              <Route path="courses" element={
-                <Suspense fallback={<PageLoader />}>
-                  <CoursesManagement />
-                </Suspense>
-              } />
-              <Route path="enrollments" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Enrollments />
-                </Suspense>
-              } />
-              <Route path="revenue" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Revenue />
-                </Suspense>
-              } />
-              <Route path="analytics" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Analytics />
-                </Suspense>
-              } />
-              <Route path="collaboration" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Collaboration />
-                </Suspense>
-              } />
-              <Route path="whiteboard" element={
-                <Suspense fallback={<PageLoader />}>
-                  <WhiteboardPage />
-                </Suspense>
-              } />
-              <Route path="meetings" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Meetings />
-                </Suspense>
-              } />
-              <Route path="documents" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Documents />
-                </Suspense>
-              } />
-              <Route path="forums" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Forums />
-                </Suspense>
-              } />
-              <Route path="users" element={
-                <Suspense fallback={<PageLoader />}>
-                  <UserManagement />
-                </Suspense>
-              } />
-              <Route path="library" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Library />
-                </Suspense>
-              } />
-              <Route path="templates" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Templates />
-                </Suspense>
-              } />
-              <Route path="recommendations" element={
-                <Suspense fallback={<PageLoader />}>
-                  <Recommendations />
-                </Suspense>
-              } />
-              <Route path="settings" element={
-                <Suspense fallback={<PageLoader />}>
-                  <DashboardSettings />
-                </Suspense>
-              } />
-            </Route>
-            <Route path="/meet-ai" element={<MeetAI />} />
-            <Route path="/course-library" element={<CourseLibrary />} />
-            <Route path="/virtual-classroom" element={<VirtualClassroom />} />
-            <Route path="/quiz-builder" element={<QuizBuilder />} />
-            <Route path="/authoring-tool" element={<AuthoringTool />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/get-demo" element={<GetDemo />} />
-            <Route path="/get-quote" element={<GetQuote />} />
-            <Route path="/free-trial" element={<FreeTrial />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/start-learning" element={<StartLearning />} />
-            <Route path="/become-instructor" element={<BecomeInstructor />} />
-            <Route path="/career-guidance" element={<CareerGuidance />} />
-            <Route path="/create-course" element={<CreateCourse />} />
-            <Route path="/student-portal" element={<StudentPortal />} />
-            <Route path="/course-viewer/:courseId" element={<CourseViewer />} />
-            <Route path="/vendor-portal" element={<VendorPortal />} />
-            <Route path="/advertiser-portal" element={<AdvertiserPortal />} />
-            <Route path="/course-management/:courseId" element={<CourseManagement />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <I18nextProvider i18n={i18n}>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        
+        <BrowserRouter>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/vendors" element={<Vendors />} />
+              <Route path="/features" element={<Features />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact-form" element={<ContactForm />} />
+              <Route path="/dashboard" element={<Dashboard />}>
+                <Route index element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Overview />
+                  </Suspense>
+                } />
+                <Route path="courses" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <CoursesManagement />
+                  </Suspense>
+                } />
+                <Route path="enrollments" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Enrollments />
+                  </Suspense>
+                } />
+                <Route path="revenue" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Revenue />
+                  </Suspense>
+                } />
+                <Route path="analytics" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Analytics />
+                  </Suspense>
+                } />
+                <Route path="collaboration" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Collaboration />
+                  </Suspense>
+                } />
+                <Route path="whiteboard" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <WhiteboardPage />
+                  </Suspense>
+                } />
+                <Route path="meetings" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Meetings />
+                  </Suspense>
+                } />
+                <Route path="documents" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Documents />
+                  </Suspense>
+                } />
+                <Route path="forums" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Forums />
+                  </Suspense>
+                } />
+                <Route path="users" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <UserManagement />
+                  </Suspense>
+                } />
+                <Route path="library" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Library />
+                  </Suspense>
+                } />
+                <Route path="templates" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Templates />
+                  </Suspense>
+                } />
+                <Route path="recommendations" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <Recommendations />
+                  </Suspense>
+                } />
+                <Route path="settings" element={
+                  <Suspense fallback={<PageLoader />}>
+                    <DashboardSettings />
+                  </Suspense>
+                } />
+              </Route>
+              <Route path="/meet-ai" element={<MeetAI />} />
+              <Route path="/course-library" element={<CourseLibrary />} />
+              <Route path="/virtual-classroom" element={<VirtualClassroom />} />
+              <Route path="/quiz-builder" element={<QuizBuilder />} />
+              <Route path="/authoring-tool" element={<AuthoringTool />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/get-demo" element={<GetDemo />} />
+              <Route path="/get-quote" element={<GetQuote />} />
+              <Route path="/free-trial" element={<FreeTrial />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/start-learning" element={<StartLearning />} />
+              <Route path="/become-instructor" element={<BecomeInstructor />} />
+              <Route path="/career-guidance" element={<CareerGuidance />} />
+              <Route path="/create-course" element={<CreateCourse />} />
+              <Route path="/student-portal" element={<StudentPortal />} />
+              <Route path="/course-viewer/:courseId" element={<CourseViewer />} />
+              <Route path="/vendor-portal" element={<VendorPortal />} />
+              <Route path="/advertiser-portal" element={<AdvertiserPortal />} />
+              <Route path="/course-management/:courseId" element={<CourseManagement />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </I18nextProvider>
 );
 
 export default App;
