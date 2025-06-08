@@ -18,7 +18,7 @@ const Navigation = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const { theme, setTheme } = useTheme();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langBtnRef = useRef(null);
   const langMenuRef = useRef(null);
@@ -92,58 +92,48 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList className="space-x-6">
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
-                    Home
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="/" className="text-white hover:text-blue-200 transition-colors px-3 py-2">{t('nav.home')}</NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-white hover:text-blue-200 transition-colors bg-transparent hover:bg-white/10">
-                    Resources
+                    {t('nav.resources')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-52 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
                       <NavigationMenuLink href="/courses" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
-                        Courses
+                        {t('nav.courses')}
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/meet-ai" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
-                        Meet AI
+                        {t('nav.meetAI')}
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/vendors" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
-                        Vendors
+                        {t('nav.vendors')}
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/student-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
-                        Student Portal
+                        {t('nav.studentPortal')}
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/advertiser-portal" className="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-sm transition-colors text-sm font-medium">
-                        Advertiser Portal
+                        {t('nav.advertiserPortal')}
                       </NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/features" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
-                    Features
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="/features" className="text-white hover:text-blue-200 transition-colors px-3 py-2">{t('nav.features')}</NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/about" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
-                    About
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="/about" className="text-white hover:text-blue-200 transition-colors px-3 py-2">{t('nav.about')}</NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/contact" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
-                    Contact
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="/contact" className="text-white hover:text-blue-200 transition-colors px-3 py-2">{t('nav.contact')}</NavigationMenuLink>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="/dashboard" className="text-white hover:text-blue-200 transition-colors px-3 py-2">
-                    Dashboard
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="/dashboard" className="text-white hover:text-blue-200 transition-colors px-3 py-2">{t('nav.dashboard')}</NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
@@ -152,10 +142,10 @@ const Navigation = () => {
           {/* Desktop Auth Buttons + Theme/Language Switchers */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" className="text-white hover:bg-white/10" onClick={() => window.location.href = '/signin'}>
-              Sign In
+              {t('nav.signIn')}
             </Button>
             <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0" onClick={() => window.location.href = '/signup'}>
-              Sign Up
+              {t('nav.signUp')}
             </Button>
             {/* Theme Switcher Dropdown */}
             <div className="relative group">
@@ -224,41 +214,41 @@ const Navigation = () => {
                 href="/"
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
               >
-                Home
+                {t('nav.home')}
               </a>
               
               {/* Resources Section */}
               <div className="border-t border-white/20 pt-2 mt-2">
-                <div className="px-3 py-1 text-xs font-semibold text-blue-200">RESOURCES</div>
+                <div className="px-3 py-1 text-xs font-semibold text-blue-200">{t('nav.resources')}</div>
                 <a
                   href="/courses"
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
                 >
-                  Courses
+                  {t('nav.courses')}
                 </a>
                 <a
                   href="/meet-ai"
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
                 >
-                  Meet AI
+                  {t('nav.meetAI')}
                 </a>
                 <a
                   href="/vendors"
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
                 >
-                  Vendors
+                  {t('nav.vendors')}
                 </a>
                 <a
                   href="/student-portal"
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
                 >
-                  Student Portal
+                  {t('nav.studentPortal')}
                 </a>
                 <a
                   href="/advertiser-portal"
                   className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
                 >
-                  Advertiser Portal
+                  {t('nav.advertiserPortal')}
                 </a>
               </div>
               
@@ -266,34 +256,34 @@ const Navigation = () => {
                 href="/features"
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
               >
-                Features
+                {t('nav.features')}
               </a>
               
               <a
                 href="/about"
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
               >
-                About
+                {t('nav.about')}
               </a>
               <a
                 href="/contact"
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
               >
-                Contact
+                {t('nav.contact')}
               </a>
               <a
                 href="/dashboard"
                 className="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
               >
-                Dashboard
+                {t('nav.dashboard')}
               </a>
               
               <div className="pt-4 space-y-2">
                 <Button variant="ghost" className="w-full text-white hover:bg-white/10">
-                  Sign In
+                  {t('nav.signIn')}
                 </Button>
                 <Button className="w-full bg-white text-purple-900 hover:bg-gray-100">
-                  Sign Up
+                  {t('nav.signUp')}
                 </Button>
               </div>
             </div>

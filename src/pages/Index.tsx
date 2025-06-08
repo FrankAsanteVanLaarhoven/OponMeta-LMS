@@ -84,7 +84,7 @@ const Index = () => {
       {/* Career Advancement Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">Advance Your Career. Learn In-demand Skills.</h2>
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">{t('homepage.advance_your_career')}</h2>
           <p className="text-xl text-slate-800 font-bold mb-8 max-w-3xl mx-auto">
             Upskill in business analytics, health care, graphic design, management and more.
           </p>
@@ -307,6 +307,7 @@ const Index = () => {
                 src="https://tse2.mm.bing.net/th?id=OIP.b2TGJlmxEdjYI39ZFNzPKwHaHa&pid=Api&P=0&h=180" 
                 alt="AI-Powered Learning"
                 className="w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-4xl hover:brightness-110 cursor-pointer transform hover:-translate-y-4 hover:rotate-1 hover:z-10 relative"
+                loading="lazy"
               />
             </div>
             <div className="space-y-6">
@@ -546,6 +547,7 @@ const Index = () => {
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
                   alt="Corporate Training"
                   className="w-full h-48 object-cover rounded-t-lg"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/40 rounded-t-lg flex items-center justify-center hover:bg-black/30 transition-colors">
                   <div className="bg-blue-600 rounded-full p-3 hover:bg-blue-700 transition-colors">
@@ -567,6 +569,7 @@ const Index = () => {
                   src="https://images.unsplash.com/photo-1584697964192-860eee694d7b" 
                   alt="Virtual Classroom"
                   className="w-full h-48 object-cover rounded-t-lg"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/40 rounded-t-lg flex items-center justify-center hover:bg-black/30 transition-colors">
                   <div className="bg-blue-600 rounded-full p-3 hover:bg-blue-700 transition-colors">
@@ -588,6 +591,7 @@ const Index = () => {
                   src="https://images.unsplash.com/photo-1518081461904-9be7c1e48c31" 
                   alt="LMS Software"
                   className="w-full h-48 object-cover rounded-t-lg"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/40 rounded-t-lg flex items-center justify-center hover:bg-black/30 transition-colors">
                   <div className="bg-blue-600 rounded-full p-3 hover:bg-blue-700 transition-colors">
@@ -852,6 +856,7 @@ const Index = () => {
                     src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
                     alt="Course Library Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="space-y-2 mb-6">
@@ -900,6 +905,7 @@ const Index = () => {
                     src="https://images.unsplash.com/photo-1513258496099-48168024aec0" 
                     alt="Virtual Classroom Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="space-y-2 mb-6">
@@ -948,6 +954,7 @@ const Index = () => {
                     src="https://images.unsplash.com/photo-1503676382389-4809596d5290" 
                     alt="Quiz Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="space-y-2 mb-6">
@@ -996,6 +1003,7 @@ const Index = () => {
                     src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
                     alt="Authoring Tool Interface"
                     className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="space-y-2 mb-6">
