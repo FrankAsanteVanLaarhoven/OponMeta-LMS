@@ -15,7 +15,7 @@ const Hero = memo(() => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight drop-shadow-2xl">{t('hero.title')}</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight drop-shadow-2xl">Unlock Your Potential with World-Class Learning</h1>
             <p className="text-2xl text-slate-800 font-bold mb-8 max-w-2xl drop-shadow-lg">
               Access world-class education from African experts and global partners. 
               Learn at your own pace with courses designed for the modern professional.

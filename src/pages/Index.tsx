@@ -87,7 +87,7 @@ const Index = () => {
       {/* Career Advancement Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">{t('homepage.advance_your_career')}</h2>
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">Advance Your Career. Learn In-demand Skills.</h2>
           <p className="text-xl text-slate-800 font-bold mb-8 max-w-3xl mx-auto">
             Upskill in business analytics, health care, graphic design, management and more.
           </p>

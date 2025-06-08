@@ -70,7 +70,7 @@ const SuccessStoriesCarousel = () => {
     <section className="py-20 px-4 bg-white/5">
       <div className="max-w-7xl mx-auto">
          <div className="text-center mb-16">
-           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">{t('successStories.title')}</h2>
+           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">Real Life Success Stories</h2>
          </div>
         
         <div className="overflow-hidden mb-12" ref={emblaRef}>
