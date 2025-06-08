@@ -25,8 +25,10 @@ import {
   Video,
   FileText
 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const AdvertiserPortal = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("overview");
 
   const adStats = {
@@ -92,7 +94,7 @@ const AdvertiserPortal = () => {
       <div className="bg-white/10 backdrop-blur-md border-b border-white/20 p-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-white">Advertiser Portal</h1>
+            <h1 className="text-3xl font-bold text-white">{t('advertiserPortal.title')}</h1>
             <p className="text-blue-200 mt-1">Create and manage your advertising campaigns</p>
           </div>
           <div className="flex items-center gap-4">
@@ -211,6 +213,7 @@ const AdvertiserPortal = () => {
                         src={campaign.thumbnail} 
                         alt={campaign.name}
                         className="w-16 h-16 rounded-lg object-cover"
+                        loading="lazy"
                       />
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -289,6 +292,7 @@ const AdvertiserPortal = () => {
                       src={campaign.thumbnail} 
                       alt={campaign.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                     <div className="absolute top-2 left-2">
                       <Badge 

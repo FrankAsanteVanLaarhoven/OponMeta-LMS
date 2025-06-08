@@ -3,6 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const SuccessStoriesCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -12,6 +13,8 @@ const SuccessStoriesCarousel = () => {
     slidesToScroll: 1,
     align: 'start'
   });
+
+  const { t } = useTranslation();
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -67,7 +70,7 @@ const SuccessStoriesCarousel = () => {
     <section className="py-20 px-4 bg-white/5">
       <div className="max-w-7xl mx-auto">
          <div className="text-center mb-16">
-           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">Real Life Success Stories</h2>
+           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">{t('successStories.title')}</h2>
          </div>
         
         <div className="overflow-hidden mb-12" ref={emblaRef}>
@@ -95,6 +98,7 @@ const SuccessStoriesCarousel = () => {
                       src={story.image}
                       alt={story.alt}
                       className="w-full h-48 object-cover rounded-lg mb-4"
+                      loading="lazy"
                     />
                      <h3 className="text-xl font-bold text-slate-900 mb-3 drop-shadow-lg">
                        {story.title}

@@ -12,6 +12,7 @@ import Navigation from "@/components/Navigation";
 import PageNavigation from "@/components/PageNavigation";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const StudentPortal = () => {
   const [streak] = useState(0);
@@ -28,6 +29,8 @@ const StudentPortal = () => {
       instagram: ""
     }
   });
+
+  const { t } = useTranslation();
 
   const markCourseComplete = () => {
     toast({
@@ -150,7 +153,7 @@ const StudentPortal = () => {
                 {/* Upcoming Events */}
                 <Card className="bg-card border-border">
                   <CardHeader>
-                    <CardTitle className="text-foreground">Upcoming events</CardTitle>
+                    <CardTitle className="text-foreground">{t('studentPortal.upcomingEvents')}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     {upcomingEvents.map((event, index) => (

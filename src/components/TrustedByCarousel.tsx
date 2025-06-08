@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Building2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const TrustedByCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -11,6 +12,8 @@ const TrustedByCarousel = () => {
     slidesToScroll: 1,
     align: 'start'
   });
+
+  const { t } = useTranslation();
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -40,7 +43,7 @@ const TrustedByCarousel = () => {
     <section className="py-16 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">Trusted by Leading Companies</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('trustedBy.title')}</h2>
           <p className="text-xl text-blue-100">
             Join thousands of organizations advancing their teams with our platform
           </p>

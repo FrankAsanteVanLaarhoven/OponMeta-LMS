@@ -10,8 +10,11 @@ import SuccessStoriesCarousel from "@/components/SuccessStoriesCarousel";
 import PageNavigation from "@/components/PageNavigation";
 import Footer from "@/components/Footer";
 import TeamCarousel from "@/components/TeamCarousel";
+import { useTranslation } from 'react-i18next';
 
 const Index = () => {
+  const { t } = useTranslation();
+
   const featuredCourses = [
     {
       id: 1,

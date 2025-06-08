@@ -1,6 +1,9 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -46,7 +49,7 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Our Services</h3>
+            <h3 className="text-lg font-semibold text-white">{t('footer.ourServices')}</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="/courses" className="text-blue-100 hover:text-white transition-colors">Online Courses</a></li>
               <li><a href="/virtual-classroom" className="text-blue-100 hover:text-white transition-colors">Virtual Classroom</a></li>

@@ -1,5 +1,6 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const teamMembers = [
   {
@@ -40,6 +41,7 @@ const carouselVariants = {
 
 const TeamCarousel = () => {
   const controls = useAnimation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     controls.start('animate');
@@ -61,10 +63,11 @@ const TeamCarousel = () => {
           >
             <img
               src={member.img}
-              alt={member.name}
+              alt={t(`team.${idx}.name`)}
               className="w-40 h-40 object-cover rounded-full mb-4 border-4 border-blue-100"
+              loading="lazy"
             />
-            <span className="font-semibold text-lg text-slate-900">{member.name}</span>
+            <span className="font-semibold text-lg text-slate-900">{t(`team.${idx}.name`)}</span>
             <span className="text-blue-600 text-sm">{member.role}</span>
           </div>
         ))}
