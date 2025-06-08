@@ -36,9 +36,9 @@ const CourseFilters = ({
 }: CourseFiltersProps) => {
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
 
-  const categories = ["All", "Technology", "Business", "Marketing", "Design", "Health", "Education"];
-  const difficulties = ["All", "Beginner", "Intermediate", "Advanced"];
-  const durations = ["All", "0-2 hours", "3-10 hours", "11-20 hours", "20+ hours"];
+  const categories = ["All", "Technology", "Business", "Marketing", "Design", "Health", "Education", "Languages", "Personal Development"];
+  const difficulties = ["All", "Beginner", "Intermediate", "Advanced", "Expert"];
+  const durations = ["All", "Up to 2 hours", "3-10 hours", "11-20 hours", "Over 20 hours"];
 
   return (
     <Card className="bg-white/10 backdrop-blur-md border-white/20 p-6">
@@ -49,7 +49,7 @@ const CourseFilters = ({
             <div className="relative">
               <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <Input
-                placeholder="Search courses, instructors, topics..."
+                placeholder="Search for courses, instructors, or topics..."
                 className="pl-10 bg-white/10 border-white/20 text-white placeholder-gray-300"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -84,7 +84,7 @@ const CourseFilters = ({
               onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
             >
               <Filter className="h-4 w-4 mr-2" />
-              Advanced
+              More Filters
             </Button>
             
             <Button
@@ -94,7 +94,7 @@ const CourseFilters = ({
               onClick={onReset}
             >
               <X className="h-4 w-4 mr-2" />
-              Reset
+              Clear All
             </Button>
           </div>
         </div>
@@ -104,7 +104,7 @@ const CourseFilters = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/20">
             {/* Price Range */}
             <div className="space-y-3">
-              <Label className="text-white font-medium">Price Range</Label>
+              <Label className="text-white font-medium">Tuition Range</Label>
               <div className="px-3">
                 <Slider
                   value={priceRange}
@@ -115,18 +115,18 @@ const CourseFilters = ({
                   className="w-full"
                 />
                 <div className="flex justify-between text-sm text-blue-100 mt-2">
-                  <span>${priceRange[0]}</span>
-                  <span>${priceRange[1]}</span>
+                  <span>USD {priceRange[0]}</span>
+                  <span>USD {priceRange[1]}</span>
                 </div>
               </div>
             </div>
 
             {/* Difficulty Level */}
             <div className="space-y-3">
-              <Label className="text-white font-medium">Difficulty Level</Label>
+              <Label className="text-white font-medium">Skill Level</Label>
               <Select value={difficulty} onValueChange={setDifficulty}>
                 <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                  <SelectValue placeholder="Select difficulty" />
+                  <SelectValue placeholder="Choose skill level" />
                 </SelectTrigger>
                 <SelectContent className="bg-gray-900 border-gray-700">
                   {difficulties.map((level) => (
@@ -140,10 +140,10 @@ const CourseFilters = ({
 
             {/* Duration */}
             <div className="space-y-3">
-              <Label className="text-white font-medium">Duration</Label>
+              <Label className="text-white font-medium">Course Duration</Label>
               <Select value={duration} onValueChange={setDuration}>
                 <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                  <SelectValue placeholder="Select duration" />
+                  <SelectValue placeholder="Choose duration" />
                 </SelectTrigger>
                 <SelectContent className="bg-gray-900 border-gray-700">
                   {durations.map((dur) => (

@@ -122,8 +122,8 @@ const AuthoringTool = () => {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-white mb-6">Elearning Authoring Tool</h1>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Create stunning online courses in minutes with our drag-and-drop interface. 
-            Choose from 100+ professional templates and build engaging learning experiences.
+            Build engaging online courses in minutes with our intuitive drag-and-drop platform. 
+            Select from 100+ global templates and design impactful learning experiences for any audience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -202,10 +202,10 @@ const AuthoringTool = () => {
                       <Layers className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                       <h4 className="text-xl font-semibold text-gray-600 mb-2">Course Canvas</h4>
                       <p className="text-gray-500 mb-4">
-                        Drag elements from the left panel to build your course slide
+                        Drag and drop elements from the left to design your course slide
                       </p>
                       <Button variant="outline">
-                        Choose Template
+                        Select a Template
                       </Button>
                     </div>
                   </div>
@@ -276,7 +276,7 @@ const AuthoringTool = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">100+ Professional Templates</h2>
                 <p className="text-lg text-gray-600">
-                  Jump-start your course creation with industry-specific templates
+                  Jump-start your course creation with templates for every industry and audience
                 </p>
               </div>
 
@@ -302,7 +302,7 @@ const AuthoringTool = () => {
                         )}
                       </div>
                       <Button className="w-full bg-orange-600 hover:bg-orange-700">
-                        Use Template
+                        Use This Template
                       </Button>
                     </CardContent>
                   </Card>
@@ -314,7 +314,7 @@ const AuthoringTool = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Powerful Authoring Features</h2>
                 <p className="text-lg text-gray-600">
-                  Everything you need to create professional elearning content
+                  All the tools you need to create world-class elearning content
                 </p>
               </div>
 
@@ -337,7 +337,7 @@ const AuthoringTool = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Export & Deployment Options</h2>
                 <p className="text-lg text-gray-600">
-                  Deploy your courses anywhere with multiple export formats
+                  Share your courses anywhere with flexible export options
                 </p>
               </div>
 
@@ -391,17 +391,17 @@ const AuthoringTool = () => {
       <section className="py-20 px-4 bg-gradient-to-r from-orange-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Create Your First Course?
+            Ready to Build Your First Global Course?
           </h2>
           <p className="text-xl text-orange-100 mb-8">
-            Join thousands of educators and trainers using our authoring tool to create engaging learning experiences.
+            Join educators and trainers worldwide using our authoring tool to create engaging, impactful learning experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-orange-900 hover:bg-gray-100">
               Start Free Trial
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Request Demo
+              Request a Demo
             </Button>
           </div>
         </div>

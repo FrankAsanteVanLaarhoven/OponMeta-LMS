@@ -43,7 +43,7 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
                 {vendor.verified && (
                   <Badge className="bg-green-500 text-white px-2 py-1 text-xs">
                     <Award className="h-3 w-3 mr-1" />
-                    Verified
+                    Verified Partner
                   </Badge>
                 )}
               </div>
@@ -65,14 +65,14 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
                 <Users className="h-4 w-4" />
                 <span className="text-white font-medium text-sm">{vendor.totalStudents.toLocaleString()}</span>
               </div>
-              <p className="text-blue-100 text-xs">Students</p>
+              <p className="text-blue-100 text-xs">Learners</p>
             </div>
             <div>
               <div className="flex items-center justify-center space-x-1 text-purple-300 mb-1">
                 <BookOpen className="h-4 w-4" />
                 <span className="text-white font-medium text-sm">{vendor.totalCourses}</span>
               </div>
-              <p className="text-blue-100 text-xs">Courses</p>
+              <p className="text-blue-100 text-xs">Programs</p>
             </div>
           </div>
 
@@ -98,16 +98,16 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
           {/* Actions */}
           <div className="flex space-x-2 pt-2">
             <Button className="flex-1 bg-white text-purple-900 hover:bg-gray-100">
-              View Profile
+              View Organization
             </Button>
             <Button variant="outline" className="flex-1 border-white/20 text-white hover:bg-white/10">
-              View Courses
+              See All Courses
             </Button>
           </div>
 
           {/* Join Date */}
           <p className="text-blue-100/70 text-xs text-center">
-            Member since {vendor.joinedDate}
+            Partner since {vendor.joinedDate}
           </p>
         </div>
       </CardContent>

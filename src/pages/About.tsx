@@ -63,16 +63,13 @@ const About = () => {
       <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-            Empowering Global Learning Through
+            Advancing Global Education with
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {" "}OPONMETA
             </span>
           </h1>
           <p className="text-xl text-slate-800 leading-relaxed">
-            OPONMETA was born from a vision to unlock global intellectual potential through comprehensive, 
-            innovative, and inclusive education. We believe that when minds worldwide are equipped with 
-            cutting-edge technology, multilingual accessibility, and industry partnerships, 
-            we can solve humanity's greatest challenges and compete in the global digital economy.
+            OPONMETA was founded to unlock the world's intellectual potential through innovative, inclusive, and accessible education. We believe that by equipping learners everywhere with advanced technology, multilingual access, and global partnerships, we can address humanity's greatest challenges and thrive in the digital era.
           </p>
         </div>
       </section>
@@ -87,9 +84,7 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-white">Our Mission</h2>
               </div>
               <p className="text-slate-800 text-lg leading-relaxed">
-                To democratize access to high-quality global education through multilingual platforms, 
-                AI-powered learning, Web3 integration, industry partnerships, and inclusive programs 
-                that empower learners, educators, and organizations worldwide with future-ready skills.
+                To make high-quality global education accessible to all through multilingual platforms, AI-powered learning, Web3, industry partnerships, and inclusive programs that empower learners, educators, and organizations with future-ready skills.
               </p>
             </CardContent>
           </Card>
@@ -101,9 +96,7 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-white">Our Vision</h2>
               </div>
               <p className="text-slate-800 text-lg leading-relaxed">
-                A future where every learner globally has access to comprehensive, technology-enhanced 
-                education, where diverse expertise is recognized and celebrated, and where innovative 
-                learning solutions serve as the foundation for sustainable development and global collaboration.
+                A world where every learner has access to comprehensive, technology-driven education, where diverse expertise is valued, and where innovative learning drives sustainable development and international collaboration.
               </p>
             </CardContent>
           </Card>
@@ -116,7 +109,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Our Values</h2>
             <p className="text-xl text-slate-800 max-w-2xl mx-auto">
-              The principles that guide everything we do
+              The guiding principles behind our global mission
             </p>
           </div>
 
@@ -143,24 +136,24 @@ const About = () => {
             <CardContent className="p-12">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-white mb-4">Our Impact</h2>
-                <p className="text-xl text-slate-800">Making comprehensive education accessible globally through innovative technology</p>
+                <p className="text-xl text-slate-800">Expanding access to quality education worldwide through innovation</p>
               </div>
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div>
                   <div className="text-4xl font-bold text-slate-900 mb-2">50,000+</div>
-                  <div className="text-slate-800">Lives Transformed</div>
+                  <div className="text-slate-800 text-xs">Learners empowered globally</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-slate-900 mb-2">54</div>
-                  <div className="text-slate-800">Countries Reached</div>
+                  <div className="text-slate-800 text-xs">International presence</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-slate-900 mb-2">1,200+</div>
-                  <div className="text-slate-800">Expert Instructors</div>
+                  <div className="text-slate-800 text-xs">Global teaching network</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-slate-900 mb-2">89%</div>
-                  <div className="text-slate-800">Career Advancement</div>
+                  <div className="text-slate-800 text-xs">Learner success rate</div>
                 </div>
               </div>
             </CardContent>
@@ -174,7 +167,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Meet Our Team</h2>
             <p className="text-xl text-slate-800 max-w-2xl mx-auto">
-              Passionate educators and technologists dedicated to transforming global education through innovation
+              Meet the passionate educators and technologists driving global education forward
             </p>
           </div>
 
@@ -201,14 +194,14 @@ const About = () => {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Join Our Mission
+            Become Part of Our Global Mission
           </h2>
           <p className="text-xl text-slate-800 mb-8">
-            Whether you're a learner, educator, or partner, there's a place for you in our community
+            Whether you are a learner, educator, or partner, you belong in our global community
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
-              Start Learning
+              Start Learning Now
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
               Become an Instructor

@@ -40,10 +40,10 @@ const GetQuote = () => {
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Get Your Custom Quote
+            Request a Personalized Quote
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Tell us about your organization's needs and we'll create a personalized pricing plan that fits your budget
+            Share your organization's needs and we'll provide a tailored pricing plan to fit your goals and budget
           </p>
         </div>
 
@@ -179,12 +179,12 @@ const GetQuote = () => {
                 </div>
 
                 <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0">
-                  Get My Custom Quote
+                  Request My Quote
                 </Button>
               </form>
 
               <p className="text-xs text-blue-200 mt-4 text-center">
-                Our sales team will contact you within 24 hours with a personalized quote.
+                Our team will reach out within 24 hours with your tailored quote.
               </p>
             </CardContent>
           </Card>

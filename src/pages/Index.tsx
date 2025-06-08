@@ -87,37 +87,41 @@ const Index = () => {
       {/* Career Advancement Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">Advance Your Career. Learn In-demand Skills.</h2>
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">Advance Your Career with In-Demand Skills</h2>
           <p className="text-xl text-slate-800 font-bold mb-8 max-w-3xl mx-auto">
-            Upskill in business analytics, health care, graphic design, management and more.
+            Grow your expertise in analytics, healthcare, design, management, and more—anytime, anywhere in the world.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100" onClick={() => window.open('/career-guidance', '_self')}>
-              I want to find a new career
+              Explore New Career Paths
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('/career-guidance', '_self')}>
-              I want to upskill in my current career
+              Advance in My Current Role
             </Button>
           </div>
           
           {/* Course Categories */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">Popular Courses</div>
+              <div className="text-2xl font-bold text-slate-900">Featured Courses</div>
+              <div className="text-xs text-blue-400">Top picks for global learners</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">Top Diplomas</div>
+              <div className="text-2xl font-bold text-slate-900">Diploma Programs</div>
+              <div className="text-xs text-blue-400">Accredited learning tracks</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">Top Certificates</div>
+              <div className="text-2xl font-bold text-slate-900">Professional Certificates</div>
+              <div className="text-xs text-blue-400">Industry-recognized credentials</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">New Courses</div>
+              <div className="text-2xl font-bold text-slate-900">Latest Courses</div>
+              <div className="text-xs text-blue-400">Recently added programs</div>
             </div>
           </div>
           
           <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700" onClick={() => window.open('/courses', '_self')}>
-            Explore Free Courses
+            Browse All Courses
           </Button>
         </div>
       </section>
@@ -126,27 +130,29 @@ const Index = () => {
       <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Explore 5,500+ Free Online Courses</h2>
-            <p className="text-xl text-blue-100">Learn From The World's Leading Experts</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Access 5,500+ Free Online Courses</h2>
+            <p className="text-xl text-blue-100">Learn from Global Experts</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-white mb-2">10 Million+</div>
-                <div className="text-blue-100">Graduates</div>
+                <div className="text-blue-100">Learners</div>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-white mb-2">193</div>
-                <div className="text-blue-100">Countries</div>
+                <div className="text-blue-100">Countries Represented</div>
+                <div className="text-xs text-blue-200">Worldwide reach</div>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-white mb-2">5,500+</div>
-                <div className="text-blue-100">Free Courses</div>
+                <div className="text-blue-100">Free Learning Programs</div>
+                <div className="text-xs text-blue-200">No-cost access</div>
               </CardContent>
             </Card>
           </div>
@@ -157,8 +163,8 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">IT</h3>
-                    <p className="text-blue-100">1,246 Courses</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">Information Technology</h3>
+                    <p className="text-blue-100">1,246 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-blue-400" />
                 </div>
@@ -169,8 +175,8 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Business</h3>
-                    <p className="text-blue-100">1,697 Courses</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">Business & Leadership</h3>
+                    <p className="text-blue-100">1,025 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-green-400" />
                 </div>
@@ -181,8 +187,8 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Teaching & Academics</h3>
-                    <p className="text-blue-100">1,588 Courses</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">Education & Teaching</h3>
+                    <p className="text-blue-100">1,588 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-purple-400" />
                 </div>
@@ -194,21 +200,9 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Personal Development</h3>
-                    <p className="text-blue-100">1,292 Courses</p>
+                    <p className="text-blue-100">1,292 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-yellow-400" />
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=management', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Management</h3>
-                    <p className="text-blue-100">1,025 Courses</p>
-                  </div>
-                  <BookOpen className="h-8 w-8 text-red-400" />
                 </div>
               </CardContent>
             </Card>
@@ -217,8 +211,8 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Health</h3>
-                    <p className="text-blue-100">991 Courses</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">Health & Wellness</h3>
+                    <p className="text-blue-100">991 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-pink-400" />
                 </div>
@@ -230,7 +224,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Engineering & Construction</h3>
-                    <p className="text-blue-100">798 Courses</p>
+                    <p className="text-blue-100">798 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-orange-400" />
                 </div>
@@ -242,7 +236,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Sales & Marketing</h3>
-                    <p className="text-blue-100">432 Courses</p>
+                    <p className="text-blue-100">432 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-cyan-400" />
                 </div>
@@ -253,8 +247,8 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Language</h3>
-                    <p className="text-blue-100">312 Courses</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">Languages</h3>
+                    <p className="text-blue-100">312 Programs</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-indigo-400" />
                 </div>
@@ -269,9 +263,9 @@ const Index = () => {
       <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Featured Courses</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Featured Learning Opportunities</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Discover high-quality courses from verified African educators and global partners
+              Explore top-rated programs from trusted educators and international partners.
             </p>
           </div>
           
@@ -283,7 +277,7 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <Button size="lg" className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/20" onClick={() => window.open('/courses', '_self')}>
-              View All Courses
+              See All Programs
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -298,9 +292,9 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Meet AI - Video Calling Powered by AI Agents</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Meet OponMeta AI – Your Intelligent Learning Assistant</h2>
             <p className="text-xl text-slate-800 font-bold max-w-3xl mx-auto">
-              Experience the future of online learning with AI-powered video calls, real-time coaching, and personalized learning assistance.
+              Experience next-generation online learning with AI-powered video, instant coaching, and personalized support.
             </p>
           </div>
           
@@ -319,9 +313,9 @@ const Index = () => {
                   <Play className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Real-time AI Coaching</h3>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Instant AI Coaching</h3>
                   <p className="text-slate-800 font-bold">
-                    Get instant feedback and guidance from AI agents trained for specific roles and subjects.
+                    Get real-time feedback and guidance from AI agents tailored to your learning needs.
                   </p>
                 </div>
               </div>
@@ -331,9 +325,9 @@ const Index = () => {
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Interactive Learning Sessions</h3>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Live Interactive Sessions</h3>
                   <p className="text-slate-800 font-bold">
-                    Participate in live AI-powered sessions with language tutors, interview coaches, and subject experts.
+                    Join live sessions with AI-powered tutors, career coaches, and global experts.
                   </p>
                 </div>
               </div>
@@ -343,9 +337,9 @@ const Index = () => {
                   <Star className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Personalized Career Plans</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Personalized Career Roadmaps</h3>
                   <p className="text-foreground font-medium">
-                    Answer a few questions and receive a customized Career Ready Plan tailored to your goals.
+                    Answer a few questions and receive a personalized roadmap to achieve your goals.
                   </p>
                 </div>
               </div>
@@ -360,7 +354,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">FREE. All Features. FOREVER!</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Try our Forever FREE account for small teams with all premium features!
+              Enjoy a free account for small teams, with access to all premium features—forever!
             </p>
           </div>
           
@@ -369,7 +363,7 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-2">FREE PLAN</h3>
-                  <p className="text-blue-100 mb-6">Ideal for startups & micro-businesses</p>
+                  <p className="text-blue-100 mb-6">Great for individuals and small teams</p>
                   <div className="text-5xl font-bold text-orange-400 mb-2">$0.00</div>
                   <p className="text-blue-100 mb-8">free forever</p>
                   
@@ -380,7 +374,7 @@ const Index = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-white">10 Learners</span>
+                      <span className="text-white">Up to 10 Learners</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -389,7 +383,7 @@ const Index = () => {
                   </div>
                   
                   <Button size="lg" className="w-full bg-blue-600 text-white hover:bg-blue-700">
-                    Get Started Free
+                    Start Free
                   </Button>
                 </div>
               </CardContent>
@@ -399,14 +393,14 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-2">ESSENTIALS</h3>
-                  <p className="text-blue-100 mb-6">Ideal for established businesses</p>
+                  <p className="text-blue-100 mb-6">Best for growing organizations</p>
                   <div className="text-5xl font-bold text-orange-400 mb-2">$1.99</div>
                   <p className="text-blue-100 mb-8">per active learner/month</p>
                   
                   <div className="space-y-4 mb-8 text-left">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-white">200+ Ready-to-Use Courses</span>
+                      <span className="text-white">AI-Powered Support & Progress Tracking</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -428,7 +422,7 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <p className="text-blue-100">
-              Got questions? <span className="text-white underline cursor-pointer">Schedule a demo and get all your questions answered.</span>
+              Have questions? <span className="text-white underline cursor-pointer">Book a demo for personalized support.</span>
             </p>
           </div>
         </div>
@@ -446,15 +440,16 @@ const Index = () => {
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-slate-900 mb-2">1,200+</div>
-                  <div className="text-slate-800 font-semibold">Expert Instructors</div>
+                  <div className="text-slate-800 font-semibold">Expert Educators</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-slate-900 mb-2">5,000+</div>
-                  <div className="text-slate-800 font-semibold">Courses Available</div>
+                  <div className="text-slate-800 font-semibold">Learning Programs</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-slate-900 mb-2">54</div>
-                  <div className="text-slate-800 font-semibold">African Countries</div>
+                  <div className="text-slate-800 font-semibold">Countries Served</div>
+                  <div className="text-xs text-blue-200">Worldwide reach</div>
                 </div>
               </div>
             </CardContent>
@@ -467,8 +462,8 @@ const Index = () => {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Create & Sell Online Courses & Training</h2>
-            <p className="text-xl text-gray-600">Sell your online courses easily with our eCommerce LMS</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Create & Monetize Online Courses</h2>
+            <p className="text-xl text-gray-600">Easily create and sell your online courses with our global eLearning platform</p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -495,28 +490,30 @@ const Index = () => {
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Create online courses & training</span>
+                  <span className="text-lg text-gray-700">Design and deliver online courses & training</span>
+                  <span className="text-xs text-gray-400">Flexible authoring tools</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Sell online courses & training</span>
+                  <span className="text-lg text-gray-700">Monetize your online courses & training</span>
+                  <span className="text-xs text-gray-400">Global marketplace access</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Make more sales in our store</span>
+                  <span className="text-lg text-gray-700">Grow your audience in our marketplace</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Easy to set up & start selling</span>
+                  <span className="text-lg text-gray-700">Quick setup—start selling in minutes</span>
                 </div>
               </div>
               
@@ -539,8 +536,8 @@ const Index = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Videos</h2>
-            <p className="text-xl text-gray-600">Learn from our comprehensive video tutorials</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Video Tutorials</h2>
+            <p className="text-xl text-gray-600">Learn from our expert-led video guides</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -584,11 +581,11 @@ const Index = () => {
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">How to Set up Your Virtual Classroom</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">How to Set Up Your Virtual Classroom</h3>
               </CardContent>
             </Card>
             
-            <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => alert('Opening video: How to Choose the Best LMS Software for Employee Training')}>
+            <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => alert('Opening video: How to Choose the Best LMS for Employee Training')}>
               <div className="relative">
                 <img 
                   src="https://images.unsplash.com/photo-1518081461904-9be7c1e48c31" 
@@ -606,7 +603,7 @@ const Index = () => {
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">How to Choose the Best LMS Software for Employee Training</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">How to Choose the Best LMS for Employee Training</h3>
               </CardContent>
             </Card>
           </div>
@@ -617,24 +614,24 @@ const Index = () => {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">We Are Experts at Training Course Development</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">We Are Experts in Course Development</h2>
             <p className="text-xl text-gray-600 mb-12">
-              We've built hundreds of training courses and trained millions of learners, so we know how to do this.
+              With hundreds of courses built and millions of learners trained, we know how to deliver impactful education.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <div className="text-5xl font-bold text-orange-500 mb-2">100,000+</div>
-              <div className="text-gray-600">Courses & tests created</div>
+              <div className="text-gray-600">Courses & Assessments Created</div>
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-orange-500 mb-2">4,000,000+</div>
-              <div className="text-gray-600">Learners</div>
+              <div className="text-gray-600">Global Learners</div>
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-orange-500 mb-2">100</div>
-              <div className="text-gray-600">Year mission</div>
+              <div className="text-gray-600">Year Vision</div>
             </div>
           </div>
           
@@ -653,10 +650,10 @@ const Index = () => {
             
             <div className="relative z-10">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4 text-center">
-                Stages of the Custom Elearning Development Process
+                Steps in Our Custom eLearning Development Process
               </h3>
               <p className="text-gray-600 text-center mb-6 sm:mb-12 text-base sm:text-lg">
-                The standard steps that our instructional designers follow are:
+                Our instructional design team follows these proven steps:
               </p>
               
               {/* Interactive Process Demo */}
@@ -685,7 +682,7 @@ const Index = () => {
                   {[
                     {
                       number: 1,
-                      title: "You tell us what you need to teach and who your learners are",
+                      title: "Share your learning goals and audience",
                       icon: "💬",
                       color: "from-blue-500 to-blue-600",
                       bgColor: "bg-blue-50",
@@ -693,7 +690,7 @@ const Index = () => {
                     },
                     {
                       number: 2,
-                      title: "We create a course outline and define the content assets to be included, such as videos, tutorials, handouts, worksheets, quizzes, etc.",
+                      title: "We design a course outline and select the best content assets (videos, tutorials, handouts, quizzes, etc.)",
                       icon: "📋",
                       color: "from-green-500 to-green-600",
                       bgColor: "bg-green-50",
@@ -701,7 +698,7 @@ const Index = () => {
                     },
                     {
                       number: 3,
-                      title: "Our team of Instructional Designers builds, designs, and edits your course",
+                      title: "Our instructional designers build, design, and refine your course",
                       icon: "🎨",
                       color: "from-purple-500 to-purple-600",
                       bgColor: "bg-purple-50",
@@ -709,7 +706,7 @@ const Index = () => {
                     },
                     {
                       number: 4,
-                      title: "We put your course into our online software",
+                      title: "We integrate your course into our online platform",
                       icon: "⚙️",
                       color: "from-orange-500 to-orange-600",
                       bgColor: "bg-orange-50",
@@ -717,7 +714,7 @@ const Index = () => {
                     },
                     {
                       number: 5,
-                      title: "You review the course & we work together to finalize it",
+                      title: "You review the course and we finalize it together",
                       icon: "🔍",
                       color: "from-pink-500 to-pink-600",
                       bgColor: "bg-pink-50",
@@ -725,7 +722,7 @@ const Index = () => {
                     },
                     {
                       number: 6,
-                      title: "We provide you with the complete course and show you how to share it with learners and monitor performance",
+                      title: "We deliver your course and show you how to launch and track results",
                       icon: "🚀",
                       color: "from-indigo-500 to-indigo-600",
                       bgColor: "bg-indigo-50",
@@ -801,14 +798,14 @@ const Index = () => {
                 
                 {/* Call to Action */}
                 <div className="text-center mt-8 sm:mt-12 p-4 sm:p-6 bg-white/70 backdrop-blur-sm rounded-xl border border-blue-200">
-                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-4">Ready to Start Your Custom Course?</h4>
-                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Let our expert team guide you through this proven process</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-4">Ready to Build Your Custom Course?</h4>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Let our experts guide you through a proven, effective process.</p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <button 
                       className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto"
                       onClick={() => alert('Starting course development process...')}
                     >
-                      🚀 Start Your Project
+                      🚀 Launch Your Project
                     </button>
                     <button 
                       className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 w-full sm:w-auto"
@@ -828,12 +825,12 @@ const Index = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Custom Elearning Solutions</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Custom eLearning Solutions</h2>
             <p className="text-xl text-gray-600 mb-4">
-              Get all the necessary resources and tools for elearning in one place
+              Access all the resources and tools you need for world-class eLearning in one place.
             </p>
             <p className="text-lg text-gray-500 max-w-4xl mx-auto">
-              Our comprehensive end-to-end platform provides everything you need to create, deliver, and manage world-class online learning experiences
+              Our all-in-one platform empowers you to create, deliver, and manage exceptional online learning experiences.
             </p>
           </div>
           
@@ -848,10 +845,10 @@ const Index = () => {
                   <div className="bg-blue-100 rounded-lg p-3 mr-4">
                     <BookOpen className="h-8 w-8 text-blue-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Premium Course Library</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Premium Learning Library</h3>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Browse a library of <strong>500+ premium courses</strong> on in-demand topics, fully customizable and ready-to-use. 
+                  Browse a library of <strong>500+ premium programs</strong> on in-demand topics, fully customizable and ready to use. 
                   Topics include AI, Data Science, Digital Marketing, Leadership, and more.
                 </p>
                 <div className="mb-6">
@@ -865,7 +862,7 @@ const Index = () => {
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    500+ Professional Courses
+                    500+ Professional Programs
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
@@ -897,11 +894,11 @@ const Index = () => {
                   <div className="bg-purple-100 rounded-lg p-3 mr-4">
                     <Users className="h-8 w-8 text-purple-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Virtual Classroom</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Virtual Classrooms</h3>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Take charge of all online learning activities using our centralized and secure 
-                  <strong> virtual classroom software</strong>. Support up to 1000 concurrent learners with HD video.
+                  <strong> virtual classroom platform</strong>. Support up to 1000 concurrent learners with HD video.
                 </p>
                 <div className="mb-6">
                   <img 
@@ -946,11 +943,11 @@ const Index = () => {
                   <div className="bg-green-100 rounded-lg p-3 mr-4">
                     <Star className="h-8 w-8 text-green-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">Quizzes & Surveys</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">Quizzes & Feedback</h3>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Assess knowledge retention through engaging quizzes with <strong>15+ question types</strong>. 
-                  Create surveys for course feedback with advanced analytics and AI-powered insights.
+                  Assess knowledge retention through engaging quizzes with <strong>15+ interactive question types</strong>. 
+                  Create feedback surveys with advanced analytics and AI-powered insights.
                 </p>
                 <div className="mb-6">
                   <img 
@@ -995,10 +992,10 @@ const Index = () => {
                   <div className="bg-orange-100 rounded-lg p-3 mr-4">
                     <Globe className="h-8 w-8 text-orange-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Elearning Authoring Tool</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">eLearning Authoring Suite</h3>
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Take advantage of the world's easiest authoring tool. Develop delightful online courses and tests in minutes 
+                  Take advantage of the world's easiest authoring suite. Develop engaging online programs and assessments in minutes 
                   with our <strong>drag-and-drop interface</strong> and 100+ professional templates.
                 </p>
                 <div className="mb-6">
@@ -1038,9 +1035,9 @@ const Index = () => {
           {/* End-to-End Process Section */}
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-16">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Complete End-to-End Learning Solution</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Comprehensive End-to-End Learning Platform</h3>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                From content creation to learner engagement, our platform handles every aspect of your elearning journey
+                From content creation to learner engagement, our platform supports every step of your eLearning journey.
               </p>
             </div>
             
@@ -1049,45 +1046,45 @@ const Index = () => {
                 <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-white">1</span>
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Create Content</h4>
-                <p className="text-gray-600 text-sm">Use our authoring tools or select from premium course library</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Create Engaging Content</h4>
+                <p className="text-gray-600 text-sm">Use our authoring suite or select from the premium learning library</p>
               </div>
               
               <div className="text-center">
                 <div className="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-white">2</span>
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Deliver Learning</h4>
-                <p className="text-gray-600 text-sm">Host live sessions in virtual classrooms or self-paced courses</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Deliver Seamless Learning</h4>
+                <p className="text-gray-600 text-sm">Host live sessions in virtual classrooms or offer self-paced programs</p>
               </div>
               
               <div className="text-center">
                 <div className="bg-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-white">3</span>
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Assess Progress</h4>
-                <p className="text-gray-600 text-sm">Track learning with quizzes, surveys, and detailed analytics</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Assess & Analyze Progress</h4>
+                <p className="text-gray-600 text-sm">Track learning with quizzes, feedback, and advanced analytics</p>
               </div>
               
               <div className="text-center">
                 <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-white">4</span>
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Scale & Optimize</h4>
-                <p className="text-gray-600 text-sm">Use AI insights to improve courses and expand your reach</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Scale & Optimize Globally</h4>
+                <p className="text-gray-600 text-sm">Leverage AI insights to enhance programs and expand your reach</p>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready to Transform Your Learning Experience?</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready to Elevate Your Learning Experience?</h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
-                Start Free Trial
+                Begin Free Trial
               </Button>
               <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                Schedule Demo
+                Book a Demo
               </Button>
             </div>
           </div>
@@ -1098,27 +1095,27 @@ const Index = () => {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Features</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Platform Features</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center cursor-pointer hover:scale-105 transition-transform" onClick={() => alert('Learn more about Professional Course Design')}>
+            <div className="text-center cursor-pointer hover:scale-105 transition-transform" onClick={() => alert('Learn more about Expert Course Design')}>
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <BookOpen className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Professional Course Design</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Expert Course Design</h3>
               <p className="text-gray-600">
-                Design or redesign eLearning courses with the help of industry experts who follow the best practices.
+                Design or update eLearning programs with guidance from industry experts who follow global best practices.
               </p>
             </div>
             
-            <div className="text-center cursor-pointer hover:scale-105 transition-transform" onClick={() => alert('Learn more about Mobile-Ready features')}>
+            <div className="text-center cursor-pointer hover:scale-105 transition-transform" onClick={() => alert('Learn more about Mobile-Optimized features')}>
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <Globe className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile-Ready</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile-Optimized</h3>
               <p className="text-gray-600">
-                Deliver a single version of a course across multiple devices and platforms without any hindrances.
+                Deliver a single version of a program across all devices and platforms, hassle-free.
               </p>
             </div>
             
@@ -1126,9 +1123,9 @@ const Index = () => {
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <Star className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Up-to-Date</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Always Up-to-Date</h3>
               <p className="text-gray-600">
-                Benefit from the services of our IDs who always remain current with the latest trends in eLearning.
+                Benefit from our team's commitment to staying current with the latest eLearning trends.
               </p>
             </div>
             
@@ -1136,9 +1133,9 @@ const Index = () => {
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <BookOpen className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Curriculum Design</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Curriculum Development</h3>
               <p className="text-gray-600">
-                Match your learning needs with expected outcomes. Our instructional designers are skilled at choosing suitable topics, interactive media, and other essential elearning elements.
+                Align your learning needs with desired outcomes. Our designers select the best topics, media, and interactive elements for your audience.
               </p>
             </div>
             
@@ -1146,19 +1143,19 @@ const Index = () => {
               <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-red-200 transition-colors">
                 <Users className="h-8 w-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Storyboarding</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Storyboarding Services</h3>
               <p className="text-gray-600">
-                Get custom elearning storyboards that serve as a prototype for effective learning programs based on your target learners.
+                Receive custom storyboards that serve as blueprints for effective learning programs tailored to your learners.
               </p>
             </div>
             
-            <div className="text-center cursor-pointer hover:scale-105 transition-transform" onClick={() => alert('Learn more about End-to-End Service')}>
+            <div className="text-center cursor-pointer hover:scale-105 transition-transform" onClick={() => alert('Learn more about Full-Service Delivery')}>
               <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-yellow-200 transition-colors">
                 <Users className="h-8 w-8 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">End-to-End Service</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Full-Service Delivery</h3>
               <p className="text-gray-600">
-                Take advantage of our end-to-end ID services. We cover the entire process of an eLearning instructional designing service - from audience analysis to development and evaluation.
+                Take advantage of our end-to-end instructional design services—from audience analysis to development and evaluation.
               </p>
             </div>
           </div>
@@ -1169,7 +1166,7 @@ const Index = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Case Studies</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Success Stories</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -1180,7 +1177,7 @@ const Index = () => {
                     OLYMPIAD TESTER
                   </div>
                   <p className="text-gray-700">
-                    Olympiad Tester maintains its undisputed position with Global Learning tools
+                    Olympiad Tester leads the way with OponMeta's global learning tools
                   </p>
                 </div>
               </CardContent>
@@ -1193,7 +1190,7 @@ const Index = () => {
                     acer
                   </div>
                   <p className="text-gray-700">
-                    Acer created a solid system to train and certify its employees
+                    Acer empowers its workforce with innovative training
                   </p>
                 </div>
               </CardContent>
@@ -1206,7 +1203,7 @@ const Index = () => {
                     CDPH
                   </div>
                   <p className="text-gray-700">
-                    CDPH successfully trains its volunteers & residents using Global Learning
+                    CDPH elevates volunteer and resident training worldwide
                   </p>
                 </div>
               </CardContent>
@@ -1225,7 +1222,7 @@ const Index = () => {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-slate-800">Meet Our Team</h3>
+            <h3 className="text-2xl font-bold text-slate-800">Our Global Team</h3>
           </div>
           <TeamCarousel />
         </div>
@@ -1235,19 +1232,18 @@ const Index = () => {
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">Common Questions</h2>
           </div>
           
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                  What is instructional design in eLearning?
+                  What is instructional design for online learning?
                 </h3>
                 <p className="text-slate-800 font-bold">
-                  Instructional design in eLearning is the organized process of designing and developing eLearning courses. 
-                  Instructional designers analyze the learning needs of a target audience and design content to achieve specific 
-                  learning objectives. The idea is to build engaging online courses for positive learning experiences.
+                  Instructional design for online learning is the structured process of creating and developing digital courses. 
+                  Instructional designers assess the needs of learners and design content to achieve clear learning outcomes. The goal is to build engaging, effective online learning experiences.
                 </p>
               </CardContent>
             </Card>
@@ -1255,11 +1251,11 @@ const Index = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                  How long does it take to develop a custom course?
+                  How long does it take to build a custom online course?
                 </h3>
                 <p className="text-slate-800 font-bold">
-                  The development timeline varies based on course complexity, content length, and requirements. 
-                  Typically, a standard course takes 4-8 weeks from initial consultation to final delivery.
+                  The timeline depends on course complexity, content length, and requirements. 
+                  Typically, a standard course takes 4–8 weeks from initial consultation to launch.
                 </p>
               </CardContent>
             </Card>
@@ -1267,11 +1263,11 @@ const Index = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                  What formats do you support for course content?
+                  What content formats are supported?
                 </h3>
                 <p className="text-slate-800 font-bold">
-                  We support various formats including videos, interactive presentations, documents, quizzes, 
-                  assessments, and SCORM-compliant packages that work across different LMS platforms.
+                  We support a wide range of formats including videos, interactive presentations, documents, quizzes, 
+                  assessments, and SCORM-compliant packages for compatibility with any LMS.
                 </p>
               </CardContent>
             </Card>
@@ -1283,17 +1279,17 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
            <h2 className="text-5xl font-bold text-slate-900 mb-6 drop-shadow-2xl">
-             Ready to Transform Your Future?
+             Ready to Shape Your Future?
            </h2>
            <p className="text-2xl text-slate-800 font-bold mb-8 drop-shadow-lg max-w-4xl mx-auto">
-             Join thousands of learners who are advancing their careers with our world-class education platform
+             Join thousands of learners advancing their careers with our global education platform.
            </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
-              Start Learning Today
+              Start Learning Now
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Become an Instructor
+              Become a Global Instructor
             </Button>
           </div>
         </div>

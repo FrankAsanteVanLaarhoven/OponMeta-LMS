@@ -83,17 +83,16 @@ const QuizBuilder = () => {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-white mb-6">Quiz & Survey Builder</h1>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Create engaging assessments with 15+ question types. Track learning progress with 
-            advanced analytics and AI-powered insights.
+            Design interactive assessments with a variety of question types. Monitor progress with advanced analytics and AI-driven insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
               <Plus className="mr-2 h-5 w-5" />
-              Create New Quiz
+              New Quiz
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
               <Eye className="mr-2 h-5 w-5" />
-              Preview Demo
+              Preview Example
             </Button>
           </div>
         </div>
@@ -136,15 +135,15 @@ const QuizBuilder = () => {
                   <div className="flex gap-2">
                     <Button variant="outline" size="sm">
                       <Settings className="mr-2 h-4 w-4" />
-                      Settings
+                      Quiz Settings
                     </Button>
                     <Button variant="outline" size="sm">
                       <Eye className="mr-2 h-4 w-4" />
-                      Preview
+                      Preview Quiz
                     </Button>
                     <Button size="sm" className="bg-green-600 hover:bg-green-700">
                       <Play className="mr-2 h-4 w-4" />
-                      Publish
+                      Publish Quiz
                     </Button>
                   </div>
                 </div>
@@ -154,10 +153,10 @@ const QuizBuilder = () => {
                     <Brain className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <h4 className="text-xl font-semibold text-gray-600 mb-2">Start Building Your Quiz</h4>
                     <p className="text-gray-500 mb-6">
-                      Drag and drop question types here or click to add questions
+                      Drag and drop question types or click to add new questions
                     </p>
                     <Button className="bg-blue-600 hover:bg-blue-700">
-                      Add First Question
+                      Add Question
                     </Button>
                   </div>
                 </div>
@@ -169,7 +168,7 @@ const QuizBuilder = () => {
                 <h2 className="text-3xl font-bold text-gray-900">Quiz Library</h2>
                 <Button className="bg-blue-600 hover:bg-blue-700">
                   <Plus className="mr-2 h-4 w-4" />
-                  Create New Quiz
+                  New Quiz
                 </Button>
               </div>
 

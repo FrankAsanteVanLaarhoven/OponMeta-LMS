@@ -8,7 +8,7 @@ interface FeatureShowcaseProps {
 
 const FeatureShowcase = ({ 
   title = "Why Choose OPONMETA?",
-  subtitle = "We're more than just an online learning platform. We're building the future of global education with comprehensive, innovative, and inclusive learning solutions.",
+  subtitle = "OPONMETA is your gateway to innovative, inclusive, and future-ready global learning.",
   className = ""
 }: FeatureShowcaseProps) => {
   return (

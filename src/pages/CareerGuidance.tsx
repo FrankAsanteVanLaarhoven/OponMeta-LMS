@@ -84,11 +84,10 @@ const CareerGuidance = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Your Career Journey Starts Here
+            Start Your Global Career Journey
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Whether you're looking to start a new career or advance in your current role, 
-            we'll help you find the perfect learning path
+            Whether you want to launch a new career or advance in your current role, we'll help you find the right learning path for your global ambitions.
           </p>
         </div>
 
@@ -101,7 +100,7 @@ const CareerGuidance = () => {
                 <Target className="h-16 w-16 text-purple-300 mx-auto mb-6" />
                 <h2 className="text-2xl font-bold text-white mb-4">Find a New Career</h2>
                 <p className="text-blue-100 mb-8">
-                  Explore exciting career opportunities and discover which path aligns with your goals and interests
+                  Explore global career opportunities and discover the path that matches your skills and aspirations
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-8">
@@ -122,7 +121,7 @@ const CareerGuidance = () => {
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0"
                   onClick={() => navigate("/courses")}
                 >
-                  Explore Career Paths
+                  Explore Global Career Paths
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
               </div>
@@ -136,7 +135,7 @@ const CareerGuidance = () => {
                 <TrendingUp className="h-16 w-16 text-green-300 mx-auto mb-6" />
                 <h2 className="text-2xl font-bold text-white mb-4">Upskill in Your Current Career</h2>
                 <p className="text-blue-100 mb-8">
-                  Advance your current career with new skills, certifications, and expertise to climb the ladder faster
+                  Advance your career with new skills, certifications, and expertise to reach your goals faster
                 </p>
 
                 <div className="space-y-4 mb-8">
@@ -160,7 +159,7 @@ const CareerGuidance = () => {
                   className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white border-0"
                   onClick={() => navigate("/courses")}
                 >
-                  Start Upskilling
+                  Start Global Upskilling
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
               </div>
@@ -174,14 +173,14 @@ const CareerGuidance = () => {
             <GraduationCap className="h-16 w-16 text-yellow-300 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-white mb-4">Not Sure Which Path to Choose?</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Take our personalized career assessment to discover the perfect learning path for your goals
+              Take our personalized assessment to discover the best learning path for your global career goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
                 Take Career Assessment
               </Button>
               <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" onClick={() => navigate("/get-demo")}>
-                Schedule Consultation
+                Book a Consultation
               </Button>
             </div>
           </CardContent>

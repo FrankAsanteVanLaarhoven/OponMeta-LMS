@@ -101,14 +101,14 @@ const BecomeInstructor = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Become an Instructor
+            Share Your Knowledge Globally
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            Share your expertise with millions of learners worldwide and build a thriving teaching business with OPONMETA
+            Inspire learners worldwide and grow your teaching career with OPONMETA's global platform
           </p>
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
             <Star className="h-5 w-5 text-yellow-400" />
-            <span className="text-white font-medium">Join 1,200+ Expert Instructors</span>
+            <span className="text-white font-medium">Join 1,200+ Global Instructors</span>
           </div>
         </div>
 
@@ -125,7 +125,7 @@ const BecomeInstructor = () => {
                     <Input 
                       id="firstName"
                       className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                      placeholder="John"
+                      placeholder="First Name"
                       required
                     />
                   </div>
@@ -134,7 +134,7 @@ const BecomeInstructor = () => {
                     <Input 
                       id="lastName"
                       className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                      placeholder="Doe"
+                      placeholder="Last Name"
                       required
                     />
                   </div>
@@ -146,7 +146,7 @@ const BecomeInstructor = () => {
                     id="email"
                     type="email"
                     className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                    placeholder="john@example.com"
+                    placeholder="Email Address"
                     required
                   />
                 </div>
@@ -157,7 +157,7 @@ const BecomeInstructor = () => {
                     id="phone"
                     type="tel"
                     className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="Phone Number (optional)"
                   />
                 </div>
 
@@ -166,7 +166,7 @@ const BecomeInstructor = () => {
                   <Input 
                     id="title"
                     className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                    placeholder="e.g., Senior Data Scientist"
+                    placeholder="Your Professional Title"
                     required
                   />
                 </div>
@@ -207,7 +207,7 @@ const BecomeInstructor = () => {
                   <Textarea 
                     id="courseIdea"
                     className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300 min-h-[100px]"
-                    placeholder="Describe the course you'd like to create..."
+                    placeholder="Describe your course idea and its global impact..."
                     required
                   />
                 </div>
@@ -217,7 +217,7 @@ const BecomeInstructor = () => {
                   <Textarea 
                     id="experience-description"
                     className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300 min-h-[100px]"
-                    placeholder="Tell us about your teaching, training, or mentoring experience..."
+                    placeholder="Share your teaching, training, or mentoring experience (optional)"
                   />
                 </div>
 
@@ -226,7 +226,7 @@ const BecomeInstructor = () => {
                   <Textarea 
                     id="motivation"
                     className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300 min-h-[100px]"
-                    placeholder="What motivates you to share your knowledge?"
+                    placeholder="What inspires you to teach and share your expertise globally?"
                     required
                   />
                 </div>
@@ -235,10 +235,10 @@ const BecomeInstructor = () => {
                   <Label className="text-white">Portfolio/Resume Upload</Label>
                   <div className="mt-2 border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
                     <Upload className="h-8 w-8 text-blue-300 mx-auto mb-2" />
-                    <p className="text-blue-100 mb-2">Upload your resume or portfolio</p>
+                    <p className="text-blue-100 mb-2">Upload your resume or teaching portfolio</p>
                     <p className="text-blue-200 text-sm">PDF, DOC, or DOCX up to 10MB</p>
                     <Button variant="outline" className="mt-3 border-white/20 text-white hover:bg-white/10">
-                      Choose File
+                      Upload File
                     </Button>
                   </div>
                 </div>
@@ -252,12 +252,12 @@ const BecomeInstructor = () => {
                 </div>
 
                 <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0">
-                  Submit Application
+                  Submit My Application
                 </Button>
               </form>
 
               <p className="text-xs text-blue-200 mt-4 text-center">
-                We'll review your application within 3-5 business days.
+                Your application will be reviewed within 3-5 business days.
               </p>
             </CardContent>
           </Card>
@@ -268,6 +268,7 @@ const BecomeInstructor = () => {
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">Why Teach with OPONMETA?</h2>
+                <p className="text-blue-100 mb-4">Empower learners everywhere and expand your impact as a global educator.</p>
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
@@ -288,6 +289,7 @@ const BecomeInstructor = () => {
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">Requirements</h2>
+                <p className="text-blue-100 mb-4">What you need to join our global instructor community</p>
                 <div className="space-y-3">
                   {requirements.map((requirement, index) => (
                     <div key={index} className="flex items-center space-x-3">
@@ -303,6 +305,7 @@ const BecomeInstructor = () => {
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">Instructor Success Stories</h2>
+                <p className="text-blue-100 mb-4">See how instructors are making a difference worldwide</p>
                 <div className="space-y-6">
                   {successStories.map((instructor, index) => (
                     <div key={index} className="flex items-center space-x-4">

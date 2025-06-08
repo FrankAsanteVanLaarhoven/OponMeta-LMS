@@ -40,7 +40,7 @@ const SignUp = () => {
             <div className="text-white">
               <h2 className="text-4xl font-bold mb-6">Join 50,000+ Global Learners</h2>
               <p className="text-xl text-blue-100 mb-8">
-                Start your learning journey with OPONMETA and unlock your potential
+                Begin your learning journey with OponMeta and reach your full potential
               </p>
               
               <div className="space-y-4">
@@ -54,7 +54,7 @@ const SignUp = () => {
               
               <div className="mt-8 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
                 <p className="text-blue-100 text-sm">
-                  ✓ No credit card required
+                  ✓ No payment required
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ const SignUp = () => {
             <CardContent className="p-8">
               <div className="text-center mb-8">
                 <h1 className="text-3xl font-bold text-white mb-2">Create Account</h1>
-                <p className="text-blue-100">Get started free - no credit card required</p>
+                <p className="text-blue-100">Sign up for free – no payment required</p>
               </div>
 
               <form className="space-y-6">
@@ -150,8 +150,7 @@ const SignUp = () => {
                 <div className="flex items-center space-x-2">
                   <input type="checkbox" className="rounded" />
                   <span className="text-sm text-blue-100">
-                    I agree to the <a href="#" className="text-white hover:underline">Terms of Service</a> and{" "}
-                    <a href="#" className="text-white hover:underline">Privacy Policy</a>
+                    I agree to the <a href="#" className="text-white hover:underline">Terms of Service</a> and <a href="#" className="text-white hover:underline">Privacy Policy</a>
                   </span>
                 </div>
                 
@@ -160,7 +159,7 @@ const SignUp = () => {
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0"
                   onClick={handleSignUp}
                 >
-                  Get Started Free
+                  Create My Account
                 </Button>
               </form>
 
@@ -179,17 +178,17 @@ const SignUp = () => {
               <div className="mt-6 grid grid-cols-2 gap-3">
                 <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
                   <Facebook className="h-4 w-4 mr-2" />
-                  Facebook
+                  Continue with Facebook
                 </Button>
                 <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
                   <Twitter className="h-4 w-4 mr-2" />
-                  Twitter
+                  Continue with Twitter
                 </Button>
               </div>
 
               <div className="mt-6 text-center">
                 <p className="text-blue-100">
-                  Already have an account?{" "}
+                  Already registered?{' '}
                   <a href="/signin" className="text-white font-medium hover:underline">
                     Sign in
                   </a>

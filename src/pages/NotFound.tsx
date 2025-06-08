@@ -24,10 +24,10 @@ const NotFound = () => {
         <div className="text-center max-w-2xl">
           <div className="text-8xl font-bold text-white/20 mb-8">404</div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Oops! Page Not Found
+            Sorry, We Couldn't Find That Page
           </h1>
           <p className="text-xl text-blue-100 mb-8">
-            The page you're looking for doesn't exist or has been moved.
+            The page you requested could not be found or may have been moved.
             <br />
             <span className="text-sm opacity-75">Attempted route: {location.pathname}</span>
           </p>
@@ -48,7 +48,7 @@ const NotFound = () => {
               onClick={() => navigate(-1)}
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Go Back
+              Back to Previous Page
             </Button>
           </div>
           
@@ -59,25 +59,25 @@ const NotFound = () => {
                 onClick={() => navigate("/courses")}
                 className="text-blue-200 hover:text-white transition-colors"
               >
-                Courses
+                Explore Courses
               </button>
               <button 
                 onClick={() => navigate("/about")}
                 className="text-blue-200 hover:text-white transition-colors"
               >
-                About Us
+                Learn About Us
               </button>
               <button 
                 onClick={() => navigate("/contact")}
                 className="text-blue-200 hover:text-white transition-colors"
               >
-                Contact
+                Contact Support
               </button>
               <button 
                 onClick={() => navigate("/signin")}
                 className="text-blue-200 hover:text-white transition-colors"
               >
-                Sign In
+                Sign In / Register
               </button>
             </div>
           </div>

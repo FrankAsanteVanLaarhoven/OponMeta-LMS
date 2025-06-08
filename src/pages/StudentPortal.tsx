@@ -69,7 +69,7 @@ const StudentPortal = () => {
   const learningPath = {
     id: 1,
     title: "HTML CSS Segment",
-    description: "HTML and CSS are the building blocks of the web. HTML structures your content, while CSS styles it to look visually appealing. In this segment, you'll learn everything about HTML and CSS—from creating web pages to designing responsive layouts.",
+    description: "HTML and CSS are essential for building modern websites. In this segment, you will learn how to structure content and create visually engaging, responsive layouts for a global audience.",
     progress: 20,
     level: "BEGINNER LEVEL",
     lectures: 10,
@@ -93,8 +93,8 @@ const StudentPortal = () => {
       <div className="container mx-auto px-4 py-8">
         <Tabs defaultValue="dashboard" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
+            <TabsTrigger value="dashboard">My Dashboard</TabsTrigger>
+            <TabsTrigger value="settings">Account Settings</TabsTrigger>
           </TabsList>
           
           <TabsContent value="dashboard" className="mt-6">
@@ -106,7 +106,7 @@ const StudentPortal = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-4">
                       <Trophy className="h-5 w-5 text-yellow-500" />
-                      <span className="text-foreground">You're on <span className="text-yellow-500 font-bold">{streak} day</span> streak!</span>
+                      <span className="text-foreground">You have a <span className="text-yellow-500 font-bold">{streak}-day</span> learning streak!</span>
                     </div>
                     
                     {/* Calendar Grid */}
@@ -186,7 +186,7 @@ const StudentPortal = () => {
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-foreground">Your learning path</CardTitle>
                       <Button variant="ghost" size="sm" className="text-primary">
-                        Open in full view
+                        View Full Path
                       </Button>
                     </div>
                   </CardHeader>
@@ -222,7 +222,7 @@ const StudentPortal = () => {
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-foreground">HTML & CSS Guide for Beginners : Creating a Sushi-Themed Website</h4>
-                            <p className="text-xs text-muted-foreground">In this video tutorial, you will create a modern, fully responsive HTML & CSS website with animations!</p>
+                            <p className="text-xs text-muted-foreground">Learn to build a modern, responsive website with HTML & CSS, including engaging animations and best practices.</p>
                           </div>
                         </div>
                         
@@ -257,11 +257,11 @@ const StudentPortal = () => {
                               className="text-xs"
                             >
                               <CheckCircle2 className="h-3 w-3 mr-1" />
-                              Complete
+                              Mark as Complete
                             </Button>
                             <Link to="/course-viewer/1">
                               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 text-xs">
-                                Continue →
+                                Continue Learning →
                               </Button>
                             </Link>
                           </div>
@@ -307,6 +307,7 @@ const StudentPortal = () => {
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-foreground">Test Your Knowledge with Mock Interview</h4>
+                            <p className="text-xs text-muted-foreground">Challenge yourself and prepare for real-world interviews with our mock interview tool.</p>
                           </div>
                         </div>
                         
@@ -334,26 +335,26 @@ const StudentPortal = () => {
                     </div>
                     
                     <div className="space-y-3 mb-6">
-                      <h4 className="text-primary font-semibold">Why Subscribe? What Makes Subscribing Worth It?</h4>
+                      <h4 className="text-primary font-semibold">Why Go Elite? Unlock Exclusive Benefits:</h4>
                       
                       <div className="space-y-2 text-sm text-muted-foreground">
                         <div className="flex items-center gap-2">
                           <Star className="h-4 w-4 text-yellow-500" />
-                          <span>Full access to personalized learning path tailored to your goals</span>
+                          <span>Access a personalized learning path tailored to your unique goals</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Star className="h-4 w-4 text-green-500" />
-                          <span>Full Access to all elite premium courses and resources</span>
+                          <span>Unlimited access to all premium courses and global resources</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Star className="h-4 w-4 text-blue-500" />
-                          <span>Hands-on coding challenges and quizzes to test your skills</span>
+                          <span>Engage in hands-on coding challenges and quizzes to strengthen your skills</span>
                         </div>
                       </div>
                     </div>
                     
                     <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                      Upgrade to Pro →
+                      Upgrade to Elite →
                     </Button>
                   </CardContent>
                 </Card>
@@ -376,7 +377,7 @@ const StudentPortal = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <Label htmlFor="email-notifications">Email Notifications</Label>
-                        <p className="text-sm text-muted-foreground">Receive course updates via email</p>
+                        <p className="text-sm text-muted-foreground">Get important course updates and reminders by email</p>
                       </div>
                       <Switch 
                         id="email-notifications"
@@ -390,7 +391,7 @@ const StudentPortal = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <Label htmlFor="push-notifications">Push Notifications</Label>
-                        <p className="text-sm text-muted-foreground">Get notified about new courses</p>
+                        <p className="text-sm text-muted-foreground">Receive instant notifications about new courses and features</p>
                       </div>
                       <Switch 
                         id="push-notifications"
@@ -404,7 +405,7 @@ const StudentPortal = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <Label htmlFor="public-profile">Public Profile</Label>
-                        <p className="text-sm text-muted-foreground">Allow others to see your progress</p>
+                        <p className="text-sm text-muted-foreground">Let others view your learning achievements and progress</p>
                       </div>
                       <Switch 
                         id="public-profile"
@@ -418,7 +419,7 @@ const StudentPortal = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <Label htmlFor="course-updates">Course Updates</Label>
-                        <p className="text-sm text-muted-foreground">Get notified when courses are updated</p>
+                        <p className="text-sm text-muted-foreground">Be alerted when your enrolled courses are updated</p>
                       </div>
                       <Switch 
                         id="course-updates"
@@ -437,7 +438,7 @@ const StudentPortal = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Share2 className="h-5 w-5" />
-                    Social Media Links
+                    Connect Your Social Media
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -524,7 +525,7 @@ const StudentPortal = () => {
                       })
                     }
                   >
-                    Save Social Links
+                    Save My Social Links
                   </Button>
                 </CardContent>
               </Card>

@@ -31,38 +31,38 @@ const SuccessStoriesCarousel = () => {
     {
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
       alt: "Corporate building",
-      title: "Acer created a solid system to train and certify its employees",
-      description: "Global technology company streamlined employee training with our comprehensive platform."
+      title: "Acer advances workforce skills with innovative learning",
+      description: "A global technology leader enhanced professional growth through our platform."
     },
     {
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2",
       alt: "Healthcare professionals",
-      title: "CDPH successfully trains its volunteers & residents using Global Learning",
-      description: "Healthcare organization improved training efficiency for thousands of volunteers."
+      title: "CDPH expands training for volunteers and residents globally",
+      description: "A leading healthcare organization improved learning for thousands worldwide."
     },
     {
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
       alt: "Modern office building",
-      title: "Thermo Fisher Scientific trains hundreds of global employees",
-      description: "Scientific equipment leader enhanced global workforce development through our platform."
+      title: "Thermo Fisher Scientific boosts global employee development",
+      description: "A science innovator accelerated workforce growth with digital learning."
     },
     {
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
       alt: "Training session",
-      title: "Microsoft enhanced global workforce skills with our platform",
-      description: "Tech giant improved employee productivity through structured learning programs."
+      title: "Microsoft increases productivity with structured learning",
+      description: "A technology leader elevated global team performance using our solutions."
     },
     {
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978",
       alt: "Team collaboration",
-      title: "Salesforce accelerated team development across 50+ countries",
-      description: "CRM leader boosted employee engagement with personalized learning paths."
+      title: "Salesforce accelerates growth across continents",
+      description: "A CRM leader boosted engagement with personalized learning journeys."
     },
     {
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
       alt: "Business meeting",
-      title: "IBM transformed their L&D strategy with AI-powered learning",
-      description: "Technology pioneer revolutionized corporate training with smart analytics."
+      title: "IBM transforms learning with AI-powered insights",
+      description: "A global technology company revolutionized training with intelligent analytics."
     }
   ];
 
@@ -70,7 +70,7 @@ const SuccessStoriesCarousel = () => {
     <section className="py-20 px-4 bg-white/5">
       <div className="max-w-7xl mx-auto">
          <div className="text-center mb-16">
-           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">Real Life Success Stories</h2>
+           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">Global Success Stories: Real Impact, Real Learners</h2>
          </div>
         
         <div className="overflow-hidden mb-12" ref={emblaRef}>
@@ -116,10 +116,10 @@ const SuccessStoriesCarousel = () => {
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
-              Create a Course
+              Share Your Experience
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              View All Case Studies
+              Discover More Case Studies
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

@@ -212,8 +212,8 @@ const CourseViewer = () => {
         {/* Progress Bar */}
         <div className="p-4 border-b border-border">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-muted-foreground">Course Progress</span>
-            <span className="text-sm font-medium text-foreground">30%</span>
+            <span className="text-sm text-muted-foreground">Learning Progress</span>
+            <span className="text-sm font-medium text-foreground">30% Complete</span>
           </div>
           <Progress value={30} className="h-2" />
         </div>
@@ -226,21 +226,21 @@ const CourseViewer = () => {
               <div className="text-center">
                 <div className="w-20 h-20 rounded-full bg-slate-700 flex items-center justify-center mb-4 mx-auto">
                   <img 
-                    src="/lovable-uploads/4312dae5-3f6f-4560-945e-3c8cfbfef188.png" 
-                    alt="Instructor" 
+                    src="/oponmeta-uploads/instructor-placeholder.png" 
+                    alt="Course Instructor" 
                     className="w-16 h-16 rounded-full object-cover"
                   />
                 </div>
                 <div className="bg-slate-700/90 p-6 rounded-lg max-w-2xl mx-auto">
-                  <h2 className="text-2xl font-bold text-white mb-2">Welcome!</h2>
+                  <h2 className="text-2xl font-bold text-white mb-2">Start Your Global Learning Experience</h2>
                   <div className="bg-slate-600 p-4 rounded-lg mb-4">
                     <p className="text-white text-lg italic">
-                      "Hey, I got the perfect developer job I've always wanted."
+                      "This platform helped me reach new heights in my career."
                     </p>
                   </div>
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                     <Download className="h-4 w-4 mr-2" />
-                    Download
+                    Download Course Resources
                   </Button>
                 </div>
               </div>
@@ -274,20 +274,20 @@ const CourseViewer = () => {
             <div className="flex items-center gap-4">
               <Button variant="outline" size="sm" className="flex items-center gap-2">
                 <NotebookPen className="h-4 w-4" />
-                Take Notes
+                My Notes
               </Button>
               <Button variant="outline" size="sm" className="flex items-center gap-2">
                 <BookmarkPlus className="h-4 w-4" />
-                Bookmark
+                Save This Lesson
               </Button>
               <Button variant="outline" size="sm" className="flex items-center gap-2">
                 <Download className="h-4 w-4" />
-                Download
+                Download Materials
               </Button>
             </div>
             
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Complete and Continue →
+              Complete & Continue
             </Button>
           </div>
 
@@ -299,16 +299,14 @@ const CourseViewer = () => {
                   <Play className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground">Welcome!</h3>
-                  <p className="text-muted-foreground">Get started with your learning journey</p>
+                  <h3 className="text-xl font-semibold text-foreground">Welcome to Your Course</h3>
+                  <p className="text-muted-foreground">Begin your global learning journey with us</p>
                 </div>
               </div>
               
               <div className="prose prose-sm max-w-none text-muted-foreground">
                 <p>
-                  Welcome to this comprehensive course! In this introductory lesson, we'll cover what you can expect to learn 
-                  and how to get the most out of your learning experience. Make sure to take notes and bookmark important 
-                  sections as you progress through the course.
+                  We are delighted to welcome you to this in-depth course. In this introduction, you will learn about the course structure and how to make the most of your learning experience. Remember to take notes and bookmark important lessons as you progress.
                 </p>
               </div>
             </CardContent>

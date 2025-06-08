@@ -13,7 +13,7 @@ const Dashboard = () => {
       <button
         className="md:hidden fixed top-4 left-4 z-30 bg-white/80 rounded-full p-2 shadow-lg border border-blue-200"
         onClick={() => setSidebarOpen(true)}
-        aria-label="Open sidebar"
+        aria-label="Open navigation menu"
       >
         <Menu className="h-6 w-6 text-blue-900" />
       </button>

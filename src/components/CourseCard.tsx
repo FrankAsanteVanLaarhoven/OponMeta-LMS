@@ -25,7 +25,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
         <div className="absolute inset-0 bg-background/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <Button size="sm" className="bg-primary/80 backdrop-blur-md text-primary-foreground hover:bg-primary">
             <Play className="h-4 w-4 mr-2" />
-            Preview
+            Preview Course
           </Button>
         </div>
       </div>
@@ -39,11 +39,11 @@ const CourseCard = ({ course }: CourseCardProps) => {
               </h3>
               {course.isBestseller && (
                 <Badge className="bg-accent text-accent-foreground text-xs ml-2">
-                  Bestseller
+                  Top Rated
                 </Badge>
               )}
             </div>
-            <p className="text-muted-foreground text-sm">by {course.instructor}</p>
+            <p className="text-muted-foreground text-sm">Instructor: {course.instructor}</p>
             <p className="text-muted-foreground text-sm mt-1 line-clamp-2">{course.description}</p>
           </div>
 
@@ -55,7 +55,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
             </div>
             <div className="flex items-center space-x-1 text-muted-foreground">
               <Play className="h-3 w-3" />
-              <span>{course.lessonsCount} lessons</span>
+              <span>{course.lessonsCount} modules</span>
             </div>
             <div className="flex items-center space-x-1 text-muted-foreground">
               <Users className="h-3 w-3" />
@@ -72,7 +72,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
           {course.progress !== undefined && (
             <div className="space-y-1">
               <div className="flex justify-between text-xs text-muted-foreground">
-                <span>Progress</span>
+                <span>Course Progress</span>
                 <span>{course.progress}%</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
@@ -88,8 +88,8 @@ const CourseCard = ({ course }: CourseCardProps) => {
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-1">
               <Star className="h-4 w-4 text-accent fill-current" />
-              <span className="text-card-foreground font-medium">{course.rating}</span>
-              <span className="text-muted-foreground">({course.students.toLocaleString()})</span>
+              <span className="text-card-foreground font-medium">{course.rating} / 5</span>
+              <span className="text-muted-foreground">({course.students.toLocaleString()} learners)</span>
             </div>
             <div className="text-xs text-muted-foreground">
               Updated {new Date(course.lastUpdated).toLocaleDateString()}
@@ -112,7 +112,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
               )}
             </div>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-              {course.progress !== undefined ? 'Continue' : 'Enroll Now'}
+              {course.progress !== undefined ? 'Resume Learning' : 'Join Now'}
             </Button>
           </div>
         </div>

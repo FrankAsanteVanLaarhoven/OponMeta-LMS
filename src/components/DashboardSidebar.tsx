@@ -20,14 +20,14 @@ const DashboardSidebar = ({ open = false, onClose = () => {} }) => {
   
   const menuItems = [
     { icon: LayoutDashboard, label: "Overview", path: "/dashboard" },
-    { icon: BookOpen, label: "Courses", path: "/dashboard/courses" },
+    { icon: BookOpen, label: "My Courses", path: "/dashboard/courses" },
     { icon: Users, label: "Enrollments", path: "/dashboard/enrollments" },
     { icon: UserCog, label: "User Management", path: "/dashboard/users" },
-    { icon: DollarSign, label: "Revenue", path: "/dashboard/revenue" },
-    { icon: BarChart3, label: "Analytics", path: "/dashboard/analytics" },
+    { icon: DollarSign, label: "Earnings", path: "/dashboard/revenue" },
+    { icon: BarChart3, label: "Analytics & Insights", path: "/dashboard/analytics" },
     { icon: MessageSquare, label: "Collaboration Hub", path: "/dashboard/collaboration" },
     { icon: Monitor, label: "Whiteboard", path: "/dashboard/whiteboard" },
-    { icon: Sparkles, label: "AI Recommendations", path: "/dashboard/recommendations" },
+    { icon: Sparkles, label: "AI-Powered Recommendations", path: "/dashboard/recommendations" },
     { icon: Settings, label: "Settings", path: "/dashboard/settings" },
   ];
 

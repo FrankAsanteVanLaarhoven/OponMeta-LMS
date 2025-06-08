@@ -82,7 +82,7 @@ const AdvertiserPortal = () => {
   const tabs = [
     { id: "overview", label: "Overview", icon: BarChart3 },
     { id: "campaigns", label: "Campaigns", icon: Target },
-    { id: "create", label: "Create Ad", icon: Plus },
+    { id: "create", label: "Create Campaign", icon: Plus },
     { id: "analytics", label: "Analytics", icon: TrendingUp },
     { id: "audience", label: "Audience", icon: Users },
     { id: "settings", label: "Settings", icon: Settings }
@@ -94,17 +94,17 @@ const AdvertiserPortal = () => {
       <div className="bg-white/10 backdrop-blur-md border-b border-white/20 p-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-white">{t('advertiserPortal.title')}</h1>
-            <p className="text-blue-200 mt-1">Create and manage your advertising campaigns</p>
+            <h1 className="text-3xl font-bold text-white">Advertiser Dashboard</h1>
+            <p className="text-blue-200 mt-1">Launch and manage your global advertising campaigns</p>
           </div>
           <div className="flex items-center gap-4">
             <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
               <Plus className="h-4 w-4 mr-2" />
-              New Campaign
+              Create Campaign
             </Button>
             <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
               <Upload className="h-4 w-4 mr-2" />
-              Upload Assets
+              Upload Creative Assets
             </Button>
           </div>
         </div>
@@ -145,7 +145,7 @@ const AdvertiserPortal = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.totalCampaigns}</div>
-                  <p className="text-xs text-green-400 mt-1">+2 this month</p>
+                  <p className="text-xs text-green-400 mt-1">+2 new this month</p>
                 </CardContent>
               </Card>
 
@@ -155,13 +155,13 @@ const AdvertiserPortal = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.totalImpressions.toLocaleString()}</div>
-                  <p className="text-xs text-green-400 mt-1">+18% vs last month</p>
+                  <p className="text-xs text-green-400 mt-1">+18% compared to last month</p>
                 </CardContent>
               </Card>
 
               <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Click Rate</CardTitle>
+                  <CardTitle className="text-sm font-medium text-blue-200">Click-Through Rate</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.clickRate}%</div>
@@ -175,7 +175,7 @@ const AdvertiserPortal = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">${adStats.totalSpend.toLocaleString()}</div>
-                  <p className="text-xs text-yellow-400 mt-1">68% of budget used</p>
+                  <p className="text-xs text-yellow-400 mt-1">68% of total budget used</p>
                 </CardContent>
               </Card>
 
@@ -185,17 +185,17 @@ const AdvertiserPortal = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.conversions}</div>
-                  <p className="text-xs text-green-400 mt-1">+23 this week</p>
+                  <p className="text-xs text-green-400 mt-1">+23 conversions this week</p>
                 </CardContent>
               </Card>
 
               <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Active Ads</CardTitle>
+                  <CardTitle className="text-sm font-medium text-blue-200">Active Advertisements</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.activeAds}</div>
-                  <p className="text-xs text-blue-400 mt-1">across 8 campaigns</p>
+                  <p className="text-xs text-blue-400 mt-1">across all campaigns</p>
                 </CardContent>
               </Card>
             </div>
@@ -203,7 +203,7 @@ const AdvertiserPortal = () => {
             {/* Recent Campaigns */}
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardHeader>
-                <CardTitle className="text-white">Campaign Performance</CardTitle>
+                <CardTitle className="text-white">Campaign Performance Overview</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -231,24 +231,24 @@ const AdvertiserPortal = () => {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                           <div>
                             <span className="text-blue-200">Budget:</span>
-                            <div className="text-white font-medium">${campaign.budget}</div>
+                            <div className="text-white font-medium">Budget: ${campaign.budget}</div>
                           </div>
                           <div>
                             <span className="text-blue-200">Spent:</span>
-                            <div className="text-white font-medium">${campaign.spent}</div>
+                            <div className="text-white font-medium">Spent: ${campaign.spent}</div>
                           </div>
                           <div>
                             <span className="text-blue-200">Impressions:</span>
-                            <div className="text-white font-medium">{campaign.impressions.toLocaleString()}</div>
+                            <div className="text-white font-medium">Impressions: {campaign.impressions.toLocaleString()}</div>
                           </div>
                           <div>
                             <span className="text-blue-200">CTR:</span>
-                            <div className="text-white font-medium">{campaign.ctr}%</div>
+                            <div className="text-white font-medium">CTR: {campaign.ctr}%</div>
                           </div>
                         </div>
                         <div className="mt-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs text-blue-200">Budget Usage:</span>
+                            <span className="text-xs text-blue-200">Budget Utilization:</span>
                             <Progress value={(campaign.spent / campaign.budget) * 100} className="flex-1 h-2" />
                             <span className="text-xs text-white">{Math.round((campaign.spent / campaign.budget) * 100)}%</span>
                           </div>
@@ -280,7 +280,7 @@ const AdvertiserPortal = () => {
               <h2 className="text-2xl font-bold text-white">All Campaigns</h2>
               <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
                 <Plus className="h-4 w-4 mr-2" />
-                New Campaign
+                Create Campaign
               </Button>
             </div>
 
@@ -313,20 +313,20 @@ const AdvertiserPortal = () => {
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-blue-200">Budget:</span>
-                        <span className="text-white">${campaign.budget}</span>
+                        <span className="text-white">Budget: ${campaign.budget}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-blue-200">Spent:</span>
-                        <span className="text-white">${campaign.spent}</span>
+                        <span className="text-white">Spent: ${campaign.spent}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-blue-200">CTR:</span>
-                        <span className="text-green-400">{campaign.ctr}%</span>
+                        <span className="text-green-400">CTR: {campaign.ctr}%</span>
                       </div>
                       <div className="space-y-1">
                         <div className="flex items-center justify-between text-sm">
                           <span className="text-blue-200">Progress:</span>
-                          <span className="text-white">{Math.round((campaign.spent / campaign.budget) * 100)}%</span>
+                          <span className="text-white">{Math.round((campaign.spent / campaign.budget) * 100)}% used</span>
                         </div>
                         <Progress value={(campaign.spent / campaign.budget) * 100} className="h-2" />
                       </div>
@@ -355,26 +355,26 @@ const AdvertiserPortal = () => {
           <div className="space-y-6">
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardHeader>
-                <CardTitle className="text-white">Create New Campaign</CardTitle>
+                <CardTitle className="text-white">Create a New Campaign</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
                       <label className="text-sm font-medium text-blue-200 block mb-2">Campaign Name</label>
-                      <Input placeholder="Enter campaign name" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                      <Input placeholder="Enter a campaign name" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-blue-200 block mb-2">Ad Type</label>
                       <Select>
                         <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                          <SelectValue placeholder="Select ad type" />
+                          <SelectValue placeholder="Choose ad type" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="banner">Banner Ad</SelectItem>
-                          <SelectItem value="video">Video Ad</SelectItem>
-                          <SelectItem value="native">Native Ad</SelectItem>
-                          <SelectItem value="popup">Pop-up Ad</SelectItem>
+                          <SelectItem value="banner">Banner Advertisement</SelectItem>
+                          <SelectItem value="video">Video Advertisement</SelectItem>
+                          <SelectItem value="native">Native Advertisement</SelectItem>
+                          <SelectItem value="popup">Pop-up Advertisement</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -382,7 +382,7 @@ const AdvertiserPortal = () => {
                       <label className="text-sm font-medium text-blue-200 block mb-2">Target Audience</label>
                       <Select>
                         <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                          <SelectValue placeholder="Select target audience" />
+                          <SelectValue placeholder="Choose target audience" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="students">Students</SelectItem>
@@ -393,7 +393,7 @@ const AdvertiserPortal = () => {
                       </Select>
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Budget ($)</label>
+                      <label className="text-sm font-medium text-blue-200 block mb-2">Budget (USD)</label>
                       <Input type="number" placeholder="0.00" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
                     </div>
                   </div>
@@ -401,7 +401,7 @@ const AdvertiserPortal = () => {
                     <div>
                       <label className="text-sm font-medium text-blue-200 block mb-2">Ad Content</label>
                       <Textarea 
-                        placeholder="Enter your ad copy here..." 
+                        placeholder="Write your ad copy here..." 
                         className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 min-h-32"
                       />
                     </div>
@@ -409,8 +409,8 @@ const AdvertiserPortal = () => {
                       <label className="text-sm font-medium text-blue-200 block mb-2">Upload Creative</label>
                       <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
                         <Upload className="h-12 w-12 text-blue-300 mx-auto mb-4" />
-                        <p className="text-white mb-2">Drag & drop your files here</p>
-                        <p className="text-blue-200 text-sm">Supports: JPG, PNG, MP4, GIF (Max 10MB)</p>
+                        <p className="text-white mb-2">Drag and drop your files here</p>
+                        <p className="text-blue-200 text-sm">Supported formats: JPG, PNG, MP4, GIF (Max 10MB)</p>
                         <Button variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10">
                           Browse Files
                         </Button>
@@ -420,7 +420,7 @@ const AdvertiserPortal = () => {
                 </div>
                 <div className="flex items-center gap-4 pt-4">
                   <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
-                    Create Campaign
+                    Launch Campaign
                   </Button>
                   <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
                     Save as Draft
@@ -575,7 +575,7 @@ const AdvertiserPortal = () => {
                     <label className="text-sm font-medium text-blue-200 block mb-2">Email Notifications</label>
                     <Select>
                       <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                        <SelectValue placeholder="Select frequency" />
+                        <SelectValue placeholder="Choose frequency" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="realtime">Real-time</SelectItem>
@@ -676,7 +676,7 @@ const AdvertiserPortal = () => {
                       <label className="text-sm font-medium text-blue-200 block mb-2">Campaign Data Retention</label>
                       <Select>
                         <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                          <SelectValue placeholder="Select retention period" />
+                          <SelectValue placeholder="Choose retention period" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="1year">1 Year</SelectItem>
@@ -712,10 +712,10 @@ const AdvertiserPortal = () => {
 
             <div className="flex items-center gap-4">
               <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
-                Save Settings
+                Save All Settings
               </Button>
               <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
-                Reset to Defaults
+                Restore Defaults
               </Button>
             </div>
           </div>
@@ -727,7 +727,7 @@ const AdvertiserPortal = () => {
             <CardContent className="p-8 text-center">
               <BarChart3 className="h-16 w-16 text-blue-300 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">{tabs.find(t => t.id === activeTab)?.label}</h3>
-              <p className="text-blue-200">This section is coming soon. Stay tuned for updates!</p>
+              <p className="text-blue-200">This section will be available soon. Please check back for updates!</p>
             </CardContent>
           </Card>
         )}

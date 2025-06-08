@@ -67,16 +67,16 @@ const CourseManagement = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-white">Course Management</h1>
-            <p className="text-blue-200 mt-1">Edit and manage your course content</p>
+            <p className="text-blue-200 mt-1">Easily organize and update your learning materials</p>
           </div>
           <div className="flex items-center gap-4">
             <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
               <Eye className="h-4 w-4 mr-2" />
-              Preview Course
+              View Course Preview
             </Button>
             <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white">
               <Save className="h-4 w-4 mr-2" />
-              Save Changes
+              Save Updates
             </Button>
           </div>
         </div>
@@ -102,7 +102,7 @@ const CourseManagement = () => {
               <h2 className="text-2xl font-bold text-white">Course Modules</h2>
               <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
                 <Plus className="h-4 w-4 mr-2" />
-                Add New Module
+                Add Module
               </Button>
             </div>
 
@@ -163,19 +163,19 @@ const CourseManagement = () => {
               <CardContent className="p-8 text-center">
                 <Upload className="h-16 w-16 text-blue-300 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Upload New Content</h3>
-                <p className="text-blue-200 mb-4">Drag and drop your video files, documents, or images here</p>
+                <p className="text-blue-200 mb-4">Easily upload videos, documents, or images for your course</p>
                 <div className="flex items-center gap-4 justify-center">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                     <FileVideo className="h-4 w-4 mr-2" />
-                    Upload Video
+                    Add Video
                   </Button>
                   <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
                     <FileText className="h-4 w-4 mr-2" />
-                    Upload Document
+                    Add Document
                   </Button>
                   <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
                     <ImageIcon className="h-4 w-4 mr-2" />
-                    Upload Image
+                    Add Image
                   </Button>
                 </div>
               </CardContent>

@@ -131,10 +131,10 @@ const Vendors = () => {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Our Education Partners
+            Global Education Partners
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Discover trusted educational institutions and expert instructors from across Africa
+            Connect with leading educational organizations and expert instructors from around the world
           </p>
         </div>
       </section>
@@ -149,7 +149,7 @@ const Vendors = () => {
                 <div className="relative">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <Input
-                    placeholder="Search vendors, specializations..."
+                    placeholder="Search partners, specializations..."
                     className="pl-10 bg-white/10 border-white/20 text-white placeholder-gray-300"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}

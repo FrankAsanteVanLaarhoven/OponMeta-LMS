@@ -34,11 +34,10 @@ const Features = () => {
             />
           </div>
            <h1 className="text-5xl font-bold text-slate-800 drop-shadow-lg mb-6">
-             OPONMETA Features
+             Discover OPONMETA's Global Features
            </h1>
            <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8 drop-shadow-md font-medium">
-            Comprehensive global learning platform with cutting-edge technology, 
-            inclusive education, and industry partnerships
+            A truly global learning platform: advanced technology, inclusive education, and worldwide industry collaboration
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {featureCategories.map((category) => (
@@ -57,17 +56,16 @@ const Features = () => {
       {/* Main Feature Showcase */}
       <FeatureShowcase 
         title="Why Choose OPONMETA?"
-        subtitle="We're building the future of global education with comprehensive features that empower learners, educators, and organizations worldwide."
+        subtitle="Empowering learners, educators, and organizations everywhere with innovative, inclusive, and future-ready features."
       />
       
       {/* Feature Categories Overview */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Our Comprehensive Approach</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">A Holistic Approach to Global Learning</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From multilingual accessibility to emerging technology integration, 
-              OPONMETA covers every aspect of modern education
+              From multilingual access to the latest in technology, OPONMETA supports every dimension of modern, international education.
             </p>
           </div>
 
@@ -76,12 +74,12 @@ const Features = () => {
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold text-card-foreground mb-4">Global Accessibility</h3>
                 <p className="text-muted-foreground mb-4">
-                  Multilingual platforms, scholarships, and inclusive education for all
+                  Multilingual access, scholarships, and inclusive learning for everyone
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Multiple language support</li>
-                  <li>• Free learning materials</li>
-                  <li>• Cultural adaptation</li>
+                  <li>• Free educational resources</li>
+                  <li>• Culturally adaptive content</li>
                 </ul>
               </CardContent>
             </Card>
@@ -90,12 +88,12 @@ const Features = () => {
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold text-card-foreground mb-4">Future-Ready Technology</h3>
                 <p className="text-muted-foreground mb-4">
-                  AI-powered learning, Web3 integration, and metaverse experiences
+                  AI-driven learning, Web3, and immersive virtual experiences
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• AI-powered courses</li>
-                  <li>• Blockchain certifications</li>
-                  <li>• Virtual campuses</li>
+                  <li>• Blockchain-based credentials</li>
+                  <li>• Virtual learning environments</li>
                 </ul>
               </CardContent>
             </Card>
@@ -104,12 +102,12 @@ const Features = () => {
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold text-card-foreground mb-4">Industry Partnerships</h3>
                 <p className="text-muted-foreground mb-4">
-                  Corporate training, university alliances, and professional networks
+                  Corporate learning, university alliances, and global professional networks
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Corporate certifications</li>
-                  <li>• Research partnerships</li>
-                  <li>• Global conferences</li>
+                  <li>• Research collaborations</li>
+                  <li>• International conferences</li>
                 </ul>
               </CardContent>
             </Card>
@@ -121,9 +119,9 @@ const Features = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Complete Feature Set</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">All-Inclusive Feature Set</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore all 24 comprehensive features that make OPONMETA the leading global learning platform
+              Discover the 24 features that make OPONMETA a leader in global education and digital learning
             </p>
           </div>
           <FeatureGrid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" />

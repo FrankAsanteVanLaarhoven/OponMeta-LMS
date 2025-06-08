@@ -35,14 +35,14 @@ const ContactForm = () => {
         {/* Left Content */}
         <div className="text-white space-y-6">
           <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-            Your Vision To{" "}
+            Bring Your Vision to
             <span className="bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
-              Life!
+              Life
             </span>
           </h1>
           
           <p className="text-xl text-gray-200 leading-relaxed">
-            Share your idea and our team will reach out to discuss it and provide you with an estimate.
+            Share your idea and our team will connect with you to discuss your goals and provide a personalized estimate.
           </p>
 
           {/* Customer Service Image */}
@@ -52,7 +52,7 @@ const ContactForm = () => {
             </div>
             <div>
               <p className="text-lg font-semibold">24/7 Customer Support</p>
-              <p className="text-gray-300">Ready to help you succeed</p>
+              <p className="text-gray-300">Here to help you succeed, wherever you are</p>
             </div>
           </div>
         </div>
@@ -72,10 +72,10 @@ const ContactForm = () => {
           {/* Tab Headers */}
           <div className="flex mb-6">
             <button className="flex-1 py-3 px-4 bg-red-500 text-white font-medium rounded-tl-lg">
-              Contact Info
+              Contact Information
             </button>
             <button className="flex-1 py-3 px-4 bg-pink-500 text-white font-medium rounded-tr-lg">
-              Add-Ons Info
+              Add-Ons Information
             </button>
           </div>
 
@@ -85,7 +85,7 @@ const ContactForm = () => {
                 {/* Full Name */}
                 <div>
                   <Input
-                    placeholder="Full Name"
+                    placeholder="Your Full Name"
                     value={formData.fullName}
                     onChange={(e) => handleInputChange("fullName", e.target.value)}
                     className="h-14 bg-white/90 border-0 placeholder-gray-500 text-gray-900 text-lg rounded-lg"
@@ -96,7 +96,7 @@ const ContactForm = () => {
                 <div>
                   <Input
                     type="email"
-                    placeholder="Email Address"
+                    placeholder="Your Email Address"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     className="h-14 bg-white/90 border-0 placeholder-gray-500 text-gray-900 text-lg rounded-lg"
@@ -124,7 +124,7 @@ const ContactForm = () => {
                     </Select>
                   </div>
                   <Input
-                    placeholder="Phone Number"
+                    placeholder="Your Phone Number"
                     value={formData.phoneNumber}
                     onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
                     className="h-14 bg-white/90 border-0 placeholder-gray-500 text-gray-900 text-lg rounded-lg flex-1"
@@ -137,7 +137,7 @@ const ContactForm = () => {
                     <MessageCircle className="h-6 w-6 text-green-500" />
                   </div>
                   <Input
-                    placeholder="Whatsapp Number"
+                    placeholder="Your WhatsApp Number (optional)"
                     value={formData.whatsappNumber}
                     onChange={(e) => handleInputChange("whatsappNumber", e.target.value)}
                     className="h-14 bg-white/90 border-0 placeholder-gray-500 text-gray-900 text-lg rounded-lg flex-1"
@@ -149,14 +149,12 @@ const ContactForm = () => {
                   type="submit"
                   className="w-full h-14 bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white font-bold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105"
                 >
-                  GET SPECIAL ADD-ONS
+                  Get My Personalized Add-Ons
                 </Button>
 
                 {/* Privacy Notice */}
                 <p className="text-center text-sm text-gray-300">
-                  Your data is kept confidential and your{" "}
-                  <span className="text-blue-300 underline cursor-pointer">privacy</span>{" "}
-                  is our highest priority.
+                  Your data is kept confidential and your <span className="text-blue-300 underline cursor-pointer">privacy</span> is our highest priority.
                 </p>
               </form>
             </CardContent>
@@ -171,7 +169,7 @@ const ContactForm = () => {
             {/* Follow Us */}
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">
-                Follow Us For The{" "}
+                Follow Us for the
                 <span className="bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
                   Latest Updates
                 </span>
@@ -191,9 +189,9 @@ const ContactForm = () => {
             {/* Connect With Us */}
             <div className="text-right">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Connect{" "}
+                Connect
                 <span className="bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
-                  With US
+                  With Us
                 </span>
               </h3>
               <div className="space-y-2 text-white">
@@ -227,7 +225,7 @@ const ContactForm = () => {
       <div className="fixed bottom-6 right-6">
         <div className="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg">
           <p className="text-sm">
-            Hi! I'm Osiz AI,🙋 Can I help you with anything today?😊
+            Hi! I'm your AI assistant. How can I help you today?
           </p>
         </div>
       </div>

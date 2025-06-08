@@ -85,10 +85,10 @@ const CaseStudies = () => {
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Success Stories
+            Global Success Stories
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            See how organizations worldwide are transforming their learning and development with OPONMETA
+            Discover how organizations around the world are transforming learning and development with OPONMETA
           </p>
         </div>
 
@@ -147,18 +147,22 @@ const CaseStudies = () => {
                       <div className="text-center">
                         <div className="text-2xl font-bold text-green-400">{study.results.engagement}</div>
                         <div className="text-sm text-blue-200">Engagement</div>
+                        <div className="text-xs text-blue-300">Learner participation</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-green-400">{study.results.completion}</div>
                         <div className="text-sm text-blue-200">Completion</div>
+                        <div className="text-xs text-blue-300">Course completion rate</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-green-400">{study.results.timeToCompetency}</div>
                         <div className="text-sm text-blue-200">Time to Competency</div>
+                        <div className="text-xs text-blue-300">Faster skill mastery</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-green-400">{study.results.satisfaction}</div>
                         <div className="text-sm text-blue-200">Satisfaction</div>
+                        <div className="text-xs text-blue-300">User satisfaction</div>
                       </div>
                     </div>
 
@@ -192,15 +196,15 @@ const CaseStudies = () => {
             <CardContent className="p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">Ready to Write Your Success Story?</h2>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Join these industry leaders and see what OPONMETA can do for your organization
+                Join global industry leaders and see what OPONMETA can do for your organization
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
                   <ArrowRight className="h-4 w-4 mr-2" />
-                  Start Free Trial
+                  Start Your Free Trial
                 </Button>
                 <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
-                  Schedule Demo
+                  Book a Demo
                 </Button>
               </div>
             </CardContent>

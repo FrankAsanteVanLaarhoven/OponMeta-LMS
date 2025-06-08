@@ -102,7 +102,7 @@ const PageNavigation = () => {
         <Button
           onClick={goBack}
           className="bg-purple-600 hover:bg-purple-700 text-white rounded-full w-12 h-12 p-0 shadow-lg"
-          title="Go Back"
+          title="Return to Previous Page"
         >
           <ArrowLeft className="h-5 w-5" />
         </Button>
@@ -111,7 +111,7 @@ const PageNavigation = () => {
         <Button
           onClick={goHome}
           className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 p-0 shadow-lg"
-          title="Go Home"
+          title="Go to Homepage"
         >
           <Home className="h-5 w-5" />
         </Button>
@@ -122,7 +122,7 @@ const PageNavigation = () => {
             onClick={goToPreviousPage}
             variant="outline"
             className="bg-white border-gray-300 hover:bg-gray-50 rounded-full w-12 h-12 p-0 shadow-lg"
-            title="Previous Page"
+            title="Previous Section"
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
@@ -134,7 +134,7 @@ const PageNavigation = () => {
             onClick={goToNextPage}
             variant="outline"
             className="bg-white border-gray-300 hover:bg-gray-50 rounded-full w-12 h-12 p-0 shadow-lg"
-            title="Next Page"
+            title="Next Section"
           >
             <ChevronRight className="h-5 w-5" />
           </Button>
@@ -148,7 +148,7 @@ const PageNavigation = () => {
             onClick={scrollToTop}
             variant="secondary"
             className="bg-gray-600 hover:bg-gray-700 text-white rounded-full w-12 h-12 p-0 shadow-lg"
-            title="Scroll to Top"
+            title="Scroll Up"
           >
             <ChevronUp className="h-5 w-5" />
           </Button>
@@ -156,7 +156,7 @@ const PageNavigation = () => {
             onClick={scrollToBottom}
             variant="secondary"
             className="bg-gray-600 hover:bg-gray-700 text-white rounded-full w-12 h-12 p-0 shadow-lg"
-            title="Scroll to Bottom"
+            title="Scroll Down"
           >
             <ChevronDown className="h-5 w-5" />
           </Button>

@@ -15,19 +15,18 @@ const Hero = memo(() => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight drop-shadow-2xl">Unlock Your Potential with World-Class Learning</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight drop-shadow-2xl">Unlock Your Potential with Global Learning</h1>
             <p className="text-2xl text-slate-800 font-bold mb-8 max-w-2xl drop-shadow-lg">
-              Access world-class education from African experts and global partners. 
-              Learn at your own pace with courses designed for the modern professional.
+              Join a worldwide community and access high-quality courses for learners and professionals. Study flexibly, anytime, anywhere.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100" onClick={() => navigate("/free-trial")}>
-                Get Started Free
+                Start Your Free Trial
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => navigate("/get-demo")}>
                 <Play className="mr-2 h-5 w-5" />
-                Get a Demo →
+                Request a Demo
               </Button>
             </div>
 
@@ -42,11 +41,11 @@ const Hero = memo(() => {
                     />
                   ))}
                 </div>
-                <span className="text-slate-900 font-bold drop-shadow-md">50,000+ students</span>
+                <span className="text-slate-900 font-bold drop-shadow-md">50,000+ learners worldwide</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-slate-900 font-bold drop-shadow-md">4.9/5 rating</span>
+                <span className="text-slate-900 font-bold drop-shadow-md">4.9/5 global rating</span>
               </div>
             </div>
           </div>

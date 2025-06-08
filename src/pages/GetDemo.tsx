@@ -32,10 +32,10 @@ const GetDemo = () => {
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Schedule Your Personal Demo
+            Book Your Personalized Demo
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            See OPONMETA in action with a personalized demonstration tailored to your organization's needs
+            Experience OPONMETA in action with a demonstration tailored to your organization's unique needs
           </p>
         </div>
 
@@ -86,11 +86,11 @@ const GetDemo = () => {
               <CardContent className="p-8 text-center">
                 <h3 className="text-xl font-bold text-white mb-4">Ready to Get Started?</h3>
                 <p className="text-blue-100 mb-6">
-                  Join thousands of organizations already using OPONMETA
+                  Discover why organizations worldwide trust OPONMETA for their learning needs
                 </p>
                 <Button className="bg-white text-purple-900 hover:bg-gray-100">
                   <ArrowRight className="h-4 w-4 mr-2" />
-                  Start Free Trial Instead
+                  Try Free for 14 Days
                 </Button>
               </CardContent>
             </Card>
@@ -193,7 +193,7 @@ const GetDemo = () => {
                 </div>
 
                 <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0">
-                  Schedule My Demo
+                  Book My Demo
                 </Button>
               </form>
 

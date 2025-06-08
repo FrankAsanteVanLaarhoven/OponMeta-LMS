@@ -211,7 +211,7 @@ const VirtualClassroom = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Powerful Features</h2>
             <p className="text-xl text-gray-600">
-              Everything you need for engaging virtual learning experiences
+              All the tools you need for impactful and interactive online learning
             </p>
           </div>
 
@@ -236,7 +236,7 @@ const VirtualClassroom = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Upcoming Sessions</h2>
-            <p className="text-lg text-gray-600">Join live learning sessions or schedule your own</p>
+            <p className="text-lg text-gray-600">Participate in live sessions or plan your own events</p>
           </div>
 
           <div className="grid gap-6">
@@ -254,7 +254,7 @@ const VirtualClassroom = () => {
                             'bg-gray-600 text-white'
                           }
                         >
-                          {session.status === 'live' ? '🔴 Live' : 
+                          {session.status === 'live' ? '🔴 In Progress' : 
                            session.status === 'upcoming' ? 'Starting Soon' : 'Scheduled'}
                         </Badge>
                       </div>
@@ -268,7 +268,7 @@ const VirtualClassroom = () => {
                     <div className="flex gap-2">
                       {session.status === 'live' ? (
                         <Button className="bg-red-600 hover:bg-red-700 text-white">
-                          Join Now
+                          Join Live
                         </Button>
                       ) : session.status === 'upcoming' ? (
                         <Button className="bg-orange-600 hover:bg-orange-700 text-white">
@@ -288,7 +288,7 @@ const VirtualClassroom = () => {
 
           <div className="text-center mt-8">
             <Button className="bg-blue-600 text-white hover:bg-blue-700">
-              Schedule New Session
+              Schedule a New Session
             </Button>
           </div>
         </div>
@@ -300,19 +300,19 @@ const VirtualClassroom = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-purple-600 mb-2">1000+</div>
-              <div className="text-gray-600">Max Participants</div>
+              <div className="text-xs text-gray-400">Large-scale learning</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-purple-600 mb-2">99.9%</div>
-              <div className="text-gray-600">Uptime</div>
+              <div className="text-xs text-gray-400">Reliable platform</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-purple-600 mb-2">4K</div>
-              <div className="text-gray-600">Video Quality</div>
+              <div className="text-xs text-gray-400">Crystal clear visuals</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-purple-600 mb-2">24/7</div>
-              <div className="text-gray-600">Support</div>
+              <div className="text-xs text-gray-400">Global assistance</div>
             </div>
           </div>
         </div>
@@ -322,17 +322,17 @@ const VirtualClassroom = () => {
       <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Transform Your Online Learning?
+            Ready to Elevate Your Online Learning?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Start hosting engaging virtual classroom sessions today with our comprehensive platform.
+            Begin hosting interactive virtual classroom sessions today with our all-in-one platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
-              Start Free Trial
+              Start Your Free Trial
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Book Demo
+              Book a Demo
             </Button>
           </div>
         </div>

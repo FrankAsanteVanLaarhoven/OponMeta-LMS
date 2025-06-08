@@ -83,7 +83,7 @@ const Navigation = () => {
             </a>
             <div className="flex flex-col">
               <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-600 bg-clip-text text-transparent">OPONMETA</span>
-              <span className="text-xs text-blue-200">GLOBAL EDTech PowerHouse</span>
+              <span className="text-xs text-blue-200">Global Learning Platform</span>
             </div>
           </div>
 

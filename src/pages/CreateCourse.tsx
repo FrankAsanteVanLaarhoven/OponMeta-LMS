@@ -13,7 +13,7 @@ const CreateCourse = () => {
   const creationMethods = [
     {
       title: "Create from Scratch",
-      description: "Build your course from the ground up with complete creative control",
+      description: "Design your course from the beginning with full creative freedom",
       icon: Plus,
       features: ["Custom curriculum design", "Upload your own content", "Set your own pace", "Full customization"],
       time: "2-4 weeks",
@@ -22,7 +22,7 @@ const CreateCourse = () => {
     },
     {
       title: "Create with AI",
-      description: "Let our AI assistant help you create professional courses quickly",
+      description: "Accelerate course creation with our AI-powered assistant for professional results",
       icon: Sparkles,
       features: ["AI-generated content", "Smart course structure", "Auto-generated quizzes", "Content suggestions"],
       time: "1-2 weeks", 
@@ -35,25 +35,25 @@ const CreateCourse = () => {
     {
       icon: Video,
       title: "Video Courses",
-      description: "Record and upload video lessons",
+      description: "Engage learners with recorded video lessons",
       popular: true
     },
     {
       icon: FileText,
       title: "Text-Based Courses", 
-      description: "Written content and documentation",
+      description: "Deliver knowledge through written lessons and resources",
       popular: false
     },
     {
       icon: Users,
       title: "Interactive Workshops",
-      description: "Live sessions with students",
+      description: "Facilitate real-time, interactive learning experiences",
       popular: true
     },
     {
       icon: BookOpen,
       title: "Certification Programs",
-      description: "Comprehensive learning paths",
+      description: "Guide learners through structured certification journeys",
       popular: false
     }
   ];
@@ -62,17 +62,17 @@ const CreateCourse = () => {
     {
       icon: Award,
       title: "Global Reach",
-      description: "Access to 50,000+ learners worldwide"
+      description: "Connect with a diverse, international audience"
     },
     {
       icon: Clock,
       title: "Flexible Schedule",
-      description: "Create and teach on your own time"
+      description: "Teach and create courses on your own schedule"
     },
     {
       icon: Users,
       title: "Community Support",
-      description: "Join our instructor community"
+      description: "Be part of a supportive global instructor network"
     }
   ];
 
@@ -84,10 +84,10 @@ const CreateCourse = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Create Your Course
+            Build and Share Your Course
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Share your expertise with the world. Choose how you want to create your course and start building today.
+            Empower learners everywhere by sharing your expertise. Select your preferred creation method and begin building your course today.
           </p>
         </div>
 
@@ -137,7 +137,7 @@ const CreateCourse = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">What Type of Course Will You Create?</h2>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Choose from various course formats to best share your knowledge
+              Select the course format that best fits your teaching style and content
             </p>
           </div>
 
@@ -166,7 +166,7 @@ const CreateCourse = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Why Become an Instructor?</h2>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Join thousands of instructors earning income while sharing their passion
+              Inspire learners and earn income by sharing your passion and expertise
             </p>
           </div>
 
@@ -188,14 +188,14 @@ const CreateCourse = () => {
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Teaching?</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join our community of expert instructors and start earning money sharing your knowledge
+              Become part of a global community of instructors and start making a difference through education
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100" onClick={() => navigate("/become-instructor")}>
-                Become an Instructor
+                Join as Instructor
               </Button>
               <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" onClick={() => navigate("/get-demo")}>
-                Schedule Demo
+                Book a Demo
               </Button>
             </div>
           </CardContent>

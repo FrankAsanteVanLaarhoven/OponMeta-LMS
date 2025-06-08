@@ -11,35 +11,35 @@ const MeetAI = () => {
   const [selectedPlan, setSelectedPlan] = useState('free');
 
   const stats = [
-    { number: '50,000+', label: 'Active Learners' },
-    { number: '1,200+', label: 'Expert Instructors' },
-    { number: '5,000+', label: 'Courses Available' },
-    { number: '54', label: 'African Countries' }
+    { number: '50,000+', label: 'Learners Worldwide' },
+    { number: '1,200+', label: 'Global Instructors' },
+    { number: '5,000+', label: 'Courses Offered' },
+    { number: '54', label: 'Countries Served' }
   ];
 
   const features = [
     {
       icon: Video,
-      title: 'AI Video Call Interface',
-      description: 'Crystal clear video calls with AI agents that respond in real-time',
+      title: 'AI Video Call Experience',
+      description: 'Seamless video calls with AI agents providing real-time responses',
       demo: 'video-interface'
     },
     {
       icon: User,
-      title: 'Real-time AI Coaching',
-      description: 'Get instant feedback and guidance from AI agents trained for specific roles',
+      title: 'Instant AI Coaching',
+      description: 'Receive immediate feedback and guidance from AI agents tailored to your needs',
       demo: 'coaching'
     },
     {
       icon: Users,
       title: 'Interactive Learning Sessions',
-      description: 'Live AI-powered sessions with language tutors and subject experts',
+      description: 'Participate in live sessions powered by AI tutors and global experts',
       demo: 'sessions'
     },
     {
       icon: Calendar,
-      title: 'Personalized Career Plans',
-      description: 'Customized Career Ready Plans tailored to your specific goals',
+      title: 'Personalized Career Planning',
+      description: 'Career plans customized to your unique goals and aspirations',
       demo: 'career-plans'
     }
   ];
@@ -48,7 +48,7 @@ const MeetAI = () => {
     {
       id: 'free',
       name: 'FREE PLAN',
-      subtitle: 'Ideal for startups & micro-businesses',
+      subtitle: 'Perfect for individuals and small teams',
       price: '$0.00',
       period: 'free forever',
       features: ['All Features', '10 Learners', 'Unlimited Courses'],
@@ -57,7 +57,7 @@ const MeetAI = () => {
     {
       id: 'essentials',
       name: 'ESSENTIALS',
-      subtitle: 'Ideal for established businesses',
+      subtitle: 'Great for growing organizations',
       price: '$1.99',
       period: 'per active learner/month',
       features: ['200+ Ready-to-Use Courses', '10+ Learners', 'AI Assistance & Tracking'],
@@ -87,34 +87,34 @@ const MeetAI = () => {
   ];
 
   const expertStats = [
-    { number: '100,000+', label: 'Courses & tests created' },
-    { number: '4,000,000+', label: 'Learners' },
-    { number: '100', label: 'Year mission' }
+    { number: '100,000+', label: 'Courses & Assessments Created' },
+    { number: '4,000,000+', label: 'Global Learners' },
+    { number: '100', label: 'Year Vision' }
   ];
 
   const solutions = [
     {
-      title: 'Premium Course Library',
-      description: 'Browse a library of hundreds of premium courses on in-demand topics, customizable & ready-to-use.',
-      action: 'Explore Course Library',
+      title: 'Extensive Course Library',
+      description: 'Access hundreds of high-quality, customizable courses on trending topics.',
+      action: 'Browse Course Library',
       image: 'photo-1498050108023-c5249f4df085'
     },
     {
       title: 'Virtual Classroom',
-      description: 'Take charge of all online learning activities using centralized and secure virtual classroom software.',
-      action: 'Access Virtual Classroom',
+      description: 'Manage all online learning activities with secure, centralized classroom tools.',
+      action: 'Enter Virtual Classroom',
       image: 'photo-1488590528505-98d2b5aba04b'
     },
     {
       title: 'Quizzes & Surveys',
-      description: 'Assess knowledge retention through engaging quizzes and seek course feedback through surveys.',
-      action: 'Try Quizzes Interface',
+      description: 'Measure learning progress with interactive quizzes and gather feedback with surveys.',
+      action: 'Try Quiz Tools',
       image: 'photo-1461749280684-dccba630e2f6'
     },
     {
-      title: 'Elearning Authoring Tool',
-      description: 'Take advantage of the world\'s easiest authoring tool. Develop delightful online courses in minutes.',
-      action: 'Open Authoring Tool',
+      title: 'E-learning Authoring Tool',
+      description: 'Create engaging online courses quickly with our intuitive authoring platform.',
+      action: 'Launch Authoring Tool',
       image: 'photo-1581091226825-a6a2a5aee158'
     }
   ];

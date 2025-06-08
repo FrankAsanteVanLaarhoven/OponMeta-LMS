@@ -28,7 +28,7 @@ const SignIn = () => {
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-white mb-2">Welcome Back</h1>
-              <p className="text-blue-100">Sign in to continue your learning journey</p>
+              <p className="text-blue-100">Sign in to access your personalized learning experience</p>
             </div>
 
             <form className="space-y-6">
@@ -71,7 +71,7 @@ const SignIn = () => {
                   <span className="text-sm text-blue-100">Remember me</span>
                 </label>
                 <a href="#" className="text-sm text-blue-200 hover:text-white">
-                  Forgot password?
+                  Forgot your password?
                 </a>
               </div>
               
@@ -99,19 +99,19 @@ const SignIn = () => {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
                 <Facebook className="h-4 w-4 mr-2" />
-                Facebook
+                Continue with Facebook
               </Button>
               <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
                 <Twitter className="h-4 w-4 mr-2" />
-                Twitter
+                Continue with Twitter
               </Button>
             </div>
 
             <div className="mt-6 text-center">
               <p className="text-blue-100">
-                Don't have an account?{" "}
+                New to OponMeta?{' '}
                 <a href="/signup" className="text-white font-medium hover:underline">
-                  Sign up
+                  Create an account
                 </a>
               </p>
             </div>

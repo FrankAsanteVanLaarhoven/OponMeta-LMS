@@ -50,14 +50,14 @@ const FreeTrial = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
             <Zap className="h-4 w-4 text-yellow-400" />
-            <span className="text-white font-medium">No Credit Card Required</span>
+            <span className="text-white font-medium">No Payment Details Needed</span>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Start Your 14-Day Free Trial
+            Begin Your 14-Day Free Trial
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Experience the full power of OPONMETA with unlimited access to all features. 
-            Cancel anytime, no strings attached.
+            Discover the full capabilities of OPONMETA with unrestricted access to every feature. 
+            Cancel anytime, no commitment required.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ const FreeTrial = () => {
                   <span className="text-green-300 font-medium">14 Days Free</span>
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-2">Create Your Account</h2>
-                <p className="text-blue-100">Get instant access to everything</p>
+                <p className="text-blue-100">Sign up for immediate access to all features</p>
               </div>
               
               <form className="space-y-6">
@@ -159,10 +159,10 @@ const FreeTrial = () => {
 
               <div className="mt-6 text-center space-y-2">
                 <p className="text-sm text-blue-200">
-                  ✓ No credit card required • ✓ Cancel anytime • ✓ Full access
+                  ✓ No payment required • ✓ Cancel anytime • ✓ Unlimited access
                 </p>
                 <p className="text-xs text-blue-300">
-                  By signing up, you agree to our Terms of Service and Privacy Policy
+                  By registering, you agree to our Terms of Service and Privacy Policy
                 </p>
               </div>
             </CardContent>

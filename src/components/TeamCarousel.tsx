@@ -67,8 +67,8 @@ const TeamCarousel = () => {
               className="w-40 h-40 object-cover rounded-full mb-4 border-4 border-blue-100"
               loading="lazy"
             />
-            <span className="font-semibold text-lg text-slate-900">{t(`team.${idx}.name`)}</span>
-            <span className="text-blue-600 text-sm">{member.role}</span>
+            <span className="font-semibold text-lg text-slate-900">{member.name}</span>
+            <span className="text-blue-600 text-sm">{member.role.replace('CEO & Founder', 'Chief Executive Officer & Founder').replace('Lead Designer', 'Lead Product Designer').replace('Head of Engineering', 'Director of Engineering').replace('AI Specialist', 'Artificial Intelligence Specialist')}</span>
           </div>
         ))}
       </motion.div>

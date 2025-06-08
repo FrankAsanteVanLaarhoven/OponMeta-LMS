@@ -74,11 +74,10 @@ const Contact = () => {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Get in Touch
+            Contact Us
           </h1>
           <p className="text-xl text-blue-100">
-            We're here to help you succeed. Reach out to us anytime with questions, 
-            feedback, or partnership opportunities.
+            We're here to support your success. Reach out anytime with questions, feedback, or partnership ideas from anywhere in the world.
           </p>
         </div>
       </section>
@@ -91,6 +90,7 @@ const Contact = () => {
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+                <p className="text-blue-100 mb-4">We respond promptly to all inquiries.</p>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -98,7 +98,7 @@ const Contact = () => {
                       <Input 
                         id="firstName"
                         className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                        placeholder="Your first name"
+                        placeholder="First Name"
                       />
                     </div>
                     <div>
@@ -106,7 +106,7 @@ const Contact = () => {
                       <Input 
                         id="lastName"
                         className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                        placeholder="Your last name"
+                        placeholder="Last Name"
                       />
                     </div>
                   </div>
@@ -117,7 +117,7 @@ const Contact = () => {
                       id="email"
                       type="email"
                       className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                      placeholder="your.email@example.com"
+                      placeholder="Email Address"
                     />
                   </div>
                   
@@ -126,7 +126,7 @@ const Contact = () => {
                     <Input 
                       id="subject"
                       className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
-                      placeholder="How can we help you?"
+                      placeholder="Subject of your inquiry"
                     />
                   </div>
                   
@@ -135,7 +135,7 @@ const Contact = () => {
                     <Textarea 
                       id="message"
                       className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300 min-h-[120px]"
-                      placeholder="Tell us more about your inquiry..."
+                      placeholder="Please provide details about your request or feedback."
                     />
                   </div>
                   
@@ -152,6 +152,7 @@ const Contact = () => {
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-6">Contact Methods</h3>
+                <p className="text-blue-100 mb-4">Choose the best way to reach our global support team.</p>
                 <div className="space-y-4">
                   {contactMethods.map((method, index) => (
                     <div key={index} className="flex items-start space-x-3">
@@ -173,6 +174,7 @@ const Contact = () => {
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-6">Quick Support</h3>
+                <p className="text-blue-100 mb-4">Need help fast? Try our live chat or request a callback.</p>
                 <div className="space-y-3">
                   <Button 
                     size="sm" 
@@ -200,7 +202,7 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Our Offices</h2>
             <p className="text-xl text-blue-100">
-              Visit us at any of our regional offices across Africa
+              Visit us at any of our regional offices or connect with us online from anywhere
             </p>
           </div>
           
@@ -226,7 +228,7 @@ const Contact = () => {
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
               <p className="text-blue-100 mb-6">
-                Check our FAQ section for quick answers to common questions
+                Find answers to common questions in our FAQ section
               </p>
               <Button className="bg-white text-purple-900 hover:bg-gray-100">
                 View FAQ

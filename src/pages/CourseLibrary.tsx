@@ -127,15 +127,15 @@ const CourseLibrary = () => {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-white mb-6">Premium Course Library</h1>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Browse our collection of 500+ premium courses created by industry experts. 
-            Fully customizable content ready for immediate deployment.
+            Explore our global library of 500+ premium courses designed by industry leaders. 
+            All content is fully customizable and ready for learners worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
-              Start Free Trial
+              Start Your Free Trial
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Request Demo
+              Book a Demo
             </Button>
           </div>
         </div>
@@ -148,18 +148,22 @@ const CourseLibrary = () => {
             <div>
               <div className="text-3xl font-bold text-white mb-2">500+</div>
               <div className="text-blue-100">Premium Courses</div>
+              <div className="text-xs text-blue-200">Global course selection</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-white mb-2">50+</div>
               <div className="text-blue-100">Expert Instructors</div>
+              <div className="text-xs text-blue-200">International teaching team</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-white mb-2">25+</div>
               <div className="text-blue-100">Languages</div>
+              <div className="text-xs text-blue-200">Multilingual access</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-white mb-2">100%</div>
               <div className="text-blue-100">Customizable</div>
+              <div className="text-xs text-blue-200">Adaptable for any audience</div>
             </div>
           </div>
         </div>
@@ -178,6 +182,7 @@ const CourseLibrary = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                aria-label="Search courses by title or description"
               />
             </div>
 
@@ -185,6 +190,7 @@ const CourseLibrary = () => {
             <div className="flex items-center gap-2">
               <Filter className="h-5 w-5 text-gray-600" />
               <span className="text-sm font-medium text-gray-600">Category:</span>
+              <span className="text-xs text-gray-400">Filter by subject area</span>
               <div className="flex flex-wrap gap-2">
                 {categories.map((category) => (
                   <button
