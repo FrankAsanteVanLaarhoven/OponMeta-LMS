@@ -95,7 +95,7 @@ const BecomeInstructor = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
+      {/* Removed <Navigation /> to prevent double navbar */}
       
       <div className="max-w-7xl mx-auto px-4 py-20">
         {/* Hero Section */}

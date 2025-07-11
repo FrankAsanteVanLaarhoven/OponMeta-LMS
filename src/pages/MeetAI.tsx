@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Play, Video, Mic, Users, Calendar, DollarSign, BookOpen, User, Check, Star, ArrowRight } from 'lucide-react';
-import PageNavigation from '@/components/PageNavigation';
-import Footer from '@/components/Footer';
 
 const MeetAI = () => {
   const [activeDemo, setActiveDemo] = useState<string | null>(null);
@@ -544,8 +542,6 @@ const MeetAI = () => {
           </div>
         </div>
       </section>
-      <PageNavigation />
-      <Footer />
     </div>
   );
 };

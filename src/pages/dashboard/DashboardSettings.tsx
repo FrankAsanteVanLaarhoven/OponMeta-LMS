@@ -10,6 +10,7 @@ import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Palette, User, Upload, Shield, Bell, Settings, Download, BarChart3, BookOpen, Zap } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const DashboardSettings = () => {
   const [profileSettings, setProfileSettings] = useState({
@@ -79,8 +80,9 @@ const DashboardSettings = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-blue-600">Platform Settings</h1>
+        <h1 className="text-3xl font-bold text-cyan-300">Platform Settings</h1>
         <div className="flex space-x-2">
           <Button variant="outline">
             <Download className="mr-2 h-4 w-4" />
@@ -108,7 +110,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <User className="h-6 w-6 text-blue-600" />
+                <User className="h-6 w-6 text-cyan-300" />
                 <CardTitle>Profile Settings</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -149,7 +151,7 @@ const DashboardSettings = () => {
                 </div>
               </div>
 
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 Save Profile Settings
               </Button>
             </CardContent>
@@ -160,7 +162,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <BookOpen className="h-6 w-6 text-blue-600" />
+                <BookOpen className="h-6 w-6 text-cyan-300" />
                 <CardTitle>Course Defaults</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -218,7 +220,7 @@ const DashboardSettings = () => {
                 </Select>
               </div>
 
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 Save Course Defaults
               </Button>
             </CardContent>
@@ -229,7 +231,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <Zap className="h-6 w-6 text-blue-600" />
+                <Zap className="h-6 w-6 text-cyan-300" />
                 <CardTitle>Advanced Features</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -287,7 +289,7 @@ const DashboardSettings = () => {
                 </div>
               </div>
 
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 Save Advanced Settings
               </Button>
             </CardContent>
@@ -298,7 +300,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <Bell className="h-6 w-6 text-blue-600" />
+                <Bell className="h-6 w-6 text-cyan-300" />
                 <CardTitle>Notifications</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -352,7 +354,7 @@ const DashboardSettings = () => {
                 </div>
               </div>
 
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 Save Notification Settings
               </Button>
             </CardContent>
@@ -363,7 +365,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <Palette className="h-6 w-6 text-blue-600" />
+                <Palette className="h-6 w-6 text-cyan-300" />
                 <CardTitle>Branding & Customization</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -454,7 +456,7 @@ const DashboardSettings = () => {
                   />
                 </div>
 
-                <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+                <Button type="submit" className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                   Save Branding Settings
                 </Button>
               </form>
@@ -466,7 +468,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <User className="h-6 w-6 text-blue-600" />
+                <User className="h-6 w-6 text-cyan-300" />
                 <CardTitle>Account Management</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -536,7 +538,7 @@ const DashboardSettings = () => {
                   </div>
                 </div>
 
-                <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+                <Button type="submit" className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                   Update Account
                 </Button>
               </form>
@@ -548,7 +550,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <Settings className="h-6 w-6 text-blue-600" />
+                <Settings className="h-6 w-6 text-cyan-300" />
                 <CardTitle>API & Integrations</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -646,7 +648,7 @@ const DashboardSettings = () => {
                   </div>
                 </div>
 
-                <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+                <Button type="submit" className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                   Save API Settings
                 </Button>
               </form>
@@ -659,7 +661,7 @@ const DashboardSettings = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <Shield className="h-6 w-6 text-blue-600" />
+                <Shield className="h-6 w-6 text-cyan-300" />
                 <CardTitle>Security Settings</CardTitle>
               </div>
               <p className="text-gray-600">
@@ -725,7 +727,7 @@ const DashboardSettings = () => {
                 </div>
               </div>
 
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 Save Security Settings
               </Button>
             </CardContent>

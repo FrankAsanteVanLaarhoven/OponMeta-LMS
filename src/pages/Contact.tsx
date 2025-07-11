@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Headphones } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Headphones, Globe, Users, Briefcase, Shield } from "lucide-react";
 import PageNavigation from "@/components/PageNavigation";
 
 const Contact = () => {
@@ -39,6 +39,44 @@ const Contact = () => {
     }
   ];
 
+  const emailContacts = [
+    {
+      icon: Mail,
+      title: "General Inquiries",
+      description: "Questions about our platform and services",
+      email: "info@oponmeta.com",
+      color: "text-blue-400"
+    },
+    {
+      icon: Headphones,
+      title: "Customer Service",
+      description: "Technical support and account assistance",
+      email: "support@oponmeta.com",
+      color: "text-green-400"
+    },
+    {
+      icon: Users,
+      title: "Partnerships",
+      description: "Business collaborations and partnerships",
+      email: "partnerships@oponmeta.com",
+      color: "text-purple-400"
+    },
+    {
+      icon: Briefcase,
+      title: "Career Opportunities",
+      description: "Job inquiries and career information",
+      email: "careers@oponmeta.com",
+      color: "text-orange-400"
+    },
+    {
+      icon: Shield,
+      title: "Administrative",
+      description: "Internal management and administrative matters",
+      email: "admin@oponmeta.com",
+      color: "text-red-400"
+    }
+  ];
+
   const offices = [
     {
       city: "Lagos",
@@ -68,8 +106,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
-      
       {/* Header */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -83,6 +119,27 @@ const Contact = () => {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 pb-20">
+        {/* Website and General Contact Info */}
+        <div className="mb-12">
+          <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <CardContent className="p-8 text-center">
+              <div className="flex items-center justify-center mb-4">
+                <Globe className="h-8 w-8 text-blue-400 mr-3" />
+                <h2 className="text-2xl font-bold text-white">Visit Our Website</h2>
+              </div>
+              <p className="text-blue-100 mb-4">Explore our platform and discover all we have to offer</p>
+              <a 
+                href="https://www.oponmeta.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-blue-200 hover:text-white transition-colors duration-300"
+              >
+                www.oponmeta.com
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid lg:grid-cols-3 gap-12">
           
           {/* Contact Form */}
@@ -196,6 +253,40 @@ const Contact = () => {
             </Card>
           </div>
         </div>
+
+        {/* Email Contact Directory */}
+        <section className="mt-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Email Directory</h2>
+            <p className="text-xl text-blue-100">
+              Contact the right team for your specific needs
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {emailContacts.map((contact, index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-3 mb-4">
+                    <div className="p-2 bg-white/10 rounded-lg">
+                      <contact.icon className={`h-5 w-5 ${contact.color}`} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">{contact.title}</h3>
+                      <p className="text-blue-100 text-sm">{contact.description}</p>
+                    </div>
+                  </div>
+                  <a 
+                    href={`mailto:${contact.email}`}
+                    className="text-blue-200 hover:text-white font-medium transition-colors duration-300"
+                  >
+                    {contact.email}
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
         {/* Office Locations */}
         <section className="mt-16">

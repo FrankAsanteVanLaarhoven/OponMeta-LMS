@@ -29,8 +29,6 @@ const Courses = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      
       <CoursesHeader />
 
       {/* Search and Filters */}

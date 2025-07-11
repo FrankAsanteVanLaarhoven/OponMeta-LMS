@@ -22,6 +22,7 @@ import {
   Star,
   Eye
 } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Forums = () => {
   const discussions = [
@@ -80,7 +81,7 @@ const Forums = () => {
   ];
 
   const categories = [
-    { name: "General Discussion", count: 156, color: "bg-blue-100 text-blue-700" },
+    { name: "General Discussion", count: 156, color: "bg-[#16203a] text-cyan-300" },
     { name: "Study Tips", count: 89, color: "bg-green-100 text-green-700" },
     { name: "Projects", count: 67, color: "bg-purple-100 text-purple-700" },
     { name: "Technical", count: 134, color: "bg-red-100 text-red-700" },
@@ -98,19 +99,20 @@ const Forums = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-orange-600">Discussion Forums</h1>
+          <h1 className="text-3xl font-bold text-cyan-300">Discussion Forums</h1>
           <p className="text-gray-600 mt-2">
             Engage with your learning community, share knowledge, and get support from peers and instructors.
           </p>
         </div>
         <div className="flex space-x-2">
-          <Button>
+          <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
             <Plus className="mr-2 h-4 w-4" />
             New Discussion
           </Button>
-          <Button variant="outline">
+          <Button variant="outline" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50">
             <Filter className="mr-2 h-4 w-4" />
             Filter
           </Button>
@@ -122,8 +124,8 @@ const Forums = () => {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <MessageSquare className="h-5 w-5 text-blue-600" />
+              <div className="p-2 bg-[#16203a] rounded-lg">
+                <MessageSquare className="h-5 w-5 text-cyan-300" />
               </div>
               <div>
                 <p className="text-2xl font-bold">147</p>
@@ -190,7 +192,7 @@ const Forums = () => {
                 />
               </div>
             </div>
-            <Button variant="outline">
+            <Button variant="outline" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50">
               <Filter className="mr-2 h-4 w-4" />
               Filter
             </Button>
@@ -214,9 +216,9 @@ const Forums = () => {
                         <div className="flex-1 space-y-2">
                           <div className="flex items-center space-x-2">
                             {discussion.isPinned && (
-                              <Pin className="h-4 w-4 text-orange-500" />
+                              <Pin className="h-4 w-4 text-cyan-500" />
                             )}
-                            <h3 className="font-semibold text-lg hover:text-orange-600 cursor-pointer">
+                            <h3 className="font-semibold text-lg hover:text-cyan-600 cursor-pointer">
                               {discussion.title}
                             </h3>
                             {discussion.isAnswered && (
@@ -261,10 +263,10 @@ const Forums = () => {
                         </div>
 
                         <div className="flex space-x-2">
-                          <Button size="sm" variant="outline">
+                          <Button size="sm" variant="outline" className="bg-cyan-600 hover:bg-cyan-700 text-white">
                             <ThumbsUp className="h-4 w-4" />
                           </Button>
-                          <Button size="sm" variant="outline">
+                          <Button size="sm" variant="outline" className="bg-cyan-600 hover:bg-cyan-700 text-white">
                             <Reply className="h-4 w-4" />
                           </Button>
                         </div>
@@ -318,7 +320,7 @@ const Forums = () => {
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button className="bg-orange-600 hover:bg-orange-700">
+                    <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
                       <MessageSquare className="mr-2 h-4 w-4" />
                       Post Discussion
                     </Button>
@@ -363,7 +365,7 @@ const Forums = () => {
               {trendingTopics.map((topic, index) => (
                 <div key={topic.topic} className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm font-bold text-orange-600">#{index + 1}</span>
+                    <span className="text-sm font-bold text-cyan-600">#{index + 1}</span>
                     <span className="text-sm">{topic.topic}</span>
                   </div>
                   <span className="text-xs text-gray-500">{topic.discussions}</span>
@@ -378,15 +380,15 @@ const Forums = () => {
               <CardTitle className="text-lg">Quick Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <Button className="w-full justify-start" variant="outline">
+              <Button className="w-full justify-start" variant="outline" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50">
                 <AlertCircle className="mr-2 h-4 w-4" />
                 Report an Issue
               </Button>
-              <Button className="w-full justify-start" variant="outline">
+              <Button className="w-full justify-start" variant="outline" className="bg-cyan-600 hover:bg-cyan-700 text-white">
                 <Star className="mr-2 h-4 w-4" />
                 My Favorites
               </Button>
-              <Button className="w-full justify-start" variant="outline">
+              <Button className="w-full justify-start" variant="outline" className="bg-cyan-600 hover:bg-cyan-700 text-white">
                 <Users className="mr-2 h-4 w-4" />
                 Find Study Partners
               </Button>

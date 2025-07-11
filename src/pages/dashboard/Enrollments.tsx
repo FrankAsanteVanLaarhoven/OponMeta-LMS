@@ -30,6 +30,7 @@ import {
   AlertCircle,
   CheckCircle
 } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Enrollments = () => {
   const [selectedStatus, setSelectedStatus] = useState("all");
@@ -228,6 +229,7 @@ const Enrollments = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <h1 className="text-3xl font-bold text-blue-600">Enrollment Tracking</h1>
 
       {/* Statistics Cards */}

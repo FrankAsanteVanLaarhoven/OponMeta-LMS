@@ -7,16 +7,73 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Calendar, Clock, Play, Star, Trophy, Users, Settings, Share2, CheckCircle2, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { 
+  Calendar, 
+  Clock, 
+  Play, 
+  Star, 
+  Trophy, 
+  Users, 
+  Settings, 
+  Share2, 
+  CheckCircle2, 
+  Facebook, 
+  Twitter, 
+  Linkedin, 
+  Instagram,
+  BookOpen,
+  Target,
+  Award,
+  Search,
+  Filter,
+  ArrowRight,
+  Download,
+  FileText,
+  CalendarDays,
+  TrendingUp,
+  AlertTriangle,
+  Eye,
+  BarChart3,
+  Activity,
+  Zap,
+  Lightbulb
+} from "lucide-react";
 import Navigation from "@/components/Navigation";
 import PageNavigation from "@/components/PageNavigation";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import { CertificateGenerator, LearningAnalyticsTracker, type LearningAnalytics } from "@/utils/certificateGenerator";
+
+interface EnrolledCourse {
+  id: number;
+  title: string;
+  instructor: string;
+  price: number;
+  rating: number;
+  image: string;
+  category: string;
+  duration: string;
+  level: string;
+  lessonsCount: number;
+  description: string;
+  progress: number;
+  completedLessons: number;
+  totalLessons: number;
+  lastAccessed: string;
+  purchaseDate: string;
+  certificateEarned: boolean;
+  isBestseller: boolean;
+  status: 'in-progress' | 'completed' | 'not-started';
+  learningAnalytics?: LearningAnalytics;
+  assessmentScores?: { assessmentId: string; score: number; maxScore: number; grade: string }[];
+}
 
 const StudentPortal = () => {
   const [streak] = useState(0);
   const { toast } = useToast();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterStatus, setFilterStatus] = useState('all');
   const [settings, setSettings] = useState({
     emailNotifications: true,
     pushNotifications: false,
@@ -32,11 +89,204 @@ const StudentPortal = () => {
 
   const { t } = useTranslation();
 
+  // Mock data for enrolled courses
+  const enrolledCourses: EnrolledCourse[] = [
+    {
+      id: 1,
+      title: "Digital Marketing Fundamentals",
+      instructor: "Sarah Johnson",
+      price: 299,
+      rating: 4.8,
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      category: "Marketing",
+      duration: "8 hours",
+      level: "Beginner",
+      lessonsCount: 18,
+      description: "Master the fundamentals of digital marketing and grow your online presence",
+      progress: 75,
+      completedLessons: 14,
+      totalLessons: 18,
+      lastAccessed: "2024-03-15",
+      purchaseDate: "2024-01-15",
+      certificateEarned: false,
+      isBestseller: true,
+      status: 'in-progress',
+      learningAnalytics: {
+        totalTimeSpent: 120,
+        chaptersCompleted: 10,
+        averageTimePerChapter: 12,
+        learningPattern: 'normal',
+        unusualBehaviorFlags: []
+      }
+    },
+    {
+      id: 2,
+      title: "Web Development Bootcamp",
+      instructor: "Mike Chen",
+      price: 499,
+      rating: 4.9,
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      category: "Technology",
+      duration: "25 hours",
+      level: "Intermediate",
+      lessonsCount: 45,
+      description: "Complete bootcamp covering HTML, CSS, JavaScript, React, and Node.js",
+      progress: 100,
+      completedLessons: 45,
+      totalLessons: 45,
+      lastAccessed: "2024-03-10",
+      purchaseDate: "2024-01-10",
+      certificateEarned: true,
+      isBestseller: true,
+      status: 'completed',
+      learningAnalytics: {
+        totalTimeSpent: 300,
+        chaptersCompleted: 20,
+        averageTimePerChapter: 15,
+        learningPattern: 'normal',
+        unusualBehaviorFlags: ['fast_forward_event']
+      }
+    },
+    {
+      id: 3,
+      title: "Business Strategy & Leadership",
+      instructor: "Dr. Amara Okafor",
+      price: 399,
+      rating: 4.7,
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      category: "Business",
+      duration: "12 hours",
+      level: "Advanced",
+      lessonsCount: 32,
+      description: "Advanced strategies for business leadership and organizational development",
+      progress: 0,
+      completedLessons: 0,
+      totalLessons: 32,
+      lastAccessed: "Never",
+      purchaseDate: "2024-03-01",
+      certificateEarned: false,
+      isBestseller: false,
+      status: 'not-started',
+      learningAnalytics: {
+        totalTimeSpent: 0,
+        chaptersCompleted: 0,
+        averageTimePerChapter: 0,
+        learningPattern: 'normal',
+        unusualBehaviorFlags: []
+      }
+    }
+  ];
+
+  const learningStats = {
+    totalCourses: enrolledCourses.length,
+    completedCourses: enrolledCourses.filter(c => c.status === 'completed').length,
+    inProgressCourses: enrolledCourses.filter(c => c.status === 'in-progress').length,
+    totalHoursLearned: 45,
+    certificatesEarned: enrolledCourses.filter(c => c.certificateEarned).length,
+    averageProgress: Math.round(enrolledCourses.reduce((acc, c) => acc + c.progress, 0) / enrolledCourses.length)
+  };
+
+  const upcomingEvents = [
+    {
+      date: "Jun 30",
+      title: "Ultimate React Native Course",
+      time: "Mon | 8AM GMT",
+      type: "Upcoming Elite Course"
+    }
+  ];
+
+  const filteredCourses = enrolledCourses.filter(course => {
+    const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         course.instructor.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         course.category.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesFilter = filterStatus === 'all' || course.status === filterStatus;
+    return matchesSearch && matchesFilter;
+  });
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'completed': return 'bg-green-100 text-green-800';
+      case 'in-progress': return 'bg-[#16203a] text-cyan-300';
+      case 'not-started': return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const getStatusText = (status: string) => {
+    switch (status) {
+      case 'completed': return 'Completed';
+      case 'in-progress': return 'In Progress';
+      case 'not-started': return 'Not Started';
+      default: return 'Unknown';
+    }
+  };
+
   const markCourseComplete = () => {
     toast({
       title: "Course Completed! 🎉",
       description: "Congratulations on completing your course. Keep up the great work!",
     });
+  };
+
+  const generateCertificate = async (course: EnrolledCourse) => {
+    try {
+      const certificateData = {
+        studentName: "John Doe", // In real app, get from user profile
+        courseTitle: course.title,
+        instructorName: course.instructor,
+        completionDate: new Date().toLocaleDateString(),
+        courseDuration: course.duration,
+        certificateId: `CERT-${course.id}-${Date.now()}`,
+        courseCategory: course.category,
+        grade: course.assessmentScores?.[0]?.grade || "Pass"
+      };
+
+      const certificateBlob = await CertificateGenerator.generateCertificate(certificateData);
+      const filename = `${course.title.replace(/\s+/g, '_')}_Certificate.pdf`;
+      CertificateGenerator.downloadCertificate(certificateBlob, filename);
+
+      toast({
+        title: "Certificate Generated! 🎉",
+        description: "Your certificate has been downloaded successfully.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to generate certificate. Please try again.",
+        variant: "destructive"
+      });
+    }
+  };
+
+  const generateDiploma = async (course: EnrolledCourse) => {
+    try {
+      const diplomaData = {
+        studentName: "John Doe", // In real app, get from user profile
+        courseTitle: course.title,
+        instructorName: course.instructor,
+        completionDate: new Date().toLocaleDateString(),
+        courseDuration: course.duration,
+        certificateId: `DIPLOMA-${course.id}-${Date.now()}`,
+        courseCategory: course.category,
+        grade: course.assessmentScores?.[0]?.grade || "Pass",
+        isDiploma: true
+      };
+
+      const diplomaBlob = await CertificateGenerator.generateDiploma(diplomaData);
+      const filename = `${course.title.replace(/\s+/g, '_')}_Diploma.pdf`;
+      CertificateGenerator.downloadCertificate(diplomaBlob, filename);
+
+      toast({
+        title: "Diploma Generated! 🎉",
+        description: "Your diploma has been downloaded successfully.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to generate diploma. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   const shareCourse = (platform: string) => {
@@ -66,34 +316,18 @@ const StudentPortal = () => {
     });
   };
 
-  const learningPath = {
-    id: 1,
-    title: "HTML CSS Segment",
-    description: "HTML and CSS are essential for building modern websites. In this segment, you will learn how to structure content and create visually engaging, responsive layouts for a global audience.",
-    progress: 20,
-    level: "BEGINNER LEVEL",
-    lectures: 10,
-    duration: "2 hrs",
-    completed: false
-  };
-
-  const upcomingEvents = [
-    {
-      date: "Jun 30",
-      title: "Ultimate React Native Course",
-      time: "Mon | 8AM GMT",
-      type: "Upcoming Elite Course"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
+      {/* <Navigation /> removed to prevent double navbar */}
       
       <div className="container mx-auto px-4 py-8">
         <Tabs defaultValue="dashboard" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-6">
             <TabsTrigger value="dashboard">My Dashboard</TabsTrigger>
+            <TabsTrigger value="courses">My Courses</TabsTrigger>
+            <TabsTrigger value="certificates">Certificates</TabsTrigger>
+            <TabsTrigger value="analytics">Learning Analytics</TabsTrigger>
+            <TabsTrigger value="booking">1:1 Booking</TabsTrigger>
             <TabsTrigger value="settings">Account Settings</TabsTrigger>
           </TabsList>
           
@@ -101,6 +335,34 @@ const StudentPortal = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Left Column */}
               <div className="lg:col-span-2 space-y-6">
+                {/* Learning Stats */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <div className="text-2xl font-bold text-primary">{learningStats.totalCourses}</div>
+                      <div className="text-sm text-muted-foreground">Total Courses</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <div className="text-2xl font-bold text-green-600">{learningStats.completedCourses}</div>
+                      <div className="text-sm text-muted-foreground">Completed</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <div className="text-2xl font-bold text-cyan-300">{learningStats.inProgressCourses}</div>
+                      <div className="text-sm text-muted-foreground">In Progress</div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <div className="text-2xl font-bold text-purple-600">{learningStats.certificatesEarned}</div>
+                      <div className="text-sm text-muted-foreground">Certificates</div>
+                    </CardContent>
+                  </Card>
+                </div>
+
                 {/* Streak Section */}
                 <Card className="bg-card border-border">
                   <CardContent className="p-6">
@@ -150,6 +412,62 @@ const StudentPortal = () => {
                   </CardContent>
                 </Card>
 
+                {/* Recent Activity */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-foreground">Recent Learning Activity</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {enrolledCourses
+                        .filter(course => course.status === 'in-progress' || course.status === 'completed')
+                        .slice(0, 3)
+                        .map((course) => (
+                          <div key={course.id} className="flex items-center gap-4 p-4 rounded-lg bg-muted/50">
+                            <div className="w-12 h-12 bg-[#16203a] rounded-lg flex items-center justify-center">
+                              <BookOpen className="h-6 w-6 text-white" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-semibold text-foreground">{course.title}</h3>
+                              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                <span>Progress: {course.progress}%</span>
+                                <span>Last accessed: {course.lastAccessed}</span>
+                              </div>
+                            </div>
+                            <Button size="sm" onClick={() => window.open(`/course-viewer/${course.id}`, '_self')}>
+                              Continue
+                            </Button>
+                          </div>
+                        ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-6">
+                {/* Overall Progress */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-foreground">Overall Progress</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div>
+                        <div className="flex justify-between text-sm mb-2">
+                          <span>Average Progress</span>
+                          <span>{learningStats.averageProgress}%</span>
+                        </div>
+                        <Progress value={learningStats.averageProgress} className="h-2" />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-primary">{learningStats.totalHoursLearned}</div>
+                        <div className="text-sm text-muted-foreground">Hours Learned</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
                 {/* Upcoming Events */}
                 <Card className="bg-card border-border">
                   <CardHeader>
@@ -177,364 +495,494 @@ const StudentPortal = () => {
                   </CardContent>
                 </Card>
               </div>
-
-              {/* Right Column */}
-              <div className="space-y-6">
-                {/* Learning Path */}
-                <Card className="bg-card border-border">
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-foreground">Your learning path</CardTitle>
-                      <Button variant="ghost" size="sm" className="text-primary">
-                        View Full Path
-                      </Button>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold">
-                          01
-                        </div>
-                        <h3 className="font-semibold text-foreground">{learningPath.title}</h3>
-                      </div>
-                      
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {learningPath.description}
-                      </p>
-                      
-                      <div className="flex gap-2">
-                        <Badge variant="secondary" className="text-xs">
-                          Starter
-                        </Badge>
-                        <Badge variant="outline" className="text-xs">
-                          Workshop
-                        </Badge>
-                      </div>
-                    </div>
-
-                    {/* Course Card */}
-                    <Card className="bg-muted/50 border-border">
-                      <CardContent className="p-4">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                            <div className="text-white text-sm font-bold">HTML</div>
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-foreground">HTML & CSS Guide for Beginners : Creating a Sushi-Themed Website</h4>
-                            <p className="text-xs text-muted-foreground">Learn to build a modern, responsive website with HTML & CSS, including engaging animations and best practices.</p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
-                          <div className="flex items-center gap-1">
-                            <Play className="h-3 w-3" />
-                            {learningPath.lectures} lectures
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            {learningPath.duration}
-                          </div>
-                        </div>
-                        
-                        <div className="space-y-2">
-                          <div className="flex justify-between items-center">
-                            <span className="text-xs text-muted-foreground">Progress</span>
-                            <span className="text-xs text-foreground">{learningPath.progress}/100%</span>
-                          </div>
-                          <Progress value={learningPath.progress} className="h-2" />
-                        </div>
-                        
-                        <div className="flex items-center justify-between mt-3 gap-2">
-                          <Badge variant="outline" className="text-xs">
-                            {learningPath.level}
-                          </Badge>
-                          <div className="flex gap-2">
-                            <Button 
-                              size="sm" 
-                              variant="outline"
-                              onClick={markCourseComplete}
-                              className="text-xs"
-                            >
-                              <CheckCircle2 className="h-3 w-3 mr-1" />
-                              Mark as Complete
-                            </Button>
-                            <Link to="/course-viewer/1">
-                              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 text-xs">
-                                Continue Learning →
-                              </Button>
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Share Course */}
-                        <div className="flex items-center gap-2 mt-3 pt-3 border-t border-border">
-                          <span className="text-xs text-muted-foreground">Share:</span>
-                          <Button 
-                            size="sm" 
-                            variant="ghost" 
-                            onClick={() => shareCourse('facebook')}
-                            className="h-6 w-6 p-0"
-                          >
-                            <Facebook className="h-3 w-3" />
-                          </Button>
-                          <Button 
-                            size="sm" 
-                            variant="ghost" 
-                            onClick={() => shareCourse('twitter')}
-                            className="h-6 w-6 p-0"
-                          >
-                            <Twitter className="h-3 w-3" />
-                          </Button>
-                          <Button 
-                            size="sm" 
-                            variant="ghost" 
-                            onClick={() => shareCourse('linkedin')}
-                            className="h-6 w-6 p-0"
-                          >
-                            <Linkedin className="h-3 w-3" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    {/* Mock Interview Card */}
-                    <Card className="bg-muted/50 border-border">
-                      <CardContent className="p-4">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-                            <Users className="h-6 w-6 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-foreground">Test Your Knowledge with Mock Interview</h4>
-                            <p className="text-xs text-muted-foreground">Challenge yourself and prepare for real-world interviews with our mock interview tool.</p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex gap-2">
-                          <Badge variant="secondary" className="text-xs">
-                            Elite
-                          </Badge>
-                          <Badge variant="outline" className="text-xs">
-                            Interview
-                          </Badge>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CardContent>
-                </Card>
-
-                {/* Elite Membership */}
-                <Card className="bg-gradient-to-br from-yellow-900/20 to-orange-900/20 border-yellow-500/20">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Trophy className="h-6 w-6 text-yellow-500" />
-                      <div>
-                        <h3 className="font-bold text-foreground">Take Your Learning to the Next Level with Elite Membership.</h3>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3 mb-6">
-                      <h4 className="text-primary font-semibold">Why Go Elite? Unlock Exclusive Benefits:</h4>
-                      
-                      <div className="space-y-2 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <Star className="h-4 w-4 text-yellow-500" />
-                          <span>Access a personalized learning path tailored to your unique goals</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Star className="h-4 w-4 text-green-500" />
-                          <span>Unlimited access to all premium courses and global resources</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Star className="h-4 w-4 text-blue-500" />
-                          <span>Engage in hands-on coding challenges and quizzes to strengthen your skills</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                      Upgrade to Elite →
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </TabsContent>
 
-          <TabsContent value="settings" className="mt-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Account Settings */}
-              <Card className="bg-card border-border">
+          <TabsContent value="courses" className="mt-6">
+            <Card>
+              <CardHeader>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                  <CardTitle>My Courses</CardTitle>
+                  <div className="flex gap-2">
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        placeholder="Search courses..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="pl-10 w-64"
+                      />
+                    </div>
+                    <select
+                      value={filterStatus}
+                      onChange={(e) => setFilterStatus(e.target.value)}
+                      className="px-3 py-2 border rounded-md"
+                    >
+                      <option value="all">All Courses</option>
+                      <option value="in-progress">In Progress</option>
+                      <option value="completed">Completed</option>
+                      <option value="not-started">Not Started</option>
+                    </select>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  {filteredCourses.map((course) => (
+                    <div key={course.id} className="border rounded-lg p-6 hover:shadow-md transition-shadow">
+                      <div className="flex flex-col lg:flex-row gap-6">
+                        {/* Course Image */}
+                        <div className="w-full lg:w-48 h-32 bg-[#16203a] rounded-lg flex items-center justify-center">
+                          <BookOpen className="h-12 w-12 text-white" />
+                        </div>
+
+                        {/* Course Info */}
+                        <div className="flex-1">
+                          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 mb-4">
+                            <div>
+                              <div className="flex items-center gap-2 mb-2">
+                                <h3 className="text-xl font-semibold">{course.title}</h3>
+                                {course.isBestseller && (
+                                  <Badge className="bg-yellow-100 text-yellow-800">Bestseller</Badge>
+                                )}
+                                <Badge className={getStatusColor(course.status)}>
+                                  {getStatusText(course.status)}
+                                </Badge>
+                              </div>
+                              <p className="text-muted-foreground mb-2">by {course.instructor}</p>
+                              <p className="text-sm text-muted-foreground">{course.description}</p>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Star className="h-4 w-4 text-yellow-500" />
+                              <span className="font-semibold">{course.rating}</span>
+                            </div>
+                          </div>
+
+                          {/* Progress and Stats */}
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                            <div>
+                              <p className="text-sm text-muted-foreground">Progress</p>
+                              <div className="flex items-center gap-2">
+                                <Progress value={course.progress} className="flex-1 h-2" />
+                                <span className="text-sm font-semibold">{course.progress}%</span>
+                              </div>
+                            </div>
+                            <div>
+                              <p className="text-sm text-muted-foreground">Lessons</p>
+                              <p className="font-semibold">{course.completedLessons}/{course.totalLessons}</p>
+                            </div>
+                            <div>
+                              <p className="text-sm text-muted-foreground">Duration</p>
+                              <p className="font-semibold">{course.duration}</p>
+                            </div>
+                            <div>
+                              <p className="text-sm text-muted-foreground">Last Accessed</p>
+                              <p className="font-semibold">{course.lastAccessed}</p>
+                            </div>
+                          </div>
+
+                          {/* Actions */}
+                          <div className="flex flex-wrap gap-2">
+                            {course.status === 'in-progress' && (
+                              <Button onClick={() => window.open(`/course-viewer/${course.id}`, '_self')}>
+                                <Play className="h-4 w-4 mr-2" />
+                                Continue Learning
+                              </Button>
+                            )}
+                            {course.status === 'not-started' && (
+                              <Button onClick={() => window.open(`/course-viewer/${course.id}`, '_self')}>
+                                <Play className="h-4 w-4 mr-2" />
+                                Start Learning
+                              </Button>
+                            )}
+                            {course.status === 'completed' && (
+                              <Button variant="outline" onClick={() => toast({ title: "Certificate downloaded", description: "Your certificate has been downloaded" })}>
+                                <FileText className="h-4 w-4 mr-2" />
+                                Download Certificate
+                              </Button>
+                            )}
+                            <Button variant="outline" onClick={() => shareCourse('facebook')}>
+                              <Share2 className="h-4 w-4 mr-2" />
+                              Share
+                            </Button>
+                            <Button variant="outline">
+                              <Download className="h-4 w-4 mr-2" />
+                              Download
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="certificates" className="mt-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>My Certificates</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {enrolledCourses
+                    .filter(course => course.certificateEarned)
+                    .map((course) => (
+                      <div key={course.id} className="flex items-center justify-between p-4 border rounded-lg">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-[#16203a] rounded-lg flex items-center justify-center">
+                            <Award className="h-6 w-6 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold">{course.title}</h3>
+                            <p className="text-sm text-muted-foreground">Completed on {course.lastAccessed}</p>
+                          </div>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button variant="outline" size="sm">
+                            <Download className="h-4 w-4 mr-2" />
+                            Download
+                          </Button>
+                          <Button variant="outline" size="sm">
+                            <Share2 className="h-4 w-4 mr-2" />
+                            Share
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  {enrolledCourses.filter(course => course.certificateEarned).length === 0 && (
+                    <div className="text-center py-8">
+                      <Award className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                      <h3 className="text-lg font-semibold mb-2">No certificates yet</h3>
+                      <p className="text-muted-foreground">Complete your courses to earn certificates!</p>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="analytics" className="mt-6">
+            <div className="space-y-6">
+              {/* Learning Analytics Overview */}
+              <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Settings className="h-5 w-5" />
-                    Account Settings
+                    <BarChart3 className="h-5 w-5" />
+                    Learning Analytics Overview
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div className="text-center p-4 bg-[#11204a] rounded-lg">
+                      <div className="text-2xl font-bold text-cyan-300">45</div>
+                      <div className="text-sm text-gray-600">Total Hours</div>
+                    </div>
+                    <div className="text-center p-4 bg-green-50 rounded-lg">
+                      <div className="text-2xl font-bold text-green-600">2.3</div>
+                      <div className="text-sm text-gray-600">Avg. Time/Chapter (min)</div>
+                    </div>
+                    <div className="text-center p-4 bg-yellow-50 rounded-lg">
+                      <div className="text-2xl font-bold text-yellow-600">3</div>
+                      <div className="text-sm text-gray-600">Fast Forward Events</div>
+                    </div>
+                    <div className="text-center p-4 bg-purple-50 rounded-lg">
+                      <div className="text-2xl font-bold text-purple-600">Normal</div>
+                      <div className="text-sm text-gray-600">Learning Pattern</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Course-Specific Analytics */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Activity className="h-5 w-5" />
+                    Course-Specific Analytics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {enrolledCourses.map((course) => (
+                      <div key={course.id} className="border rounded-lg p-4">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="font-semibold">{course.title}</h3>
+                          <Badge className={course.learningAnalytics?.learningPattern === 'normal' ? 'bg-green-100 text-green-800' : 
+                                           course.learningAnalytics?.learningPattern === 'suspicious' ? 'bg-yellow-100 text-yellow-800' : 
+                                           'bg-red-100 text-red-800'}>
+                            {course.learningAnalytics?.learningPattern || 'Normal'} Pattern
+                          </Badge>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                          <div>
+                            <p className="text-sm text-gray-600">Time Spent</p>
+                            <p className="font-semibold">{course.learningAnalytics?.totalTimeSpent || 0} minutes</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-gray-600">Chapters Completed</p>
+                            <p className="font-semibold">{course.learningAnalytics?.chaptersCompleted || 0} / {course.totalLessons}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-gray-600">Avg. Time/Chapter</p>
+                            <p className="font-semibold">{course.learningAnalytics?.averageTimePerChapter || 0} min</p>
+                          </div>
+                        </div>
+
+                        {/* Behavior Flags */}
+                        {course.learningAnalytics?.unusualBehaviorFlags && course.learningAnalytics.unusualBehaviorFlags.length > 0 && (
+                          <div className="mb-4">
+                            <p className="text-sm font-medium text-red-600 mb-2">⚠️ Unusual Behavior Detected:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {course.learningAnalytics.unusualBehaviorFlags.map((flag, index) => (
+                                <Badge key={index} variant="destructive" className="text-xs">
+                                  {flag.replace(/_/g, ' ')}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Assessment Scores */}
+                        {course.assessmentScores && course.assessmentScores.length > 0 && (
+                          <div>
+                            <p className="text-sm font-medium mb-2">Assessment Performance:</p>
+                            <div className="space-y-2">
+                              {course.assessmentScores.map((assessment, index) => (
+                                <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                  <span className="text-sm">Assessment {index + 1}</span>
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-sm">{assessment.score}/{assessment.maxScore}</span>
+                                    <Badge className={assessment.score >= 80 ? 'bg-green-100 text-green-800' : 
+                                                     assessment.score >= 60 ? 'bg-yellow-100 text-yellow-800' : 
+                                                     'bg-red-100 text-red-800'}>
+                                      {assessment.grade}
+                                    </Badge>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Anti-Cheating Alerts */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5 text-red-500" />
+                    Learning Integrity Alerts
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                      <div className="flex items-start gap-3">
+                        <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5" />
+                        <div>
+                          <h4 className="font-medium text-yellow-800">Suspicious Activity Detected</h4>
+                          <p className="text-sm text-yellow-700 mt-1">
+                            Multiple fast-forward events detected in "Digital Marketing Fundamentals". 
+                            Consider reviewing the material more thoroughly.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5" />
+                        <div>
+                          <h4 className="font-medium text-green-800">Good Learning Pattern</h4>
+                          <p className="text-sm text-green-700 mt-1">
+                            Your learning pattern in "Web Development Bootcamp" shows consistent engagement 
+                            and appropriate time spent on each chapter.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Learning Recommendations */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Lightbulb className="h-5 w-5" />
+                    Learning Recommendations
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <Zap className="h-4 w-4 text-cyan-300 mt-0.5" />
+                      <div>
+                        <p className="font-medium">Optimize Your Learning</p>
+                        <p className="text-sm text-gray-600">Try to spend at least 3-5 minutes per chapter for better retention</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Eye className="h-4 w-4 text-green-500 mt-0.5" />
+                      <div>
+                        <p className="font-medium">Review Completed Chapters</p>
+                        <p className="text-sm text-gray-600">Revisit previous chapters to reinforce your understanding</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Target className="h-4 w-4 text-purple-500 mt-0.5" />
+                      <div>
+                        <p className="font-medium">Focus on Weak Areas</p>
+                        <p className="text-sm text-gray-600">Your assessment scores suggest reviewing advanced concepts</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="booking" className="mt-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>1:1 Booking</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center py-8">
+                  <Calendar className="h-16 w-16 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Book a 1:1 Session</h3>
+                  <p className="text-muted-foreground mb-6">
+                    Schedule a personalized 1-on-1 session with one of our expert instructors.
+                    Perfect for getting immediate feedback and personalized guidance.
+                  </p>
+                  <div className="space-y-4">
+                    <Button asChild className="w-full sm:w-auto">
+                      <a href="/one-to-one-booking">Book Now</a>
+                    </Button>
+                    <div className="text-sm text-muted-foreground">
+                      <p>• Get personalized guidance from experts</p>
+                      <p>• Receive immediate feedback on your work</p>
+                      <p>• Ask questions and get detailed explanations</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="settings" className="mt-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Account Settings</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* Notification Settings */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">Notification Preferences</h3>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
                         <Label htmlFor="email-notifications">Email Notifications</Label>
-                        <p className="text-sm text-muted-foreground">Get important course updates and reminders by email</p>
+                        <p className="text-sm text-muted-foreground">Receive course updates and announcements</p>
                       </div>
-                      <Switch 
+                      <Switch
                         id="email-notifications"
                         checked={settings.emailNotifications}
-                        onCheckedChange={(checked) => 
-                          setSettings({...settings, emailNotifications: checked})
-                        }
+                        onCheckedChange={(checked) => setSettings({...settings, emailNotifications: checked})}
                       />
                     </div>
-                    
                     <div className="flex items-center justify-between">
                       <div>
                         <Label htmlFor="push-notifications">Push Notifications</Label>
-                        <p className="text-sm text-muted-foreground">Receive instant notifications about new courses and features</p>
+                        <p className="text-sm text-muted-foreground">Get real-time updates on your device</p>
                       </div>
-                      <Switch 
+                      <Switch
                         id="push-notifications"
                         checked={settings.pushNotifications}
-                        onCheckedChange={(checked) => 
-                          setSettings({...settings, pushNotifications: checked})
-                        }
+                        onCheckedChange={(checked) => setSettings({...settings, pushNotifications: checked})}
                       />
                     </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <Label htmlFor="public-profile">Public Profile</Label>
-                        <p className="text-sm text-muted-foreground">Let others view your learning achievements and progress</p>
-                      </div>
-                      <Switch 
-                        id="public-profile"
-                        checked={settings.publicProfile}
-                        onCheckedChange={(checked) => 
-                          setSettings({...settings, publicProfile: checked})
-                        }
-                      />
-                    </div>
-                    
                     <div className="flex items-center justify-between">
                       <div>
                         <Label htmlFor="course-updates">Course Updates</Label>
-                        <p className="text-sm text-muted-foreground">Be alerted when your enrolled courses are updated</p>
+                        <p className="text-sm text-muted-foreground">Notifications about new course content</p>
                       </div>
-                      <Switch 
+                      <Switch
                         id="course-updates"
                         checked={settings.courseUpdates}
-                        onCheckedChange={(checked) => 
-                          setSettings({...settings, courseUpdates: checked})
-                        }
+                        onCheckedChange={(checked) => setSettings({...settings, courseUpdates: checked})}
                       />
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              {/* Social Media Links */}
-              <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Share2 className="h-5 w-5" />
-                    Connect Your Social Media
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <Facebook className="h-5 w-5 text-blue-600" />
-                      <div className="flex-1">
-                        <Label htmlFor="facebook">Facebook</Label>
-                        <Input 
-                          id="facebook"
-                          placeholder="https://facebook.com/username"
-                          value={settings.socialLinks.facebook}
-                          onChange={(e) => 
-                            setSettings({
-                              ...settings, 
-                              socialLinks: {...settings.socialLinks, facebook: e.target.value}
-                            })
-                          }
-                        />
-                      </div>
+                {/* Social Links */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold">Social Media Links</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="facebook">Facebook</Label>
+                      <Input
+                        id="facebook"
+                        placeholder="Your Facebook profile"
+                        value={settings.socialLinks.facebook}
+                        onChange={(e) => setSettings({
+                          ...settings,
+                          socialLinks: {...settings.socialLinks, facebook: e.target.value}
+                        })}
+                      />
                     </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Twitter className="h-5 w-5 text-blue-400" />
-                      <div className="flex-1">
-                        <Label htmlFor="twitter">Twitter</Label>
-                        <Input 
-                          id="twitter"
-                          placeholder="https://twitter.com/username"
-                          value={settings.socialLinks.twitter}
-                          onChange={(e) => 
-                            setSettings({
-                              ...settings, 
-                              socialLinks: {...settings.socialLinks, twitter: e.target.value}
-                            })
-                          }
-                        />
-                      </div>
+                    <div>
+                      <Label htmlFor="twitter">Twitter</Label>
+                      <Input
+                        id="twitter"
+                        placeholder="Your Twitter handle"
+                        value={settings.socialLinks.twitter}
+                        onChange={(e) => setSettings({
+                          ...settings,
+                          socialLinks: {...settings.socialLinks, twitter: e.target.value}
+                        })}
+                      />
                     </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Linkedin className="h-5 w-5 text-blue-700" />
-                      <div className="flex-1">
-                        <Label htmlFor="linkedin">LinkedIn</Label>
-                        <Input 
-                          id="linkedin"
-                          placeholder="https://linkedin.com/in/username"
-                          value={settings.socialLinks.linkedin}
-                          onChange={(e) => 
-                            setSettings({
-                              ...settings, 
-                              socialLinks: {...settings.socialLinks, linkedin: e.target.value}
-                            })
-                          }
-                        />
-                      </div>
+                    <div>
+                      <Label htmlFor="linkedin">LinkedIn</Label>
+                      <Input
+                        id="linkedin"
+                        placeholder="Your LinkedIn profile"
+                        value={settings.socialLinks.linkedin}
+                        onChange={(e) => setSettings({
+                          ...settings,
+                          socialLinks: {...settings.socialLinks, linkedin: e.target.value}
+                        })}
+                      />
                     </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Instagram className="h-5 w-5 text-pink-600" />
-                      <div className="flex-1">
-                        <Label htmlFor="instagram">Instagram</Label>
-                        <Input 
-                          id="instagram"
-                          placeholder="https://instagram.com/username"
-                          value={settings.socialLinks.instagram}
-                          onChange={(e) => 
-                            setSettings({
-                              ...settings, 
-                              socialLinks: {...settings.socialLinks, instagram: e.target.value}
-                            })
-                          }
-                        />
-                      </div>
+                    <div>
+                      <Label htmlFor="instagram">Instagram</Label>
+                      <Input
+                        id="instagram"
+                        placeholder="Your Instagram handle"
+                        value={settings.socialLinks.instagram}
+                        onChange={(e) => setSettings({
+                          ...settings,
+                          socialLinks: {...settings.socialLinks, instagram: e.target.value}
+                        })}
+                      />
                     </div>
                   </div>
-                  
-                  <Button 
-                    className="w-full" 
-                    onClick={() => 
-                      toast({
-                        title: "Settings Saved",
-                        description: "Your social media links have been updated.",
-                      })
-                    }
-                  >
-                    Save My Social Links
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+
+                <Button className="w-full">Save Settings</Button>
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
       </div>
-      
-      <PageNavigation />
     </div>
   );
 };

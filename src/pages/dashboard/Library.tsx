@@ -15,6 +15,7 @@ import {
   Users,
   ChevronDown
 } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Library = () => {
   const libraryStats = [
@@ -62,6 +63,7 @@ const Library = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
         <div>

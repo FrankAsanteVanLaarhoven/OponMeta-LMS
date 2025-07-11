@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Video, Monitor, FileText, MessageSquare, Users, Calendar, Plus, Settings, Mic, Camera, Share, Edit3 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Collaboration = () => {
   const navigate = useNavigate();
@@ -32,9 +33,10 @@ const Collaboration = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-blue-600">Collaboration Hub</h1>
+          <h1 className="text-3xl font-bold text-cyan-300">Collaboration Hub</h1>
           <p className="text-gray-600 mt-2">
             Facilitate seamless interactions with students and peers using our integrated collaboration tools.
           </p>
@@ -56,8 +58,8 @@ const Collaboration = () => {
           <CardHeader>
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <Video className="h-6 w-6 text-blue-600" />
+                <div className="p-2 bg-[#16203a] rounded-lg">
+                  <Video className="h-6 w-6 text-cyan-300" />
                 </div>
                 <CardTitle className="text-lg">Video Conferencing</CardTitle>
               </div>
@@ -68,15 +70,15 @@ const Collaboration = () => {
             <p className="text-gray-600">
               Host live classes, Q&A sessions, or one-on-one meetings.
             </p>
-            <div className="relative w-full h-32 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg flex items-center justify-center">
+            <div className="relative w-full h-32 bg-[#16203a] rounded-lg flex items-center justify-center">
               <div className="text-center">
-                <Camera className="h-8 w-8 text-blue-400 mx-auto mb-2" />
-                <span className="text-sm text-blue-600 font-medium">Ready to start</span>
+                <Camera className="h-8 w-8 text-cyan-300 mx-auto mb-2" />
+                <span className="text-sm text-cyan-300 font-medium">Ready to start</span>
               </div>
             </div>
             <div className="flex space-x-2">
               <Button 
-                className="flex-1 bg-blue-600 hover:bg-blue-700"
+                className="flex-1 bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]"
                 onClick={handleStartMeeting}
               >
                 <Plus className="mr-2 h-4 w-4" />
@@ -112,7 +114,7 @@ const Collaboration = () => {
             <p className="text-gray-600">
               Brainstorm ideas, explain concepts visually, and collaborate in real-time.
             </p>
-            <div className="relative w-full h-32 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg flex items-center justify-center">
+            <div className="relative w-full h-32 bg-[#16203a] rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <Edit3 className="h-8 w-8 text-purple-400 mx-auto mb-2" />
                 <span className="text-sm text-purple-600 font-medium">5 templates available</span>
@@ -153,7 +155,7 @@ const Collaboration = () => {
             <p className="text-gray-600">
               Co-author documents, share notes, and provide feedback instantly.
             </p>
-            <div className="relative w-full h-32 bg-gradient-to-br from-green-50 to-green-100 rounded-lg flex items-center justify-center">
+            <div className="relative w-full h-32 bg-[#16203a] rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <FileText className="h-8 w-8 text-green-400 mx-auto mb-2" />
                 <span className="text-sm text-green-600 font-medium">12 documents shared</span>
@@ -257,7 +259,7 @@ const Collaboration = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 border rounded-lg">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-cyan-300 rounded-full"></div>
                     <div>
                       <h4 className="font-medium"># general</h4>
                       <p className="text-sm text-gray-500">Course announcements and general chat</p>
@@ -271,7 +273,7 @@ const Collaboration = () => {
 
                 <div className="flex items-center justify-between p-3 border rounded-lg">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-cyan-300 rounded-full"></div>
                     <div>
                       <h4 className="font-medium"># assignments</h4>
                       <p className="text-sm text-gray-500">Assignment discussions and submissions</p>
@@ -285,7 +287,7 @@ const Collaboration = () => {
 
                 <div className="flex items-center justify-between p-3 border rounded-lg">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-cyan-300 rounded-full"></div>
                     <div>
                       <h4 className="font-medium"># project-collaboration</h4>
                       <p className="text-sm text-gray-500">Team projects and group work</p>

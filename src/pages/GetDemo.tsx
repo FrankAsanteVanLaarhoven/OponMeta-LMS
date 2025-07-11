@@ -27,7 +27,7 @@ const GetDemo = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
+      {/* Removed <Navigation /> to prevent double navbar */}
       
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
@@ -42,10 +42,10 @@ const GetDemo = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Demo Info */}
           <div className="space-y-8">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#0a1834] border-4 border-[#11204a]">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
-                  <Video className="h-8 w-8 text-blue-400" />
+                  <Video className="h-8 w-8 text-cyan-300" />
                   <h2 className="text-2xl font-bold text-white">What You'll See</h2>
                 </div>
                 <div className="space-y-4">
@@ -59,7 +59,7 @@ const GetDemo = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#0a1834] border-4 border-[#11204a]">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
                   <Clock className="h-8 w-8 text-purple-400" />
@@ -71,7 +71,7 @@ const GetDemo = () => {
                     <span>Duration: 30-45 minutes</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Video className="h-5 w-5 text-blue-400" />
+                    <Video className="h-5 w-5 text-cyan-300" />
                     <span>Platform: Zoom/Teams/Google Meet</span>
                   </div>
                   <div className="flex items-center space-x-3">

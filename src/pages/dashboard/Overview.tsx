@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { LineChart, Line, ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid } from "recharts";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Overview = () => {
   const [coursePending] = useState(0);
@@ -114,50 +115,48 @@ const Overview = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white min-h-screen">
+      <DashboardBackButton />
       {/* Header with Search and More Menu */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
         <div className="flex items-center space-x-6">
           <div>
-            <h1 className="text-3xl font-bold text-blue-600">Dashboard</h1>
-            <p className="text-gray-600 mt-1">Monitor your training platform performance</p>
+            <h1 className="text-3xl font-bold text-[#0a1834] dark:text-cyan-300">Dashboard</h1>
+            <p className="text-[#22305a] dark:text-cyan-200 mt-1">Monitor your training platform performance</p>
           </div>
         </div>
-        
         <div className="flex items-center space-x-4">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#22305a] dark:text-cyan-300 h-4 w-4" />
             <Input 
               placeholder="Search Groups" 
-              className="pl-10 w-64 bg-gray-50 border-gray-200"
+              className="pl-10 w-64 bg-[#f5f7fa] dark:bg-[#16203a] border-[#e5e7eb] dark:border-[#22305a] text-[#0a1834] dark:text-white"
             />
           </div>
-          
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-600">{activeUsers} of {totalUsers} Active Users</span>
+            <span className="text-sm text-[#22305a] dark:text-cyan-200">{activeUsers} of {totalUsers} Active Users</span>
             <div className="flex items-center space-x-1">
-              <div className="w-16 h-2 bg-gray-200 rounded-full">
+              <div className="w-16 h-2 bg-[#e5e7eb] dark:bg-[#22305a] rounded-full">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               </div>
             </div>
           </div>
-          
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="bg-white dark:bg-[#16203a] text-[#0a1834] dark:text-white border-[#e5e7eb] dark:border-[#22305a]">
                 <MoreHorizontal className="h-4 w-4 mr-2" />
                 More
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-64">
+            <DropdownMenuContent align="end" className="w-64 bg-white dark:bg-[#16203a] text-[#0a1834] dark:text-white border-[#e5e7eb] dark:border-[#22305a]">
               {quickActions.map((action, index) => {
                 const Icon = action.icon;
                 return (
-                  <DropdownMenuItem key={index} className="flex items-center space-x-3 p-3">
-                    <Icon className="h-5 w-5 text-blue-600" />
+                  <DropdownMenuItem key={index} className="flex items-center space-x-3 p-3 hover:bg-[#f0f4fa] dark:hover:bg-[#22305a]">
+                    <Icon className="h-5 w-5 text-cyan-600 dark:text-cyan-300" />
                     <div>
                       <div className="font-medium">{action.label}</div>
-                      <div className="text-xs text-gray-500">{action.description}</div>
+                      <div className="text-xs text-[#22305a] dark:text-cyan-200">{action.description}</div>
                     </div>
                   </DropdownMenuItem>
                 );
@@ -166,45 +165,41 @@ const Overview = () => {
           </DropdownMenu>
         </div>
       </div>
-      
       {/* Vendor Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+        <Card className="bg-white dark:bg-[#16203a] border-[#e5e7eb] dark:border-[#22305a] hover:bg-[#f0f4fa] dark:hover:bg-[#22305a] transition-all duration-300">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Total Courses</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#22305a] dark:text-cyan-200">Total Courses</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">{courseStats.totalCourses}</div>
+            <div className="text-2xl font-bold text-[#0a1834] dark:text-white">{courseStats.totalCourses}</div>
             <p className="text-xs text-green-600 mt-1">+2 this month</p>
           </CardContent>
         </Card>
-
-        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+        <Card className="bg-white dark:bg-[#16203a] border-[#e5e7eb] dark:border-[#22305a] hover:bg-[#f0f4fa] dark:hover:bg-[#22305a] transition-all duration-300">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Total Students</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#22305a] dark:text-cyan-200">Total Students</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">{courseStats.totalStudents.toLocaleString()}</div>
+            <div className="text-2xl font-bold text-[#0a1834] dark:text-white">{courseStats.totalStudents.toLocaleString()}</div>
             <p className="text-xs text-green-600 mt-1">+127 this week</p>
           </CardContent>
         </Card>
-
-        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+        <Card className="bg-white dark:bg-[#16203a] border-[#e5e7eb] dark:border-[#22305a] hover:bg-[#f0f4fa] dark:hover:bg-[#22305a] transition-all duration-300">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Total Revenue</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#22305a] dark:text-cyan-200">Total Revenue</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">${courseStats.totalRevenue.toLocaleString()}</div>
+            <div className="text-2xl font-bold text-[#0a1834] dark:text-white">${courseStats.totalRevenue.toLocaleString()}</div>
             <p className="text-xs text-green-600 mt-1">+12% vs last month</p>
           </CardContent>
         </Card>
-
-        <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300">
+        <Card className="bg-white dark:bg-[#16203a] border-[#e5e7eb] dark:border-[#22305a] hover:bg-[#f0f4fa] dark:hover:bg-[#22305a] transition-all duration-300">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Completion Rate</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#22305a] dark:text-cyan-200">Completion Rate</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">{courseStats.completionRate}%</div>
+            <div className="text-2xl font-bold text-[#0a1834] dark:text-white">{courseStats.completionRate}%</div>
             <p className="text-xs text-green-600 mt-1">+5% improvement</p>
           </CardContent>
         </Card>

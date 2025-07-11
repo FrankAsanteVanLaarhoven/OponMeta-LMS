@@ -9,5 +9,11 @@
   "common": {
     "loading": "Loading...",
     "error": "Error"
+  },
+  "cta": {
+    "title": "Ready to Shape Your Future?",
+    "subtitle": "Join thousands of learners advancing their careers with our global education platform.",
+    "startLearning": "Start Learning Now",
+    "becomeInstructor": "Become a Global Instructor"
   }
 } 

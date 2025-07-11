@@ -21,6 +21,7 @@ import {
   AlertCircle,
   CheckCircle
 } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Revenue = () => {
   const handlePaystackSettings = () => {
@@ -48,8 +49,9 @@ const Revenue = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-blue-600">Revenue Monitoring</h1>
+        <h1 className="text-3xl font-bold text-cyan-300">Revenue Monitoring</h1>
         <div className="flex space-x-2">
           <Button variant="outline">
             <Download className="mr-2 h-4 w-4" />
@@ -76,7 +78,7 @@ const Revenue = () => {
             <DollarSign className="h-5 w-5 text-gray-400" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-600">$25,750.00</div>
+            <div className="text-3xl font-bold text-cyan-300">$25,750.00</div>
             <div className="flex items-center text-sm text-green-600 mt-2">
               <ArrowUpRight className="h-4 w-4 mr-1" />
               <span>+12.5% from last month</span>
@@ -93,7 +95,7 @@ const Revenue = () => {
             <CreditCard className="h-5 w-5 text-gray-400" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-600">$1,230.50</div>
+            <div className="text-3xl font-bold text-cyan-300">$1,230.50</div>
             <p className="text-sm text-gray-500 mt-2">Next payout: Aug 1, 2024</p>
             <div className="flex items-center text-sm text-orange-600 mt-1">
               <Calendar className="h-4 w-4 mr-1" />
@@ -110,7 +112,7 @@ const Revenue = () => {
             <TrendingUp className="h-5 w-5 text-gray-400" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-600">$49.99</div>
+            <div className="text-3xl font-bold text-cyan-300">$49.99</div>
             <p className="text-sm text-gray-500 mt-2">Based on last 30 days</p>
             <div className="flex items-center text-sm text-green-600 mt-1">
               <ArrowUpRight className="h-4 w-4 mr-1" />
@@ -127,7 +129,7 @@ const Revenue = () => {
             <Users className="h-5 w-5 text-gray-400" />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-600">2,847</div>
+            <div className="text-3xl font-bold text-cyan-300">2,847</div>
             <p className="text-sm text-gray-500 mt-2">Active enrollments</p>
             <div className="flex items-center text-sm text-green-600 mt-1">
               <ArrowUpRight className="h-4 w-4 mr-1" />
@@ -171,7 +173,7 @@ const Revenue = () => {
             <div className="space-y-3">
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-600">Your Share (70%)</span>
-                <span className="font-semibold text-blue-600">$18,025.00</span>
+                <span className="font-semibold text-cyan-300">$18,025.00</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-600">Platform Fee (30%)</span>
@@ -199,7 +201,7 @@ const Revenue = () => {
               <div className="flex items-center space-x-2">
                 <AlertCircle className="h-4 w-4 text-orange-500" />
                 <span className="text-sm text-gray-600">Aug 1, 2024</span>
-                <span className="font-semibold text-blue-600">$1,230.50</span>
+                <span className="font-semibold text-cyan-300">$1,230.50</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Calendar className="h-4 w-4 text-gray-400" />
@@ -237,7 +239,7 @@ const Revenue = () => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold text-blue-600">${course.revenue.toFixed(2)}</div>
+                      <div className="font-semibold text-cyan-300">${course.revenue.toFixed(2)}</div>
                       <div className="text-sm text-gray-500">Total Revenue</div>
                     </div>
                   </div>
@@ -290,7 +292,7 @@ const Revenue = () => {
                             variant={transaction.type === 'Sale' ? 'default' : transaction.type === 'Payout' ? 'secondary' : 'destructive'}
                             className={
                               transaction.type === 'Sale' ? 'bg-green-100 text-green-800' :
-                              transaction.type === 'Payout' ? 'bg-blue-100 text-blue-800' :
+                              transaction.type === 'Payout' ? 'bg-[#16203a] text-cyan-300' :
                               'bg-red-100 text-red-800'
                             }
                           >
@@ -301,7 +303,7 @@ const Revenue = () => {
                         <TableCell className={transaction.amount < 0 ? 'text-red-600' : 'text-green-600'}>
                           ${Math.abs(transaction.amount).toFixed(2)}
                         </TableCell>
-                        <TableCell className={transaction.commission < 0 ? 'text-red-600' : 'text-blue-600'}>
+                        <TableCell className={transaction.commission < 0 ? 'text-red-600' : 'text-cyan-300'}>
                           ${Math.abs(transaction.commission).toFixed(2)}
                         </TableCell>
                         <TableCell>
@@ -341,7 +343,7 @@ const Revenue = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium">January 2024</span>
-                    <span className="text-lg font-bold text-blue-600">$8,250.00</span>
+                    <span className="text-lg font-bold text-cyan-300">$8,250.00</span>
                   </div>
                   <Progress value={85} className="h-2" />
                   

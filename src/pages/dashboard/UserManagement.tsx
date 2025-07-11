@@ -31,6 +31,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Progress } from "@/components/ui/progress";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const UserManagement = () => {
   const [activeTab, setActiveTab] = useState("users");
@@ -67,6 +68,7 @@ const UserManagement = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">User Management</h1>

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import PageNavigation from "@/components/PageNavigation";
 import { 
   CheckCircle, 
   Clock, 
@@ -19,7 +18,6 @@ import {
   Eye,
   Download
 } from "lucide-react";
-import Navigation from "@/components/Navigation";
 import { useState } from "react";
 
 const QuizBuilder = () => {
@@ -76,7 +74,6 @@ const QuizBuilder = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
       
       {/* Header */}
       <section className="py-20 px-4">
@@ -86,11 +83,11 @@ const QuizBuilder = () => {
             Design interactive assessments with a variety of question types. Monitor progress with advanced analytics and AI-driven insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
+            <Button size="lg" className="bg-[#11204a] text-white hover:bg-[#16203a] border-2 border-[#0a1834]">
               <Plus className="mr-2 h-5 w-5" />
               New Quiz
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="border-[#11204a] text-[#11204a] hover:bg-[#11204a]/10">
               <Eye className="mr-2 h-5 w-5" />
               Preview Example
             </Button>
@@ -155,7 +152,7 @@ const QuizBuilder = () => {
                     <p className="text-gray-500 mb-6">
                       Drag and drop question types or click to add new questions
                     </p>
-                    <Button className="bg-blue-600 hover:bg-blue-700">
+                    <Button className="bg-[#11204a] text-white hover:bg-[#16203a] border-2 border-[#0a1834]">
                       Add Question
                     </Button>
                   </div>
@@ -376,7 +373,6 @@ const QuizBuilder = () => {
           </div>
         </div>
       </section>
-      <PageNavigation />
     </div>
   );
 };

@@ -22,6 +22,7 @@ import {
   Tag,
   BarChart3
 } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Templates = () => {
   const templateCategories = [
@@ -152,6 +153,7 @@ const Templates = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       {/* Header */}
       <div className="text-center max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">Training Templates & Examples</h1>

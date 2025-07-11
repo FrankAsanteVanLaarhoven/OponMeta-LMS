@@ -1,135 +1,99 @@
-import FeatureShowcase from "@/components/FeatureShowcase";
-import FeatureGrid from "@/components/FeatureGrid";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import PageNavigation from "@/components/PageNavigation";
-import Footer from "@/components/Footer";
+import { Zap, Globe, Users, BookOpen, Star, CreditCard, BarChart3, Shield, Briefcase, Heart, Target, TrendingUp, Award } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const features = [
+  {
+    icon: <Zap className="w-8 h-8 text-blue-600" />, title: 'AI-Powered Course Creation',
+    desc: 'Instantly generate courses, lessons, quizzes, videos, and assessments with advanced AI tools. Empower instructors and organizations to scale content creation and keep learning fresh.'
+  },
+  {
+    icon: <Globe className="w-8 h-8 text-green-600" />, title: 'Multilingual & Global',
+    desc: 'Reach learners worldwide with seamless language switching and culturally adaptive content. OponMeta supports 10+ languages and growing.'
+  },
+  {
+    icon: <Users className="w-8 h-8 text-purple-600" />, title: 'Personalized Learning Companions',
+    desc: 'AI companions guide, motivate, and adapt to each learner’s journey. Unlock premium features with subscription plans.'
+  },
+  {
+    icon: <CreditCard className="w-8 h-8 text-pink-600" />, title: 'Flexible Subscriptions & Payments',
+    desc: 'Student, instructor, and vendor/advertiser plans. Secure Stripe integration for global payments. Manage everything in one place.'
+  },
+  {
+    icon: <BookOpen className="w-8 h-8 text-yellow-600" />, title: 'Student & Instructor Portals',
+    desc: 'Intuitive dashboards for tracking progress, managing courses, and engaging with the community.'
+  },
+  {
+    icon: <Briefcase className="w-8 h-8 text-indigo-600" />, title: 'Vendor & Advertiser System',
+    desc: 'Offer courses, manage subscriptions, and run targeted ad campaigns. Monetize your expertise or reach new audiences.'
+  },
+  {
+    icon: <BarChart3 className="w-8 h-8 text-orange-600" />, title: 'Analytics & Insights',
+    desc: 'Track learning outcomes, engagement, and ROI with real-time analytics for students, instructors, and vendors.'
+  },
+  {
+    icon: <Target className="w-8 h-8 text-teal-600" />, title: 'Ad Management & Scheduling',
+    desc: 'Dynamic ad panel with scheduling, targeting, and role-based access. Maximize visibility and revenue.'
+  },
+  {
+    icon: <Award className="w-8 h-8 text-rose-600" />, title: 'World-Class UX & Accessibility',
+    desc: 'Modern, responsive design. Accessible to all learners, on any device.'
+  },
+  {
+    icon: <Star className="w-8 h-8 text-yellow-500" />, title: 'Mega-Menu Navigation',
+    desc: 'One powerful, expandable navbar for all navigation. Effortlessly explore 22+ course categories, subcategories, and featured content.'
+  },
+  {
+    icon: <TrendingUp className="w-8 h-8 text-fuchsia-600" />, title: 'Career & Skills Focused',
+    desc: 'Discover trending skills, career paths, and industry-aligned learning goals.'
+  },
+  {
+    icon: <Shield className="w-8 h-8 text-gray-600" />, title: 'Secure & Private',
+    desc: 'Enterprise-grade security, privacy, and compliance. Your data is always protected.'
+  },
+  {
+    icon: <Heart className="w-8 h-8 text-red-500" />, title: 'Community & Support',
+    desc: 'Engage with peers, mentors, and support teams. Learning is better together.'
+  }
+];
 
 const Features = () => {
-  const featureCategories = [
-    "Global Knowledge Accessibility",
-    "Innovation & Future-Ready Skills", 
-    "Collaborative Learning Environment",
-    "Industry-Relevant Training",
-    "Professional Growth & Leadership Development",
-    "Networking & Global Partnerships",
-    "Inclusivity & Diversity in Learning",
-    "Continuous Learning Culture",
-    "Digital Branding & Market Positioning",
-    "Monetization & Business Sustainability",
-    "Emerging Technology Integration",
-    "Community-Driven Marketing"
-  ];
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-gray-900">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary via-primary-foreground to-accent">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex justify-center mb-8">
-            <img 
-              src="/logo.png"
-              alt="OPONMETA Logo" 
-              className="h-16 w-auto"
-            />
-          </div>
-           <h1 className="text-5xl font-bold text-slate-800 drop-shadow-lg mb-6">
-             Discover OPONMETA's Global Features
-           </h1>
-           <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8 drop-shadow-md font-medium">
-            A truly global learning platform: advanced technology, inclusive education, and worldwide industry collaboration
-          </p>
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {featureCategories.map((category) => (
-              <Badge 
-                key={category} 
-                variant="secondary" 
-                className="bg-card/90 text-card-foreground border-border backdrop-blur-sm hover:bg-card hover:shadow-md transition-all duration-200"
-              >
-                {category}
-              </Badge>
-            ))}
-          </div>
+      <section className="py-20 px-4 text-center">
+        <div className="max-w-3xl mx-auto mb-10">
+          <img src="/logo.png" alt="OponMeta Logo" className="h-16 mx-auto mb-6" />
+          <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">Unlock the Future of Learning with OponMeta</h1>
+          <p className="text-xl text-gray-700 mb-8">AI-powered, multilingual, and designed for students, instructors, and organizations worldwide. Experience the most advanced, accessible, and engaging educational platform ever built.</p>
+          <Button size="lg" className="text-lg px-8 py-4 font-bold shadow-lg" asChild>
+            <a href="/signup">Start Free – Join OponMeta Today</a>
+          </Button>
         </div>
       </section>
 
-      {/* Main Feature Showcase */}
-      <FeatureShowcase 
-        title="Why Choose OPONMETA?"
-        subtitle="Empowering learners, educators, and organizations everywhere with innovative, inclusive, and future-ready features."
-      />
-      
-      {/* Feature Categories Overview */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">A Holistic Approach to Global Learning</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From multilingual access to the latest in technology, OPONMETA supports every dimension of modern, international education.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-card-foreground mb-4">Global Accessibility</h3>
-                <p className="text-muted-foreground mb-4">
-                  Multilingual access, scholarships, and inclusive learning for everyone
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Multiple language support</li>
-                  <li>• Free educational resources</li>
-                  <li>• Culturally adaptive content</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-card-foreground mb-4">Future-Ready Technology</h3>
-                <p className="text-muted-foreground mb-4">
-                  AI-driven learning, Web3, and immersive virtual experiences
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• AI-powered courses</li>
-                  <li>• Blockchain-based credentials</li>
-                  <li>• Virtual learning environments</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-card-foreground mb-4">Industry Partnerships</h3>
-                <p className="text-muted-foreground mb-4">
-                  Corporate learning, university alliances, and global professional networks
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Corporate certifications</li>
-                  <li>• Research collaborations</li>
-                  <li>• International conferences</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+      {/* Features Grid */}
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((f, i) => (
+            <div key={i} className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-200 border border-gray-100">
+              <div className="mb-4">{f.icon}</div>
+              <h3 className="text-2xl font-bold mb-2">{f.title}</h3>
+              <p className="text-gray-600 text-base mb-2">{f.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* All Features Grid */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">All-Inclusive Feature Set</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover the 24 features that make OPONMETA a leader in global education and digital learning
-            </p>
-          </div>
-          <FeatureGrid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" />
+      {/* Call to Action */}
+      <section className="py-16 px-4 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Ready to experience the next generation of learning?</h2>
+          <p className="text-lg text-gray-700 mb-8">Sign up now and join a global community of learners, educators, and innovators. OponMeta is your gateway to limitless knowledge and opportunity.</p>
+          <Button size="lg" className="text-lg px-8 py-4 font-bold shadow-lg" asChild>
+            <a href="/signup">Get Started Free</a>
+          </Button>
         </div>
       </section>
-
-      <PageNavigation />
-      <Footer />
     </div>
   );
 };

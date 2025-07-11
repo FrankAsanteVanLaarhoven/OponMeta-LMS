@@ -1,217 +1,150 @@
-import Navigation from "@/components/Navigation";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Globe, Users, Award, Heart, Target, Eye } from "lucide-react";
-import PageNavigation from "@/components/PageNavigation";
+import React from 'react';
+import { Target, Eye, Globe, Users, Award, Heart } from 'lucide-react';
 
-const About = () => {
-  const values = [
-    {
-      icon: Globe,
-      title: "Global Excellence",
-      description: "We celebrate and promote diverse expertise while connecting learners with comprehensive global knowledge networks and multilingual platforms."
-    },
-    {
-      icon: Users,
-      title: "Inclusive Innovation",
-      description: "Quality education with AI-powered learning, Web3 integration, and emerging technologies should be accessible to everyone, regardless of location or background."
-    },
-    {
-      icon: Award,
-      title: "Future-Ready Quality",
-      description: "We maintain the highest standards in course content, industry partnerships, blockchain certifications, and cutting-edge learning outcomes."
-    },
-    {
-      icon: Heart,
-      title: "Community & Collaboration",
-      description: "Every course contributes to building stronger global communities through mentorship programs, professional networks, and sustainable development initiatives."
-    }
-  ];
+const values = [
+  {
+    icon: Globe,
+    title: 'We celebrate and promote diverse expertise while connecting learners with comprehensive global knowledge networks and multilingual platforms.'
+  },
+  {
+    icon: Users,
+    title: 'Quality education with AI-powered learning, Web3 integration, and emerging technologies should be accessible to everyone, regardless of location or background.'
+  },
+  {
+    icon: Award,
+    title: 'We maintain the highest standards in course content, industry partnerships, blockchain certifications, and cutting-edge learning outcomes.'
+  },
+  {
+    icon: Heart,
+    title: 'Every course contributes to building stronger global communities through mentorship programs, professional networks, and sustainable development initiatives.'
+  }
+];
 
-  const team = [
-    {
-      name: "Dr. Amina Hassan",
-      role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      bio: "Former World Bank education specialist with 15+ years in African development"
-    },
-    {
-      name: "James Ochieng",
-      role: "Head of Technology",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      bio: "Tech entrepreneur who built educational platforms reaching 2M+ students"
-    },
-    {
-      name: "Sarah Kimani",
-      role: "Head of Content",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-      bio: "Former university dean specializing in curriculum development and quality assurance"
-    },
-    {
-      name: "Mohamed Al-Rashid",
-      role: "Head of Partnerships",
-      image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
-      bio: "International education consultant with extensive network across MENA and Africa"
-    }
-  ];
+const team = [
+  {
+    name: 'Founder & CEO',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+    bio: 'Former World Bank education specialist with 15+ years in African development'
+  },
+  {
+    name: 'Head of Technology',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
+    bio: 'Tech entrepreneur who built educational platforms reaching 2M+ students'
+  },
+  {
+    name: 'Head of Content',
+    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
+    bio: 'Former university dean specializing in curriculum development and quality assurance'
+  },
+  {
+    name: 'Head of Partnerships',
+    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334',
+    bio: 'International education consultant with extensive network across MENA and Africa'
+  }
+];
 
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-            Advancing Global Education with
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              {" "}OPONMETA
-            </span>
-          </h1>
-          <p className="text-xl text-slate-800 leading-relaxed">
-            OPONMETA was founded to unlock the world's intellectual potential through innovative, inclusive, and accessible education. We believe that by equipping learners everywhere with advanced technology, multilingual access, and global partnerships, we can address humanity's greatest challenges and thrive in the digital era.
+const About = () => (
+  <div className="min-h-screen bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
+    {/* Hero Section */}
+    <section className="py-16 px-4 bg-[#f0f4fa] dark:bg-[#0a1834] text-center">
+      <h1 className="text-5xl lg:text-6xl font-bold text-[#0a1834] dark:text-white mb-6">
+        Empowering Global Learning<br />
+        Through <span className="bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">OPONMETA</span>
+      </h1>
+    </section>
+
+    {/* About Us, Mission, Vision (added section) */}
+    <section className="py-12 px-4 bg-white dark:bg-[#16203a] text-[#0a1834] dark:text-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold mb-4">About Us</h2>
+        <p className="mb-6 text-lg text-[#16203a] dark:text-cyan-300">
+          OponMeta is a global EdTech powerhouse pioneering the future of digital learning. We craft transformative experiences in professional development and technical education, equipping today's learners and tomorrow's workforce with the tools to thrive in a rapidly evolving world. From immersive training modules to scalable learning platforms, OponMeta empowers institutions and individuals to unlock their full potential—redefining what learning can achieve across borders and industries.
+        </p>
+        <h3 className="text-2xl font-semibold mt-8 mb-2">Mission</h3>
+        <p className="mb-6 text-lg text-[#16203a] dark:text-cyan-300">
+          To create a dynamic, accessible, and innovative platform where professionals can gain technical expertise, strengthen leadership skills, and drive industry progress through lifelong learning. By fostering a culture of excellence and innovation, OponMeta supports professionals in unlocking their full potential and shaping the future of global industries.
+        </p>
+        <h3 className="text-2xl font-semibold mt-8 mb-2">Vision</h3>
+        <p className="text-lg text-[#16203a] dark:text-cyan-300">
+          To be the foremost global hub for professional developments and technical education, empowering individuals, businesses, and communities through world-class learning, knowledge-sharing, and industry partnerships.
+        </p>
+      </div>
+    </section>
+
+    {/* Mission & Vision */}
+    <section className="py-16 px-4 bg-[#f0f4fa] dark:bg-[#0a1834]">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="bg-white dark:bg-[#16203a] rounded-xl shadow p-8 flex flex-col items-center border border-[#e5e7eb] dark:border-[#22305a]">
+          <Target className="h-10 w-10 text-cyan-600 dark:text-cyan-300 mb-4" />
+          <p className="text-lg text-center text-[#16203a] dark:text-white">
+            To democratize access to high-quality global education through multilingual platforms, AI-powered learning, Web3 integration, industry partnerships, and inclusive programs that empower learners, educators, and organizations worldwide with future-ready skills.
           </p>
         </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
-          <Card className="bg-white/10 backdrop-blur-md border-white/20">
-            <CardContent className="p-8">
-              <div className="flex items-center space-x-3 mb-6">
-                <Target className="h-8 w-8 text-blue-400" />
-                <h2 className="text-2xl font-bold text-white">Our Mission</h2>
-              </div>
-              <p className="text-slate-800 text-lg leading-relaxed">
-                To make high-quality global education accessible to all through multilingual platforms, AI-powered learning, Web3, industry partnerships, and inclusive programs that empower learners, educators, and organizations with future-ready skills.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/10 backdrop-blur-md border-white/20">
-            <CardContent className="p-8">
-              <div className="flex items-center space-x-3 mb-6">
-                <Eye className="h-8 w-8 text-purple-400" />
-                <h2 className="text-2xl font-bold text-white">Our Vision</h2>
-              </div>
-              <p className="text-slate-800 text-lg leading-relaxed">
-                A world where every learner has access to comprehensive, technology-driven education, where diverse expertise is valued, and where innovative learning drives sustainable development and international collaboration.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Our Values</h2>
-            <p className="text-xl text-slate-800 max-w-2xl mx-auto">
-              The guiding principles behind our global mission
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 text-center group hover:bg-white/15 transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="inline-flex p-3 rounded-full bg-white/10 mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <value.icon className="h-8 w-8 text-blue-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">{value.title}</h3>
-                  <p className="text-slate-800 text-sm leading-relaxed">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <Card className="bg-white/10 backdrop-blur-md border-white/20">
-            <CardContent className="p-12">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-white mb-4">Our Impact</h2>
-                <p className="text-xl text-slate-800">Expanding access to quality education worldwide through innovation</p>
-              </div>
-              <div className="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">50,000+</div>
-                  <div className="text-slate-800 text-xs">Learners empowered globally</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">54</div>
-                  <div className="text-slate-800 text-xs">International presence</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">1,200+</div>
-                  <div className="text-slate-800 text-xs">Global teaching network</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">89%</div>
-                  <div className="text-slate-800 text-xs">Learner success rate</div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Meet Our Team</h2>
-            <p className="text-xl text-slate-800 max-w-2xl mx-auto">
-              Meet the passionate educators and technologists driving global education forward
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 text-center group hover:bg-white/15 transition-all duration-300">
-                <CardContent className="p-6">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <h3 className="text-lg font-semibold text-white mb-1">{member.name}</h3>
-                  <p className="text-blue-400 font-medium mb-3">{member.role}</p>
-                  <p className="text-slate-800 text-sm leading-relaxed">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Become Part of Our Global Mission
-          </h2>
-          <p className="text-xl text-slate-800 mb-8">
-            Whether you are a learner, educator, or partner, you belong in our global community
+        <div className="bg-white dark:bg-[#16203a] rounded-xl shadow p-8 flex flex-col items-center border border-[#e5e7eb] dark:border-[#22305a]">
+          <Eye className="h-10 w-10 text-cyan-600 dark:text-cyan-300 mb-4" />
+          <p className="text-lg text-center text-[#16203a] dark:text-white">
+            A future where every learner globally has access to comprehensive, technology-enhanced education, where diverse expertise is recognized and celebrated, and where innovative learning solutions serve as the foundation for sustainable development and global collaboration.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
-              Start Learning Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Become an Instructor
-            </Button>
-          </div>
         </div>
-      </section>
-      <PageNavigation />
-    </div>
-  );
-};
+      </div>
+    </section>
+
+    {/* Principles/Values */}
+    <section className="py-16 px-4 bg-white dark:bg-[#16203a]">
+      <h2 className="text-2xl font-semibold text-center mb-10 text-[#0a1834] dark:text-white">The principles that guide everything we do</h2>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+        {values.map((value, idx) => (
+          <div key={idx} className="bg-[#f0f4fa] dark:bg-[#11204a] rounded-xl shadow p-6 flex flex-col items-center text-center border border-[#e5e7eb] dark:border-[#22305a]">
+            <value.icon className="h-8 w-8 text-cyan-600 dark:text-cyan-300 mb-4" />
+            <p className="text-base text-[#16203a] dark:text-white">{value.title}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Impact Stats */}
+    <section className="py-16 px-4 bg-[#f0f4fa] dark:bg-[#0a1834]">
+      <h2 className="text-2xl font-semibold text-center mb-10 text-[#0a1834] dark:text-white">Making comprehensive education accessible globally through innovative technology</h2>
+      <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div className="text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-2">50,000+</div>
+          <div className="text-[#16203a] dark:text-white text-sm">Lives Transformed</div>
+        </div>
+        <div>
+          <div className="text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-2">54</div>
+          <div className="text-[#16203a] dark:text-white text-sm">Countries Reached</div>
+        </div>
+        <div>
+          <div className="text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-2">1,200+</div>
+          <div className="text-[#16203a] dark:text-white text-sm">Expert Instructors</div>
+        </div>
+        <div>
+          <div className="text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-2">89%</div>
+          <div className="text-[#16203a] dark:text-white text-sm">Career Advancement</div>
+        </div>
+      </div>
+    </section>
+
+    {/* Team Section */}
+    <section className="py-16 px-4 bg-white dark:bg-[#16203a]">
+      <h2 className="text-2xl font-semibold text-center mb-10 text-[#0a1834] dark:text-white">Passionate educators and technologists dedicated to transforming global education through innovation</h2>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+        {team.map((member, idx) => (
+          <div key={idx} className="bg-[#f0f4fa] dark:bg-[#11204a] rounded-xl shadow p-6 flex flex-col items-center text-center border border-[#e5e7eb] dark:border-[#22305a]">
+            <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full object-cover mb-4" />
+            <div className="font-semibold text-cyan-600 dark:text-cyan-300 mb-1">{member.name}</div>
+            <div className="text-[#16203a] dark:text-white text-sm">{member.bio}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Final CTA */}
+    <section className="py-16 px-4 text-center bg-[#f0f4fa] dark:bg-[#0a1834]">
+      <h2 className="text-2xl font-semibold mb-6 text-[#0a1834] dark:text-white">Whether you're a learner, educator, or partner, there's a place for you in our community</h2>
+      <a href="/start-learning" className="text-xl text-cyan-600 dark:text-cyan-300 font-bold underline">Start Learning</a>
+    </section>
+  </div>
+);
 
 export default About;

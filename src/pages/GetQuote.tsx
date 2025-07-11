@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Calculator, Users, Clock, Shield, CheckCircle, Phone } from "lucide-react";
-import PageNavigation from "@/components/PageNavigation";
 
 const GetQuote = () => {
   const pricingFeatures = [
@@ -35,7 +33,6 @@ const GetQuote = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
       
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
@@ -256,7 +253,6 @@ const GetQuote = () => {
           </div>
         </div>
       </div>
-      <PageNavigation />
     </div>
   );
 };

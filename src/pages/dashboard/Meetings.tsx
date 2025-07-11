@@ -21,6 +21,7 @@ import {
   UserPlus,
   Copy
 } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Meetings = () => {
   const upcomingMeetings = [
@@ -71,9 +72,10 @@ const Meetings = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-blue-600">Video Meetings</h1>
+          <h1 className="text-3xl font-bold text-cyan-300">Video Meetings</h1>
           <p className="text-gray-600 mt-2">
             Host live classes, Q&A sessions, and collaborate with students in real-time.
           </p>
@@ -91,24 +93,24 @@ const Meetings = () => {
       </div>
 
       {/* Quick Start Meeting */}
-      <Card className="bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200">
+      <Card className="bg-[#16203a] border-[#11204a]">
         <CardContent className="p-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="p-3 bg-blue-600 rounded-full">
+              <div className="p-3 bg-cyan-300 rounded-full">
                 <Video className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-blue-900">Start Instant Meeting</h3>
-                <p className="text-blue-700">Begin a meeting right now with your students</p>
+                <h3 className="text-lg font-semibold text-cyan-300">Start Instant Meeting</h3>
+                <p className="text-cyan-300">Begin a meeting right now with your students</p>
               </div>
             </div>
             <div className="flex space-x-2">
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 <Play className="mr-2 h-4 w-4" />
                 Start Now
               </Button>
-              <Button variant="outline" className="border-blue-300 text-blue-700">
+              <Button variant="outline" className="border-[#11204a] text-[#11204a] hover:bg-[#11204a]/10">
                 <UserPlus className="mr-2 h-4 w-4" />
                 Invite Others
               </Button>

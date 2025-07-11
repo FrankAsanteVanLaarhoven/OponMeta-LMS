@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,7 +5,6 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Clock, CheckCircle, Star, Shield, Users, Zap, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import PageNavigation from "@/components/PageNavigation";
 
 const FreeTrial = () => {
   const navigate = useNavigate();
@@ -44,7 +42,6 @@ const FreeTrial = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
       
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
@@ -149,7 +146,7 @@ const FreeTrial = () => {
 
                 <Button 
                   size="lg" 
-                  className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white border-0"
+                  className="bg-[#11204a] text-white hover:bg-[#16203a] border-2 border-[#0a1834]"
                   onClick={handleStartTrial}
                 >
                   Start Free Trial
@@ -218,7 +215,7 @@ const FreeTrial = () => {
                 <p className="text-blue-100 mb-6">
                   Custom branding, SSO, advanced analytics, and dedicated support
                 </p>
-                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                <Button variant="outline" className="border-[#11204a] text-[#11204a] hover:bg-[#11204a]/10">
                   Contact Sales
                 </Button>
               </CardContent>
@@ -226,7 +223,6 @@ const FreeTrial = () => {
           </div>
         </div>
       </div>
-      <PageNavigation />
     </div>
   );
 };

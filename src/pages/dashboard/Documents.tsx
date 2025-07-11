@@ -19,6 +19,7 @@ import {
   FolderPlus,
   MoreVertical
 } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Documents = () => {
   const recentDocuments = [
@@ -106,6 +107,7 @@ const Documents = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-green-600">Document Editor</h1>
@@ -130,8 +132,8 @@ const Documents = () => {
         <Card className="hover:shadow-md transition-shadow cursor-pointer">
           <CardContent className="p-4">
             <div className="flex items-center space-x-3">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <FileText className="h-5 w-5 text-blue-600" />
+              <div className="p-2 bg-[#16203a] rounded-lg">
+                <FileText className="h-5 w-5 text-cyan-300" />
               </div>
               <div>
                 <h3 className="font-semibold">Blank Document</h3>
@@ -228,7 +230,7 @@ const Documents = () => {
                         variant={doc.status === "active" ? "default" : "secondary"}
                         className={
                           doc.status === "active" ? "bg-green-100 text-green-700" :
-                          doc.status === "shared" ? "bg-blue-100 text-blue-700" :
+                          doc.status === "shared" ? "bg-[#16203a] text-cyan-300" :
                           doc.status === "collaborative" ? "bg-purple-100 text-purple-700" :
                           "bg-gray-100 text-gray-700"
                         }
@@ -261,8 +263,8 @@ const Documents = () => {
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
-                      <div className="p-2 bg-blue-100 rounded-lg">
-                        <Share className="h-5 w-5 text-blue-600" />
+                      <div className="p-2 bg-[#16203a] rounded-lg">
+                        <Share className="h-5 w-5 text-cyan-300" />
                       </div>
                       <div>
                         <h4 className="font-semibold">{doc.title}</h4>

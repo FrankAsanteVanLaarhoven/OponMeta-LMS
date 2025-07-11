@@ -9,6 +9,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Plus, Search, Filter, MoreHorizontal, Edit, Trash2, Eye, Upload, ArrowLeft, Star } from "lucide-react";
+import { useDropzone } from 'react-dropzone';
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const CoursesManagement = () => {
   const [showCreateForm, setShowCreateForm] = useState(false);
@@ -53,6 +55,7 @@ const CoursesManagement = () => {
     price: "",
     imageUrl: "",
   });
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,6 +93,19 @@ const CoursesManagement = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const onDrop = (acceptedFiles: File[]) => {
+    setUploadedFiles(prev => [...prev, ...acceptedFiles]);
+  };
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    multiple: true,
+    noClick: false,
+    noKeyboard: false,
+    // Accept all file types and folders
+    // Note: folder upload support depends on browser
+    // No 'accept' prop means all files are allowed
+  });
+
   if (showCreateForm) {
     return (
       <div className="space-y-6">
@@ -104,7 +120,7 @@ const CoursesManagement = () => {
           </Button>
         </div>
 
-        <h1 className="text-3xl font-bold text-blue-600">Create New Course</h1>
+        <h1 className="text-3xl font-bold text-cyan-300">Create New Course</h1>
 
         <Card className="max-w-2xl">
           <CardHeader>
@@ -170,7 +186,34 @@ const CoursesManagement = () => {
                 </p>
               </div>
 
-              <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+              {/* File Upload Area */}
+              <div className="space-y-2">
+                <Label>Upload Course Files & Media</Label>
+                <div
+                  {...getRootProps()}
+                  className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${isDragActive ? 'border-[#11204a] bg-[#16203a]' : 'border-gray-300 bg-white/30'}`}
+                  style={{ minHeight: 120 }}
+                >
+                  <input {...getInputProps()} webkitdirectory="true" directory="true" />
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <Upload className="w-10 h-10 text-cyan-300 mb-2" />
+                    <p className="text-gray-700">Drag & drop files or folders here, or click to select</p>
+                    <p className="text-xs text-gray-500 mt-1">Supports all file types, including video, PDF, CSV, ZIP, images, and folders</p>
+                  </div>
+                </div>
+                {uploadedFiles.length > 0 && (
+                  <div className="mt-3">
+                    <Label className="text-sm text-gray-700">Selected Files:</Label>
+                    <ul className="text-xs text-gray-800 max-h-32 overflow-y-auto mt-1 bg-white/40 rounded p-2">
+                      {uploadedFiles.map((file, idx) => (
+                        <li key={idx} className="truncate">{file.webkitRelativePath || file.name}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              <Button type="submit" className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 <Plus className="mr-2 h-4 w-4" />
                 Create Course
               </Button>
@@ -183,11 +226,12 @@ const CoursesManagement = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
+      <DashboardBackButton />
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-blue-600">Courses Management</h1>
+        <h1 className="text-3xl font-bold text-cyan-300">Courses Management</h1>
         <Button
           onClick={() => setShowCreateForm(true)}
-          className="bg-blue-600 hover:bg-blue-700"
+          className="bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]"
         >
           <Plus className="mr-2 h-4 w-4" />
           Create New Course
@@ -304,9 +348,9 @@ const CoursesManagement = () => {
 
       {/* Feature Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 hover:shadow-lg transition-shadow duration-300">
+        <Card className="bg-[#16203a] border-[#11204a] hover:shadow-lg transition-shadow duration-300">
           <CardHeader>
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
+            <div className="w-12 h-12 bg-[#11204a] rounded-lg flex items-center justify-center mb-2">
               <span className="text-2xl">✨</span>
             </div>
             <CardTitle className="text-lg">AI Personalization</CardTitle>
@@ -315,13 +359,13 @@ const CoursesManagement = () => {
             <p className="text-gray-600 mb-4">
               Get AI-powered course recommendations and identify knowledge gaps for tailored learning.
             </p>
-            <Button variant="link" className="text-blue-600 p-0 hover:underline">
+            <Button variant="link" className="text-cyan-300 p-0 hover:underline">
               Find Courses →
             </Button>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200 hover:shadow-lg transition-shadow duration-300">
+        <Card className="bg-[#16203a] border-[#11204a] hover:shadow-lg transition-shadow duration-300">
           <CardHeader>
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-2">
               <span className="text-2xl">📚</span>
@@ -332,13 +376,13 @@ const CoursesManagement = () => {
             <p className="text-gray-600 mb-4">
               Support for diverse media types, AR/VR content, and live streaming capabilities.
             </p>
-            <Button variant="link" className="text-purple-600 p-0 hover:underline">
+            <Button variant="link" className="text-cyan-300 p-0 hover:underline">
               Learn More →
             </Button>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-green-50 to-teal-50 border-green-200 hover:shadow-lg transition-shadow duration-300">
+        <Card className="bg-[#16203a] border-[#11204a] hover:shadow-lg transition-shadow duration-300">
           <CardHeader>
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-2">
               <span className="text-2xl">📱</span>
@@ -349,7 +393,7 @@ const CoursesManagement = () => {
             <p className="text-gray-600 mb-4">
               Access learning on-the-go with native mobile apps and offline content synchronization.
             </p>
-            <Button variant="link" className="text-green-600 p-0 hover:underline">
+            <Button variant="link" className="text-cyan-300 p-0 hover:underline">
               Download App →
             </Button>
           </CardContent>

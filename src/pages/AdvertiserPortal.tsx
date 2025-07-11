@@ -89,20 +89,20 @@ const AdvertiserPortal = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-[#0a1834]">
       {/* Header */}
-      <div className="bg-white/10 backdrop-blur-md border-b border-white/20 p-6">
+      <div className="bg-[#11204a] border-b border-[#16203a] p-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-white">Advertiser Dashboard</h1>
-            <p className="text-blue-200 mt-1">Launch and manage your global advertising campaigns</p>
+            <p className="text-cyan-300 mt-1">Launch and manage your global advertising campaigns</p>
           </div>
           <div className="flex items-center gap-4">
-            <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
+            <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
               <Plus className="h-4 w-4 mr-2" />
               Create Campaign
             </Button>
-            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+            <Button variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
               <Upload className="h-4 w-4 mr-2" />
               Upload Creative Assets
             </Button>
@@ -112,7 +112,7 @@ const AdvertiserPortal = () => {
 
       <div className="max-w-7xl mx-auto p-6">
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 mb-8 bg-white/10 backdrop-blur-md rounded-lg p-2">
+        <div className="flex items-center gap-2 mb-8 bg-[#11204a] rounded-lg p-2">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
@@ -123,8 +123,8 @@ const AdvertiserPortal = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 ${
                   activeTab === tab.id 
-                    ? "bg-white text-slate-800 hover:bg-white/90" 
-                    : "text-white hover:bg-white/10"
+                    ? "bg-white text-[#0a1834] hover:bg-cyan-100" 
+                    : "text-white hover:bg-[#16203a]"
                 }`}
               >
                 <Icon className="h-4 w-4" />
@@ -139,76 +139,76 @@ const AdvertiserPortal = () => {
           <div className="space-y-6">
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+              <Card className="bg-[#16203a] border-[#11204a] text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Total Campaigns</CardTitle>
+                  <CardTitle className="text-sm font-medium text-cyan-300">Total Campaigns</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.totalCampaigns}</div>
-                  <p className="text-xs text-green-400 mt-1">+2 new this month</p>
+                  <p className="text-xs text-cyan-300 mt-1">+2 new this month</p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+              <Card className="bg-[#16203a] border-[#11204a] text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Total Impressions</CardTitle>
+                  <CardTitle className="text-sm font-medium text-cyan-300">Total Impressions</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.totalImpressions.toLocaleString()}</div>
-                  <p className="text-xs text-green-400 mt-1">+18% compared to last month</p>
+                  <p className="text-xs text-cyan-300 mt-1">+18% compared to last month</p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+              <Card className="bg-[#16203a] border-[#11204a] text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Click-Through Rate</CardTitle>
+                  <CardTitle className="text-sm font-medium text-cyan-300">Click-Through Rate</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.clickRate}%</div>
-                  <p className="text-xs text-green-400 mt-1">+0.3% improvement</p>
+                  <p className="text-xs text-cyan-300 mt-1">+0.3% improvement</p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+              <Card className="bg-[#16203a] border-[#11204a] text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Total Spend</CardTitle>
+                  <CardTitle className="text-sm font-medium text-cyan-300">Total Spend</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">${adStats.totalSpend.toLocaleString()}</div>
-                  <p className="text-xs text-yellow-400 mt-1">68% of total budget used</p>
+                  <p className="text-xs text-cyan-300 mt-1">68% of total budget used</p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+              <Card className="bg-[#16203a] border-[#11204a] text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Conversions</CardTitle>
+                  <CardTitle className="text-sm font-medium text-cyan-300">Conversions</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.conversions}</div>
-                  <p className="text-xs text-green-400 mt-1">+23 conversions this week</p>
+                  <p className="text-xs text-cyan-300 mt-1">+23 conversions this week</p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white">
+              <Card className="bg-[#16203a] border-[#11204a] text-white">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-blue-200">Active Advertisements</CardTitle>
+                  <CardTitle className="text-sm font-medium text-cyan-300">Active Advertisements</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">{adStats.activeAds}</div>
-                  <p className="text-xs text-blue-400 mt-1">across all campaigns</p>
+                  <p className="text-xs text-cyan-300 mt-1">across all campaigns</p>
                 </CardContent>
               </Card>
             </div>
 
             {/* Recent Campaigns */}
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#16203a] border-[#11204a]">
               <CardHeader>
                 <CardTitle className="text-white">Campaign Performance Overview</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {campaigns.map((campaign) => (
-                    <div key={campaign.id} className="flex items-center gap-4 p-4 bg-white/5 rounded-lg">
+                    <div key={campaign.id} className="flex items-center gap-4 p-4 bg-[#11204a] rounded-lg">
                       <img 
                         src={campaign.thumbnail} 
                         alt={campaign.name}
@@ -220,48 +220,48 @@ const AdvertiserPortal = () => {
                           <h3 className="font-semibold text-white">{campaign.name}</h3>
                           <Badge 
                             variant={campaign.status === "active" ? "default" : "secondary"}
-                            className={campaign.status === "active" ? "bg-green-600 text-white" : "bg-yellow-600 text-white"}
+                            className={campaign.status === "active" ? "bg-cyan-600 text-white" : "bg-cyan-600 text-white"}
                           >
                             {campaign.status}
                           </Badge>
-                          <Badge variant="outline" className="border-blue-400 text-blue-300">
+                          <Badge variant="outline" className="border-cyan-400 text-cyan-300">
                             {campaign.type}
                           </Badge>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                           <div>
-                            <span className="text-blue-200">Budget:</span>
+                            <span className="text-cyan-300">Budget:</span>
                             <div className="text-white font-medium">Budget: ${campaign.budget}</div>
                           </div>
                           <div>
-                            <span className="text-blue-200">Spent:</span>
+                            <span className="text-cyan-300">Spent:</span>
                             <div className="text-white font-medium">Spent: ${campaign.spent}</div>
                           </div>
                           <div>
-                            <span className="text-blue-200">Impressions:</span>
+                            <span className="text-cyan-300">Impressions:</span>
                             <div className="text-white font-medium">Impressions: {campaign.impressions.toLocaleString()}</div>
                           </div>
                           <div>
-                            <span className="text-blue-200">CTR:</span>
+                            <span className="text-cyan-300">CTR:</span>
                             <div className="text-white font-medium">CTR: {campaign.ctr}%</div>
                           </div>
                         </div>
                         <div className="mt-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs text-blue-200">Budget Utilization:</span>
+                            <span className="text-xs text-cyan-300">Budget Utilization:</span>
                             <Progress value={(campaign.spent / campaign.budget) * 100} className="flex-1 h-2" />
                             <span className="text-xs text-white">{Math.round((campaign.spent / campaign.budget) * 100)}%</span>
                           </div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Button size="sm" variant="ghost" className="text-white hover:bg-white/10">
+                        <Button size="sm" variant="ghost" className="text-white hover:bg-[#16203a]">
                           {campaign.status === "active" ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
                         </Button>
-                        <Button size="sm" variant="ghost" className="text-white hover:bg-white/10">
+                        <Button size="sm" variant="ghost" className="text-white hover:bg-[#16203a]">
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button size="sm" variant="ghost" className="text-white hover:bg-white/10">
+                        <Button size="sm" variant="ghost" className="text-white hover:bg-[#16203a]">
                           <Edit className="h-4 w-4" />
                         </Button>
                       </div>
@@ -278,7 +278,7 @@ const AdvertiserPortal = () => {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white">All Campaigns</h2>
-              <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
+              <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Create Campaign
               </Button>
@@ -286,8 +286,8 @@ const AdvertiserPortal = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {campaigns.map((campaign) => (
-                <Card key={campaign.id} className="bg-white/10 backdrop-blur-md border-white/20 overflow-hidden">
-                  <div className="aspect-video bg-slate-800 relative">
+                <Card key={campaign.id} className="bg-[#16203a] border-[#11204a] overflow-hidden">
+                  <div className="aspect-video bg-[#11204a] relative">
                     <img 
                       src={campaign.thumbnail} 
                       alt={campaign.name}
@@ -297,13 +297,13 @@ const AdvertiserPortal = () => {
                     <div className="absolute top-2 left-2">
                       <Badge 
                         variant={campaign.status === "active" ? "default" : "secondary"}
-                        className={campaign.status === "active" ? "bg-green-600 text-white" : "bg-yellow-600 text-white"}
+                        className={campaign.status === "active" ? "bg-cyan-600 text-white" : "bg-cyan-600 text-white"}
                       >
                         {campaign.status}
                       </Badge>
                     </div>
                     <div className="absolute top-2 right-2">
-                      <Badge variant="outline" className="border-blue-400 text-blue-300 bg-black/50">
+                      <Badge variant="outline" className="border-cyan-400 text-cyan-300 bg-[#11204a]">
                         {campaign.type}
                       </Badge>
                     </div>
@@ -312,34 +312,34 @@ const AdvertiserPortal = () => {
                     <h3 className="font-semibold text-white mb-3">{campaign.name}</h3>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-blue-200">Budget:</span>
+                        <span className="text-cyan-300">Budget:</span>
                         <span className="text-white">Budget: ${campaign.budget}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-blue-200">Spent:</span>
+                        <span className="text-cyan-300">Spent:</span>
                         <span className="text-white">Spent: ${campaign.spent}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-blue-200">CTR:</span>
-                        <span className="text-green-400">CTR: {campaign.ctr}%</span>
+                        <span className="text-cyan-300">CTR:</span>
+                        <span className="text-cyan-300">CTR: {campaign.ctr}%</span>
                       </div>
                       <div className="space-y-1">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-blue-200">Progress:</span>
+                          <span className="text-cyan-300">Progress:</span>
                           <span className="text-white">{Math.round((campaign.spent / campaign.budget) * 100)}% used</span>
                         </div>
                         <Progress value={(campaign.spent / campaign.budget) * 100} className="h-2" />
                       </div>
                     </div>
                     <div className="flex items-center gap-2 mt-4">
-                      <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
+                      <Button size="sm" className="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white">
                         {campaign.status === "active" ? <Pause className="h-4 w-4 mr-1" /> : <Play className="h-4 w-4 mr-1" />}
                         {campaign.status === "active" ? "Pause" : "Resume"}
                       </Button>
-                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                      <Button size="sm" variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
                         <Edit className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                      <Button size="sm" variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
                         <Eye className="h-4 w-4" />
                       </Button>
                     </div>
@@ -353,7 +353,7 @@ const AdvertiserPortal = () => {
         {/* Create Ad Tab */}
         {activeTab === "create" && (
           <div className="space-y-6">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#16203a] border-[#11204a]">
               <CardHeader>
                 <CardTitle className="text-white">Create a New Campaign</CardTitle>
               </CardHeader>
@@ -361,13 +361,13 @@ const AdvertiserPortal = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Campaign Name</label>
-                      <Input placeholder="Enter a campaign name" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                      <label className="text-sm font-medium text-cyan-300 block mb-2">Campaign Name</label>
+                      <Input placeholder="Enter a campaign name" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Ad Type</label>
+                      <label className="text-sm font-medium text-cyan-300 block mb-2">Ad Type</label>
                       <Select>
-                        <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                        <SelectTrigger className="bg-[#11204a] border-[#16203a] text-white">
                           <SelectValue placeholder="Choose ad type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -379,9 +379,9 @@ const AdvertiserPortal = () => {
                       </Select>
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Target Audience</label>
+                      <label className="text-sm font-medium text-cyan-300 block mb-2">Target Audience</label>
                       <Select>
-                        <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                        <SelectTrigger className="bg-[#11204a] border-[#16203a] text-white">
                           <SelectValue placeholder="Choose target audience" />
                         </SelectTrigger>
                         <SelectContent>
@@ -393,25 +393,25 @@ const AdvertiserPortal = () => {
                       </Select>
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Budget (USD)</label>
-                      <Input type="number" placeholder="0.00" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                      <label className="text-sm font-medium text-cyan-300 block mb-2">Budget (USD)</label>
+                      <Input type="number" placeholder="0.00" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Ad Content</label>
+                      <label className="text-sm font-medium text-cyan-300 block mb-2">Ad Content</label>
                       <Textarea 
                         placeholder="Write your ad copy here..." 
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 min-h-32"
+                        className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400 min-h-32"
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Upload Creative</label>
-                      <div className="border-2 border-dashed border-white/20 rounded-lg p-6 text-center">
-                        <Upload className="h-12 w-12 text-blue-300 mx-auto mb-4" />
+                      <label className="text-sm font-medium text-cyan-300 block mb-2">Upload Creative</label>
+                      <div className="border-2 border-dashed border-[#16203a] rounded-lg p-6 text-center">
+                        <Upload className="h-12 w-12 text-cyan-300 mx-auto mb-4" />
                         <p className="text-white mb-2">Drag and drop your files here</p>
-                        <p className="text-blue-200 text-sm">Supported formats: JPG, PNG, MP4, GIF (Max 10MB)</p>
-                        <Button variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10">
+                        <p className="text-cyan-300 text-sm">Supported formats: JPG, PNG, MP4, GIF (Max 10MB)</p>
+                        <Button variant="outline" className="mt-4 border-[#16203a] text-white hover:bg-[#16203a]">
                           Browse Files
                         </Button>
                       </div>
@@ -419,10 +419,10 @@ const AdvertiserPortal = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 pt-4">
-                  <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
+                  <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
                     Launch Campaign
                   </Button>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                  <Button variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
                     Save as Draft
                   </Button>
                 </div>
@@ -436,7 +436,7 @@ const AdvertiserPortal = () => {
           <div className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Account Settings */}
-              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <Card className="bg-[#16203a] border-[#11204a]">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center gap-2">
                     <Settings className="h-5 w-5" />
@@ -445,17 +445,17 @@ const AdvertiserPortal = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Company Name</label>
-                    <Input placeholder="Your Company Name" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Company Name</label>
+                    <Input placeholder="Your Company Name" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Business Email</label>
-                    <Input type="email" placeholder="business@company.com" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Business Email</label>
+                    <Input type="email" placeholder="business@company.com" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Industry</label>
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Industry</label>
                     <Select>
-                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                      <SelectTrigger className="bg-[#11204a] border-[#16203a] text-white">
                         <SelectValue placeholder="Select industry" />
                       </SelectTrigger>
                       <SelectContent>
@@ -472,7 +472,7 @@ const AdvertiserPortal = () => {
               </Card>
 
               {/* Billing Settings */}
-              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <Card className="bg-[#16203a] border-[#11204a]">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center gap-2">
                     <DollarSign className="h-5 w-5" />
@@ -480,20 +480,20 @@ const AdvertiserPortal = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="p-4 bg-white/5 rounded-lg">
+                  <div className="p-4 bg-[#11204a] rounded-lg">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-blue-200">Current Plan</span>
-                      <Badge className="bg-green-600 text-white">Pro</Badge>
+                      <span className="text-cyan-300">Current Plan</span>
+                      <Badge className="bg-cyan-600 text-white">Pro</Badge>
                     </div>
                     <p className="text-white font-semibold">$299/month</p>
-                    <p className="text-blue-200 text-sm">Next billing: Jan 15, 2025</p>
+                    <p className="text-cyan-300 text-sm">Next billing: Jan 15, 2025</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Monthly Budget Limit</label>
-                    <Input type="number" placeholder="5000" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Monthly Budget Limit</label>
+                    <Input type="number" placeholder="5000" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Auto-reload Budget</label>
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Auto-reload Budget</label>
                     <div className="flex items-center gap-2">
                       <Input type="checkbox" className="w-4 h-4" />
                       <span className="text-white text-sm">Automatically reload when budget is 80% used</span>
@@ -503,7 +503,7 @@ const AdvertiserPortal = () => {
               </Card>
 
               {/* Campaign Defaults */}
-              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <Card className="bg-[#16203a] border-[#11204a]">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center gap-2">
                     <Target className="h-5 w-5" />
@@ -512,13 +512,13 @@ const AdvertiserPortal = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Default Daily Budget</label>
-                    <Input type="number" placeholder="100" className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Default Daily Budget</label>
+                    <Input type="number" placeholder="100" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Default Audience</label>
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Default Audience</label>
                     <Select>
-                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                      <SelectTrigger className="bg-[#11204a] border-[#16203a] text-white">
                         <SelectValue placeholder="Select default audience" />
                       </SelectTrigger>
                       <SelectContent>
@@ -529,9 +529,9 @@ const AdvertiserPortal = () => {
                     </Select>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Default Ad Format</label>
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Default Ad Format</label>
                     <Select>
-                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                      <SelectTrigger className="bg-[#11204a] border-[#16203a] text-white">
                         <SelectValue placeholder="Select default format" />
                       </SelectTrigger>
                       <SelectContent>
@@ -545,7 +545,7 @@ const AdvertiserPortal = () => {
               </Card>
 
               {/* Notifications */}
-              <Card className="bg-white/10 backdrop-blur-md border-white/20">
+              <Card className="bg-[#16203a] border-[#11204a]">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center gap-2">
                     <Users className="h-5 w-5" />
@@ -572,9 +572,9 @@ const AdvertiserPortal = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Email Notifications</label>
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Email Notifications</label>
                     <Select>
-                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                      <SelectTrigger className="bg-[#11204a] border-[#16203a] text-white">
                         <SelectValue placeholder="Choose frequency" />
                       </SelectTrigger>
                       <SelectContent>
@@ -590,7 +590,7 @@ const AdvertiserPortal = () => {
             </div>
 
             {/* API & Integrations */}
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#16203a] border-[#11204a]">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Settings className="h-5 w-5" />
@@ -600,23 +600,23 @@ const AdvertiserPortal = () => {
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">API Key</label>
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">API Key</label>
                     <div className="flex items-center gap-2">
                       <Input 
                         value="adv_sk_1234567890abcdef..." 
                         readOnly 
-                        className="bg-white/10 border-white/20 text-white" 
+                        className="bg-[#11204a] border-[#16203a] text-white" 
                       />
-                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                      <Button size="sm" variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
                         Copy
                       </Button>
                     </div>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-blue-200 block mb-2">Webhook URL</label>
+                    <label className="text-sm font-medium text-cyan-300 block mb-2">Webhook URL</label>
                     <Input 
                       placeholder="https://your-app.com/webhooks/ads" 
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" 
+                      className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" 
                     />
                   </div>
                 </div>
@@ -624,34 +624,34 @@ const AdvertiserPortal = () => {
                 <div className="space-y-4">
                   <h4 className="text-white font-medium">Connected Integrations</h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="p-4 bg-white/5 rounded-lg flex items-center justify-between">
+                    <div className="p-4 bg-[#11204a] rounded-lg flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                        <div className="w-8 h-8 bg-cyan-600 rounded flex items-center justify-center">
                           <BarChart3 className="h-4 w-4 text-white" />
                         </div>
                         <span className="text-white">Google Analytics</span>
                       </div>
-                      <Badge className="bg-green-600 text-white">Connected</Badge>
+                      <Badge className="bg-cyan-600 text-white">Connected</Badge>
                     </div>
-                    <div className="p-4 bg-white/5 rounded-lg flex items-center justify-between">
+                    <div className="p-4 bg-[#11204a] rounded-lg flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">
+                        <div className="w-8 h-8 bg-cyan-600 rounded flex items-center justify-center">
                           <Target className="h-4 w-4 text-white" />
                         </div>
                         <span className="text-white">Facebook Pixel</span>
                       </div>
-                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                      <Button size="sm" variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
                         Connect
                       </Button>
                     </div>
-                    <div className="p-4 bg-white/5 rounded-lg flex items-center justify-between">
+                    <div className="p-4 bg-[#11204a] rounded-lg flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
+                        <div className="w-8 h-8 bg-cyan-600 rounded flex items-center justify-center">
                           <TrendingUp className="h-4 w-4 text-white" />
                         </div>
                         <span className="text-white">HubSpot</span>
                       </div>
-                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                      <Button size="sm" variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
                         Connect
                       </Button>
                     </div>
@@ -661,7 +661,7 @@ const AdvertiserPortal = () => {
             </Card>
 
             {/* Privacy & Security */}
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#16203a] border-[#11204a]">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Settings className="h-5 w-5" />
@@ -673,9 +673,9 @@ const AdvertiserPortal = () => {
                   <div className="space-y-4">
                     <h4 className="text-white font-medium">Data Retention</h4>
                     <div>
-                      <label className="text-sm font-medium text-blue-200 block mb-2">Campaign Data Retention</label>
+                      <label className="text-sm font-medium text-cyan-300 block mb-2">Campaign Data Retention</label>
                       <Select>
-                        <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                        <SelectTrigger className="bg-[#11204a] border-[#16203a] text-white">
                           <SelectValue placeholder="Choose retention period" />
                         </SelectTrigger>
                         <SelectContent>
@@ -711,10 +711,10 @@ const AdvertiserPortal = () => {
             </Card>
 
             <div className="flex items-center gap-4">
-              <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white">
+              <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
                 Save All Settings
               </Button>
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+              <Button variant="outline" className="border-[#16203a] text-white hover:bg-[#16203a]">
                 Restore Defaults
               </Button>
             </div>
@@ -723,11 +723,11 @@ const AdvertiserPortal = () => {
 
         {/* Other tabs placeholder */}
         {!["overview", "campaigns", "create", "settings"].includes(activeTab) && (
-          <Card className="bg-white/10 backdrop-blur-md border-white/20">
+          <Card className="bg-[#16203a] border-[#11204a]">
             <CardContent className="p-8 text-center">
-              <BarChart3 className="h-16 w-16 text-blue-300 mx-auto mb-4" />
+              <BarChart3 className="h-16 w-16 text-cyan-300 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">{tabs.find(t => t.id === activeTab)?.label}</h3>
-              <p className="text-blue-200">This section will be available soon. Please check back for updates!</p>
+              <p className="text-cyan-300">This section will be available soon. Please check back for updates!</p>
             </CardContent>
           </Card>
         )}

@@ -175,14 +175,60 @@ const ContactForm = () => {
                 </span>
               </h3>
               <div className="flex space-x-4">
-                {["Facebook", "Twitter", "YouTube", "Instagram", "LinkedIn", "Behance"].map((platform) => (
-                  <button
-                    key={platform}
-                    className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                  >
-                    {platform.charAt(0)}
-                  </button>
-                ))}
+                <a
+                  href="https://facebook.com/oponmeta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                  aria-label="Facebook"
+                >
+                  F
+                </a>
+                <a
+                  href="https://twitter.com/oponmeta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                  aria-label="Twitter"
+                >
+                  T
+                </a>
+                <a
+                  href="https://youtube.com/@oponmeta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                  aria-label="YouTube"
+                >
+                  Y
+                </a>
+                <a
+                  href="https://instagram.com/oponmeta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                  aria-label="Instagram"
+                >
+                  I
+                </a>
+                <a
+                  href="https://linkedin.com/company/oponmeta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  L
+                </a>
+                <a
+                  href="https://behance.net/oponmeta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                  aria-label="Behance"
+                >
+                  B
+                </a>
               </div>
             </div>
 

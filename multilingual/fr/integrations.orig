@@ -1,0 +1,439 @@
+<!DOCTYPE html><!-- Last Published: Wed Jul 09 2025 13:28:52 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.coursebox.ai" data-wf-page="65f1aa33290291e9b4c0a726" data-wf-site="65e9bdf0fae79e05e213200c" lang="fr"><head><meta charset="utf-8"/><title>Intégrations | Coursebox AI</title><link rel="alternate" hrefLang="x-default" href="https://www.coursebox.ai/integrations"/><link rel="alternate" hrefLang="en" href="https://www.coursebox.ai/integrations"/><link rel="alternate" hrefLang="ar" href="https://www.coursebox.ai/ar/ltkmlt"/><link rel="alternate" hrefLang="es" href="https://www.coursebox.ai/es/integraciones"/><link rel="alternate" hrefLang="de" href="https://www.coursebox.ai/de/integrationen"/><link rel="alternate" hrefLang="fr" href="https://www.coursebox.ai/fr/integrations"/><link rel="alternate" hrefLang="pt" href="https://www.coursebox.ai/pt/integracoes"/><link rel="alternate" hrefLang="it" href="https://www.coursebox.ai/it/integrazioni"/><link rel="alternate" hrefLang="zh" href="https://www.coursebox.ai/zh/ji-cheng"/><link rel="alternate" hrefLang="ko" href="https://www.coursebox.ai/ko/tonghab"/><link rel="alternate" hrefLang="ja" href="https://www.coursebox.ai/ja/tong-he"/><link rel="alternate" hrefLang="nl" href="https://www.coursebox.ai/nl/integraties"/><meta content="Coursebox Integrations vous permet d&#x27;intégrer notre Coursebox à vos autres outils. Qu&#x27;il s&#x27;agisse de votre site Web ou de votre plateforme LMS, découvrez des informations sur l&#x27;intégration à Coursebox." name="description"/><meta content="Intégrations | Coursebox AI" property="og:title"/><meta content="Coursebox Integrations vous permet d&#x27;intégrer notre Coursebox à vos autres outils. Qu&#x27;il s&#x27;agisse de votre site Web ou de votre plateforme LMS, découvrez des informations sur l&#x27;intégration à Coursebox." property="og:description"/><meta content="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f7fc4f48d05521bd8ba7f3_Coursebox%20hero%20graphic%20(13).jpg" property="og:image"/><meta content="Intégrations | Coursebox AI" property="twitter:title"/><meta content="Coursebox Integrations vous permet d&#x27;intégrer notre Coursebox à vos autres outils. Qu&#x27;il s&#x27;agisse de votre site Web ou de votre plateforme LMS, découvrez des informations sur l&#x27;intégration à Coursebox." property="twitter:description"/><meta content="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f7fc4f48d05521bd8ba7f3_Coursebox%20hero%20graphic%20(13).jpg" property="twitter:image"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="OB5L2-6ikYbMGZzU0T1gg7RS2rJr4Ob12A3b2r1iqf8" name="google-site-verification"/><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/css/coursebox.webflow.shared.a005524ae.min.css" rel="stylesheet" type="text/css"/><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/css/coursebox.webflow.65f1aa33290291e9b4c0a726-b6f4da04b.min.css" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f4dad563d976e9342cfc6b_20cf5e_7e0899ed0b8e4e3a9b208ce1f0f664fd~mv2.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f4dc036537490dba263209_Untitled%20design%20-%202024-03-16T073837.984.png" rel="apple-touch-icon"/><link href="https://www.coursebox.ai/fr/integrations" rel="canonical"/><link rel="preconnect" href="https://cdn.prod.website-files.com" crossorigin="anonymous">
+
+
+<link rel="preload"
+    href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/css/coursebox.webflow.1d507dff4.min.css"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<style>
+    p {
+        font-family: arial;
+        font-weight: 400;
+    }
+
+    .boxer-register-form .password {
+        text-security: disc;
+        -webkit-text-security: disc;
+        -mox-text-security: disc;
+    }
+
+    @media screen and (max-width: 479px) {
+        .image.blog-post {
+            min-height: 202px;
+            width: 479px !important;
+            height: 100%;
+        }
+    }
+    
+</style>
+
+<meta name="google-site-verification" content="4sj-121qyTvIsZxbBucdqOogtrFaeG3KgASFHlkDA2s" />
+
+<style>
+    html.anti-flicker-hide {
+        opacity: 1 !important
+    }
+
+    @media(width:1350px) {
+        .home-hero-companies {
+            display: none
+        }
+
+        .lcp .home-hero-companies {
+            display: flex
+        }
+    }
+
+    @media(width:412px) {
+
+        .page-wrapper.overflow-hidden,
+        .w-tab-pane {
+            opacity: 1 !important
+        }
+
+        .blog-collection-list-wrapper,
+        .paragraph.blog-hero.heading-2,
+        .title.blog-hero,
+        .title.pricing {
+            transform: none !important;
+            opacity: 1 !important;
+            transform-style: unset !important
+        }
+
+        .tab-link {
+            transition: unset !important
+        }
+
+        .w-tab-pane {
+            transition: none !important
+        }
+
+        .container-default.home-hero.w-container,
+        .home-hero-companies {
+            display: none
+        }
+
+        .lcp .container-default.home-hero.w-container,
+        .lcp .home-hero-companies {
+            display: flex
+        }
+
+        .image.card-post-item,
+        .image.card-testimonial {
+            opacity: 0
+        }
+
+        .image.card-post-item,
+        .lcp .image.card-testimonial {
+            opacity: 1
+        }
+    }
+</style>
+
+<style>
+    .w-webflow-badge {
+        display: none !important;
+    }
+</style>
+
+<!-- Nocodelytics -->
+<script async id="nocodelytics-snippet" type="text/javascript"
+    src="https://tracker.nocodelytics.com/api/tracker/assets/nocodelytics.js"></script><!-- End Nocodelytics -->
+
+
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            // Inject Chargebee script
+            var chargebeeScript = document.createElement('script');
+            chargebeeScript.src = "https://js.chargebee.com/v2/chargebee.js";
+            chargebeeScript.setAttribute('data-cb-site', 'courseboxai');
+            chargebeeScript.setAttribute('data-cb-ga-enabled', 'true');
+            document.head.appendChild(chargebeeScript);
+
+            // Check if the URL includes "pricing"
+            if (window.location.href.includes("pricing")) {
+
+                // Inject Chatbot Config
+                window.embeddedChatbotConfig = {
+                    chatbotId: "aOP_KOSLZ2Bi0OpR6pUnl",
+                    domain: "www.chatbase.co"
+                };
+
+                // Inject Chatbase script
+                var chatbaseScript = document.createElement('script');
+                chatbaseScript.src = "https://www.chatbase.co/embed.min.js";
+                chatbaseScript.setAttribute('chatbotId', 'aOP_KOSLZ2Bi0OpR6pUnl');
+                chatbaseScript.setAttribute('domain', 'www.chatbase.co');
+                document.head.appendChild(chatbaseScript);
+            }
+        }, 6000); // Delay by 3000 milliseconds
+    });
+</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-0YT7394H6S"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0YT7394H6S');
+</script>
+
+<!-- Google Tag Manager -->
+<script defer>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MLBXZDD');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- PostHog -->
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init Ie Ts Ms Ee Es Rs capture Ge calculateEventProperties Os register register_once register_for_session unregister unregister_for_session js getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ds Fs createPersonProfile Ls Ps opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Cs debug I As getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_61w0zU91ynkpJl71NIb5K4pGSYjDqWoXsMGOS8fzcqn', {
+        api_host: 'https://eu.i.posthog.com',
+        defaults: '2025-05-24',
+        person_profiles: 'always', // or 'identified_only' to create profiles for anonymous users as well
+        autocapture: false,
+        rageclick: false,
+        capture_pageview: true,
+        capture_pageleave: true,
+      	disable_session_recording: true
+    })
+</script>
+
+<!-- PostHog --><script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","symbol":"$","decimal":".","fractionDigits":2,"group":",","template":"{{wf {&quot;path&quot;:&quot;symbol&quot;,&quot;type&quot;:&quot;PlainText&quot;\\} }} {{wf {&quot;path&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;CommercePrice&quot;\\} }} ","hideDecimalForWholeNumbers":true};</script></head><body class="bg-neutral-800"><div class="page-wrapper overflow-hidden"><div data-collapse="medium" data-animation="over-left" data-duration="400" data-w-id="58db7844-5919-d71b-dd74-2323ed8dffe9" data-easing="ease" data-easing2="ease" role="banner" class="header w-nav"><div class="container-default w-container"><div class="header-wrapper"><div class="split-content header-right"><a href="/fr" class="brand w-nav-brand"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/660fe39debd7cc7092e09609_Untitled%20design.webp" alt="" class="header-logo"/></a></div><div class="split-content header-center"><nav role="navigation" class="nav-menu w-nav-menu"><ul role="list" class="header-navigation w-list-unstyled"><li class="nav-item-wrapper"><div data-hover="true" data-delay="0" data-w-id="aa6df718-ccc0-b2b0-3946-1a426e08b7b3" class="nav-link-dropdown w-dropdown"><div class="nav-link dropdown w-dropdown-toggle"><div class="text-block-18">Des solutions <span class="dropdown-arrow"></span></div></div><nav class="dropdown-list w-dropdown-list"><div class="dropdown-nav-main-wrapper"><div class="dropdown-nav-pages-wrapper"><div class="dropdown-nav-content"><ul role="list" class="dropdown-nav last"><li class="dropdown-nav-item"><a href="/fr/formation-a-la-securite-lms-copy" class="dropdown-nav-link">RTO australiens</a></li><li class="dropdown-nav-item"><a href="/fr/consultants-en-conception-pedagogique" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">petites entreprises</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/creatrices" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Entreprise</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/colleges-et-universites" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Collèges et universités</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/formation-a-la-securite-lms-copy-2" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Prestataires de formation accrédités</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/logiciel-de-formation-en-soins-de-sante" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Soins de santé</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/agriculture" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Agriculture</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/logiciel-de-formation-a-la-vente" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Ventes</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/sante-et-bien-etre" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Santé et bien-être</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/logiciel-de-formation-en-hotellerie" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Hospitalité</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/immobilier" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Immobilier</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/organismes-sans-but-lucratif" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Organismes sans but lucratif</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/technologie" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Technologie</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/entreprise-lms-copy" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Intégration et intronisations en entreprise</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/rto-training-resources-for-sale" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Unités de compétence RTO</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li></ul></div></div></div></nav></div></li><li class="nav-item-wrapper"><div data-hover="true" data-delay="0" data-w-id="c1564769-b868-3c51-e11d-a9003541e669" class="nav-link-dropdown w-dropdown"><div class="nav-link dropdown w-dropdown-toggle"><div class="text-block-19">Caractéristiques <span class="dropdown-arrow"></span></div></div><nav class="dropdown-list w-dropdown-list"><div class="dropdown-nav-main-wrapper"><div class="dropdown-nav-pages-wrapper"><div class="dropdown-nav-content"><ul role="list" class="dropdown-nav last"><li class="dropdown-nav-item"><a href="/fr/redacteur-de-cours-sur-lia-copy" class="dropdown-nav-link">Générateur de quiz AI</a></li><li class="dropdown-nav-item"><a href="/fr/ia-lms" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Évaluation de l&#x27;IA</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/videos-de-formation-generees-par-lia" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Générateur de rubriques AI</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/generateur-de-quiz-ia" class="dropdown-nav-link tag w-inline-block"><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div><div class="footer-nav-link-tag-text">Générateur de programmes d&#x27;IA</div></a></li><li class="dropdown-nav-item"><a href="/fr/evaluation-de-lia" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Générateur vidéo de formation AI</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/tuteur-de-chatbot-ia" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Chatbot AI Tutor</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item"><a href="/fr/lms-dapprentissage-social" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Apprentissage social</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/outil-de-creation-scorm" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">SCORM</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/integrations" aria-current="page" class="dropdown-nav-link tag w-inline-block w--current"><div class="footer-nav-link-tag-text">Intégrations</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/generateur-de-rubriques-dia-copy" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Images d&#x27;IA</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/generateur-de-rubriques-dia-copy-2" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Interactions avec l&#x27;IA</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/fr/generateur-de-rubriques-dia" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Rubriques d&#x27;IA</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"></li></ul></div></div></div></nav></div></li><li class="nav-item-wrapper"><a href="/fr/avis" class="nav-link">Blogue</a></li><li class="nav-item-wrapper"><a href="/fr/blog" class="nav-link">Blogue</a></li><li class="nav-item-wrapper"><a href="/fr/tarification" class="nav-link">Tarification</a></li><li class="nav-item-wrapper mobile"><a href="https://my.coursebox.ai/#/courses/create/ai/for-you" class="nav-link sign-in mobile">Connectez-vous</a></li><li class="nav-item-wrapper mobile-button"><div class="button-primary-gradient header-button mobile-button"><a href="/fr/tarification" class="button-primary w-button"><strong class="bold-text-20">Commencez gratuitement</strong></a></div></li></ul></nav></div><div class="split-content header-left"><div data-hover="true" data-delay="0" data-w-id="6ba7c99b-d6fa-6ecb-7e9a-bf4d942ac1b1" class="nav-link-dropdown w-dropdown"><div class="nav-link dropdown w-dropdown-toggle"><div class="text-block-18 small">Connectez-vous<span class="dropdown-arrow _2"></span></div></div><nav class="dropdown-list-copy w-dropdown-list"><div class="dropdown-nav-main-wrapper _2"><div class="dropdown-nav-pages-wrapper lesst"><div class="dropdown-nav-content"><ul role="list" class="dropdown-nav last"><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"><a href="/fr/services-de-conception-pedagogique" class="dropdown-nav-link tag w-inline-block"><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"><a href="#" class="dropdown-nav-link tag w-inline-block"><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="https://my.coursebox.ai/#/courses/create/ai/for-you" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Ma boîte de cours</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="https://www.coursebox.ai/lms-login" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Plateforme de marque</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"><a href="#" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Agriculture</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li></ul></div></div></div></nav></div><div class="button-primary-gradient header-button"><a href="#" id="nav-start-free" data-w-id="de1bc336-7eb2-cb9f-dece-be9b5170ffaf" class="button-primary w-button"><strong class="bold-text-20">Commencez gratuitement</strong></a></div><div class="menu-button w-nav-button"><div class="header-menu-button-icon-wrapper"><div class="icon-wrapper"><div class="header-menu-button-icon-top"></div><div class="header-menu-button-icon-medium"></div><div class="header-menu-button-icon-bottom"></div></div></div></div></div></div></div></div><section class="section integrations-hero"><div class="container-default integrations-hero w-container"><div class="integrations-hero-wrapper"><div class="integrations-hero-content _2"><h1 data-w-id="a082c97a-00c4-8399-0856-af128d88d7d0" style="-webkit-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="title integrations-hero"><strong>Intégrations Coursebox</strong><br/></h1><p data-w-id="6e6a2d1b-ff09-ec79-4d38-108618726cd8" style="-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="paragraph integrations-hero _2">Intégrez vos outils existants à Coursebox, tels que votre LMS, votre site Web, votre plateforme RH, votre système de paiement, etc. Les intégrations LMS sont disponibles via LTI 1.3.<br/></p><div data-w-id="e3133bcc-a829-9a85-b193-8bcb465dc444" style="-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="_2-buttons-wrapper integrations-hero left"><div id="w-node-e3133bcc-a829-9a85-b193-8bcb465dc445-b4c0a726" class="button-primary-gradient _2-buttons"><a href="https://calendly.com/courseboxai/30minconsultation" class="button-primary w-button">Réservez une démo</a></div></div></div><div data-w-id="acc832cd-cc43-5a6b-61e9-ac7da760a874" style="-webkit-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="integrations-hero-images-main-wrapper"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65efe7e235baee2b42b268bc_Coursebox%20hero%20graphic%20(801%20x%20904%20px)%20(9).png" loading="eager" alt="" class="image-11 home-perks-content-top-image"/></div></div><div class="bg-gradient-blur-wrapper integrations-hero"><div class="bg-gradient-blur-circle-3 pink top"></div><div class="bg-gradient-blur-circle-2 blue"></div><div class="bg-gradient-blur-circle-1 purple"></div></div></div></section><section id="integrations" class="section integrations"><div class="container-default integrations w-container"><div data-w-id="ead12af3-ca06-f917-94d2-c7973b38c38f" style="-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="content-top integrations"><h2 class="title integrations"><strong>Systèmes de gestion de l&#x27;apprentissage avec LTI 1.3</strong><br/></h2></div></div><div class="container-default home-features w-container"><div class="w-layout-grid home-features-grid"><div id="w-node-a6632ef9-8784-c76c-6708-95a1af9ac044-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578b1812b83bed012a948_download.webp" loading="eager" alt="" class="image card-home-feature"/><h3 class="title card-home-feature"><strong>Toile</strong></h3></div><div id="w-node-a6632ef9-8784-c76c-6708-95a1af9ac052-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1226f5c7ec799bf72_kisspng-moodle-android-educational-icon-5ae224cd82ae07_2848137715247699975353.webp" loading="eager" width="Auto" alt="" class="image card-home-feature"/><h3 class="title card-home-feature"><strong>Moodle</strong><br/></h3></div><div id="w-node-a6632ef9-8784-c76c-6708-95a1af9ac059-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c177dca89736218f88_open-lms-icon-filled-256%20(1).webp" loading="eager" alt="" class="image card-home-feature"/><div class="card-home-feature-content"><h3 class="title card-home-feature"><strong>LMS ouvert</strong><br/></h3></div></div><div id="w-node-a6632ef9-8784-c76c-6708-95a1af9ac060-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1c546a67c91b7eb98_d2l-share-logo.webp" loading="eager" alt="" class="image card-home-feature"/><div class="card-home-feature-content"><h3 class="title card-home-feature"><strong>Espace lumineux</strong><br/></h3></div></div><div id="w-node-a6632ef9-8784-c76c-6708-95a1af9ac067-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1d3d001b067c88132_Blackboard_Inc__logo.webp" loading="eager" alt="" class="image card-home-feature"/><div class="card-home-feature-content"><h3 class="title card-home-feature"><strong>Tableau noir</strong><br/></h3></div></div></div><div style="padding-top:56.17021276595745%" class="w-embed-youtubevideo youtube-2 _2"><iframe src="https://www.youtube.com/embed/5jCxXV7fsIs?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameBorder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="" title="How to connect Coursebox LTI to your LMS"></iframe></div></div></section><section id="integrations" class="section integrations _2"><div class="container-default integrations w-container"><div data-w-id="1ea89b7b-2dd4-1fd9-80ae-eedf1a3b5f3d" style="-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="content-top integrations"><h2 class="title integrations"><strong>Connectez Coursebox à des milliers de plateformes</strong><br/></h2></div></div><div class="container-default home-features w-container"><div class="w-layout-grid home-features-grid _2"><div id="w-node-_1ea89b7b-2dd4-1fd9-80ae-eedf1a3b5f48-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c19d90dbe16e6bb161_download%20(1).webp" loading="eager" alt="" class="image card-home-feature"/><h3 class="title card-home-feature"><a href="https://zapier.com/apps/coursebox-lms/integrations" target="_blank"><strong>Zapier</strong></a></h3></div></div></div></section><section id="integrations" class="section integrations"><div class="container-default integrations w-container"><div data-w-id="0e029653-31b5-d2a9-0137-9e896608f894" style="-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="content-top integrations"><h2 class="title integrations"><strong>Intégrations natives</strong><br/></h2></div></div><div class="container-default home-features w-container"><div class="w-layout-grid home-features-grid _2"><div id="w-node-_0e029653-31b5-d2a9-0137-9e896608f89f-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1ba094aade8b04c19_Arlo-press-release_edited.webp" loading="eager" alt="" class="image card-home-feature"/><h3 class="title card-home-feature"><strong>Arlo</strong></h3></div><div id="w-node-_0e029653-31b5-d2a9-0137-9e896608f8a7-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1003221d7ce1f0ab0_job-ready-Secondary-CMYK-1_edited.webp" loading="eager" width="Auto" alt="" class="image card-home-feature"/><div class="card-home-feature-content"><h3 class="title card-home-feature"><strong>JobReady et Vetrak Cloud</strong></h3></div></div><div id="w-node-_0e029653-31b5-d2a9-0137-9e896608f8af-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1c673fe3c8eb25d28_8fc6a20dd42803d99e5f782d03916991.webp" loading="eager" width="Auto" alt="" class="image card-home-feature"/><h3 class="title card-home-feature"><strong>Rayure</strong><br/></h3></div></div><div style="padding-top:56.17021276595745%" class="w-embed-youtubevideo youtube-2"><iframe src="https://www.youtube.com/embed/Aj5aWlOUKxY?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameBorder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="" title="Selling Courses and Subscriptions in Coursebox"></iframe></div></div></section><section id="integrations" class="section integrations"><div class="container-default integrations w-container"><div data-w-id="3c4aee93-1786-118e-20db-6cbdcac3513c" style="-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="content-top integrations"><h2 class="title integrations"><strong> Intégrez votre cours sous forme de cadre dans n&#x27;importe quel éditeur de site Web</strong><br/></h2></div></div><div class="container-default home-features w-container"><div class="w-layout-grid home-features-grid"><div id="w-node-_3c4aee93-1786-118e-20db-6cbdcac35147-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c11938b16ea3b5d551_download%20(5)_edited.webp" loading="eager" alt="" class="image card-home-feature"/><h3 class="title card-home-feature"><strong>Wix</strong></h3></div><div id="w-node-_3c4aee93-1786-118e-20db-6cbdcac3514f-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c177dca89736218f53_images.webp" loading="eager" width="Auto" alt="" class="image card-home-feature"/><div class="card-home-feature-content"><h3 class="title card-home-feature"><strong>Shopify</strong></h3></div></div><div id="w-node-_3c4aee93-1786-118e-20db-6cbdcac35157-b4c0a726" class="card home-feature"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1932733bcfc4236f2_download%20(12).webp" loading="eager" width="Auto" alt="" class="image card-home-feature"/><h3 class="title card-home-feature"><strong>Espace Squarespace</strong><br/></h3></div><div id="w-node-_3c4aee93-1786-118e-20db-6cbdcac35160-b4c0a726" class="card home-feature _22"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f578c1f6a2ab97509aba4d_maxresdefault_edited.webp" loading="eager" alt="" class="image card-home-feature"/><div class="card-home-feature-content"><h3 class="title card-home-feature"><strong>Wordpress</strong><br/></h3></div></div></div><div style="padding-top:56.17021276595745%" class="w-embed-youtubevideo youtube-2 _2"><iframe src="https://www.youtube.com/embed/Aj5aWlOUKxY?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameBorder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="" title="Selling Courses and Subscriptions in Coursebox"></iframe></div></div></section><section class="section cta"><div class="container-2 w-container"><div class="cta-card-wrapper"><div class="card cta"><h2 class="heading-2"><strong class="bold-text-18">Le créateur de cours alimenté par l&#x27;IA dont vous rêviez.</strong><br/></h2><p class="paragraph-6">Commencez gratuitement dès aujourd&#x27;hui.</p><div class="_2-buttons-wrapper"><div class="div-block-3"><a data-w-id="985f03d8-afe6-3b77-58cf-ff6f3a7c07aa" href="#" class="button-primary w-button">Inscrivez-vous gratuitement</a></div></div></div><div class="cta-gradient-blur"></div></div></div></section><section class="section home-blog"></section><footer class="footer"><div class="container-default w-container"><div class="footer-content"><div class="footer-menu-main-content"><div class="footer-menu-wrapper last"><div class="title footer-menu">Compte</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/fr/tarification" class="footer-nav-link">Tarification</a></li><li class="footer-nav-item"><a href="https://my.coursebox.ai/#/courses/create/ai/for-you" class="footer-nav-link">Connectez-vous à Coursebox</a></li><li class="footer-nav-item"><a href="/fr/gerer-labonnement" class="footer-nav-link">Gérer l&#x27;abonnement</a></li><li class="footer-nav-item"><a href="/fr/gerer-labonnement" class="footer-nav-link">Mettre à niveau ou annuler</a></li><li class="footer-nav-item"><a href="/fr/connexion-lms" class="footer-nav-link">Connectez-vous à LXP</a></li><li class="footer-nav-item"><a href="/fr/programme-daffiliation" class="footer-nav-link">Affiliés</a></li><li class="footer-nav-item"><a href="/fr/partenaires" class="footer-nav-link">PARTENAIRES</a></li><li class="footer-nav-item"><a href="/fr/entreprise" class="footer-nav-link">Entreprise</a></li></ul></div></div><div class="footer-menu-wrapper last"><div class="title footer-menu">Caractéristiques</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/fr/generateur-de-quiz-ia" class="footer-nav-link">Quiz sur l&#x27;IA</a></li><li class="footer-nav-item"><a href="/fr/redacteur-de-cours-sur-lia" class="footer-nav-link">Rédacteur de cours d&#x27;IA</a></li><li class="footer-nav-item"><a href="/fr/tuteur-de-chatbot-ia" class="footer-nav-link">Tuteur IA</a></li><li class="footer-nav-item"><a href="/fr/evaluation-de-lia" class="footer-nav-link">Évaluation de l&#x27;IA</a></li><li class="footer-nav-item"><a href="/fr/plateforme-dexperience-dapprentissage" class="footer-nav-link">AI LXP</a></li><li class="footer-nav-item"><a href="/fr/ia-lms" class="footer-nav-link">LAMPES À AIR</a></li><li class="footer-nav-item"><a href="/fr/integrations" aria-current="page" class="footer-nav-link w--current">Intégrations</a></li></ul></div></div><div class="footer-menu-wrapper last"><div class="title footer-menu">Ressources</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/fr/cours-pratique-gratuit-sur-lia-generative" class="footer-nav-link">Cours d&#x27;IA gratuit</a></li><li class="footer-nav-item"><a href="/fr/blog" class="footer-nav-link">Blogue</a></li></ul></div></div><div class="footer-menu-wrapper last"><div class="title footer-menu">L&#x27;entreprise</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/fr/a-propos" class="footer-nav-link">À propos</a></li><li class="footer-nav-item"><a href="/fr/contact" class="footer-nav-link">Contacter</a></li><li class="footer-nav-item"><a href="/fr/contrat-de-portail-prive" class="footer-nav-link">Accord relatif au portail privé</a></li><li class="footer-nav-item"><a href="/fr/contrat-dutilisation" class="footer-nav-link">Contrat d&#x27;utilisation</a></li><li class="footer-nav-item"><a href="/fr/politique-de-confidentialite" class="footer-nav-link">Confidentialité</a></li><li class="footer-nav-item"><a href="/fr/frais-et-charges" class="footer-nav-link">Honoraires</a></li></ul></div></div></div></div><div class="footer-content-bottom"><a href="/fr" class="footer-logo-container w-inline-block"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65fe59e0bf27147c2015da43_coursebox%20logo.webp" alt="Logo Coursebox avec dégradé" loading="lazy" class="footer-logo"/></a><div class="footer-small-print">Tous droits réservés © Coursebox Pty Ltd.</div><div class="social-media-wrapper"><a href="https://www.linkedin.com/company/courseboxai" target="_blank" class="social-media-link icon-size-13px"></a><a href="https://www.youtube.com/channel/UChZ26y9B2waBHvY8c_uG0ow" target="_blank" class="social-media-link icon-size-13px"></a><a href="https://www.instagram.com/coursebox.ai/" target="_blank" class="social-media-link icon-size-15px"></a></div></div></div></footer><div class="form-popup boxer-registeration-popup"><div id="small-business-monthly-parent" class="contact-form-block w-node-_1896e417-cf44-7311-c110-8671f0e4693f-f0e4693e w-form"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/6635ecf10edfd934c9ca3791_icons8-cross-48.png" loading="lazy" data-w-id="1896e417-cf44-7311-c110-8671f0e46940" alt="" class="image-15"/><form id="email-form" name="email-form" data-name="Email Form" method="get" data-optibase-submit-conversion-id="free_sign_up" class="card-contact-form boxer-register-form" data-wf-page-id="65f1aa33290291e9b4c0a726" data-wf-element-id="1896e417-cf44-7311-c110-8671f0e46941" data-wf-locale-id="66506742c6ec524dc2105b4f"><div id="w-node-_1896e417-cf44-7311-c110-8671f0e46942-f0e4693e" class="input-wrapper"><label for="Email-2">Votre e-mail</label><input class="input-2 emailboxer w-input" maxlength="256" name="Email" data-name="Email" placeholder="par exemple my@gmail.com" type="email" id="Email-2" required=""/></div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e46946-f0e4693e" class="input-wrapper password-field-wrapper"><label for="Password-2">Mot de passe</label><input class="input-2 password w-input" maxlength="256" name="Password" data-name="Password" placeholder="Mot de passe" type="text" id="Password-2" required=""/></div><div id="w-node-_9d4826eb-47e8-aa18-990f-3c38a6125a72-f0e4693e" class="password-error-text">Le mot de passe doit comporter au moins 12 caractères et contenir au moins des lettres majuscules et minuscules, ainsi qu&#x27;un chiffre et un symbole</div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e4694a-f0e4693e" class="input-wrapper"><label for="Firstname-2">Prénom</label><input class="input-2 firstname w-input" maxlength="256" name="Firstname" data-name="Firstname" pattern="[a-zA-Z0-9#-]+" placeholder="Prénom" title="Please enter letters, numbers, or hyphens only" type="text" id="Firstname-2" required=""/></div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e4694e-f0e4693e" class="input-wrapper"><label for="Lastname-2">Nom de famille</label><input class="input-2 lastname w-input" maxlength="256" name="Lastname" data-name="Lastname" pattern="[a-zA-Z0-9#-]+" placeholder="Nom de famille" title="Please enter letters, numbers, or hyphens only" type="text" id="Lastname-2" required=""/></div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e46952-f0e4693e" class="button-primary-gradient-2 contact-form nextbtn"><input type="submit" data-wait="Veuillez patienter..." class="button-primary-2 small nextbtn w-button" value="Suivant"/></div></form><div class="success-message-2 w-form-done"><div>Veuillez patienter avant d&#x27;être redirigé.</div></div><div class="error-message-2 w-form-fail"><div>Oups ! Quelque chose s&#x27;est mal passé.</div></div></div></div></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65e9bdf0fae79e05e213200c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/js/webflow.schunk.6568e74973c68f74.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/js/webflow.schunk.e392afcae7bd0059.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/js/webflow.0f79025d.926edabc468308a8.js" type="text/javascript"></script><!-- First promoter -->
+
+<script>
+  window.addEventListener("load", function () {
+    (function (w) {
+      w.fpr = w.fpr || function () {
+        w.fpr.q = w.fpr.q || [];
+        w.fpr.q[arguments[0] == "set" ? "unshift" : "push"](arguments);
+      };
+    })(window);
+    
+    fpr("init", { cid: "qtlhc4fu" });
+
+    // Ensure FirstPromoter script has loaded before tracking clicks
+    setTimeout(function () {
+      if (typeof fpr === "function") {
+        fpr("click");
+      } else {
+        console.warn("FirstPromoter script not loaded in time.");
+      }
+    }, 500);
+  });
+</script>
+
+<script src="https://cdn.firstpromoter.com/fpr.js" async defer></script>
+
+<script>
+
+  function getFPTid() {
+    return window.FPROM && window.FPROM.data.tid || ('fp_' + (new Date).getTime());
+  }
+
+  var chargebeeTrackFunc = function (chargebeeInstance) {
+    var tid = getFPTid();
+  
+    if (tid && chargebeeInstance) {
+      var cart = chargebeeInstance.getCart();
+      cart.setCustomer({ cf_tid: tid });
+    }
+  };
+  
+
+ var stateCheck = setInterval(function () {
+     var chargebeeInstance;
+    try {
+      chargebeeInstance = Chargebee.getInstance();
+    }
+    catch (err) {
+    };
+    if (chargebeeInstance) {
+      clearInterval(stateCheck);
+      chargebeeTrackFunc(chargebeeInstance);
+    }
+  }, 100);
+
+</script>
+<!-- END First Promoter --->
+
+
+<!-- Free user register form --->
+<script>
+  
+  function isValidPassword(password) {
+    // Password must be at least 12 characters long and contain at least uppercase and lowercase letters, with a number and a symbol
+    var passwordRegexes = [
+      /.{12,}/,
+      /[A-Z]/,
+      /[a-z]/,
+      /[0-9]/,
+      /[!@#\$%\^&\*\(\)_\+\-=\[\]\{\};':"\\|,.<>\/?]/
+    ];
+    var passwordChecks = passwordRegexes.map(function (regex) {
+      return regex.test(password);
+    });
+    var isValid = passwordChecks.every(function (passwordCheck) {
+      return passwordCheck;
+    });
+    console.log("isValid", isValid);
+    return isValid;
+  }
+  
+$('.dropinscript').hide();
+var submittingBoxer=false;
+$('.boxer-register-form').submit(function (event) {
+  //event.preventDefault();
+  //event.stopPropagation();
+  
+  if (submittingBoxer) {
+    return;
+  }
+  
+  var email = $(this).find('.emailboxer').val();
+  var password = $(this).find('.password').val();
+  var firstName = $(this).find('.firstname').val();
+  var lastName = $(this).find('.lastname').val();
+
+  if(!isValidPassword(password)){
+    event.preventDefault();
+    event.stopPropagation();
+    $('.password-error-text').show();
+    submittingBoxer = false;
+    return false;
+  }
+
+  submittingBoxer = true;
+  $(this).find('.nextbtn').val('Please wait....');
+
+  $('.password-error-text').hide();
+  
+  var settings = {
+    "url": "https://my.coursebox.ai/api/WineUsers/createAccount",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    data: JSON.stringify({ "data": { "user": { "firstName": firstName, inIframe: true, "lastName": lastName, "email": email, "password": password, "status": ["BOXER"] }, "offerCode": "" } })
+  };
+
+  $.ajax(settings).done(function (response) {
+    if (response) {
+      var settings = {
+        "url": "https://my.coursebox.ai/auth/login",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        data: JSON.stringify({ "email": email, "password": password, inIframe: true })
+      };
+      $.ajax(settings).done(function (response) {
+
+        window.location.href = 'https://my.coursebox.ai/auto-login-redirect?token=' + response.token.id + '&redirectTo=https%3A%2F%2Fmy.coursebox.ai%2Fcourses%2Fcreate%2Fai%2Ffor-you';
+        $('.boxer-registeration-popup').hide();
+      }, function (err) {
+        submittingBoxer = false;
+      });
+    }
+  },function(err){
+    submittingBoxer = false;
+  });
+	
+  //mask password to avoid it to be saved in webflow
+  $(this).find('.password').val("xxx");
+});
+
+function isValidEmail(email) {
+  var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+function checkBoxerEmail(email) {
+ 
+  var isEmail = isValidEmail(email);
+  if (isEmail) {
+
+    var settings = {
+      "url": "https://my.coursebox.ai/api/WineUsers/checkEmail",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      data: JSON.stringify({ "email": email })
+    };
+    $.ajax(settings).done(function (response) {
+      if (response && !response.isAvailable) {
+        window.location.href = 'https://my.coursebox.ai/login';
+      }
+    });
+
+  }
+}
+
+$('.emailboxer').keyup(function(){
+checkBoxerEmail(this.value);
+});
+
+
+</script>
+<!-- END Free user register form --->
+
+ <!-- Listens for clicks on buttons or submit inputs with text 'Sign Up Free' or 'Start Free' and sends a custom PostHog event with details including button text, timestamp, and page URL. --->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  
+
+    document.body.addEventListener('click', function (e) {
+      const el = e.target.closest('a.button-primary, input.button-primary');
+      if (!el) return;
+
+      const text = el.tagName === 'INPUT' ? el.value.trim() : el.innerText.trim();
+
+      console.log('✅ Tracked click:', text);
+     
+      trackSignupButtonClick(text);
+      
+    });
+
+    function trackSignupButtonClick(buttonText) {
+      posthog.capture('signup_button_clicked', {
+        button_text: buttonText,
+        clicked_at: new Date().toISOString(),
+        page_url: window.location.href,
+      });
+    }
+  });
+</script>
+
+
+
+<!-- PostHog Next Button-->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('click', function (e) {
+      const el = e.target.closest('div.nextbtn, input.nextbtn');
+      if (!el) return;
+
+      const text = el.tagName === 'INPUT' ? el.value.trim() : el.innerText.trim();
+
+      console.log('➡️ Next button clicked:', text);
+      handleNextButtonClick(text);
+    });
+
+    function handleNextButtonClick(buttonText) {
+       posthog.capture('signup_form_next_clicked', {
+          button_text: 'Next',
+          form_id: 'email-form',
+          page_url: window.location.href,
+        });
+    }
+  });
+</script>
+
+
+<script>
+  ;(function() {
+    // your locale list (two-letter codes), adjust if needed
+    var locales     = ['ar','es','de','fr','pt','it','zh','ko','ja','nl'];
+    // your old collection slug (no leading/trailing slash here)
+    var oldSlug     = 'off-the-shelf-elearning-courses';
+    // your new landing-page slug (no leading slash here, ensure trailing slash)
+    var landingSlug = 'ai-elearning-authoring-tool/';
+    var loc  = window.location;
+    var path = loc.pathname;                    // e.g. "/de/off-the-shelf-elearning-courses/course-1/"
+    var parts = path.replace(/^\/|\/$/g, '')     // trim leading/trailing “/”
+                      .split('/');               // e.g. ["de","off-the-shelf-elearning-courses","course-1"]
+    // helper to do the redirect
+    function redirect(to) {
+      loc.replace(to + loc.search + loc.hash);
+    }
+    // :one: Primary (no locale prefix): first segment is oldSlug
+    if (parts[0] === oldSlug) {
+      return redirect('/' + landingSlug);
+    }
+    // :two: Localized: first segment is a locale, second is oldSlug
+    if (
+      parts.length >= 2 &&
+      locales.indexOf(parts[0]) !== -1 &&
+      parts[1] === oldSlug
+    ) {
+      return redirect('/' + parts[0] + '/' + landingSlug);
+    }
+    // otherwise do nothing
+  })();
+</script></body></html>

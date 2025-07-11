@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import PageNavigation from "@/components/PageNavigation";
 import { 
   Video, 
   Users, 
@@ -19,8 +18,6 @@ import {
   Grid,
   Presentation
 } from "lucide-react";
-import Navigation from "@/components/Navigation";
-import { useState } from "react";
 
 const VirtualClassroom = () => {
   const [isInSession, setIsInSession] = useState(false);
@@ -93,7 +90,6 @@ const VirtualClassroom = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
       
       {/* Header */}
       <section className="py-20 px-4">
@@ -337,7 +333,6 @@ const VirtualClassroom = () => {
           </div>
         </div>
       </section>
-      <PageNavigation />
     </div>
   );
 };

@@ -67,10 +67,10 @@ const SuccessStoriesCarousel = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white/5">
+    <section className="py-20 px-4 bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
       <div className="max-w-7xl mx-auto">
          <div className="text-center mb-16">
-           <h2 className="text-5xl font-bold text-slate-900 mb-4 drop-shadow-2xl">Global Success Stories: Real Impact, Real Learners</h2>
+           <h2 className="text-5xl font-bold mb-4 drop-shadow-2xl text-[#0a1834] dark:text-white">Global Success Stories: Real Impact, Real Learners</h2>
          </div>
         
         <div className="overflow-hidden mb-12" ref={emblaRef}>
@@ -78,32 +78,18 @@ const SuccessStoriesCarousel = () => {
             {/* Duplicate the stories array for seamless loop */}
             {[...successStories, ...successStories].map((story, index) => (
               <div key={index} className="flex-none w-80">
-                <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 relative overflow-hidden">
-                  {/* Neon Halo Effect */}
-                  <div 
-                    className="absolute inset-0 rounded-lg opacity-30 pointer-events-none"
-                    style={{
-                      background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.6) 0%, rgba(147, 51, 234, 0.4) 30%, rgba(59, 130, 246, 0.2) 70%, transparent 100%)',
-                      filter: 'blur(8px)',
-                    }}
-                  />
-                  <div 
-                    className="absolute inset-0 rounded-lg opacity-20 pointer-events-none"
-                    style={{
-                      boxShadow: '0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6), inset 0 0 20px rgba(59, 130, 246, 0.3)',
-                    }}
-                  />
+                <Card className="bg-white dark:bg-[#16203a] border-[#22305a] hover:bg-[#f0f4fa] dark:hover:bg-[#22305a] transition-all duration-300 hover:scale-105 relative overflow-hidden">
                   <CardContent className="p-6 relative z-10">
                     <img 
                       src={story.image}
                       alt={story.alt}
-                      className="w-full h-48 object-cover rounded-lg mb-4"
+                      className="w-full h-48 object-cover rounded-lg mb-4 border-2 border-[#11204a]"
                       loading="lazy"
                     />
-                     <h3 className="text-xl font-bold text-slate-900 mb-3 drop-shadow-lg">
+                     <h3 className="text-xl font-bold mb-3 drop-shadow-lg text-[#0a1834] dark:text-white">
                        {story.title}
                      </h3>
-                     <p className="text-slate-800 font-bold drop-shadow-md">
+                     <p className="font-bold drop-shadow-md text-cyan-700 dark:text-cyan-300">
                        {story.description}
                      </p>
                   </CardContent>
@@ -115,12 +101,12 @@ const SuccessStoriesCarousel = () => {
         
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+            <Button size="lg" className="bg-cyan-600 text-white hover:bg-cyan-700">
               Share Your Experience
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="border-cyan-600 dark:border-cyan-300 text-cyan-600 dark:text-cyan-300 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a]">
               Discover More Case Studies
-              <ChevronRight className="ml-2 h-5 w-5" />
+              <ChevronRight className="ml-2 h-5 w-5 text-cyan-600 dark:text-cyan-300" />
             </Button>
           </div>
         </div>

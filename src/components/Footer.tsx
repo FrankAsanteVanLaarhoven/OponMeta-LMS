@@ -1,14 +1,13 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Users, CreditCard, BookOpen, Briefcase, Star, Globe, Target, TrendingUp, Award, Heart, Zap, Calendar } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
+    <footer className="bg-[#0a1834] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -20,112 +19,227 @@ const Footer = () => {
                 />
               </a>
               <div className="flex flex-col">
-                <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-600 bg-clip-text text-transparent">OPONMETA</span>
-                <span className="text-xs text-blue-200">Global Learning Platform</span>
+                <span className="text-lg font-bold text-white">OPONMETA</span>
+                <span className="text-xs text-cyan-300">Global Learning Platform</span>
               </div>
             </div>
-            <p className="text-blue-100 text-sm">
+            <p className="text-cyan-100 text-sm">
               Advancing education worldwide with innovative, AI-powered learning and training solutions for everyone.
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4 text-blue-300" />
-                <span className="text-blue-100">Global Headquarters</span>
+                <Globe className="h-4 w-4 text-cyan-300" />
+                <a href="https://www.oponmeta.com" target="_blank" rel="noopener noreferrer" className="text-cyan-100 hover:text-cyan-400 transition-colors">
+                  www.oponmeta.com
+                </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-blue-300" />
-                <span className="text-blue-100">+1 (555) 123-4567</span>
+                <MapPin className="h-4 w-4 text-cyan-300" />
+                <span className="text-cyan-100">Global Headquarters</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-blue-300" />
-                <span className="text-blue-100">+2348055254643</span>
+                <Phone className="h-4 w-4 text-cyan-300" />
+                <span className="text-cyan-100">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-blue-300" />
-                <span className="text-blue-100">info@oponmeta.com</span>
+                <Phone className="h-4 w-4 text-cyan-300" />
+                <span className="text-cyan-100">+2348055254643</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-cyan-300" />
+                <a href="mailto:info@oponmeta.com" className="text-cyan-100 hover:text-cyan-400 transition-colors">
+                  info@oponmeta.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-cyan-300" />
+                <a href="mailto:support@oponmeta.com" className="text-cyan-100 hover:text-cyan-400 transition-colors">
+                  support@oponmeta.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-cyan-300" />
+                <a href="mailto:partnerships@oponmeta.com" className="text-cyan-100 hover:text-cyan-400 transition-colors">
+                  partnerships@oponmeta.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-cyan-300" />
+                <a href="mailto:careers@oponmeta.com" className="text-cyan-100 hover:text-cyan-400 transition-colors">
+                  careers@oponmeta.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-cyan-300" />
+                <a href="mailto:admin@oponmeta.com" className="text-cyan-100 hover:text-cyan-400 transition-colors">
+                  admin@oponmeta.com
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Learning & Platform */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Solutions</h3>
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <BookOpen className="h-5 w-5 text-cyan-400" />
+              Learning & Platform
+            </h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/courses" className="text-blue-100 hover:text-white transition-colors">Online Courses</a></li>
-              <li><a href="/virtual-classroom" className="text-blue-100 hover:text-white transition-colors">Virtual Classrooms</a></li>
-              <li><a href="/meet-ai" className="text-blue-100 hover:text-white transition-colors">AI Learning Assistant</a></li>
-              <li><a href="/authoring-tool" className="text-blue-100 hover:text-white transition-colors">Content Authoring Tools</a></li>
-              <li><a href="/quiz-builder" className="text-blue-100 hover:text-white transition-colors">Quiz & Assessment Builder</a></li>
-              <li><a href="/course-library" className="text-blue-100 hover:text-white transition-colors">Course Library</a></li>
-              <li><a href="/vendors" className="text-blue-100 hover:text-white transition-colors">Global Vendor Partners</a></li>
-              <li><a href="/become-instructor" className="text-blue-100 hover:text-white transition-colors">Become an Instructor</a></li>
+              <li><a href="/courses" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <BookOpen className="h-3 w-3 text-cyan-300" />
+                Browse Courses
+              </a></li>
+              <li><a href="/student-portal" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Users className="h-3 w-3 text-cyan-300" />
+                Student Portal
+              </a></li>
+              <li><a href="/one-to-one-booking" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Calendar className="h-3 w-3 text-cyan-300" />
+                1:1 Booking
+              </a></li>
+              <li><a href="/companion-subscribe" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <CreditCard className="h-3 w-3 text-cyan-300" />
+                Subscription Management
+              </a></li>
+              <li><a href="/companion" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Star className="h-3 w-3 text-cyan-300" />
+                AI Learning Companion
+              </a></li>
+              <li><a href="/virtual-classroom" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Globe className="h-3 w-3 text-cyan-300" />
+                Virtual Classrooms
+              </a></li>
+              <li><a href="/course-library" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <BookOpen className="h-3 w-3 text-cyan-300" />
+                Course Library
+              </a></li>
+              <li><a href="/quiz-builder" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Target className="h-3 w-3 text-cyan-300" />
+                Quiz Builder
+              </a></li>
+              <li><a href="/authoring-tool" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Zap className="h-3 w-3 text-cyan-300" />
+                Authoring Tool
+              </a></li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Business & Partners */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">About Us</h3>
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <Briefcase className="h-5 w-5 text-green-400" />
+              Business & Partners
+            </h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/about" className="text-blue-100 hover:text-white transition-colors">About OponMeta</a></li>
-              <li><a href="/case-studies" className="text-blue-100 hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="/features" className="text-blue-100 hover:text-white transition-colors">Platform Features</a></li>
-              <li><a href="/get-demo" className="text-blue-100 hover:text-white transition-colors">Request a Demo</a></li>
-              <li><a href="/get-quote" className="text-blue-100 hover:text-white transition-colors">Get a Quote</a></li>
-              <li><a href="/free-trial" className="text-blue-100 hover:text-white transition-colors">Start Free Trial</a></li>
-              <li><a href="/contact" className="text-blue-100 hover:text-white transition-colors">Contact Support</a></li>
-              <li><a href="/start-learning" className="text-blue-100 hover:text-white transition-colors">Start Learning</a></li>
+              <li><a href="/vendors" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <TrendingUp className="h-3 w-3 text-cyan-300" />
+                Vendor Partners
+              </a></li>
+              <li><a href="/vendor-portal" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Briefcase className="h-3 w-3 text-cyan-300" />
+                Vendor Portal
+              </a></li>
+              <li><a href="/advertiser-portal" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Award className="h-3 w-3 text-cyan-300" />
+                Advertiser Portal
+              </a></li>
+              <li><a href="/become-instructor" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Users className="h-3 w-3 text-cyan-300" />
+                Become Instructor
+              </a></li>
+              <li><a href="/create-course" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <BookOpen className="h-3 w-3 text-cyan-300" />
+                Create Course
+              </a></li>
+              <li><a href="/dashboard" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Star className="h-3 w-3 text-cyan-300" />
+                Dashboard
+              </a></li>
+              <li><a href="/get-demo" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Heart className="h-3 w-3 text-cyan-300" />
+                Request Demo
+              </a></li>
+              <li><a href="/get-quote" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Target className="h-3 w-3 text-cyan-300" />
+                Get Quote
+              </a></li>
             </ul>
           </div>
 
-          {/* Legal & Support */}
+          {/* Support & Resources */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Support & Policies</h3>
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <Heart className="h-5 w-5 text-pink-400" />
+              Support & Resources
+            </h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/privacy-policy" className="text-blue-100 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms-of-service" className="text-blue-100 hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="/cookie-policy" className="text-blue-100 hover:text-white transition-colors">Cookie Policy</a></li>
-              <li><a href="/refund-policy" className="text-blue-100 hover:text-white transition-colors">Refund Policy</a></li>
-              <li><a href="/support" className="text-blue-100 hover:text-white transition-colors">Support Center</a></li>
-              <li><a href="/help" className="text-blue-100 hover:text-white transition-colors">Help & FAQ</a></li>
-              <li><a href="/accessibility" className="text-blue-100 hover:text-white transition-colors">Accessibility</a></li>
-              <li><a href="/security" className="text-blue-100 hover:text-white transition-colors">Security</a></li>
+              <li><a href="/about" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Star className="h-3 w-3 text-cyan-300" />
+                About OponMeta
+              </a></li>
+              <li><a href="/features" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Zap className="h-3 w-3 text-cyan-300" />
+                Platform Features
+              </a></li>
+              <li><a href="/case-studies" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Award className="h-3 w-3 text-cyan-300" />
+                Case Studies
+              </a></li>
+              <li><a href="/career-guidance" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Target className="h-3 w-3 text-cyan-300" />
+                Career Guidance
+              </a></li>
+              <li><a href="/start-learning" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <BookOpen className="h-3 w-3 text-cyan-300" />
+                Start Learning
+              </a></li>
+              <li><a href="/free-trial" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Star className="h-3 w-3 text-cyan-300" />
+                Free Trial
+              </a></li>
+              <li><a href="/contact" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Mail className="h-3 w-3 text-cyan-300" />
+                Contact Support
+              </a></li>
+              <li><a href="/contact-form" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <Heart className="h-3 w-3 text-cyan-300" />
+                Contact Form
+              </a></li>
             </ul>
           </div>
         </div>
 
         {/* Social Media & Newsletter */}
-        <div className="mt-12 pt-8 border-t border-white/20">
+        <div className="mt-12 pt-8 border-t border-[#11204a]">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-            
             {/* Social Media */}
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-blue-100">Connect with us:</span>
+              <span className="text-sm text-cyan-100">Connect with us:</span>
               <div className="flex space-x-3">
-                <a href="#" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://facebook.com/oponmeta" target="_blank" rel="noopener noreferrer" className="text-cyan-100 hover:text-cyan-400 transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://twitter.com/oponmeta" target="_blank" rel="noopener noreferrer" className="text-cyan-100 hover:text-cyan-400 transition-colors">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://linkedin.com/company/oponmeta" target="_blank" rel="noopener noreferrer" className="text-cyan-100 hover:text-cyan-400 transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-blue-300 hover:text-white transition-colors">
+                <a href="https://instagram.com/oponmeta" target="_blank" rel="noopener noreferrer" className="text-cyan-100 hover:text-cyan-400 transition-colors">
                   <Instagram className="h-5 w-5" />
                 </a>
               </div>
             </div>
-
             {/* Newsletter Signup */}
             <div className="flex items-center space-x-2">
               <input 
                 type="email" 
                 placeholder="Subscribe to our global newsletter"
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="px-4 py-2 bg-[#16203a] border border-[#11204a] rounded-lg text-white placeholder-cyan-200 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 id="newsletter-email"
               />
               <button 
-                className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg text-sm transition-all"
+                className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg text-sm transition-all"
                 onClick={() => {
                   const email = document.getElementById('newsletter-email') as HTMLInputElement;
                   if (email.value) {
@@ -141,14 +255,14 @@ const Footer = () => {
         </div>
 
         {/* Copyright & Design Credit */}
-        <div className="mt-8 pt-6 border-t border-white/20">
+        <div className="mt-8 pt-6 border-t border-[#11204a]">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-            <div className="text-sm text-blue-100">
+            <div className="text-sm text-cyan-100">
               © {new Date().getFullYear()} OPONMETA Global Learning. All rights reserved.
             </div>
-            <div className="flex items-center space-x-4 text-sm text-blue-100">
+            <div className="flex items-center space-x-4 text-sm text-cyan-100">
               <span>Design by</span>
-              <span className="font-semibold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="font-semibold text-cyan-300">
                 FAVL
               </span>
             </div>

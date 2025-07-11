@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Sparkles, Brain, Target, Zap } from "lucide-react";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Recommendations = () => {
   const [formData, setFormData] = useState({
@@ -35,13 +36,14 @@ const Recommendations = () => {
 
   return (
     <div className="space-y-6">
+      <DashboardBackButton />
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="p-2 bg-blue-100 rounded-lg">
-            <Sparkles className="h-8 w-8 text-blue-600" />
+          <div className="p-2 bg-[#16203a] rounded-lg">
+            <Sparkles className="h-8 w-8 text-cyan-300" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-blue-600">Personalized Learning Recommendations</h1>
+            <h1 className="text-3xl font-bold text-cyan-300">Personalized Learning Recommendations</h1>
             <p className="text-gray-600 mt-1">
               Fill in your details to receive AI-powered course recommendations tailored to your learning journey.
             </p>
@@ -56,7 +58,7 @@ const Recommendations = () => {
       <Card className="max-w-4xl mx-auto">
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
-            <Brain className="h-5 w-5 text-blue-600" />
+            <Brain className="h-5 w-5 text-cyan-300" />
             <span>Get AI Recommendations</span>
           </CardTitle>
           <p className="text-gray-600">Our AI analyzes your learning patterns to suggest the most suitable courses.</p>
@@ -65,7 +67,7 @@ const Recommendations = () => {
           {isAnalyzing ? (
             <div className="space-y-6 py-8">
               <div className="text-center">
-                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-cyan-300 mx-auto mb-4"></div>
                 <h3 className="text-lg font-semibold mb-2">Analyzing Your Learning Profile</h3>
                 <p className="text-gray-600">This may take a few moments...</p>
               </div>
@@ -123,7 +125,7 @@ const Recommendations = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
+              <Button type="submit" className="w-full bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]">
                 <Sparkles className="mr-2 h-4 w-4" />
                 Get Recommendations
               </Button>

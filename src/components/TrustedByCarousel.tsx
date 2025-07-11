@@ -40,11 +40,11 @@ const TrustedByCarousel = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
+    <section className="py-16 px-4 bg-[#0a1834]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-4">Trusted by Leading Organizations Globally</h2>
-          <p className="text-xl text-blue-100">
+          <p className="text-xl text-cyan-300">
             Empowering teams and organizations worldwide with innovative learning solutions.
           </p>
         </div>
@@ -55,33 +55,24 @@ const TrustedByCarousel = () => {
             {[...companies, ...companies].map((company, index) => (
               <div key={index} className="flex-none w-64">
                 <Card 
-                  className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 relative"
-                  style={{
-                    boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)',
-                  }}
+                  className="bg-[#16203a] border-[#22305a] hover:bg-[#22305a] transition-all duration-300 hover:scale-105 relative shadow-xl"
                 >
-                  <div 
-                    className="absolute inset-0 rounded-lg opacity-20 hover:opacity-30 transition-opacity duration-300"
-                    style={{
-                      background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
-                    }}
-                  />
                   <CardContent className="p-6 relative z-10">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-700 to-cyan-400 rounded-lg flex items-center justify-center shadow-lg">
                         <span className="text-white font-bold text-lg">{company.logo}</span>
                       </div>
                       <div>
                         <h3 className="text-white font-semibold text-lg drop-shadow-sm">{company.name}</h3>
                         <div className="flex items-center space-x-1 mt-1">
-                          <Building2 className="h-4 w-4 text-blue-300" />
-                          <span className="text-blue-100 text-sm font-medium">International Enterprise</span>
+                          <Building2 className="h-4 w-4 text-cyan-300" />
+                          <span className="text-cyan-200 text-sm font-medium">International Enterprise</span>
                         </div>
                       </div>
                     </div>
-                    <div className="mt-4 pt-4 border-t border-white/20">
+                    <div className="mt-4 pt-4 border-t border-[#22305a]">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-blue-100 font-medium">Active Learners</span>
+                        <span className="text-cyan-300 font-medium">Active Learners</span>
                         <span className="text-white font-semibold drop-shadow-sm">{Math.floor(Math.random() * 5000) + 1000}+</span>
                       </div>
                     </div>

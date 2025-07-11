@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, TrendingUp, Users, BarChart, Download, Calendar, Filter } from "lucide-react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { BarChart as RechartsBarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
+import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Analytics = () => {
   const [timeRange, setTimeRange] = useState("7d");
@@ -105,6 +106,7 @@ const Analytics = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
+      <DashboardBackButton />
       {/* Header with Controls */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h1 className="text-3xl font-bold text-blue-600">Real-Time Analytics</h1>

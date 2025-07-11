@@ -77,8 +77,8 @@ const CreateCourse = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
-      <Navigation />
+    <div className="min-h-screen bg-[#0a1834]">
+      {/* Removed <Navigation /> to prevent double navbar */}
       
       <div className="max-w-7xl mx-auto px-4 py-20">
         {/* Hero Section */}
@@ -86,7 +86,7 @@ const CreateCourse = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
             Build and Share Your Course
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-cyan-300 max-w-3xl mx-auto mb-8">
             Empower learners everywhere by sharing your expertise. Select your preferred creation method and begin building your course today.
           </p>
         </div>
@@ -94,12 +94,12 @@ const CreateCourse = () => {
         {/* Creation Methods */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {creationMethods.map((method, index) => (
-            <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 group hover:bg-white/15 transition-all duration-300">
+            <Card key={index} className="bg-[#16203a] border-[#11204a] group hover:bg-[#22305a] transition-all duration-300">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <method.icon className="h-16 w-16 text-purple-300 mx-auto mb-4" />
                   <h2 className="text-2xl font-bold text-white mb-3">{method.title}</h2>
-                  <p className="text-blue-100 mb-4">{method.description}</p>
+                  <p className="text-cyan-300 mb-4">{method.description}</p>
                   
                   <div className="flex justify-center space-x-4 mb-4">
                     <Badge variant="secondary" className="bg-white/20 text-white">
@@ -113,7 +113,7 @@ const CreateCourse = () => {
 
                 <div className="space-y-3 mb-8">
                   {method.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-blue-100">
+                    <div key={idx} className="flex items-center text-cyan-300">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
                       <span className="text-sm">{feature}</span>
                     </div>
@@ -122,7 +122,7 @@ const CreateCourse = () => {
 
                 <Button 
                   size="lg" 
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0"
+                  className="w-full bg-[#11204a] hover:bg-[#16203a] text-white border-2 border-[#0a1834]"
                   onClick={() => navigate(method.route)}
                 >
                   {method.title}
@@ -136,16 +136,16 @@ const CreateCourse = () => {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">What Type of Course Will You Create?</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">
+            <p className="text-cyan-300 max-w-2xl mx-auto">
               Select the course format that best fits your teaching style and content
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {courseTypes.map((type, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 group hover:bg-white/15 transition-all duration-300">
+              <Card key={index} className="bg-[#16203a] border-[#11204a] group hover:bg-[#22305a] transition-all duration-300">
                 <CardContent className="p-6 text-center">
-                  <type.icon className="h-12 w-12 text-blue-300 mx-auto mb-4" />
+                  <type.icon className="h-12 w-12 text-cyan-300 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-white mb-2 flex items-center justify-center">
                     {type.title}
                     {type.popular && (
@@ -154,7 +154,7 @@ const CreateCourse = () => {
                       </Badge>
                     )}
                   </h3>
-                  <p className="text-blue-200 text-sm">{type.description}</p>
+                  <p className="text-cyan-300 text-sm">{type.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -165,18 +165,18 @@ const CreateCourse = () => {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Why Become an Instructor?</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">
+            <p className="text-cyan-300 max-w-2xl mx-auto">
               Inspire learners and earn income by sharing your passion and expertise
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {instructorBenefits.map((benefit, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-md border-white/20 text-center">
+              <Card key={index} className="bg-[#16203a] border-[#11204a] text-center">
                 <CardContent className="p-8">
                   <benefit.icon className="h-12 w-12 text-green-400 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-blue-200">{benefit.description}</p>
+                  <p className="text-cyan-300">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -184,17 +184,17 @@ const CreateCourse = () => {
         </section>
 
         {/* CTA Section */}
-        <Card className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-md border-white/20">
+        <Card className="bg-[#11204a] border-[#22305a]">
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Teaching?</h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-cyan-300 mb-8 max-w-2xl mx-auto">
               Become part of a global community of instructors and start making a difference through education
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100" onClick={() => navigate("/become-instructor")}>
+              <Button size="lg" className="bg-[#16203a] text-white hover:bg-[#22305a] border-2 border-[#11204a]" onClick={() => navigate("/become-instructor")}>
                 Join as Instructor
               </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" onClick={() => navigate("/get-demo")}>
+              <Button size="lg" variant="outline" className="border-[#11204a] text-white hover:bg-[#11204a]/10" onClick={() => navigate("/get-demo")}>
                 Book a Demo
               </Button>
             </div>

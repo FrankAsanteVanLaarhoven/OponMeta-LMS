@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Users, Globe, Star, ChevronRight, Play } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import { BookOpen, Users, Globe, Star, ChevronRight, Play, CreditCard } from "lucide-react";
 import Hero from "@/components/Hero";
 import CourseCard from "@/components/CourseCard";
+import Footer from "@/components/Footer";
 
 import TrustedByCarousel from "@/components/TrustedByCarousel";
 import SuccessStoriesCarousel from "@/components/SuccessStoriesCarousel";
-import PageNavigation from "@/components/PageNavigation";
-import Footer from "@/components/Footer";
 import TeamCarousel from "@/components/TeamCarousel";
 import { useTranslation } from 'react-i18next';
+import { LampContainer } from "@/components/ui/lamp";
+import { motion } from "framer-motion";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -75,9 +75,52 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
+    <div className="min-h-screen bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
       <Hero />
+      <div className="mt-24" />
+
+      {/* CTA Lamp Section */}
+      <LampContainer>
+        <motion.h1
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+          className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl dark:from-cyan-300 dark:to-white"
+        >
+          Ready to Shape Your Future?<br />
+          <span className="block text-2xl md:text-4xl font-normal text-[#0a1834] dark:text-white drop-shadow-lg mt-4">
+            Join thousands of learners advancing their careers with our global education platform.
+          </span>
+        </motion.h1>
+        <div className="mt-10 flex justify-center">
+          <Button size="lg" className="bg-[#0a1834] text-white font-bold shadow-lg hover:bg-[#11204a] px-8 py-4 text-xl dark:bg-white dark:text-[#0a1834] dark:hover:bg-slate-200">
+            Start Learning Now
+          </Button>
+        </div>
+      </LampContainer>
+
+      {/* AI Learning Companion Featured Section */}
+      <section className="py-16 px-4 bg-white dark:bg-[#0a1834]">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-[#f5f7fa] dark:bg-[#16203a] rounded-3xl shadow-xl p-8 md:p-12 border border-[#22305a] dark:border-[#22305a]">
+          <div className="flex-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1834] dark:text-white mb-4">Meet Your AI Learning Companion</h2>
+            <p className="text-lg text-[#22305a] dark:text-slate-200 mb-6">Personalized, voice-driven, and always available—your AI Companion helps you learn at your pace, track your progress, and get instant feedback. Unlock interactive sessions, bookmarking, session history, and more!</p>
+            <ul className="text-[#22305a] dark:text-slate-200 mb-6 space-y-2">
+              <li>• Real-time voice-driven lessons</li>
+              <li>• Personalized learning paths</li>
+              <li>• Progress tracking & session history</li>
+              <li>• Feedback, quizzes, and interactive chat</li>
+              <li>• Available on all devices</li>
+            </ul>
+            <Button size="lg" className="bg-[#0a1834] text-white hover:bg-[#11204a] font-bold shadow-lg dark:bg-slate-100 dark:text-[#0a1834] dark:hover:bg-slate-200" onClick={() => window.open('/companion', '_self')}>
+              Try Now
+            </Button>
+          </div>
+          <div className="flex-1 flex justify-center items-center">
+            <img src="/logo.png" alt="AI Companion" className="h-40 w-40 rounded-full shadow-2xl border-4 border-slate-500/30 bg-slate-700/10 dark:border-[#22305a] dark:bg-[#11204a]" />
+          </div>
+        </div>
+      </section>
       
 
       
@@ -85,17 +128,17 @@ const Index = () => {
       <TrustedByCarousel />
       
       {/* Career Advancement Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">Advance Your Career with In-Demand Skills</h2>
-          <p className="text-xl text-slate-800 font-bold mb-8 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-6">Advance Your Career with In-Demand Skills</h2>
+          <p className="text-xl text-blue-100 font-bold mb-8 max-w-3xl mx-auto">
             Grow your expertise in analytics, healthcare, design, management, and more—anytime, anywhere in the world.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100" onClick={() => window.open('/career-guidance', '_self')}>
+            <Button size="lg" className="bg-slate-800 text-white hover:bg-slate-700" onClick={() => window.open('/career-guidance', '_self')}>
               Explore New Career Paths
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('/career-guidance', '_self')}>
+            <Button size="lg" variant="outline" className="border-slate-800 text-slate-800 hover:bg-slate-50" onClick={() => window.open('/career-guidance', '_self')}>
               Advance in My Current Role
             </Button>
           </div>
@@ -103,31 +146,31 @@ const Index = () => {
           {/* Course Categories */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">Featured Courses</div>
-              <div className="text-xs text-blue-400">Top picks for global learners</div>
+              <div className="text-2xl font-bold text-white">Featured Courses</div>
+              <div className="text-xs text-blue-100">Top picks for global learners</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">Diploma Programs</div>
-              <div className="text-xs text-blue-400">Accredited learning tracks</div>
+              <div className="text-2xl font-bold text-white">Diploma Programs</div>
+              <div className="text-xs text-blue-100">Accredited learning tracks</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">Professional Certificates</div>
-              <div className="text-xs text-blue-400">Industry-recognized credentials</div>
+              <div className="text-2xl font-bold text-white">Professional Certificates</div>
+              <div className="text-xs text-blue-100">Industry-recognized credentials</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-slate-900">Latest Courses</div>
-              <div className="text-xs text-blue-400">Recently added programs</div>
+              <div className="text-2xl font-bold text-white">Latest Courses</div>
+              <div className="text-xs text-blue-100">Recently added programs</div>
             </div>
           </div>
           
-          <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700" onClick={() => window.open('/courses', '_self')}>
+          <Button size="lg" className="bg-[#16203a] text-white hover:bg-[#22305a]" onClick={() => window.open('/courses', '_self')}>
             Browse All Courses
           </Button>
         </div>
       </section>
 
       {/* Course Statistics Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Access 5,500+ Free Online Courses</h2>
@@ -135,20 +178,20 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
+            <Card className="bg-[#16203a] border-[#22305a] text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-white mb-2">10 Million+</div>
                 <div className="text-blue-100">Learners</div>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
+            <Card className="bg-[#16203a] border-[#22305a] text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-white mb-2">193</div>
                 <div className="text-blue-100">Countries Represented</div>
                 <div className="text-xs text-blue-200">Worldwide reach</div>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 text-center">
+            <Card className="bg-[#16203a] border-[#22305a] text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-white mb-2">5,500+</div>
                 <div className="text-blue-100">Free Learning Programs</div>
@@ -260,7 +303,7 @@ const Index = () => {
 
       
       {/* Featured Courses Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Featured Learning Opportunities</h2>
@@ -289,7 +332,7 @@ const Index = () => {
 
 
       {/* AI-Powered Features Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Meet OponMeta AI – Your Intelligent Learning Assistant</h2>
@@ -307,40 +350,38 @@ const Index = () => {
                 loading="lazy"
               />
             </div>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-600 rounded-full p-2">
-                  <Play className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Instant AI Coaching</h3>
-                  <p className="text-slate-800 font-bold">
-                    Get real-time feedback and guidance from AI agents tailored to your learning needs.
-                  </p>
-                </div>
+            <div className="space-y-10">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-white mb-2">AI-Powered Learning Support</h2>
+                <p className="text-cyan-300 text-lg max-w-2xl">Unlock your full potential with instant AI coaching, live expert sessions, and personalized career roadmaps—all designed to accelerate your learning journey.</p>
               </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-green-600 rounded-full p-2">
-                  <Users className="h-6 w-6 text-white" />
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-cyan-300 rounded-full p-2">
+                    <Play className="h-6 w-6 text-[#0a1834]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">Instant AI Coaching</h3>
+                    <p className="text-cyan-200 text-base font-medium">Get real-time feedback and guidance from AI agents tailored to your unique learning needs. Progress faster with actionable insights and support, anytime.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Live Interactive Sessions</h3>
-                  <p className="text-slate-800 font-bold">
-                    Join live sessions with AI-powered tutors, career coaches, and global experts.
-                  </p>
+                <div className="flex items-start space-x-4">
+                  <div className="bg-green-400 rounded-full p-2">
+                    <Users className="h-6 w-6 text-[#0a1834]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">Live Interactive Sessions</h3>
+                    <p className="text-cyan-200 text-base font-medium">Join live sessions with AI-powered tutors, career coaches, and global experts. Collaborate, ask questions, and get personalized advice in real time.</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-purple-600 rounded-full p-2">
-                  <Star className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Personalized Career Roadmaps</h3>
-                  <p className="text-foreground font-medium">
-                    Answer a few questions and receive a personalized roadmap to achieve your goals.
-                  </p>
+                <div className="flex items-start space-x-4">
+                  <div className="bg-purple-400 rounded-full p-2">
+                    <Star className="h-6 w-6 text-[#0a1834]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">Personalized Career Roadmaps</h3>
+                    <p className="text-cyan-200 text-base font-medium">Answer a few questions and receive a step-by-step, personalized roadmap to achieve your learning and career goals—crafted just for you by AI.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -349,7 +390,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">FREE. All Features. FOREVER!</h2>
@@ -429,7 +470,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <Card className="bg-white/10 backdrop-blur-md border-white/20">
             <CardContent className="p-12">
@@ -459,7 +500,7 @@ const Index = () => {
 
 
       {/* Create & Sell Online Courses Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Create & Monetize Online Courses</h2>
@@ -469,7 +510,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content - Media Screen */}
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden">
+              <div className="w-full h-96 bg-[#0a1834] border-4 border-[#11204a] rounded-2xl shadow-2xl overflow-hidden">
                 <video 
                   className="w-full h-full object-cover" 
                   autoPlay 
@@ -533,7 +574,7 @@ const Index = () => {
       </section>
 
       {/* Videos Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Video Tutorials</h2>
@@ -611,7 +652,7 @@ const Index = () => {
       </section>
 
       {/* Development Process Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">We Are Experts in Course Development</h2>
@@ -822,7 +863,7 @@ const Index = () => {
       </section>
 
       {/* Custom eLearning Solutions */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Custom eLearning Solutions</h2>
@@ -1092,7 +1133,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Platform Features</h2>
@@ -1163,7 +1204,7 @@ const Index = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Success Stories</h2>
@@ -1219,7 +1260,7 @@ const Index = () => {
       </section>
 
       {/* Team Section - Carousel */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-slate-800">Our Global Team</h3>
@@ -1229,7 +1270,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-6">Common Questions</h2>
@@ -1275,26 +1316,89 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-           <h2 className="text-5xl font-bold text-slate-900 mb-6 drop-shadow-2xl">
-             Ready to Shape Your Future?
-           </h2>
-           <p className="text-2xl text-slate-800 font-bold mb-8 drop-shadow-lg max-w-4xl mx-auto">
-             Join thousands of learners advancing their careers with our global education platform.
-           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
-              Start Learning Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Become a Global Instructor
-            </Button>
+      {/* Student Portal & Subscription CTA Section */}
+      <section className="py-20 px-4 bg-[#0a1834]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Access Your Learning Hub</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Manage your learning journey, track progress, and unlock premium features with our comprehensive student portal and subscription management.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Student Portal Card */}
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all cursor-pointer" onClick={() => window.open('/student-portal', '_self')}>
+              <div className="flex items-center mb-6">
+                <div className="bg-green-500 rounded-lg p-3 mr-4">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Student Portal</h3>
+              </div>
+              <p className="text-blue-100 mb-6">
+                Access your personalized dashboard, track course progress, manage certificates, and connect with your learning community.
+              </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                  Course Progress Tracking
+                </div>
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                  Certificate Management
+                </div>
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                  Learning Analytics
+                </div>
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                  Community Features
+                </div>
+              </div>
+              <Button size="lg" className="w-full bg-green-600 text-white hover:bg-green-700">
+                Access Student Portal
+              </Button>
+            </div>
+            
+            {/* Subscription Management Card */}
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all cursor-pointer" onClick={() => window.open('/companion-subscribe', '_self')}>
+              <div className="flex items-center mb-6">
+                <div className="bg-pink-500 rounded-lg p-3 mr-4">
+                  <CreditCard className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Subscription Management</h3>
+              </div>
+              <p className="text-blue-100 mb-6">
+                Upgrade your learning experience with AI companions, premium features, and advanced analytics. Manage your subscription with ease.
+              </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-3"></div>
+                  AI Learning Companions
+                </div>
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-3"></div>
+                  Premium Course Access
+                </div>
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-3"></div>
+                  Advanced Analytics
+                </div>
+                <div className="flex items-center text-sm text-blue-200">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-3"></div>
+                  Priority Support
+                </div>
+              </div>
+              <Button size="lg" className="w-full bg-pink-600 text-white hover:bg-pink-700">
+                Manage Subscription
+              </Button>
+            </div>
           </div>
         </div>
       </section>
-      <PageNavigation />
+
+      {/* Footer */}
       <Footer />
     </div>
   );

@@ -1,0 +1,439 @@
+<!DOCTYPE html><!-- Last Published: Wed Jul 09 2025 13:28:52 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.coursebox.ai" data-wf-page="65f4df882d798b865803ffb3" data-wf-site="65e9bdf0fae79e05e213200c" lang="de"><head><meta charset="utf-8"/><title>Nutzervereinbarung</title><link rel="alternate" hrefLang="x-default" href="https://www.coursebox.ai/user-agreement"/><link rel="alternate" hrefLang="en" href="https://www.coursebox.ai/user-agreement"/><link rel="alternate" hrefLang="ar" href="https://www.coursebox.ai/ar/tfqy-lmstkhdm"/><link rel="alternate" hrefLang="es" href="https://www.coursebox.ai/es/acuerdo-de-usuario"/><link rel="alternate" hrefLang="de" href="https://www.coursebox.ai/de/benutzervereinbarung"/><link rel="alternate" hrefLang="fr" href="https://www.coursebox.ai/fr/contrat-dutilisation"/><link rel="alternate" hrefLang="pt" href="https://www.coursebox.ai/pt/contrato-do-utilizador"/><link rel="alternate" hrefLang="it" href="https://www.coursebox.ai/it/contratto-duso"/><link rel="alternate" hrefLang="zh" href="https://www.coursebox.ai/zh/yong-hu-xie-yi"/><link rel="alternate" hrefLang="ko" href="https://www.coursebox.ai/ko/sayongja-gyeyag"/><link rel="alternate" hrefLang="ja" href="https://www.coursebox.ai/ja/yuzaqi-yue"/><link rel="alternate" hrefLang="nl" href="https://www.coursebox.ai/nl/gebruikersovereenkomst"/><meta content="Lesen Sie die Coursebox-Nutzervereinbarung hier" name="description"/><meta content="Nutzervereinbarung" property="og:title"/><meta content="Lesen Sie die Coursebox-Nutzervereinbarung hier" property="og:description"/><meta content="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f7fc4f48d05521bd8ba7f3_Coursebox%20hero%20graphic%20(13).jpg" property="og:image"/><meta content="Nutzervereinbarung" property="twitter:title"/><meta content="Lesen Sie die Coursebox-Nutzervereinbarung hier" property="twitter:description"/><meta content="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f7fc4f48d05521bd8ba7f3_Coursebox%20hero%20graphic%20(13).jpg" property="twitter:image"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="OB5L2-6ikYbMGZzU0T1gg7RS2rJr4Ob12A3b2r1iqf8" name="google-site-verification"/><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/css/coursebox.webflow.shared.a005524ae.min.css" rel="stylesheet" type="text/css"/><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/css/coursebox.webflow.65f4df882d798b865803ffb3-28b0a8379.min.css" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f4dad563d976e9342cfc6b_20cf5e_7e0899ed0b8e4e3a9b208ce1f0f664fd~mv2.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65f4dc036537490dba263209_Untitled%20design%20-%202024-03-16T073837.984.png" rel="apple-touch-icon"/><link href="https://www.coursebox.ai/de/benutzervereinbarung" rel="canonical"/><link rel="preconnect" href="https://cdn.prod.website-files.com" crossorigin="anonymous">
+
+
+<link rel="preload"
+    href="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/css/coursebox.webflow.1d507dff4.min.css"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<style>
+    p {
+        font-family: arial;
+        font-weight: 400;
+    }
+
+    .boxer-register-form .password {
+        text-security: disc;
+        -webkit-text-security: disc;
+        -mox-text-security: disc;
+    }
+
+    @media screen and (max-width: 479px) {
+        .image.blog-post {
+            min-height: 202px;
+            width: 479px !important;
+            height: 100%;
+        }
+    }
+    
+</style>
+
+<meta name="google-site-verification" content="4sj-121qyTvIsZxbBucdqOogtrFaeG3KgASFHlkDA2s" />
+
+<style>
+    html.anti-flicker-hide {
+        opacity: 1 !important
+    }
+
+    @media(width:1350px) {
+        .home-hero-companies {
+            display: none
+        }
+
+        .lcp .home-hero-companies {
+            display: flex
+        }
+    }
+
+    @media(width:412px) {
+
+        .page-wrapper.overflow-hidden,
+        .w-tab-pane {
+            opacity: 1 !important
+        }
+
+        .blog-collection-list-wrapper,
+        .paragraph.blog-hero.heading-2,
+        .title.blog-hero,
+        .title.pricing {
+            transform: none !important;
+            opacity: 1 !important;
+            transform-style: unset !important
+        }
+
+        .tab-link {
+            transition: unset !important
+        }
+
+        .w-tab-pane {
+            transition: none !important
+        }
+
+        .container-default.home-hero.w-container,
+        .home-hero-companies {
+            display: none
+        }
+
+        .lcp .container-default.home-hero.w-container,
+        .lcp .home-hero-companies {
+            display: flex
+        }
+
+        .image.card-post-item,
+        .image.card-testimonial {
+            opacity: 0
+        }
+
+        .image.card-post-item,
+        .lcp .image.card-testimonial {
+            opacity: 1
+        }
+    }
+</style>
+
+<style>
+    .w-webflow-badge {
+        display: none !important;
+    }
+</style>
+
+<!-- Nocodelytics -->
+<script async id="nocodelytics-snippet" type="text/javascript"
+    src="https://tracker.nocodelytics.com/api/tracker/assets/nocodelytics.js"></script><!-- End Nocodelytics -->
+
+
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            // Inject Chargebee script
+            var chargebeeScript = document.createElement('script');
+            chargebeeScript.src = "https://js.chargebee.com/v2/chargebee.js";
+            chargebeeScript.setAttribute('data-cb-site', 'courseboxai');
+            chargebeeScript.setAttribute('data-cb-ga-enabled', 'true');
+            document.head.appendChild(chargebeeScript);
+
+            // Check if the URL includes "pricing"
+            if (window.location.href.includes("pricing")) {
+
+                // Inject Chatbot Config
+                window.embeddedChatbotConfig = {
+                    chatbotId: "aOP_KOSLZ2Bi0OpR6pUnl",
+                    domain: "www.chatbase.co"
+                };
+
+                // Inject Chatbase script
+                var chatbaseScript = document.createElement('script');
+                chatbaseScript.src = "https://www.chatbase.co/embed.min.js";
+                chatbaseScript.setAttribute('chatbotId', 'aOP_KOSLZ2Bi0OpR6pUnl');
+                chatbaseScript.setAttribute('domain', 'www.chatbase.co');
+                document.head.appendChild(chatbaseScript);
+            }
+        }, 6000); // Delay by 3000 milliseconds
+    });
+</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-0YT7394H6S"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0YT7394H6S');
+</script>
+
+<!-- Google Tag Manager -->
+<script defer>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MLBXZDD');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- PostHog -->
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init Ie Ts Ms Ee Es Rs capture Ge calculateEventProperties Os register register_once register_for_session unregister unregister_for_session js getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ds Fs createPersonProfile Ls Ps opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Cs debug I As getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_61w0zU91ynkpJl71NIb5K4pGSYjDqWoXsMGOS8fzcqn', {
+        api_host: 'https://eu.i.posthog.com',
+        defaults: '2025-05-24',
+        person_profiles: 'always', // or 'identified_only' to create profiles for anonymous users as well
+        autocapture: false,
+        rageclick: false,
+        capture_pageview: true,
+        capture_pageleave: true,
+      	disable_session_recording: true
+    })
+</script>
+
+<!-- PostHog --><meta name=“robots” content=“noindex”><script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","symbol":"$","decimal":".","fractionDigits":2,"group":",","template":"{{wf {&quot;path&quot;:&quot;symbol&quot;,&quot;type&quot;:&quot;PlainText&quot;\\} }} {{wf {&quot;path&quot;:&quot;amount&quot;,&quot;type&quot;:&quot;CommercePrice&quot;\\} }} ","hideDecimalForWholeNumbers":true};</script></head><body class="bg-neutral-800"><div style="opacity:0" class="page-wrapper"><div data-collapse="medium" data-animation="over-left" data-duration="400" data-w-id="58db7844-5919-d71b-dd74-2323ed8dffe9" data-easing="ease" data-easing2="ease" role="banner" class="header w-nav"><div class="container-default w-container"><div class="header-wrapper"><div class="split-content header-right"><a href="/de" class="brand w-nav-brand"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/660fe39debd7cc7092e09609_Untitled%20design.webp" alt="Coursebox-Logo weiß" class="header-logo"/></a></div><div class="split-content header-center"><nav role="navigation" class="nav-menu w-nav-menu"><ul role="list" class="header-navigation w-list-unstyled"><li class="nav-item-wrapper"><div data-hover="true" data-delay="0" data-w-id="aa6df718-ccc0-b2b0-3946-1a426e08b7b3" class="nav-link-dropdown w-dropdown"><div class="nav-link dropdown w-dropdown-toggle"><div class="text-block-18">Lösungen <span class="dropdown-arrow"></span></div></div><nav class="dropdown-list w-dropdown-list"><div class="dropdown-nav-main-wrapper"><div class="dropdown-nav-pages-wrapper"><div class="dropdown-nav-content"><ul role="list" class="dropdown-nav last"><li class="dropdown-nav-item"><a href="/de/sicherheitstraining-lms-copy" class="dropdown-nav-link">Schulungsanbieter</a></li><li class="dropdown-nav-item"><a href="/de/berater-fur-unterrichtsdesign" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Berater für Unterrichtsdesign</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/schopfer" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Macher</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/hochschulen-universitaten" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Hochschulen &amp; Universitäten</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/sicherheitstraining-lms-copy-2" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Akkreditierte Schulungsanbieter</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/schulungssoftware-fur-das-gesundheitswesen" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Gesundheitswesen</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/landwirtschaft" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Landwirtschaft</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/software-fur-verkaufstraining" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Verkäufe</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/gesundheit-und-wellness" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Gesundheit &amp; Wellness</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/schulungssoftware-fur-das-gastgewerbe" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Gastlichkeit</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/immobilie" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Immobilien</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/gemeinnutzige-organisationen" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Gemeinnützige Organisationen</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/technologie" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Technologie</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/lms-unternehmens-copy" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Unternehmens-Onboarding und Einführungen</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/rto-training-resources-for-sale" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">RTO-Kompetenzeinheiten</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li></ul></div></div></div></nav></div></li><li class="nav-item-wrapper"><div data-hover="true" data-delay="0" data-w-id="c1564769-b868-3c51-e11d-a9003541e669" class="nav-link-dropdown w-dropdown"><div class="nav-link dropdown w-dropdown-toggle"><div class="text-block-19">Funktionen <span class="dropdown-arrow"></span></div></div><nav class="dropdown-list w-dropdown-list"><div class="dropdown-nav-main-wrapper"><div class="dropdown-nav-pages-wrapper"><div class="dropdown-nav-content"><ul role="list" class="dropdown-nav last"><li class="dropdown-nav-item"><a href="/de/ki-kursautor-copy" class="dropdown-nav-link">KI-Kursersteller</a></li><li class="dropdown-nav-item"><a href="/de/ki-lms" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">AI LMS (weißes Etikett)</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/ki-generierte-schulungsvideos" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">KI-Schulungsvideogenerator</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/ki-quiz-generator" class="dropdown-nav-link tag w-inline-block"><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div><div class="footer-nav-link-tag-text">KI-Quizgenerator</div></a></li><li class="dropdown-nav-item"><a href="/de/ki-bewertung" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">KI-Bewertung und Benotung</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/ki-chatbot-tutor" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Chatbot für KI-Tutoren</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item"><a href="/de/soziales-lernen-lms" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Soziales Lernen</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/scorm-authoring-tool" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">VERACHTEN</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/integrationen" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Integrationen</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/ki-rubrikengenerator-copy" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">KI-Bilder</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/ki-rubrikengenerator-copy-2" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">KI-Interaktionen</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="/de/ki-rubrikengenerator" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">AI-Rubriken</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"></li></ul></div></div></div></nav></div></li><li class="nav-item-wrapper"><a href="/de/bewertungen" class="nav-link">Bewertungen</a></li><li class="nav-item-wrapper"><a href="/de/blog" class="nav-link">Blog</a></li><li class="nav-item-wrapper"><a href="/de/preise" class="nav-link">Preisgestaltung</a></li><li class="nav-item-wrapper mobile"><a href="https://my.coursebox.ai/#/courses/create/ai/for-you" class="nav-link sign-in mobile">Einloggen</a></li><li class="nav-item-wrapper mobile-button"><div class="button-primary-gradient header-button mobile-button"><a href="/de/preise" class="button-primary w-button">Fangen Sie an</a></div></li></ul></nav></div><div class="split-content header-left"><div data-hover="true" data-delay="0" data-w-id="6ba7c99b-d6fa-6ecb-7e9a-bf4d942ac1b1" class="nav-link-dropdown w-dropdown"><div class="nav-link dropdown w-dropdown-toggle"><div class="text-block-18 small">Loggen Sie sich ein<span class="dropdown-arrow _2"></span></div></div><nav class="dropdown-list-copy w-dropdown-list"><div class="dropdown-nav-main-wrapper _2"><div class="dropdown-nav-pages-wrapper lesst"><div class="dropdown-nav-content"><ul role="list" class="dropdown-nav last"><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"><a href="/de/dienstleistungen-im-bereich-unterrichtsdesign" class="dropdown-nav-link tag w-inline-block"><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"><a href="#" class="dropdown-nav-link tag w-inline-block"><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="https://my.coursebox.ai/#/courses/create/ai/for-you" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Meine Coursebox</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item"><a href="https://www.coursebox.ai/lms-login" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Markenplattform</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"><a href="#" class="dropdown-nav-link tag w-inline-block"><div class="footer-nav-link-tag-text">Landwirtschaft</div><div class="nav-link-tag-wrapper"><div class="nav-link-tag-blur"></div></div></a></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li><li class="dropdown-nav-item hide"></li></ul></div></div></div></nav></div><div class="button-primary-gradient header-button"><a href="#" id="nav-start-free" data-w-id="de1bc336-7eb2-cb9f-dece-be9b5170ffaf" class="button-primary w-button"><strong class="bold-text-20">Starte kostenlos</strong></a></div><div class="menu-button w-nav-button"><div class="header-menu-button-icon-wrapper"><div class="icon-wrapper"><div class="header-menu-button-icon-top"></div><div class="header-menu-button-icon-medium"></div><div class="header-menu-button-icon-bottom"></div></div></div></div></div></div></div></div><section class="section utility-page"><div class="container-medium-761px utility-page"><h1 data-w-id="55c57951-f068-0dff-64d7-7663bc0ec7b8" style="-webkit-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40%, 0) scale3d(0.8, 0.8, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="title utility-page">Nutzervereinbarung<br/></h1><p data-w-id="72620edf-e4c7-1e9a-3a59-dff3df2562e3" style="-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="paragraph utility-page">Nutzungsbedingungen von Coursebox und Open Tute (Opentute)<br/><br/><strong>NUTZERVEREINBARUNG <br/>NUTZUNGSBEDINGUNGEN</strong> <br/>1. Definitionen <br/>2. Willkommen <br/>3. Eignung zur Nutzung <br/>4. Nutzung des Dienstes <br/>5. Verbotenes Verhalten <br/>6. Datenschutz und Schutz des geistigen Eigentums <br/>7. Einsatz von Tools für künstliche Intelligenz <br/>8. Gebühren und Entgelte <br/>10. Beauftragter für die Zahlungsverwaltung <br/>11. Einwilligungen und Garantien des Benutzers <br/>12. Profil-Meinungen und Bewertungen <br/>13. Werbung <br/>14. Geschäftliche Nutzung unserer Dienste <br/>15. Über diese Bedingungen <br/>17. Haftungsausschluss <br/>18. Haftungsbeschränkung <br/>19. Feedback und Fragen<br/>20. Richtlinien für Rückerstattungen <br/>21.       Additional Terms for RTOs – Use of AI-Generated Training and Assessment Resources     <strong><br/><br/><br/>NUTZERVEREINBARUNG <br/>NUTZUNGSBEDINGUNGEN </strong><br/>Nutzungsbedingungen von Coursebox und Open Tute<br/>In diesen Bedingungen bedeutet ein Verweis auf den „Anbieter“, „wir“, „unser“ oder „uns“ Coursebox Pty Ltd ABN 64 652 541 798 oder Open Tute Pty Ltd ABN 80 607 003 136, je nachdem, welches Unternehmen den Dienst anbietet.<br/><strong>1. Definitionen</strong><br/>„Konto“ (oder Benutzerprofil) bezeichnet das Konto, das Sie eröffnen, wenn Sie sich für den Dienst registrieren.<br/>„Zugelassener Experte“ bezeichnet einen Benutzer, der als Experte benannt wurde und dessen Berechtigungen in den Super-Admin-Einstellungen festgelegt wurden.<br/>„Kanäle“ Wenn diese Option aktiviert ist, können Nutzer Kanäle als privat, kostenpflichtig, nur für VIP oder öffentlich veröffentlichen und du erhältst möglicherweise Kanalnachrichten und Updates, wie sie veröffentlicht wurden, einschließlich Kommentare, Likes und Antworten.<br/>„Kanaladministrator“ oder „Kanaladministrator“ bezeichnet einen Benutzer, der eingeladen wurde, bei der Verwaltung eines bestimmten Kanals zu helfen.<br/>„Channel Guru“ bezeichnet den Ersteller, Herausgeber und Kontoinhaber eines Channels, der für die Verwaltung von Zugriffsanfragen, Admin-Einladungen und/oder die Annahme von Mitgliedschaftszahlungen für den Zugriff auf einen bestimmten Channel verantwortlich ist.<br/>„Coursebox“ steht für Coursebox Pty Limited ABN 64 652 541 987, ihre Rechtsnachfolger und Rechtsnachfolger.<br/>„Expertendienste“ sind Dienste, die von einem zugelassenen Experten für einen Lernenden oder Benutzer auf einem bestimmten Portal bereitgestellt werden.<br/>„Folgen“ Nutzer können Beiträge in ihrem Feed sehen, die auf den Nutzern und Kanälen basieren, denen sie folgen.<br/>„Gruppenchats“ -Kanal-Gurus und Admins können Gruppen bilden. Wir verwenden die bereitgestellten Informationen, um die Suche und Einrichtung von Gruppen zu erleichtern, einschließlich der Auswahl eines bestimmten Portals oder Kanals.<br/>„Inaktives Konto“ bezeichnet ein Benutzerkonto, bei dem über einen Zeitraum von 12 Monaten ununterbrochen keine Anmeldung stattgefunden hat.<br/>„Sofortnachrichten“ Wir verwenden die personenbezogenen Daten, die Sie uns im Rahmen Ihrer Erfahrung mit dem Empfangen und Senden von Nachrichten auf dem System sowie aller E-Mails, Push-Benachrichtigungen (oder SMS-Benachrichtigungen, sofern verfügbar) zur Verfügung stellen, wie in den Einstellungen oder vom Superadmin eines bestimmten Portals definiert.<br/>„Rechte an geistigem Eigentum“ sind weltweit bestehende und zukünftige geistige Eigentumsrechte und der Gegenstand solcher Rechte, einschließlich: (a) Patente, Urheberrechte, Rechte an Schaltungslayouts (oder ähnlichen Rechten), eingetragene Designs, eingetragene und nicht eingetragene Marken und jedes Recht, vertrauliche Informationen vertraulich behandeln zu lassen; und (b) jeden Antrag oder jedes Recht, die Registrierung eines der in Absatz (a) genannten Rechte zu beantragen, unabhängig davon, ob diese Rechte registriert sind oder dazu in der Lage sind registriert sein und ob es nach irgendwelchen Gesetzen existiert, unter nach allgemeinem Recht oder nach Billigkeit.<br/>„Teilnehmer“ bezeichnet einen Nutzer, der für Learning angemeldet ist, unabhängig davon, ob es sich um eine private Lernanfrage, einen offenen Learning-Zugang, einen Kauf oder einen VIP-Status handelt.<br/>„Lernadministrator“ oder „Lernadministrator“ bezeichnet einen Benutzer, der für die Verwaltung eines bestimmten Lernmoduls auf die Administratorebene aktualisiert wurde.<br/>„Lernexperte“ oder „Experte“ bezeichnet den Ersteller, Herausgeber und Kontoinhaber eines Lernmoduls, der für die Verwaltung von Zugriffsanfragen, Administratoreinladungen und/oder die Annahme von Mitgliedschaftszahlungen für den Zugriff innerhalb eines Lernmoduls verantwortlich ist.<br/>„Learning“ oder „Learning Module“ ist ein vom Anbieter betriebener Dienst und umfasst Elemente wie:<br/>* Bewertung (Quiz, Checkpoint oder Aufgabe) — Bewertungswerkzeuge, Benotung und Berichterstattung werden verfügbar sein.<br/>* Text-/Bild- und/oder Galeriebildschirm — grundlegende Bildschirme können in einem Kurs enthalten sein.<br/>* Chat — Aktivitäten können einen Chat-Bereich beinhalten.<br/>* Interaktiver Bildschirm — ermöglicht das Einbetten einiger HTML-, SCORM- und/oder anderer interaktiver Arbeiten.<br/>* Video — Bildschirme können eingebettete Videos von Dritten verwenden.<br/>* Umfrage — Umfragen können gegebenenfalls in Lernaktivitäten eingebettet werden<br/>* Berichterstattung — Benutzer können Analysedaten einsehen und Berichte herunterladen, je nach Nutzung und Stufe.<br/>* Veranstaltungen — Aktivitäten können Veranstaltungen beinhalten.<br/>„Lernanfrage“ ist eine Lernanfrage, die an einen anderen Benutzer gestellt wird.<br/>„Lizenz“ oder „Plan“ bezieht sich auf die monatlichen oder jährlichen Gebühren, die vom Superadministrator des privaten Portals zu zahlen sind.<br/>„Open Tute“ steht für Open Tute Pty Ltd ABN 80 607 003 136, ihre Rechtsnachfolger und Abtretungsempfänger.<br/>„Personenbezogene Daten“ sind alle Informationen, die verwendet werden können, um Sie zu identifizieren, zu kontaktieren oder zu lokalisieren, wie Ihr Name, Ihre Adresse, E-Mail-Adresse oder Telefonnummer, enthalten jedoch keine Informationen, die vollständig anonymisiert wurden, sodass eine bestimmte Person anhand dieser Daten nicht mehr identifiziert werden kann.<br/>„Profil-Meinungen und Bewertungen“ bezeichnet das Feedback- oder Bewertungssystem, das vom Anbieter verwendet wird, um die Fähigkeit der Nutzer, Expertendienstleistungen zu erbringen, oder die Fähigkeit eines Lernenden, die Kurse abzuschließen und zu bezahlen, zu bewerten.<br/>„Dienst“ bezeichnet die öffentlichen oder privaten Marken, Open Courses, zusammen mit anderen Diensten und Plattformen, die vom Anbieter betrieben werden und unter https://www.coursebox.ai, https://opentute.com verfügbar sind, sowie alle zugehörigen Dienste, Tools oder Anwendungen des Anbieters.<br/>„Private Portal“ ist ein White-Label-Dienst, der vom Anbieter auf der Anbieterplattform betrieben wird.<br/>„Private Portal Super Admin“ ist der Kontoinhaber, der für die Verwaltung eines privaten Portals verantwortlich ist.<br/>„Profil“ Wir verwenden die personenbezogenen Daten, die Sie uns im Rahmen der Erstellung, Nutzung, Durchsuchbarkeit und Nutzung Ihres Profils und der damit verbundenen Komponenten, einschließlich, aber nicht beschränkt auf Beiträge, zur Verfügung stellen.<br/>„Anbieter“ bezeichnet das Unternehmen, das den Dienst anbietet, nämlich Coursebox oder Open Tute.<br/>„Einstellungen“ Wir verwenden die personenbezogenen Daten, die Sie uns im Rahmen Ihrer anfänglichen und individuellen Benutzereinstellungen zur Verfügung stellen.<br/>„Umfragen“ Die bereitgestellten Informationen können als Grundlage für Umfragen, Fragen oder Umfragen dienen, die an Benutzer gesendet werden.<br/>„Bedingungen“ oder „Standardbedingungen“ sind die in dieser Benutzervereinbarung festgelegten Nutzungsbedingungen, die vom Anbieter von Zeit zu Zeit durch Mitteilung an Sie geändert werden können.<br/>„Nutzer“, „Sie“ oder „Ihr“ bezeichnet eine Person, die den Dienst besucht oder nutzt.<br/>„Nutzervertrag“ bedeutet: (1) diese Nutzervereinbarung in der jeweils gültigen Fassung; (2) die Datenschutzrichtlinie und die Gebühren und Entgelte in der jeweils gültigen Fassung; (3) alle anderen Vertragsbestimmungen, die sowohl von einem Experten als auch von einem Lernenden akzeptiert werden und in den Dienst hochgeladen wurden, soweit sie nicht mit der Nutzervereinbarung und dem Verhaltenskodex unvereinbar sind; und (4) die im Dienst verliehenen und akzeptierten Anforderungsbedingungen, soweit sie nicht unvereinbar mit den Benutzervereinbarung und der Datenschutzkodex.<br/>„VIP“ ist ein Benutzer, dem der Status für den Zugriff auf reine VIP-Kanäle und Schulungen zugewiesen wurde.<br/><strong>2. Willkommen </strong><br/>Vielen Dank, dass Sie unseren Service nutzen. <br/>Durch die Nutzung unseres Dienstes stimmen Sie diesen Bedingungen zu. Bitte lesen Sie sie sorgfältig durch.<br/><strong>3. Eignung zur Nutzung</strong><br/>Sie werden den Service nicht nutzen, wenn Sie:<br/>* nicht rechtsfähig sind, Ihren Verpflichtungen aus diesen Bedingungen nachzukommen;<br/>* sind gesetzlich verboten, den Service zu nutzen; oder<br/>* sind von der Nutzung des Dienstes ausgeschlossen.<br/>Benutzer können einen Firmennamen oder einen Firmennamen angeben, der mit dem Konto des Benutzers verknüpft werden soll. <br/>Wenn ein Firmenname oder ein Firmenname mit ihrem Konto verknüpft ist, ist diese Benutzervereinbarung ein Vertrag mit dem Nutzer als Einzelperson (nicht dem Unternehmen oder Unternehmen) und die Nutzer bleiben für alle Aktivitäten verantwortlich, die in Bezug auf ihr Konto vorgenommen werden.<br/>Wir können uns nach eigenem Ermessen weigern, eine natürliche oder juristische Person als Nutzer zu registrieren.<br/><strong>4. Nutzung des Dienstes</strong><br/>Bei der Nutzung des Dienstes müssen Sie alle Ihnen zur Verfügung gestellten Richtlinien befolgen. <br/>Missbrauche unseren Service nicht. Sie dürfen unseren Service nur nutzen, soweit dies gesetzlich zulässig ist, einschließlich der geltenden Gesetze und Vorschriften zur Export- und Wiederausfuhrkontrolle. Wir können Sie sperren, wenn Sie unsere Bedingungen oder Richtlinien nicht einhalten oder wenn wir mutmaßliches Fehlverhalten untersuchen.<br/>Durch die Nutzung unseres Dienstes erhalten Sie kein Eigentum an geistigen Eigentumsrechten an unserem Service oder den Inhalten, auf die Sie zugreifen. Sie dürfen Inhalte unseres Dienstes nicht verwenden, es sei denn, Sie haben die Erlaubnis des Eigentümers eingeholt oder es ist anderweitig gesetzlich zulässig. Diese Bedingungen gewähren Ihnen nicht das Recht, in unserem Service verwendete Marken oder Logos zu verwenden. Entferne, verberge oder ändere keine rechtlichen Hinweise, die in oder zusammen mit unserem Service angezeigt werden.<br/>Unser Service zeigt einige Inhalte an, die nicht von dem Anbieter stammen. Für diese Inhalte ist ausschließlich das Unternehmen verantwortlich, das sie zur Verfügung stellt. Wir können Inhalte überprüfen, um festzustellen, ob sie illegal sind oder gegen unsere Richtlinien verstoßen, und wir können Inhalte entfernen oder deren Anzeige verweigern, von denen wir vernünftigerweise annehmen, dass sie gegen unsere Richtlinien oder das Gesetz verstoßen. Wir sind jedoch nicht dafür verantwortlich.<br/>Sie sind verantwortlich für die Aktivitäten, die auf oder über Ihr Konto stattfinden. Sie dürfen Ihr Kontopasswort nicht für andere Anwendungen verwenden.<br/>Um Ihr Konto zu schützen, werden Sie Ihr Passwort vertraulich behandeln. <br/>Suche Nutzer können die Profile der jeweils anderen Nutzer anhand der bereitgestellten Informationen durchsuchen, insbesondere in Bezug auf Fähigkeiten, die für die Bereitstellung von Nachhilfe-, Trainings- oder Mentoring-Angeboten auf Abruf verfügbar sind.<br/>„Folgen“ Nutzer können Beiträge in ihrem Feed sehen, die auf den Nutzern und Kanälen basieren, denen sie folgen.<br/>„Gruppenchats“ -Kanal-Gurus und Admins können Gruppen bilden. Wir verwenden die bereitgestellten Informationen, um die Suche und Einrichtung von Gruppen zu erleichtern, einschließlich der Auswahl eines bestimmten Portals oder Kanals.<br/>Bitte beachten Sie, dass das SSO-Add-on (Single Sign-On) nur für Kursadministratoren und nicht für Lernende gilt.<br/><strong>4.1. YouTube-API-Dienste<br/></strong>Coursebox verwendet YouTube-API-Dienste als Teil seiner Features und Funktionen. Durch die Nutzung von Coursebox erklären Sie sich mit den [Nutzungsbedingungen von YouTube] (https://www.youtube.com/t/terms) einverstanden.<br/>Die Nutzung und Übertragung der von Google APIs erhaltenen Informationen durch Coursebox an eine andere App erfolgt gemäß der [Google API Services User Data Policy] (https://developers.google.com/terms/api-services-user-data-policy), einschließlich der Limited <br/>Verwenden Sie die Anforderungen.<br/>Sie können den Zugriff von Coursebox auf Ihre Daten jederzeit über Ihre Google-Sicherheitseinstellungen unter: [https://security.google.com/settings/security/permissions](https://security.google.com/settings/security/permissions) widerrufen.<br/>Weitere Informationen darüber, wie Coursebox Ihre Daten erhebt, verwendet und schützt, finden Sie in unserer [Datenschutzrichtlinie] (https://www.coursebox.ai/privacy).<br/>‍<strong>5. Verbotenes Verhalten</strong><br/>Während der Nutzung des Dienstes werden Sie nicht an den folgenden Aktivitäten teilnehmen:<br/>1. Inhalte oder Artikel in unangemessenen Kategorien oder Bereichen auf unserem Service veröffentlichen;<br/>2. den Dienst für illegale Zwecke nutzen, gegen Rechte oder Pflichten gegenüber dem Anbieter oder einer anderen Stelle verstoßen oder andere dazu ermutigen, sie zu verletzen, einschließlich der Verletzung, Veruntreuung oder Verletzung von geistigem Eigentum, vertraglichen Rechten, Vertraulichkeits- oder Datenschutzrechten.<br/>3. Nichtzahlung der Expertendienstleistungen, wie im Voraus vereinbart, es sei denn, der Lernende erfüllt die Bedingungen nicht oder ändert die Bedingungen der Expertendienste wesentlich von der Liste ab;<br/>4. Nichtbereitstellung der von Ihnen gekauften Expertendienstleistungen, es sei denn, der Lernende erfüllt die Bedingungen nicht oder ändert die Bedingungen der Expertendienste wesentlich von der Liste ab;<br/>5. unsere Gebührenstruktur, den Abrechnungsprozess oder die dem Anbieter geschuldeten Gebühren zu umgehen oder zu manipulieren;<br/>6. falsche, ungenaue, irreführende, verleumderische oder anstößige Inhalte (einschließlich personenbezogener Daten) posten;<br/>7. Maßnahmen ergreifen, die das Profil, die Meinungen und Bewertungen untergraben könnten (z. B. das Anzeigen, Importieren oder Exportieren von Feedback-Informationen oder deren Verwendung für Zwecke, die nichts mit dem Service zu tun haben);<br/>8. Ihr Konto (einschließlich Profilmeinungen und Bewertungen) und Ihren Benutzernamen ohne unsere Zustimmung auf ein anderes übertragen;<br/>9. jegliche Werbe- oder Verkaufsförderungsmaterialien, einschließlich Junkmail, Spam, Kettenbriefe, Pyramidensysteme oder jede andere Form unaufgeforderter oder unwillkommener Werbung, zu verteilen, zu veröffentlichen oder zu übertragen;<br/>10. Viren oder andere Technologien zu verbreiten, die dem Anbieter, dem Dienst oder den Interessen oder dem Eigentum der Nutzer (einschließlich ihrer geistigen Eigentumsrechte, Datenschutz- und Öffentlichkeitsrechte) schaden können oder die rechtswidrig, bedrohlich, missbräuchlich, verleumderisch, in die Privatsphäre eingreifend, obszön, profan sind oder Personen belästigen oder belästigen oder zu Hass gegen sie anregen können;<br/>11. ohne unsere ausdrückliche schriftliche Genehmigung Angebote von unserem Dienst herunterladen und zusammenfassen, um sie zusammen mit Angeboten anderer Dienste anzuzeigen, ohne unsere vorherige schriftliche Genehmigung einen Teil des Dienstes in einen anderen Dienst zu integrieren;<br/>12. versuchen, Softwareprogramme, die von uns in Verbindung mit dem Service verwendet werden, zu modifizieren, zu übersetzen, anzupassen, zu bearbeiten, zu dekompilieren, zu disassemblieren oder zurückzuentwickeln;<br/>13. Rechte oder Inhalte des Dienstes oder der Urheberrechte und Marken des Anbieters kopieren, ändern oder verteilen; oder Informationen über Benutzer, einschließlich E-Mail-Adressen, ohne deren Zustimmung sammeln oder anderweitig sammeln.<br/>14. sich als eine andere natürliche oder juristische Person auszugeben oder Ihre Zugehörigkeit zu einer natürlichen oder juristischen Person falsch darzustellen, wenn Sie unsere Dienste nutzen oder versuchen, das Konto oder die persönlichen Daten einer anderen Person zu verwenden; und versuchen Sie, sich durch Hacken von Passwort-Mining oder auf andere Weise unbefugten Zugriff auf die Dienste oder die mit den Diensten verbundenen Computersysteme oder Netzwerke zu verschaffen.<br/><strong>6. Datenschutz und Schutz des geistigen Eigentums</strong><br/>Unsere Datenschutzrichtlinie erklärt, wie wir mit Ihren personenbezogenen Daten umgehen und Ihre Privatsphäre schützen, wenn Sie unsere Dienste nutzen. Durch die Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass der Anbieter diese Daten gemäß unseren Datenschutzrichtlinien verwenden kann.<br/>Wir reagieren auf Hinweise zu mutmaßlichen Urheberrechtsverletzungen und kündigen Konten von Rechtsverletzern gemäß den Gesetzen Australiens. Wenn Sie der Meinung sind, dass Ihre geistigen Eigentumsrechte verletzt wurden, benachrichtigen Sie uns bitte und wir werden Ihre Meldung untersuchen. Bitte kontaktieren Sie uns, indem Sie uns eine E-Mail an support@coursebox.ai senden. <br/><strong>7. Einsatz von Tools für künstliche Intelligenz</strong><br/>Wir können andere Anwendungen wie ChatGPT (https://chat.openai.com) verwenden, um Kursentwicklern bei der schnellen Erstellung von Inhalten zu helfen. Alle Benutzer, die diese Funktion nutzen, müssen alle produzierten Inhalte vor der Veröffentlichung überprüfen und die Verantwortung und Haftung für alle produzierten Inhalte übernehmen, als ob der Kursentwickler den gesamten Inhalt ohne Unterstützung künstlicher Intelligenz geschrieben und produziert hätte. Es wird ferner davon ausgegangen, dass der Anbieter und verbundene Parteien keine Haftung oder Verantwortung für Fälle übernehmen, in denen Inhalte produziert werden, die negative Auswirkungen auf die Lernenden oder Nutzer ihrer veröffentlichten oder unveröffentlichten Inhalte haben.<br/><strong>8. Gebühren und Entgelte</strong><br/>Wir berechnen die in den Tarifen beschriebenen Gebühren und Entgelte, die wir von Zeit zu Zeit ändern können.<br/>Sofern nicht anders angegeben, sind alle Gebühren in US-Dollar angegeben.<br/><strong>9. Steuern</strong><br/>Sie sind für die Zahlung aller Steuern verantwortlich, einschließlich aller Waren und Dienstleistungen oder Mehrwertsteuer, die je nach Gerichtsbarkeit der erbrachten Dienstleistungen anfallen können. Diese Steuern werden gegebenenfalls zu den Ihnen in Rechnung gestellten Gebühren hinzugerechnet.<br/>Sie müssen auch Ihren Verpflichtungen aus den in Ihrem Land geltenden Einkommensteuerbestimmungen nachkommen.<br/><strong>10. Beauftragter für die Zahlungsverwaltung </strong><br/>Wir können nach eigenem Ermessen von Zeit zu Zeit einen Vertreter benennen, der Zahlungen (einschließlich Händlerdienstleistungen) von oder an Nutzer in unserem Namen entgegennimmt oder leistet. Eine solche Person hat dieselben Rechte, Befugnisse und Privilegien wie wir im Rahmen dieser Benutzervereinbarung und ist berechtigt, ihre Rechte, Befugnisse und Privilegien als unser Vertreter oder in ihrem eigenen Namen auszuüben oder durchzusetzen. In keinem Fall haften wir gegenüber einem Nutzer für Verluste, Schäden oder Haftung, die auf Fahrlässigkeit und/oder Handlungen des Zahlungsabwicklungsagenten zurückzuführen sind, die über die vom Anbieter erteilten Befugnisse hinausgehen.<br/>Um als Affiliate oder Vertriebspartner bei Coursebox bezahlt zu werden, müssen Sie in unserem Online-Affiliate-Partner-System registriert sein und über ein Paypal-Konto verfügen.<br/><strong>11. Einwilligungen und Garantien des Benutzers</strong><br/>Sie stimmen dem Folgenden zu:<br/>1. Informationen, die Sie auf Ihrer Profilseite angeben, können in anderen Teilen der Plattform angezeigt werden, sofern dies aktiviert ist, jedoch nicht zur Verwendung in Marketingmaterialien ohne Ihre ausdrückliche schriftliche Genehmigung.<br/>2. Wenn Sie sich als Kursautor dafür entscheiden, einen Kurs als „öffentlich durchsuchbar“ zu veröffentlichen, können wir die Daten auf der Kurs-Landingpage verwenden, um Ihnen bei der Suchmaschinenoptimierung zu helfen.<br/>3. unsere Nutzung von Google Cloud und Amazon Web Services als unsere Standard-Hosting- und E-Mail-Anbieter, sodass Ihre Daten auf Server an verschiedenen Standorten innerhalb und außerhalb Australiens übertragen und dort gespeichert werden können. Der Standardstandort für jede Instanz ist Sydney, obwohl sich dies von Zeit zu Zeit ändern kann. Das Portal-Hosting ist standardmäßig auf 100 GB Speicherplatz begrenzt, dies kann jedoch von Fall zu Fall erhöht werden — zusätzliche Gebühren können anfallen.<br/>4. Der Anbieter nutzt professionelle Hosting-Dienstleister wie Amazon Web Services Inc. oder Google Cloud für Ihr privates Portal<br/>5. und Sie erkennen an, dass der Anbieter die Verfügbarkeit Ihres privaten Portals nicht garantiert.<br/>6. Wenn das von einem Admin aktiviert wurde und du wählst, zu posten oder zu kommentieren, können dein Profilname und dein Link deinen Followern im Newsfeed oder in den Gruppennachrichten angezeigt werden.<br/>7. Wenn Sie die Tags #tags oder @channel hinzufügen, können wir diese Daten verwenden, um Ihnen von Zeit zu Zeit relevantere Neuigkeiten und Vorschläge bereitzustellen.<br/>8. Wir können die Servicesoftware von Zeit zu Zeit automatisch aktualisieren.<br/>9. Wenn Sie uns Inhalte zur Verfügung stellen, gewähren Sie uns eine Lizenz zur Nutzung dieser Inhalte, um Ihnen die Nutzung des Dienstes zu ermöglichen. Wir verwenden Ihre Inhalte nicht für andere Zwecke als für Analysen und notwendige Aktivitäten im Zusammenhang mit dem Dienst. Andernfalls werden wir Ihre Inhalte vertraulich behandeln. <br/>10. Wir agieren nur als Portal für den Online-Vertrieb und die Veröffentlichung von Nutzerinhalten. Wir haben das Recht (aber nicht die Verpflichtung), alle von uns als angemessen erachteten Maßnahmen in Bezug auf Ihre Benutzerinhalte zu ergreifen.<br/>11. Wir übernehmen keine Haftung aufgrund oder im Zusammenhang mit anderen Inhalten, die Sie im Service verfügbar haben oder auf die Sie zugreifen.<br/>12. Wir übernehmen keine Verantwortung oder Haftung für das Löschen oder Nichtspeichern von Inhalten, unabhängig davon, ob die Inhalte auf dem Dienst zur Verfügung gestellt wurden oder nicht.<br/>13. Jeglicher Inhalt, der an den Service übermittelt wird, bedarf unserer Zustimmung. Ohne dazu verpflichtet zu sein und anzuerkennen, dass wir Websites nicht ständig überwachen, behalten wir uns das Recht vor, Ihre Benutzerinhalte in Absprache mit dem Superadmin des privaten Portals abzulehnen, zu genehmigen oder zu ändern, wenn wir sie für anstößig halten oder gegen Gesetze oder unsere Richtlinien und Standards verstoßen.<br/>Sie erklären und garantieren, dass Ihr Inhalt:<br/>14. keine Urheberrechte, Patente, Marken, Geschäftsgeheimnisse oder andere geistige Eigentumsrechte, Eigentumsrechte, Publizitäts- oder Datenschutzrechte einer Person verletzen oder missbrauchen;<br/>15. wird nicht gegen Gesetze oder Vorschriften verstoßen;<br/>16. wird nicht verleumderisch oder handelsverleumderisch sein;<br/>17. wird nicht obszön sein oder Kinderpornografie enthalten;<br/>18. wird nicht die Entwicklung, Konstruktion, Herstellung oder Herstellung von Raketen oder nuklearen, chemischen oder biologischen Waffen beinhalten.<br/>19. wird kein Material enthalten, das mit terroristischen Aktivitäten in Verbindung steht.<br/>20. wird keine unvollständigen, falschen oder ungenauen Informationen über Sie oder eine andere Person enthalten; und<br/>21. enthält keine Viren oder andere Computerprogrammierungsroutinen, die dazu bestimmt sind, Systeme, Daten oder persönliche Informationen zu beschädigen, nachteilig zu stören, heimlich abzufangen oder zu enteignen.<br/>Wir bieten unüberwachten Zugriff auf Inhalte anderer Unternehmen, einschließlich Profilmeinungen und Bewertungen sowie Artikel mit Originalinhalten und Meinungen (oder Links zu Inhalten dieser anderen Unternehmen). <br/>Der Dienst kann Links zu anderen Diensten enthalten. Wir haben keine Kontrolle über andere Dienste, auf die wir vom Dienst aus verlinken. Wir befürworten nicht den Inhalt, die Produkte, Dienstleistungen, Praktiken, Richtlinien oder die Leistung der Dienste, auf die wir vom Dienst aus verlinken. Die Nutzung anderer Inhalte, Links zu anderen Inhalten und/oder Diensten erfolgt auf Ihr Risiko.<br/><strong>12. Profil-Meinungen und Bewertungen</strong><br/>Sie erklären sich damit einverstanden, dass alle Rückmeldungen und Bewertungen, die Sie auf Profil-Meinungen und Bewertungen hinterlassen, die aus Kommentaren und einer mehrdimensionalen Bewertung (z. B. Qualität, Kommunikation usw.) bestehen, von uns ohne Bezug auf Sie verwendet, geändert oder gelöscht werden können. Sie dürfen ohne unsere vorherige schriftliche Genehmigung keine Rückmeldungen, Bewertungen oder Kommentare anderer verwenden oder damit umgehen, die in irgendeiner Weise mit unseren Richtlinien, wie sie von Zeit zu Zeit auf dem Service veröffentlicht werden, unvereinbar sind.<br/>Sie dürfen nichts tun (oder unterlassen), was die Integrität des Anbieter-Feedbacksystems untergraben könnte. Wir sind berechtigt, Ihr Konto jederzeit zu sperren oder zu kündigen, wenn wir über Feedback zu Ihnen oder Ihre Feedback-Bewertung besorgt sind, von der wir glauben, dass unser Feedback-System untergraben werden könnte.<br/>Unsere Feedback-Bewertungen gehören uns und dürfen nicht für andere Zwecke verwendet werden, als die Bereitstellung von Expertendiensten über den Service zu erleichtern. Ohne unsere schriftliche Genehmigung dürfen Sie Ihre Profilmeinungen und Bewertungen (einschließlich, aber nicht beschränkt auf die Vermarktung oder den Export Ihrer einzelnen oder aller Ihrer zusammengesetzten Bewertungen oder Feedback-Kommentare) an keinem realen oder virtuellen Ort außer in einem vom Anbieter oder seinen verbundenen Unternehmen betriebenen Dienst verwenden.<br/><strong>13. Werbung</strong><br/>Sie können mit anderen Unternehmen zusammenarbeiten oder Werbung auf Ihrem privaten Portal sponsern, sofern die Werbung den Gesetzen der örtlichen Gerichtsbarkeit und dem Vertrag über das private Portal entspricht. <br/><strong>14. Geschäftliche Nutzung unserer Dienste</strong><br/>Wenn Sie unseren Service im Namen eines Unternehmens/einer Firma/Organisation nutzen, akzeptiert dieses Unternehmen/diese Firma/Organisation diese Bedingungen und erklärt sich damit einverstanden, sie einzuhalten. <br/><strong>15. Über diese Bedingungen</strong><br/>Wir können diese Bedingungen oder alle zusätzlichen Bedingungen, die für einen Dienst gelten, ändern und werden Sie über wichtige Änderungen der Bedingungen informieren.<br/>Änderungen, die neue Funktionen eines Dienstes betreffen, oder Änderungen, die aus rechtlichen Gründen vorgenommen werden, werden sofort wirksam. Wenn Sie mit den geänderten Nutzungsbedingungen eines Dienstes nicht einverstanden sind, können Sie die Nutzung dieses Dienstes einstellen.<br/>Wenn es einen Konflikt zwischen diesen Bedingungen und den zusätzlichen Bedingungen gibt, haben die zusätzlichen Bedingungen Vorrang.<br/>Diese Bedingungen regeln die Beziehung zwischen dem Anbieter und Ihnen. Sie begründen keine weiteren Begünstigtenrechte.<br/>Wenn Sie diese Bedingungen nicht einhalten und wir nicht sofort handeln, bedeutet das nicht, dass wir auf irgendwelche Rechte verzichten, die wir möglicherweise haben (z. B. in Zukunft zu handeln).<br/>Wenn sich herausstellt, dass eine bestimmte Bestimmung nicht durchsetzbar ist, hat dies keine Auswirkungen auf andere Bedingungen.<br/>Für alle Streitigkeiten, die sich aus oder im Zusammenhang mit diesen Bedingungen oder den Diensten ergeben, gelten die Gesetze von Südaustralien. Alle Ansprüche, die sich aus oder im Zusammenhang mit diesen Bedingungen oder den Diensten ergeben, werden ausschließlich vor den Gerichten von South Australia verhandelt, und Sie und der Anbieter stimmen der ausschließlichen Zuständigkeit dieser Gerichte zu.<br/><strong>16. Vollständige Vereinbarung </strong><br/>Diese Bedingungen und alle geltenden zusätzlichen Bedingungen stellen die gesamte Vereinbarung zwischen Ihnen und dem Anbieter in Bezug auf den Dienst dar und ersetzen alle vorherigen Mitteilungen und/oder Vereinbarungen zwischen Ihnen und dem Anbieter in Bezug auf den Zugriff und die Nutzung der Dienste.<br/><strong>17. Haftungsausschluss</strong><br/>Soweit nach geltendem Recht zulässig, bietet der Anbieter den Dienst (einschließlich aller auf oder über den Dienst verfügbaren Inhalte) so an, wie er ist, und gibt keinerlei ausdrückliche, stillschweigende, gesetzliche oder sonstige Zusicherungen oder Gewährleistungen in Bezug auf die Dienste ab, einschließlich, aber nicht beschränkt auf Garantien des Eigentums, der Marktgängigkeit, der Eignung für einen bestimmten Zweck oder der Nichtverletzung von Rechten Dritter. <br/>Der Anbieter garantiert nicht, dass die Funktionen der Dienste ununterbrochen oder fehlerfrei sind, dass die auf oder über die Dienste zur Verfügung gestellten Inhalte fehlerfrei sind, dass Mängel behoben werden oder dass die vom Anbieter verwendeten Server frei von Viren oder anderen schädlichen Komponenten sind. <br/>Der Anbieter übernimmt keine Garantie oder Zusicherung in Bezug auf die Nutzung der über die Dienste verfügbaren Inhalte in Bezug auf Genauigkeit, Zuverlässigkeit oder auf andere Weise.<br/><strong>18. Haftungsbeschränkung</strong><br/>Soweit nach geltendem Recht zulässig, haftet der Anbieter Ihnen gegenüber in keinem Fall aus irgendeinem Rechtsgrund für zufällige, direkte, indirekte, strafende, tatsächliche, Folgeschäden, besondere, beispielhafte oder andere Schäden, einschließlich, aber nicht beschränkt auf Umsatz- oder Einkommensverluste, entgangene Gewinne, Schmerzen und Leiden, emotionale Belastungen, Kosten für Ersatzwaren oder Dienstleistungen oder ähnliche Schäden, die Ihnen oder anderen im Zusammenhang mit der Dienste (oder deren Kündigung aus irgendeinem Grund), auch wenn der Anbieter darüber informiert wurde Möglichkeit solcher Schäden. <br/>Soweit nach geltendem Recht zulässig, ist der Anbieter in keiner Weise verantwortlich oder haftbar für Inhalte, die auf den Diensten veröffentlicht oder über diese verfügbar sind (einschließlich Verletzungsansprüche im Zusammenhang mit diesen Inhalten), für Ihre Nutzung der Dienste oder für das Verhalten anderer auf oder über die Dienste. <br/>In bestimmten Rechtsordnungen ist der Ausschluss bestimmter Garantien oder die Haftungsbeschränkung für Neben- oder Folgeschäden nicht zulässig, was bedeutet, dass einige der oben genannten Einschränkungen möglicherweise nicht für Sie gelten. In diesen Ländern werden die vorstehenden Ausschlüsse und Beschränkungen im größtmöglichen gesetzlich zulässigen Umfang durchgesetzt. <br/>Soweit gesetzlich zulässig, übersteigt die Haftung des Anbieters Ihnen gegenüber, aus welchem Grund auch immer, Ihre Kosten für den Erwerb des Dienstes nicht.<br/><strong>19. Feedback und Fragen</strong><br/>Wenn Sie Fragen zu dieser Vereinbarung haben, kontaktieren Sie uns bitte per E-Mail unter support@coursebox.ai. <br/><strong>20. Richtlinien für Rückerstattungen</strong><br/>Coursebox Pty Ltd befolgt das australische Verbraucherrecht (ACL) und stellt sicher, dass Kunden Anspruch auf Abhilfemaßnahmen haben, wenn die Dienste fehlerhaft sind, nicht der Beschreibung entsprechen oder die Verbrauchergarantien nicht erfüllen. Wir stellen Dienstleistungen monatlich oder jährlich im Voraus in Rechnung. Solange die Dienstleistungen wie vereinbart für den vorausbezahlten Zeitraum erbracht werden, fallen Rückerstattungen in der Regel nicht an. Wenn Sie jedoch der Meinung sind, dass der Service, den Sie erhalten haben, fehlerhaft ist, nicht wie beschrieben geliefert wird oder nicht wie versprochen funktioniert, haben Sie im Rahmen von ACL möglicherweise Anspruch auf Rückerstattung, Reparatur oder andere Abhilfemaßnahmen. Um eine Überprüfung zu beantragen, senden Sie bitte Belege an support@coursebox.ai.Refunds. In folgenden Fällen wird Ihnen nicht stattgegeben: Meinungsänderung oder Entscheidung, dass der Service nicht Ihren persönlichen Vorlieben entspricht. Situationen, in denen der Dienst wie beschrieben funktioniert, aber keine bestimmte Funktion enthält, die nicht beworben wird. Teilweise Nutzung eines Abonnements, für das Dienste verfügbar waren. Wenn Sie betrügerische Aktivitäten mit Ihrer Zahlungsmethode vermuten, empfehlen wir Ihnen, sich zunächst an Ihre Bank oder Ihren Zahlungsanbieter zu wenden und diese Informationen zur weiteren Untersuchung in einem Support-Ticket anzugeben. Die vollständigen Geschäftsbedingungen finden Sie in Ihrer unterzeichneten Vereinbarung unter: https://www.coursebox.ai/user-agreement.<br/><strong>21. Additional Terms for RTOs – Use of AI-Generated Training and Assessment Resources</strong><br/><strong>21.1 Australian RTO Compliance Responsibility</strong><br/>If you are an Australian Registered Training Organisation (RTO) or acting on behalf of an RTO, you acknowledge and agree that:<br/>No Implied ASQA Compliance: Coursebox, Open Tute, and their AI-powered features do not represent or warrant that any training, assessment, or related resources generated, modified, or published using the platform are compliant with the Standards for RTOs, ASQA, or any other regulatory or funding body requirements.<br/>User Validation Required: You are solely responsible for reviewing, customising, validating, and updating all outputs—whether generated by AI, template, or user input—to ensure they meet the relevant regulatory, industry, and organisational requirements before use.<br/>Professional Review: All resources intended for accredited training and assessment must be reviewed and approved by suitably qualified staff (such as compliance managers, instructional designers, or other relevant experts) within your organisation.<br/>No Substitute for Expert Advice: Coursebox tools and any instructional materials (including videos, guides, or templates) are intended to assist with resource creation and do not constitute compliance, legal, or educational advice. RTOs should seek independent professional advice for all matters regarding compliance and validation.<br/>User Indemnity: To the extent permitted by law, you indemnify Coursebox Pty Ltd, Open Tute Pty Ltd, and their related parties from any claims, losses, or regulatory actions arising from the use of AI-generated or platform-generated resources that have not been validated as compliant by your own qualified personnel.<br/><strong>21.2 Disclaimer on Demonstrations and Support Materials</strong><br/>From time to time, Coursebox may provide demonstrations, user guides, or training videos to illustrate how features (such as the Unit of Competency to F2F Training Package builder) operate.<br/>Educational Purposes Only: Such materials are provided for illustrative and educational purposes only and do not guarantee or imply that resulting resources are compliant with ASQA or any other regulatory standards.<br/>No Public Endorsement by Experts: Any third-party expert contributors to support materials do not provide legal or compliance endorsement for resources generated by Coursebox or for the suitability of those resources for RTO purposes.<br/><strong>21.3 RTO Acknowledgement</strong><br/>By using Coursebox to generate, adapt, or manage training and assessment resources, RTOs and their staff expressly acknowledge their responsibility to:<br/>Undertake their own validation and quality assurance processes, remain up-to-date with all regulatory obligations and changes, and not rely on Coursebox or its AI-powered features as a replacement for qualified human review or regulatory consultation.</p></div></section><footer class="footer"><div class="container-default w-container"><div class="footer-content"><div class="footer-menu-main-content"><div class="footer-menu-wrapper last"><div class="title footer-menu">Konto</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/de/preise" class="footer-nav-link">Preisgestaltung</a></li><li class="footer-nav-item"><a href="https://my.coursebox.ai/#/courses/create/ai/for-you" class="footer-nav-link">Loggen Sie sich in Coursebox ein</a></li><li class="footer-nav-item"><a href="/de/abonnement-verwalten" class="footer-nav-link">Abonnement verwalten</a></li><li class="footer-nav-item"><a href="/de/abonnement-verwalten" class="footer-nav-link">Upgrade oder Kündigung</a></li><li class="footer-nav-item"><a href="/de/lms-anmeldung" class="footer-nav-link">Loggen Sie sich bei LXP ein</a></li><li class="footer-nav-item"><a href="/de/partnerprogramm" class="footer-nav-link">Affiliates</a></li><li class="footer-nav-item"><a href="/de/partner-angebote" class="footer-nav-link">Partner</a></li><li class="footer-nav-item"><a href="/de/unternehmen" class="footer-nav-link">Unternehmen</a></li></ul></div></div><div class="footer-menu-wrapper last"><div class="title footer-menu">Funktionen</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/de/ki-quiz-generator" class="footer-nav-link">KI-Quiz</a></li><li class="footer-nav-item"><a href="/de/ki-kursautor" class="footer-nav-link">KI-Kursautor</a></li><li class="footer-nav-item"><a href="/de/ki-chatbot-tutor" class="footer-nav-link">KI-Tutor</a></li><li class="footer-nav-item"><a href="/de/ki-bewertung" class="footer-nav-link">KI-Bewertung</a></li><li class="footer-nav-item"><a href="/de/lerner-fahrungs-plattform" class="footer-nav-link">VON LXP</a></li><li class="footer-nav-item"><a href="/de/ki-lms" class="footer-nav-link">LUFT-ALMS</a></li><li class="footer-nav-item"><a href="/de/integrationen" class="footer-nav-link">Integrationen</a></li></ul></div></div><div class="footer-menu-wrapper last"><div class="title footer-menu">Ressourcen</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/de/kostenloser-praktischer-kurs-zur-generativen-ki" class="footer-nav-link">Kostenloser KI-Kurs</a></li><li class="footer-nav-item"><a href="/de/blog" class="footer-nav-link">Blog</a></li></ul></div></div><div class="footer-menu-wrapper last"><div class="title footer-menu">Firma</div><div class="footer-menu-content"><ul role="list" class="footer-nav last w-list-unstyled"><li class="footer-nav-item"><a href="/de/um" class="footer-nav-link">Über</a></li><li class="footer-nav-item"><a href="/de/kontakt" class="footer-nav-link">Kontakt</a></li><li class="footer-nav-item"><a href="/de/private-portal-vereinbarung" class="footer-nav-link">Vereinbarung über ein privates Portal</a></li><li class="footer-nav-item"><a href="/de/benutzervereinbarung" aria-current="page" class="footer-nav-link w--current">Nutzervereinbarung</a></li><li class="footer-nav-item"><a href="/de/datenschutzrichtlinie" class="footer-nav-link">Datenschutz</a></li><li class="footer-nav-item"><a href="/de/gebuhren-und-kosten" class="footer-nav-link">Gebühren</a></li></ul></div></div></div></div><div class="footer-content-bottom"><a href="/de" class="footer-logo-container w-inline-block"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/65fe59e0bf27147c2015da43_coursebox%20logo.webp" alt="Coursebox-Logo mit Farbverlauf" loading="lazy" class="footer-logo"/></a><div class="footer-small-print">Copyright © Coursebox Pty Ltd.</div><div class="social-media-wrapper"><a href="https://www.linkedin.com/company/courseboxai" target="_blank" class="social-media-link icon-size-13px"></a><a href="https://www.youtube.com/channel/UChZ26y9B2waBHvY8c_uG0ow" target="_blank" class="social-media-link icon-size-13px"></a><a href="https://www.instagram.com/coursebox.ai/" target="_blank" class="social-media-link icon-size-15px"></a></div></div></div></footer><div class="form-popup boxer-registeration-popup"><div id="small-business-monthly-parent" class="contact-form-block w-node-_1896e417-cf44-7311-c110-8671f0e4693f-f0e4693e w-form"><img src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/6635ecf10edfd934c9ca3791_icons8-cross-48.png" loading="lazy" data-w-id="1896e417-cf44-7311-c110-8671f0e46940" alt="" class="image-15"/><form id="email-form" name="email-form" data-name="Email Form" method="get" data-optibase-submit-conversion-id="free_sign_up" class="card-contact-form boxer-register-form" data-wf-page-id="65f4df882d798b865803ffb3" data-wf-element-id="1896e417-cf44-7311-c110-8671f0e46941" data-wf-locale-id="66506742c6ec524dc2105b4e"><div id="w-node-_1896e417-cf44-7311-c110-8671f0e46942-f0e4693e" class="input-wrapper"><label for="Email-2">Deine E-Mail</label><input class="input-2 emailboxer w-input" maxlength="256" name="Email" data-name="Email" placeholder="z. B. my@gmail.com" type="email" id="Email-2" required=""/></div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e46946-f0e4693e" class="input-wrapper password-field-wrapper"><label for="Password-2">Passwort</label><input class="input-2 password w-input" maxlength="256" name="Password" data-name="Password" placeholder="Passwort" type="text" id="Password-2" required=""/></div><div id="w-node-_9d4826eb-47e8-aa18-990f-3c38a6125a72-f0e4693e" class="password-error-text">Das Passwort muss mindestens 12 Zeichen lang sein und mindestens Groß- und Kleinbuchstaben sowie eine Zahl und ein Symbol enthalten</div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e4694a-f0e4693e" class="input-wrapper"><label for="Firstname-2">Vorname</label><input class="input-2 firstname w-input" maxlength="256" name="Firstname" data-name="Firstname" pattern="[a-zA-Z0-9#-]+" placeholder="Vorname" title="Please enter letters, numbers, or hyphens only" type="text" id="Firstname-2" required=""/></div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e4694e-f0e4693e" class="input-wrapper"><label for="Lastname-2">Nachname</label><input class="input-2 lastname w-input" maxlength="256" name="Lastname" data-name="Lastname" pattern="[a-zA-Z0-9#-]+" placeholder="Nachname" title="Please enter letters, numbers, or hyphens only" type="text" id="Lastname-2" required=""/></div><div id="w-node-_1896e417-cf44-7311-c110-8671f0e46952-f0e4693e" class="button-primary-gradient-2 contact-form nextbtn"><input type="submit" data-wait="Bitte warte..." class="button-primary-2 small nextbtn w-button" value="Weiter"/></div></form><div class="success-message-2 w-form-done"><div>Bitte warten Sie, bis Sie weitergeleitet werden.</div></div><div class="error-message-2 w-form-fail"><div>Hoppla! Irgendwas ist schief gelaufen.</div></div></div></div></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65e9bdf0fae79e05e213200c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/js/webflow.schunk.6568e74973c68f74.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/js/webflow.schunk.e392afcae7bd0059.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/65e9bdf0fae79e05e213200c/js/webflow.0f79025d.926edabc468308a8.js" type="text/javascript"></script><!-- First promoter -->
+
+<script>
+  window.addEventListener("load", function () {
+    (function (w) {
+      w.fpr = w.fpr || function () {
+        w.fpr.q = w.fpr.q || [];
+        w.fpr.q[arguments[0] == "set" ? "unshift" : "push"](arguments);
+      };
+    })(window);
+    
+    fpr("init", { cid: "qtlhc4fu" });
+
+    // Ensure FirstPromoter script has loaded before tracking clicks
+    setTimeout(function () {
+      if (typeof fpr === "function") {
+        fpr("click");
+      } else {
+        console.warn("FirstPromoter script not loaded in time.");
+      }
+    }, 500);
+  });
+</script>
+
+<script src="https://cdn.firstpromoter.com/fpr.js" async defer></script>
+
+<script>
+
+  function getFPTid() {
+    return window.FPROM && window.FPROM.data.tid || ('fp_' + (new Date).getTime());
+  }
+
+  var chargebeeTrackFunc = function (chargebeeInstance) {
+    var tid = getFPTid();
+  
+    if (tid && chargebeeInstance) {
+      var cart = chargebeeInstance.getCart();
+      cart.setCustomer({ cf_tid: tid });
+    }
+  };
+  
+
+ var stateCheck = setInterval(function () {
+     var chargebeeInstance;
+    try {
+      chargebeeInstance = Chargebee.getInstance();
+    }
+    catch (err) {
+    };
+    if (chargebeeInstance) {
+      clearInterval(stateCheck);
+      chargebeeTrackFunc(chargebeeInstance);
+    }
+  }, 100);
+
+</script>
+<!-- END First Promoter --->
+
+
+<!-- Free user register form --->
+<script>
+  
+  function isValidPassword(password) {
+    // Password must be at least 12 characters long and contain at least uppercase and lowercase letters, with a number and a symbol
+    var passwordRegexes = [
+      /.{12,}/,
+      /[A-Z]/,
+      /[a-z]/,
+      /[0-9]/,
+      /[!@#\$%\^&\*\(\)_\+\-=\[\]\{\};':"\\|,.<>\/?]/
+    ];
+    var passwordChecks = passwordRegexes.map(function (regex) {
+      return regex.test(password);
+    });
+    var isValid = passwordChecks.every(function (passwordCheck) {
+      return passwordCheck;
+    });
+    console.log("isValid", isValid);
+    return isValid;
+  }
+  
+$('.dropinscript').hide();
+var submittingBoxer=false;
+$('.boxer-register-form').submit(function (event) {
+  //event.preventDefault();
+  //event.stopPropagation();
+  
+  if (submittingBoxer) {
+    return;
+  }
+  
+  var email = $(this).find('.emailboxer').val();
+  var password = $(this).find('.password').val();
+  var firstName = $(this).find('.firstname').val();
+  var lastName = $(this).find('.lastname').val();
+
+  if(!isValidPassword(password)){
+    event.preventDefault();
+    event.stopPropagation();
+    $('.password-error-text').show();
+    submittingBoxer = false;
+    return false;
+  }
+
+  submittingBoxer = true;
+  $(this).find('.nextbtn').val('Please wait....');
+
+  $('.password-error-text').hide();
+  
+  var settings = {
+    "url": "https://my.coursebox.ai/api/WineUsers/createAccount",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    data: JSON.stringify({ "data": { "user": { "firstName": firstName, inIframe: true, "lastName": lastName, "email": email, "password": password, "status": ["BOXER"] }, "offerCode": "" } })
+  };
+
+  $.ajax(settings).done(function (response) {
+    if (response) {
+      var settings = {
+        "url": "https://my.coursebox.ai/auth/login",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        data: JSON.stringify({ "email": email, "password": password, inIframe: true })
+      };
+      $.ajax(settings).done(function (response) {
+
+        window.location.href = 'https://my.coursebox.ai/auto-login-redirect?token=' + response.token.id + '&redirectTo=https%3A%2F%2Fmy.coursebox.ai%2Fcourses%2Fcreate%2Fai%2Ffor-you';
+        $('.boxer-registeration-popup').hide();
+      }, function (err) {
+        submittingBoxer = false;
+      });
+    }
+  },function(err){
+    submittingBoxer = false;
+  });
+	
+  //mask password to avoid it to be saved in webflow
+  $(this).find('.password').val("xxx");
+});
+
+function isValidEmail(email) {
+  var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+function checkBoxerEmail(email) {
+ 
+  var isEmail = isValidEmail(email);
+  if (isEmail) {
+
+    var settings = {
+      "url": "https://my.coursebox.ai/api/WineUsers/checkEmail",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      data: JSON.stringify({ "email": email })
+    };
+    $.ajax(settings).done(function (response) {
+      if (response && !response.isAvailable) {
+        window.location.href = 'https://my.coursebox.ai/login';
+      }
+    });
+
+  }
+}
+
+$('.emailboxer').keyup(function(){
+checkBoxerEmail(this.value);
+});
+
+
+</script>
+<!-- END Free user register form --->
+
+ <!-- Listens for clicks on buttons or submit inputs with text 'Sign Up Free' or 'Start Free' and sends a custom PostHog event with details including button text, timestamp, and page URL. --->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  
+
+    document.body.addEventListener('click', function (e) {
+      const el = e.target.closest('a.button-primary, input.button-primary');
+      if (!el) return;
+
+      const text = el.tagName === 'INPUT' ? el.value.trim() : el.innerText.trim();
+
+      console.log('✅ Tracked click:', text);
+     
+      trackSignupButtonClick(text);
+      
+    });
+
+    function trackSignupButtonClick(buttonText) {
+      posthog.capture('signup_button_clicked', {
+        button_text: buttonText,
+        clicked_at: new Date().toISOString(),
+        page_url: window.location.href,
+      });
+    }
+  });
+</script>
+
+
+
+<!-- PostHog Next Button-->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('click', function (e) {
+      const el = e.target.closest('div.nextbtn, input.nextbtn');
+      if (!el) return;
+
+      const text = el.tagName === 'INPUT' ? el.value.trim() : el.innerText.trim();
+
+      console.log('➡️ Next button clicked:', text);
+      handleNextButtonClick(text);
+    });
+
+    function handleNextButtonClick(buttonText) {
+       posthog.capture('signup_form_next_clicked', {
+          button_text: 'Next',
+          form_id: 'email-form',
+          page_url: window.location.href,
+        });
+    }
+  });
+</script>
+
+
+<script>
+  ;(function() {
+    // your locale list (two-letter codes), adjust if needed
+    var locales     = ['ar','es','de','fr','pt','it','zh','ko','ja','nl'];
+    // your old collection slug (no leading/trailing slash here)
+    var oldSlug     = 'off-the-shelf-elearning-courses';
+    // your new landing-page slug (no leading slash here, ensure trailing slash)
+    var landingSlug = 'ai-elearning-authoring-tool/';
+    var loc  = window.location;
+    var path = loc.pathname;                    // e.g. "/de/off-the-shelf-elearning-courses/course-1/"
+    var parts = path.replace(/^\/|\/$/g, '')     // trim leading/trailing “/”
+                      .split('/');               // e.g. ["de","off-the-shelf-elearning-courses","course-1"]
+    // helper to do the redirect
+    function redirect(to) {
+      loc.replace(to + loc.search + loc.hash);
+    }
+    // :one: Primary (no locale prefix): first segment is oldSlug
+    if (parts[0] === oldSlug) {
+      return redirect('/' + landingSlug);
+    }
+    // :two: Localized: first segment is a locale, second is oldSlug
+    if (
+      parts.length >= 2 &&
+      locales.indexOf(parts[0]) !== -1 &&
+      parts[1] === oldSlug
+    ) {
+      return redirect('/' + parts[0] + '/' + landingSlug);
+    }
+    // otherwise do nothing
+  })();
+</script></body></html>

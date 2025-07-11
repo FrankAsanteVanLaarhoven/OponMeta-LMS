@@ -49,7 +49,6 @@ const features: Feature[] = [
 
 const FeatureGrid = ({ className = "", cardClassName = "", showCategories = false }: FeatureGridProps) => {
   const { t } = useTranslation();
-  const features = rawFeatures.map(f => ({ ...f, title: t(f.titleKey), description: t(f.descriptionKey) }));
 
   return (
     <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${className}`}>
