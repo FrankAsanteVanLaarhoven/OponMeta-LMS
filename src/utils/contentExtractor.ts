@@ -155,7 +155,7 @@ export class ContentExtractor {
         'Face-to-face training'
       ],
       price: 999,
-      demoUrl: 'https://demo.oponmeta.com',
+      demoUrl: 'https://example.com',
       metadata: {
         keywords: ['RTO', 'qualification', 'training', 'OponMeta'],
         author: 'OponMeta Team',

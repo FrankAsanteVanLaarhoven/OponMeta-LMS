@@ -297,7 +297,7 @@ export const getTestingInstructions = () => {
    - Test credit purchase flow
 
 5. AUTHENTICATION:
-   - Test sign in with demo@oponmeta.com / demo123
+   - Test sign in with any@example.com / demo123
    - Test sign up flow
    - Test profile persistence
    - Test logout functionality
@@ -328,7 +328,7 @@ Expected Results:
 - Error states should be handled gracefully
 
 Demo Credentials:
-- Email: demo@oponmeta.com
+- Email: any@example.com
 - Password: demo123
 - Or use any email/password for auto-login with mock user
   `;

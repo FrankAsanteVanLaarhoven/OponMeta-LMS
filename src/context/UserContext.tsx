@@ -99,7 +99,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       // Mock login - replace with real API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      if (email === 'demo@oponmeta.com' && password === 'demo123') {
+      if (email === 'demo@example.com' && password === 'demo123') {
         setUser(mockUser);
         localStorage.setItem('oponmeta_user', JSON.stringify(mockUser));
       } else {

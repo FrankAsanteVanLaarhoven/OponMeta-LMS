@@ -13,7 +13,7 @@ const Contact = () => {
       icon: Mail,
       title: "Email Support",
       description: "Get help via email",
-      contact: "support@oponmeta.com",
+      contact: "support@example.com",
       available: "24/7 response within 2 hours"
     },
     {
@@ -44,35 +44,35 @@ const Contact = () => {
       icon: Mail,
       title: "General Inquiries",
       description: "Questions about our platform and services",
-      email: "info@oponmeta.com",
+      email: "contact@example.com",
       color: "text-blue-400"
     },
     {
       icon: Headphones,
       title: "Customer Service",
       description: "Technical support and account assistance",
-      email: "support@oponmeta.com",
+      email: "support@example.com",
       color: "text-green-400"
     },
     {
       icon: Users,
       title: "Partnerships",
       description: "Business collaborations and partnerships",
-      email: "partnerships@oponmeta.com",
+      email: "partnerships@example.com",
       color: "text-purple-400"
     },
     {
       icon: Briefcase,
       title: "Career Opportunities",
       description: "Job inquiries and career information",
-      email: "careers@oponmeta.com",
+      email: "careers@example.com",
       color: "text-orange-400"
     },
     {
       icon: Shield,
       title: "Administrative",
       description: "Internal management and administrative matters",
-      email: "admin@oponmeta.com",
+      email: "admin@example.com",
       color: "text-red-400"
     }
   ];
@@ -129,12 +129,12 @@ const Contact = () => {
               </div>
               <p className="text-blue-100 mb-4">Explore our platform and discover all we have to offer</p>
               <a 
-                href="https://www.oponmeta.com" 
+                href="https://example.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-2xl font-bold text-blue-200 hover:text-white transition-colors duration-300"
               >
-                www.oponmeta.com
+                www.example.com
               </a>
             </CardContent>
           </Card>
