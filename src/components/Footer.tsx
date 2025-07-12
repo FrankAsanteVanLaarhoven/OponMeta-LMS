@@ -12,14 +12,15 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <a href="/">
-                <img 
-                  src="/logo.svg" 
-                  alt="Platform Logo" 
-                  className="h-10 w-10 animate-swivel"
+                <img
+                  src="/logo.png"
+                  alt="OponMeta Logo"
+                  className="h-8 w-8 mr-2"
                 />
+                <span className="text-lg font-bold text-white">OponMeta</span>
               </a>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white">OUR PLATFORM</span>
+                <span className="text-lg font-bold text-white">OponMeta</span>
                 <span className="text-xs text-cyan-300">Global Learning Platform</span>
               </div>
             </div>
@@ -175,7 +176,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="/about" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
                 <Star className="h-3 w-3 text-cyan-300" />
-                About Our Platform
+                About OponMeta
               </a></li>
               <li><a href="/features" className="text-cyan-100 hover:text-cyan-400 transition-colors flex items-center gap-2">
                 <Zap className="h-3 w-3 text-cyan-300" />
@@ -213,11 +214,11 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-cyan-100">© 2024 Our Platform. All rights reserved.</span>
+              <span className="text-sm text-cyan-100">© 2024 OponMeta. All rights reserved.</span>
               <a href="/privacy" className="text-sm text-cyan-100 hover:text-cyan-400 transition-colors">Privacy Policy</a>
               <a href="/terms" className="text-sm text-cyan-100 hover:text-cyan-400 transition-colors">Terms of Service</a>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <span className="text-sm text-cyan-100">Follow us:</span>
               <a href="#" className="text-cyan-100 hover:text-cyan-400 transition-colors">

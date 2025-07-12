@@ -302,8 +302,8 @@ const Navigation = () => {
           {/* Logo and main nav */}
           <div className="flex items-center space-x-8">
             <a href="/" className="flex items-center space-x-2">
-              <img src="/logo.svg" alt="Platform Logo" className="h-10 w-10 animate-swivel mr-2" />
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">OUR PLATFORM</span>
+              <img src="/logo.png" alt="OponMeta Logo" className="h-10 w-10 animate-swivel mr-2" />
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">OponMeta</span>
             </a>
             <nav className="flex items-center space-x-6">
               {/* Explore Courses Dropdown */}

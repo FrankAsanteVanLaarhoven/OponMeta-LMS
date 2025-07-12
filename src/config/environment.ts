@@ -4,7 +4,7 @@
 export const config = {
   // App Configuration
   app: {
-    name: import.meta.env.VITE_APP_NAME || 'Learning Management System',
+    name: import.meta.env.VITE_APP_NAME || 'OponMeta',
     url: import.meta.env.VITE_APP_URL || 'http://localhost:8080',
     version: import.meta.env.VITE_APP_VERSION || '1.0.0',
     environment: import.meta.env.VITE_NODE_ENV || 'development',
@@ -23,10 +23,10 @@ export const config = {
     redirectUri: import.meta.env.VITE_AUTH_REDIRECT_URI || '',
   },
 
-  // Database
+  // Database (if using client-side database)
   database: {
-    name: import.meta.env.VITE_DB_NAME || 'lms_database',
-    version: parseInt(import.meta.env.VITE_DB_VERSION || '1'),
+    name: import.meta.env.VITE_DB_NAME || 'oponmeta_database',
+    version: import.meta.env.VITE_DB_VERSION || '1',
   },
 
   // External Services
@@ -37,34 +37,20 @@ export const config = {
     sentry: {
       dsn: import.meta.env.VITE_SENTRY_DSN || '',
     },
-  },
-
-  // Analytics
-  analytics: {
-    googleAnalytics: import.meta.env.VITE_GA_TRACKING_ID || '',
-    mixpanel: import.meta.env.VITE_MIXPANEL_TOKEN || '',
-  },
-
-  // File Upload
-  upload: {
-    url: import.meta.env.VITE_UPLOAD_URL || '/api/upload',
-    maxFileSize: parseInt(import.meta.env.VITE_MAX_FILE_SIZE || '10485760'), // 10MB
+    analytics: {
+      googleAnalyticsId: import.meta.env.VITE_GA_ID || '',
+    },
   },
 
   // Feature Flags
   features: {
-    ai: import.meta.env.VITE_ENABLE_AI_FEATURES === 'true',
-    social: import.meta.env.VITE_ENABLE_SOCIAL_FEATURES === 'true',
-    notifications: import.meta.env.VITE_ENABLE_NOTIFICATIONS === 'true',
-    analytics: import.meta.env.VITE_ENABLE_ANALYTICS === 'true',
+    enableAnalytics: import.meta.env.VITE_ENABLE_ANALYTICS === 'true',
+    enableNotifications: import.meta.env.VITE_ENABLE_NOTIFICATIONS !== 'false',
+    enableOfflineMode: import.meta.env.VITE_ENABLE_OFFLINE_MODE === 'true',
   },
+};
 
-  // Internationalization
-  i18n: {
-    defaultLocale: import.meta.env.VITE_DEFAULT_LOCALE || 'en',
-    supportedLocales: (import.meta.env.VITE_SUPPORTED_LOCALES || 'en').split(','),
-  },
-} as const;
+export default config;
 
 // Type-safe environment configuration
 export type Config = typeof config;
