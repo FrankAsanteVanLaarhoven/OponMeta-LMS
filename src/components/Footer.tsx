@@ -17,10 +17,10 @@ const Footer = () => {
                   alt="OponMeta Logo"
                   className="h-8 w-8 mr-2"
                 />
-                <span className="text-lg font-bold text-white">OponMeta</span>
+                <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
               </a>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white">OponMeta</span>
+                <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
                 <span className="text-xs text-cyan-300">Global Learning Platform</span>
               </div>
             </div>
