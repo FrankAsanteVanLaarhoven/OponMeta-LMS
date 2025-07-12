@@ -105,11 +105,30 @@ src/
 ## 🔧 Configuration
 
 ### Environment Variables
-Create a `.env` file in the root directory:
+Create a `.env.local` file in the root directory:
 
 ```env
-VITE_API_BASE_URL=your_api_url
-VITE_APP_NAME=OponMeta LMS
+# App Configuration
+VITE_APP_NAME="Your Learning Platform"
+VITE_APP_URL="https://your-domain.com"
+
+# API Configuration (if you have a backend)
+VITE_API_BASE_URL="https://your-api-domain.com/api"
+
+# Authentication (if using external auth)
+VITE_AUTH_DOMAIN="your-auth-domain.com"
+VITE_AUTH_CLIENT_ID="your-client-id"
+
+# Payment Processing (if using Stripe)
+VITE_STRIPE_PUBLIC_KEY="pk_test_your_stripe_public_key"
+
+# Analytics (optional)
+VITE_GA_TRACKING_ID="G-XXXXXXXXXX"
+
+# Feature Flags
+VITE_ENABLE_AI_FEATURES="true"
+VITE_ENABLE_SOCIAL_FEATURES="true"
+VITE_ENABLE_NOTIFICATIONS="true"
 ```
 
 ### Customization
@@ -142,21 +161,66 @@ Supports multiple languages with easy content management:
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Configure build settings
-3. Deploy automatically on push
+### Quick Deploy
 
-### Netlify
-1. Connect repository to Netlify
-2. Set build command: `npm run build`
-3. Set publish directory: `dist`
+#### Option 1: Vercel (Recommended)
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Login and deploy
+vercel login
+vercel --prod
+```
+
+#### Option 2: Netlify
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Login and deploy
+netlify login
+netlify deploy --prod
+```
+
+#### Option 3: Automated Script
+```bash
+# Make script executable and run
+chmod +x scripts/deploy.sh
+./scripts/deploy.sh [vercel|netlify]
+```
+
+### Environment Configuration
+
+For production, set environment variables in your hosting platform's environment settings.
 
 ### Manual Deployment
 ```bash
-npm run build
-# Upload dist/ folder to your web server
+# Build for production
+npm run build:prod
+
+# The dist/ folder contains your production-ready files
+# Upload to your web server or hosting provider
 ```
+
+### Post-Deployment Checklist
+
+- [ ] Test all major features
+- [ ] Verify mobile responsiveness
+- [ ] Check loading performance
+- [ ] Test user registration/login
+- [ ] Verify course creation and enrollment
+- [ ] Test payment processing (if applicable)
+- [ ] Check analytics tracking
+- [ ] Verify email notifications
+- [ ] Test file uploads
+- [ ] Check internationalization
+
+### Custom Domain Setup
+
+1. **Vercel**: Go to Settings > Domains in your project dashboard
+2. **Netlify**: Go to Domain management in your site dashboard
+3. Update your DNS records as instructed by your hosting provider
 
 ## 🤝 Contributing
 

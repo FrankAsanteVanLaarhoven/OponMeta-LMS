@@ -380,15 +380,15 @@ const Forums = () => {
               <CardTitle className="text-lg">Quick Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <Button className="w-full justify-start" variant="outline" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50">
+              <Button className="w-full justify-start border-cyan-600 text-cyan-600 hover:bg-cyan-50" variant="outline">
                 <AlertCircle className="mr-2 h-4 w-4" />
                 Report an Issue
               </Button>
-              <Button className="w-full justify-start" variant="outline" className="bg-cyan-600 hover:bg-cyan-700 text-white">
+              <Button className="w-full justify-start bg-cyan-600 hover:bg-cyan-700 text-white" variant="outline">
                 <Star className="mr-2 h-4 w-4" />
                 My Favorites
               </Button>
-              <Button className="w-full justify-start" variant="outline" className="bg-cyan-600 hover:bg-cyan-700 text-white">
+              <Button className="w-full justify-start bg-cyan-600 hover:bg-cyan-700 text-white" variant="outline">
                 <Users className="mr-2 h-4 w-4" />
                 Find Study Partners
               </Button>
