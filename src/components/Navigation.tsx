@@ -302,8 +302,8 @@ const Navigation = () => {
           {/* Logo and main nav */}
           <div className="flex items-center space-x-8">
             <a href="/" className="flex items-center space-x-2">
-              <img src="/branding/logo-symbol.png" alt="OponMeta Globe Logo" className="h-10 w-10 animate-swivel mr-2" />
-              <img src="/branding/logo-oponmeta.png" alt="OponMeta Logo with Text" className="h-10" />
+              <img src="/branding/logo.png" alt="OponMeta Symbol Logo" className="h-10 w-10 animate-swivel mr-2" />
+              <img src="/branding/new-logo.png" alt="OponMeta Branding Name" className="h-10" />
             </a>
             <nav className="flex items-center space-x-6">
               {/* Explore Courses Dropdown */}
