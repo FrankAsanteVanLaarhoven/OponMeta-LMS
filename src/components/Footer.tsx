@@ -11,14 +11,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <a href="/">
+              <a href="/" className="flex items-center space-x-2">
                 <img src="/branding/logo.png" alt="OponMeta Symbol Logo" className="h-8 w-8 mr-2 animate-swivel" />
-                <img src="/branding/new-logo.png" alt="OponMeta Branding Name" className="h-8" />
+                <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
               </a>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
-                <span className="text-xs text-cyan-300">Global Learning Platform</span>
-              </div>
             </div>
             <p className="text-cyan-100 text-sm">
               Advancing education worldwide with innovative, AI-powered learning and training solutions for everyone.

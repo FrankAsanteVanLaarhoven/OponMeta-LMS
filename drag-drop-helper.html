@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OponMeta Logo Upload Helper</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .drop-zone {
+            border: 3px dashed #FFD700;
+            border-radius: 15px;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .drop-zone.dragover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #FFA500;
+            transform: scale(1.02);
+        }
+        
+        .drop-zone h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.5em;
+        }
+        
+        .drop-zone p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .file-list {
+            margin-top: 30px;
+        }
+        
+        .file-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .file-name {
+            font-weight: bold;
+        }
+        
+        .file-size {
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #FFD700;
+        }
+        
+        .instructions ol {
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .success {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .error {
+            color: #f44336;
+            font-weight: bold;
+        }
+        
+        .copy-button {
+            background: #FFD700;
+            color: #333;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .copy-button:hover {
+            background: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 OponMeta Logo Upload Helper</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <ol>
+                <li>Drag and drop your logo files (PNG, JPG, SVG) from your desktop into the drop zone below</li>
+                <li>The files will be listed with their names and sizes</li>
+                <li>Copy the terminal commands shown for each file</li>
+                <li>Run those commands in your terminal to move the files to the project</li>
+                <li>Your logos will be available in <code>public/branding/</code></li>
+            </ol>
+        </div>
+        
+        <div class="drop-zone" id="dropZone">
+            <h3>📁 Drop Your Logo Files Here</h3>
+            <p>Drag and drop PNG, JPG, JPEG, or SVG files from your desktop</p>
+            <p>Supported formats: .png, .jpg, .jpeg, .svg</p>
+        </div>
+        
+        <div class="file-list" id="fileList">
+            <!-- Files will be listed here -->
+        </div>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileList = document.getElementById('fileList');
+        
+        // Prevent default drag behaviors
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        // Highlight drop zone when item is dragged over it
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, unhighlight, false);
+        });
+        
+        // Handle dropped files
+        dropZone.addEventListener('drop', handleDrop, false);
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        function highlight(e) {
+            dropZone.classList.add('dragover');
+        }
+        
+        function unhighlight(e) {
+            dropZone.classList.remove('dragover');
+        }
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            handleFiles(files);
+        }
+        
+        function handleFiles(files) {
+            [...files].forEach(uploadFile);
+        }
+        
+        function uploadFile(file) {
+            // Check if file is an image
+            if (!file.type.startsWith('image/') && !file.name.toLowerCase().endsWith('.svg')) {
+                showError(`❌ ${file.name} is not a supported image file`);
+                return;
+            }
+            
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            
+            const fileSize = formatFileSize(file.size);
+            const command = `cp "${file.path}" public/branding/${file.name}`;
+            
+            fileItem.innerHTML = `
+                <div>
+                    <div class="file-name">📄 ${file.name}</div>
+                    <div class="file-size">Size: ${fileSize}</div>
+                    <div class="success">✅ Ready to copy to public/branding/</div>
+                </div>
+                <button class="copy-button" onclick="copyToClipboard('${command}')">Copy Command</button>
+            `;
+            
+            fileList.appendChild(fileItem);
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show success message
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#4CAF50';
+                button.style.color = 'white';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#FFD700';
+                    button.style.color = '#333';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                showError('Failed to copy command to clipboard');
+            });
+        }
+        
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'file-item error';
+            errorDiv.textContent = message;
+            fileList.appendChild(errorDiv);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html> 

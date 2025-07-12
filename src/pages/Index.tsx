@@ -117,7 +117,10 @@ const Index = () => {
             </Button>
           </div>
           <div className="flex-1 flex justify-center items-center">
-            <img src="/logo.png" alt="AI Companion" className="h-40 w-40 rounded-full shadow-2xl border-4 border-slate-500/30 bg-slate-700/10 dark:border-[#22305a] dark:bg-[#11204a]" />
+            <div className="flex items-center space-x-4">
+              <img src="/branding/logo.png" alt="OponMeta Symbol Logo" className="h-40 w-40 animate-swivel" />
+              <span className="text-6xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
+            </div>
           </div>
         </div>
       </section>

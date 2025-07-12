@@ -61,7 +61,7 @@ const Hero = memo(() => {
                 <video 
                   className="w-full h-full object-cover rounded-2xl" 
                   controls
-                  poster="/logo.png"
+                  poster="/branding/logo.png"
                 >
                   <source src="/demo-video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.

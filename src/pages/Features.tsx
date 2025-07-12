@@ -62,8 +62,11 @@ const Features = () => {
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
         <div className="max-w-3xl mx-auto mb-10">
-          <img src="/logo.png" alt="Platform Logo" className="h-16 mx-auto mb-6" />
-          <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">Unlock the Future of Learning with Our Platform</h1>
+          <div className="flex items-center justify-center space-x-2 mb-6">
+            <img src="/branding/logo.png" alt="OponMeta Symbol Logo" className="h-16 w-16 animate-swivel" />
+            <span className="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
+          </div>
+          <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">Unlock the Future of Learning with OponMeta</h1>
           <p className="text-xl text-gray-700 mb-8">AI-powered, multilingual, and designed for students, instructors, and organizations worldwide. Experience the most advanced, accessible, and engaging educational platform ever built.</p>
           <Button size="lg" className="text-lg px-8 py-4 font-bold shadow-lg" asChild>
             <a href="/signup">Start Free – Join Our Platform Today</a>
