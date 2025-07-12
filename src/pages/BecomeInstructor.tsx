@@ -104,7 +104,7 @@ const BecomeInstructor = () => {
             Share Your Knowledge Globally
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-            Inspire learners worldwide and grow your teaching career with OPONMETA's global platform
+            Inspire learners worldwide and grow your teaching career with our global platform
           </p>
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
             <Star className="h-5 w-5 text-yellow-400" />
@@ -267,7 +267,7 @@ const BecomeInstructor = () => {
             {/* Benefits */}
             <Card className="bg-white/10 backdrop-blur-md border-white/20">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-white mb-6">Why Teach with OPONMETA?</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">Why Teach with Our Platform?</h2>
                 <p className="text-blue-100 mb-4">Empower learners everywhere and expand your impact as a global educator.</p>
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (

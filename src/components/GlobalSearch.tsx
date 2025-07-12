@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, X, Clock, TrendingUp, BookOpen, Users, Briefcase, Zap, Star, ArrowRight } from 'lucide-react';
-import { searchContent, getSearchSuggestions, getPopularSearches, getRecentSearches, saveSearch, SearchResult } from '@/services/searchService';
+import { searchService, SearchResult } from '@/services/searchService';
 import { useNavigate } from 'react-router-dom';
 
 interface GlobalSearchProps {
@@ -21,8 +21,13 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, className 
   const resultsRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  const popularSearches = getPopularSearches();
-  const recentSearches = getRecentSearches();
+  const [popularSearches, setPopularSearches] = useState<string[]>([]);
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+  useEffect(() => {
+    searchService.getPopularSearches().then(setPopularSearches);
+    searchService.getRecentSearches().then(setRecentSearches);
+  }, []);
 
   // Focus input when search opens
   useEffect(() => {
@@ -48,10 +53,9 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, className 
     setIsLoading(true);
     
     // Debounce search
-    const timeoutId = setTimeout(() => {
-      const searchResults = searchContent(query);
-      const searchSuggestions = getSearchSuggestions(query);
-      
+    const timeoutId = setTimeout(async () => {
+      const searchResults = await searchService.search({ query });
+      const searchSuggestions = await searchService.getSearchSuggestions(query);
       setResults(searchResults);
       setSuggestions(searchSuggestions);
       setShowSuggestions(false);
@@ -94,7 +98,7 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, className 
 
   const handleSearch = (searchQuery: string) => {
     if (searchQuery.trim()) {
-      saveSearch(searchQuery);
+      searchService.saveSearch(searchQuery);
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
       onClose();
     }

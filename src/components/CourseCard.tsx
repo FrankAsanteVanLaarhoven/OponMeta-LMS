@@ -1,16 +1,57 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Users, Clock, Play } from "lucide-react";
+import { Star, Users, Clock, Play, Heart, Bookmark, ThumbsUp } from "lucide-react";
 import { Course } from "@/data/coursesData";
+import { useState, useEffect } from "react";
+import { 
+  toggleFavorite, 
+  isFavorite, 
+  toggleWishlist, 
+  isWishlisted, 
+  toggleLike, 
+  isLiked,
+  addRecentlyViewed 
+} from "@/utils/userContentActions";
 
 interface CourseCardProps {
   course: Course;
 }
 
 const CourseCard = ({ course }: CourseCardProps) => {
+  const [favorited, setFavorited] = useState(false);
+  const [wishlisted, setWishlisted] = useState(false);
+  const [liked, setLiked] = useState(false);
+
+  // Initialize state from localStorage
+  useEffect(() => {
+    setFavorited(isFavorite(course.id));
+    setWishlisted(isWishlisted(course.id));
+    setLiked(isLiked(course.id));
+  }, [course.id]);
+
+  // Add to recently viewed when component mounts
+  useEffect(() => {
+    addRecentlyViewed(course.id);
+  }, [course.id]);
+
+  const handleFavorite = () => {
+    toggleFavorite(course.id);
+    setFavorited(!favorited);
+  };
+
+  const handleWishlist = () => {
+    toggleWishlist(course.id);
+    setWishlisted(!wishlisted);
+  };
+
+  const handleLike = () => {
+    toggleLike(course.id);
+    setLiked(!liked);
+  };
+
   return (
-    <Card className="bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300 group overflow-hidden shadow-lg">
+    <Card className="bg-white text-black border border-gray-300 hover:bg-gray-100 transition-all duration-300 group overflow-hidden shadow-lg">
       <div className="relative">
         <img 
           src={course.image} 
@@ -22,6 +63,41 @@ const CourseCard = ({ course }: CourseCardProps) => {
             {course.category}
           </Badge>
         </div>
+        
+        {/* Action buttons overlay */}
+        <div className="absolute top-4 right-4 flex gap-2">
+          <Button
+            size="sm"
+            variant="ghost"
+            className={`h-8 w-8 p-0 rounded-full backdrop-blur-md ${
+              favorited ? 'bg-red-500 text-white hover:bg-red-600' : 'bg-white/80 text-gray-700 hover:bg-white'
+            }`}
+            onClick={handleFavorite}
+          >
+            <Heart className={`h-4 w-4 ${favorited ? 'fill-current' : ''}`} />
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            className={`h-8 w-8 p-0 rounded-full backdrop-blur-md ${
+              wishlisted ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-white/80 text-gray-700 hover:bg-white'
+            }`}
+            onClick={handleWishlist}
+          >
+            <Bookmark className={`h-4 w-4 ${wishlisted ? 'fill-current' : ''}`} />
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            className={`h-8 w-8 p-0 rounded-full backdrop-blur-md ${
+              liked ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-white/80 text-gray-700 hover:bg-white'
+            }`}
+            onClick={handleLike}
+          >
+            <ThumbsUp className={`h-4 w-4 ${liked ? 'fill-current' : ''}`} />
+          </Button>
+        </div>
+
         <div className="absolute inset-0 bg-background/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <Button size="sm" className="bg-primary/80 backdrop-blur-md text-primary-foreground hover:bg-primary">
             <Play className="h-4 w-4 mr-2" />

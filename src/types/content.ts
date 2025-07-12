@@ -254,7 +254,7 @@ export type Language =
   | 'ko' 
   | 'nl';
 
-export const LANGUAGES: Language[] = ['en', 'es', 'de', 'fr', 'it', 'ja', 'ko', 'nl', 'pt', 'zh'];
+export const LANGUAGE_CODES: Language[] = ['en', 'es', 'de', 'fr', 'it', 'ja', 'ko', 'nl', 'pt', 'zh'];
 
 export type ContentStatus = 'draft' | 'published' | 'archived' | 'scheduled';
 

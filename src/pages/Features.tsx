@@ -8,7 +8,7 @@ const features = [
   },
   {
     icon: <Globe className="w-8 h-8 text-green-600" />, title: 'Multilingual & Global',
-    desc: 'Reach learners worldwide with seamless language switching and culturally adaptive content. OponMeta supports 10+ languages and growing.'
+    desc: 'Reach learners worldwide with seamless language switching and culturally adaptive content. Our platform supports 10+ languages and growing.'
   },
   {
     icon: <Users className="w-8 h-8 text-purple-600" />, title: 'Personalized Learning Companions',
@@ -62,11 +62,11 @@ const Features = () => {
       {/* Hero Section */}
       <section className="py-20 px-4 text-center">
         <div className="max-w-3xl mx-auto mb-10">
-          <img src="/logo.png" alt="OponMeta Logo" className="h-16 mx-auto mb-6" />
-          <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">Unlock the Future of Learning with OponMeta</h1>
+          <img src="/logo.png" alt="Platform Logo" className="h-16 mx-auto mb-6" />
+          <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">Unlock the Future of Learning with Our Platform</h1>
           <p className="text-xl text-gray-700 mb-8">AI-powered, multilingual, and designed for students, instructors, and organizations worldwide. Experience the most advanced, accessible, and engaging educational platform ever built.</p>
           <Button size="lg" className="text-lg px-8 py-4 font-bold shadow-lg" asChild>
-            <a href="/signup">Start Free – Join OponMeta Today</a>
+            <a href="/signup">Start Free – Join Our Platform Today</a>
           </Button>
         </div>
       </section>
@@ -88,7 +88,7 @@ const Features = () => {
       <section className="py-16 px-4 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Ready to experience the next generation of learning?</h2>
-          <p className="text-lg text-gray-700 mb-8">Sign up now and join a global community of learners, educators, and innovators. OponMeta is your gateway to limitless knowledge and opportunity.</p>
+          <p className="text-lg text-gray-700 mb-8">Sign up now and join a global community of learners, educators, and innovators. Our platform is your gateway to limitless knowledge and opportunity.</p>
           <Button size="lg" className="text-lg px-8 py-4 font-bold shadow-lg" asChild>
             <a href="/signup">Get Started Free</a>
           </Button>

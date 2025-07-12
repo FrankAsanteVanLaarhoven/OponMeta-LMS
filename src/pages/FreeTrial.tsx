@@ -53,7 +53,7 @@ const FreeTrial = () => {
             Begin Your 14-Day Free Trial
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Discover the full capabilities of OPONMETA with unrestricted access to every feature. 
+            Discover the full capabilities of our platform with unrestricted access to every feature. 
             Cancel anytime, no commitment required.
           </p>
         </div>

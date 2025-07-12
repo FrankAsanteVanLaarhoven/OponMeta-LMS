@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* OponMeta Deep Blue Theme - Unified Brand Color */
+    /* Deep Blue Theme - Unified Brand Color */
     --background: 222 60% 10%; /* #0a1834 */
     --foreground: 220 100% 97%;
 
@@ -60,7 +60,7 @@
   }
 
   .dark {
-    /* OponMeta Deep Blue Theme - Unified Brand Color */
+    /* Deep Blue Theme - Unified Brand Color */
     --background: #252533; /* #0a1834 */
     --foreground: 220 100% 97%;
 

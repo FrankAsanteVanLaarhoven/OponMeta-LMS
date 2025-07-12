@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Target, TrendingUp, Users, BookOpen, Award, Briefcase, GraduationCap } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import PageNavigation from "@/components/PageNavigation";
 import Footer from "@/components/Footer";
 
@@ -185,6 +185,27 @@ const CareerGuidance = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Add a section with links to each career category page */}
+        <div className="bg-white rounded-lg shadow p-6 mb-12">
+          <h2 className="text-2xl font-bold mb-4 text-center">Explore Career Categories</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <Link to="/careers/leadership-and-management" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Leadership and Management</Link>
+            <Link to="/careers/mentorship-career-readiness" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Mentorship & Career Readiness</Link>
+            <Link to="/careers/specialized-industry-tracks" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Specialized Industry Tracks</Link>
+            <Link to="/careers/real-estate-and-estate-management" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Real Estate and Estate Management</Link>
+            <Link to="/careers/public-safety-and-emergency-services" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Public Safety and Emergency Services</Link>
+            <Link to="/careers/social-care-and-community-support" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Social Care and Community Support</Link>
+            <Link to="/careers/health-science" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Health Science</Link>
+            <Link to="/careers/finance" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Finance</Link>
+            <Link to="/careers/information-technology" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Information Technology</Link>
+            <Link to="/careers/education-training" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Education & Training</Link>
+            <Link to="/careers/business-management-administration" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Business Management & Administration</Link>
+            <Link to="/careers/marketing-sales-service" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Marketing, Sales, & Service</Link>
+            <Link to="/careers/agriculture-food-natural-resources" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Agriculture, Food, & Natural Resources</Link>
+            <Link to="/careers/hospitality-tourism" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Hospitality & Tourism</Link>
+          </div>
+        </div>
       </div>
 
       <PageNavigation />

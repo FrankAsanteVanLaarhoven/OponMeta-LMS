@@ -40,7 +40,7 @@ const SignUp = () => {
             <div className="text-[#0a1834] dark:text-white">
               <h2 className="text-4xl font-bold mb-6">Join 50,000+ Global Learners</h2>
               <p className="text-xl text-[#16203a] dark:text-cyan-300 mb-8">
-                Begin your learning journey with OponMeta and reach your full potential
+                Begin your learning journey with us and reach your full potential
               </p>
               
               <div className="space-y-4">

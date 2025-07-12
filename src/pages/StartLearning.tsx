@@ -276,7 +276,7 @@ const StartLearning = () => {
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl font-extrabold text-white mb-4">Ready to Transform Your Career?</h2>
             <p className="text-xl text-white mb-8 max-w-2xl mx-auto font-medium">
-              Join 50,000+ learners who have already started their journey with OPONMETA
+              Join 50,000+ learners who have already started their journey with our platform
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50 font-semibold shadow" onClick={() => navigate("/signup")}> 

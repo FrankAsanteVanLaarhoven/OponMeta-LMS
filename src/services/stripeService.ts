@@ -1,4 +1,4 @@
-// Stripe Service for OponMeta
+// Stripe Service for our platform
 // This service handles all Stripe-related operations including payments, subscriptions, and webhooks
 
 export interface StripeConfig {

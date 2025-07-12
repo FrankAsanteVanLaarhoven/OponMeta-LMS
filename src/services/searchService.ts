@@ -1,462 +1,334 @@
-// Global Search Service for OponMeta Platform
-// This service provides comprehensive search across all platform content
+import { multilingualContentService, ExtractedContent } from '../utils/multilingualContent';
 
 export interface SearchResult {
   id: string;
   title: string;
   description: string;
-  type: 'course' | 'page' | 'feature' | 'tool' | 'companion' | 'instructor' | 'category';
+  content: string;
+  language: string;
+  type: 'page' | 'blog' | 'rto-qualification' | 'course' | 'career';
+  slug: string;
   url: string;
-  category?: string;
-  tags?: string[];
   relevance: number;
-  icon?: string;
+  excerpt: string;
+  metadata?: {
+    readingTime?: string;
+    category?: string;
+    tags?: string[];
+  };
 }
 
-export interface SearchIndex {
-  [key: string]: SearchResult;
+export interface SearchOptions {
+  query: string;
+  language?: string;
+  type?: 'page' | 'blog' | 'rto-qualification' | 'course' | 'career';
+  limit?: number;
+  includeContent?: boolean;
 }
 
-// Comprehensive search index covering all platform content
-const searchIndex: SearchIndex = {
-  // Courses
-  'courses': {
-    id: 'courses',
-    title: 'Browse Courses',
-    description: 'Explore thousands of free online courses across all categories',
-    type: 'page',
-    url: '/courses',
-    category: 'Learning',
-    tags: ['courses', 'learning', 'education', 'training'],
-    relevance: 100
-  },
-  'course-library': {
-    id: 'course-library',
-    title: 'Course Library',
-    description: 'Access our comprehensive library of courses and learning materials',
-    type: 'page',
-    url: '/course-library',
-    category: 'Learning',
-    tags: ['library', 'courses', 'materials', 'resources'],
-    relevance: 95
-  },
-  'create-course': {
-    id: 'create-course',
-    title: 'Create Course',
-    description: 'Build and publish your own courses on the OponMeta platform',
-    type: 'page',
-    url: '/create-course',
-    category: 'Content Creation',
-    tags: ['create', 'course', 'authoring', 'publish'],
-    relevance: 90
-  },
+class SearchService {
+  private multilingualContent: ExtractedContent[] | null = null;
 
-  // AI & Companions
-  'ai-companion': {
-    id: 'ai-companion',
-    title: 'AI Learning Companion',
-    description: 'Personalized AI tutor to enhance your learning experience',
-    type: 'companion',
-    url: '/companion',
-    category: 'AI Tools',
-    tags: ['ai', 'companion', 'tutor', 'personalized', 'learning'],
-    relevance: 100
-  },
-  'meet-ai': {
-    id: 'meet-ai',
-    title: 'Meet AI',
-    description: 'Discover our AI-powered learning tools and companions',
-    type: 'page',
-    url: '/meet-ai',
-    category: 'AI Tools',
-    tags: ['ai', 'meet', 'introduction', 'tools'],
-    relevance: 95
-  },
-
-  // Portals & Dashboards
-  'student-portal': {
-    id: 'student-portal',
-    title: 'Student Portal',
-    description: 'Access your courses, progress, and learning dashboard',
-    type: 'page',
-    url: '/student-portal',
-    category: 'Student Tools',
-    tags: ['student', 'portal', 'dashboard', 'progress', 'courses'],
-    relevance: 100
-  },
-  'dashboard': {
-    id: 'dashboard',
-    title: 'Dashboard',
-    description: 'Main dashboard for managing your OponMeta account',
-    type: 'page',
-    url: '/dashboard',
-    category: 'Account',
-    tags: ['dashboard', 'account', 'overview', 'management'],
-    relevance: 95
-  },
-  'vendor-portal': {
-    id: 'vendor-portal',
-    title: 'Vendor Portal',
-    description: 'Manage your vendor account and course offerings',
-    type: 'page',
-    url: '/vendor-portal',
-    category: 'Vendor Tools',
-    tags: ['vendor', 'portal', 'management', 'courses'],
-    relevance: 90
-  },
-  'advertiser-portal': {
-    id: 'advertiser-portal',
-    title: 'Advertiser Portal',
-    description: 'Manage advertising campaigns and promotions',
-    type: 'page',
-    url: '/advertiser-portal',
-    category: 'Advertising',
-    tags: ['advertiser', 'portal', 'ads', 'campaigns'],
-    relevance: 85
-  },
-
-  // Tools & Features
-  'authoring-tool': {
-    id: 'authoring-tool',
-    title: 'Authoring Tool',
-    description: 'Create interactive e-learning content with our drag-and-drop authoring tool',
-    type: 'tool',
-    url: '/authoring-tool',
-    category: 'Content Creation',
-    tags: ['authoring', 'tool', 'create', 'content', 'drag-drop'],
-    relevance: 95
-  },
-  'quiz-builder': {
-    id: 'quiz-builder',
-    title: 'Quiz Builder',
-    description: 'Create engaging quizzes and assessments for your courses',
-    type: 'tool',
-    url: '/quiz-builder',
-    category: 'Content Creation',
-    tags: ['quiz', 'builder', 'assessment', 'test'],
-    relevance: 90
-  },
-  'plagiarism-checker': {
-    id: 'plagiarism-checker',
-    title: 'Plagiarism Checker',
-    description: 'Premium AI-powered plagiarism detection tool',
-    type: 'tool',
-    url: '/plagiarism-checker',
-    category: 'Writing Tools',
-    tags: ['plagiarism', 'checker', 'ai', 'premium', 'detection'],
-    relevance: 85
-  },
-  'grammar-checker': {
-    id: 'grammar-checker',
-    title: 'Grammar Checker',
-    description: 'Free AI grammar and style checker',
-    type: 'tool',
-    url: '/grammar-checker',
-    category: 'Writing Tools',
-    tags: ['grammar', 'checker', 'ai', 'free', 'writing'],
-    relevance: 85
-  },
-
-  // Booking & Scheduling
-  'one-to-one-booking': {
-    id: 'one-to-one-booking',
-    title: '1:1 Booking',
-    description: 'Schedule one-on-one sessions with instructors and mentors',
-    type: 'page',
-    url: '/one-to-one-booking',
-    category: 'Scheduling',
-    tags: ['booking', '1:1', 'sessions', 'mentors', 'instructors'],
-    relevance: 90
-  },
-
-  // Subscription & Management
-  'subscription-management': {
-    id: 'subscription-management',
-    title: 'Subscription Management',
-    description: 'Manage your OponMeta subscription and billing',
-    type: 'page',
-    url: '/companion-subscribe',
-    category: 'Account',
-    tags: ['subscription', 'management', 'billing', 'account'],
-    relevance: 85
-  },
-
-  // Information Pages
-  'about': {
-    id: 'about',
-    title: 'About OponMeta',
-    description: 'Learn about our mission to advance education worldwide',
-    type: 'page',
-    url: '/about',
-    category: 'Company',
-    tags: ['about', 'company', 'mission', 'story'],
-    relevance: 80
-  },
-  'features': {
-    id: 'features',
-    title: 'Platform Features',
-    description: 'Explore all the features and capabilities of OponMeta',
-    type: 'page',
-    url: '/features',
-    category: 'Platform',
-    tags: ['features', 'platform', 'capabilities', 'tools'],
-    relevance: 85
-  },
-  'contact': {
-    id: 'contact',
-    title: 'Contact Us',
-    description: 'Get in touch with our support team',
-    type: 'page',
-    url: '/contact',
-    category: 'Support',
-    tags: ['contact', 'support', 'help', 'inquiry'],
-    relevance: 80
-  },
-
-  // Career & Development
-  'career-guidance': {
-    id: 'career-guidance',
-    title: 'Career Guidance',
-    description: 'Get personalized career advice and guidance',
-    type: 'page',
-    url: '/career-guidance',
-    category: 'Career',
-    tags: ['career', 'guidance', 'advice', 'development'],
-    relevance: 85
-  },
-
-  // Vendors & Partners
-  'vendors': {
-    id: 'vendors',
-    title: 'Vendor Partners',
-    description: 'Explore our network of vendor partners and their offerings',
-    type: 'page',
-    url: '/vendors',
-    category: 'Partners',
-    tags: ['vendors', 'partners', 'network', 'offerings'],
-    relevance: 85
-  },
-  'become-instructor': {
-    id: 'become-instructor',
-    title: 'Become Instructor',
-    description: 'Join our platform as an instructor and share your knowledge',
-    type: 'page',
-    url: '/become-instructor',
-    category: 'Instructors',
-    tags: ['instructor', 'become', 'teach', 'share'],
-    relevance: 90
-  },
-
-  // Course Categories
-  'it-courses': {
-    id: 'it-courses',
-    title: 'IT Courses',
-    description: 'Information Technology courses including programming, networking, and more',
-    type: 'category',
-    url: '/courses?category=it',
-    category: 'Technology',
-    tags: ['it', 'technology', 'programming', 'networking'],
-    relevance: 90
-  },
-  'health-courses': {
-    id: 'health-courses',
-    title: 'Health Courses',
-    description: 'Healthcare, nursing, and wellness courses',
-    type: 'category',
-    url: '/courses?category=health',
-    category: 'Health',
-    tags: ['health', 'healthcare', 'nursing', 'wellness'],
-    relevance: 90
-  },
-  'business-courses': {
-    id: 'business-courses',
-    title: 'Business Courses',
-    description: 'Business management, marketing, and entrepreneurship courses',
-    type: 'category',
-    url: '/courses?category=business',
-    category: 'Business',
-    tags: ['business', 'management', 'marketing', 'entrepreneurship'],
-    relevance: 90
-  },
-  'language-courses': {
-    id: 'language-courses',
-    title: 'Language Courses',
-    description: 'Learn new languages with our comprehensive language courses',
-    type: 'category',
-    url: '/courses?category=language',
-    category: 'Language',
-    tags: ['language', 'languages', 'learning', 'communication'],
-    relevance: 90
-  },
-
-  // Additional Tools
-  'virtual-classroom': {
-    id: 'virtual-classroom',
-    title: 'Virtual Classrooms',
-    description: 'Join live virtual classrooms and interactive learning sessions',
-    type: 'feature',
-    url: '/virtual-classroom',
-    category: 'Learning',
-    tags: ['virtual', 'classroom', 'live', 'interactive'],
-    relevance: 85
-  },
-  'certificate-generator': {
-    id: 'certificate-generator',
-    title: 'Certificate Generator',
-    description: 'Generate and download completion certificates for your courses',
-    type: 'tool',
-    url: '/certificate-generator',
-    category: 'Certification',
-    tags: ['certificate', 'generator', 'download', 'completion'],
-    relevance: 80
-  },
-  'analytics': {
-    id: 'analytics',
-    title: 'Analytics',
-    description: 'Track your learning progress and performance analytics',
-    type: 'page',
-    url: '/dashboard/analytics',
-    category: 'Analytics',
-    tags: ['analytics', 'progress', 'performance', 'tracking'],
-    relevance: 85
+  constructor() {
+    // Lazy initialization - don't load content until needed
   }
-};
 
-// Search function with fuzzy matching and relevance scoring
-export const searchContent = (query: string): SearchResult[] => {
-  if (!query.trim()) return [];
-
-  const searchTerm = query.toLowerCase().trim();
-  const results: SearchResult[] = [];
-
-  // Search through all indexed content
-  Object.values(searchIndex).forEach(item => {
-    let score = 0;
-    const searchableText = `${item.title} ${item.description} ${item.tags?.join(' ') || ''} ${item.category || ''}`.toLowerCase();
-
-    // Exact title match (highest priority)
-    if (item.title.toLowerCase().includes(searchTerm)) {
-      score += 100;
-    }
-
-    // Exact description match
-    if (item.description.toLowerCase().includes(searchTerm)) {
-      score += 50;
-    }
-
-    // Tag matches
-    if (item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))) {
-      score += 30;
-    }
-
-    // Category match
-    if (item.category?.toLowerCase().includes(searchTerm)) {
-      score += 20;
-    }
-
-    // Partial word matches
-    const words = searchTerm.split(' ');
-    words.forEach(word => {
-      if (searchableText.includes(word)) {
-        score += 10;
+  /**
+   * Get multilingual content with lazy loading
+   */
+  private getMultilingualContent(): ExtractedContent[] {
+    if (this.multilingualContent === null) {
+      try {
+        console.log('Loading multilingual content...');
+        
+        // Check if the service exists
+        if (!multilingualContentService) {
+          console.error('multilingualContentService is not available');
+          this.multilingualContent = [];
+          return this.multilingualContent;
+        }
+        
+        console.log('multilingualContentService:', multilingualContentService);
+        console.log('getAllContent method:', typeof multilingualContentService.getAllContent);
+        
+        // Check if the method exists
+        if (typeof multilingualContentService.getAllContent !== 'function') {
+          console.error('getAllContent is not a function on multilingualContentService');
+          this.multilingualContent = [];
+          return this.multilingualContent;
+        }
+        
+        // Try to call the method
+        this.multilingualContent = multilingualContentService.getAllContent();
+        console.log('Loaded content:', this.multilingualContent.length, 'items');
+      } catch (error) {
+        console.error('Failed to load multilingual content in search service:', error);
+        this.multilingualContent = [];
       }
-    });
-
-    // Fuzzy matching for typos
-    if (fuzzyMatch(searchableText, searchTerm)) {
-      score += 5;
     }
-
-    if (score > 0) {
-      results.push({
-        ...item,
-        relevance: score + item.relevance
-      });
-    }
-  });
-
-  // Sort by relevance and return top results
-  return results
-    .sort((a, b) => b.relevance - a.relevance)
-    .slice(0, 10);
-};
-
-// Simple fuzzy matching function
-const fuzzyMatch = (text: string, query: string): boolean => {
-  const queryChars = query.split('');
-  let textIndex = 0;
-  
-  for (const char of queryChars) {
-    const foundIndex = text.indexOf(char, textIndex);
-    if (foundIndex === -1) return false;
-    textIndex = foundIndex + 1;
+    return this.multilingualContent;
   }
-  
-  return true;
-};
 
-// Get search suggestions based on partial input
-export const getSearchSuggestions = (query: string): string[] => {
-  if (!query.trim()) return [];
+  /**
+   * Simple search method for backward compatibility
+   */
+  async searchContent(query: string, limit: number = 10): Promise<SearchResult[]> {
+    return this.search({ query, limit });
+  }
 
-  const suggestions = new Set<string>();
-  const searchTerm = query.toLowerCase().trim();
-
-  Object.values(searchIndex).forEach(item => {
-    // Add title suggestions
-    if (item.title.toLowerCase().includes(searchTerm)) {
-      suggestions.add(item.title);
+  /**
+   * Search across all content types
+   */
+  async search(options: SearchOptions): Promise<SearchResult[]> {
+    const { query, language, type, limit = 20, includeContent = false } = options;
+    
+    if (!query.trim()) {
+      return [];
     }
 
-    // Add category suggestions
-    if (item.category?.toLowerCase().includes(searchTerm)) {
-      suggestions.add(item.category);
+    const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 2);
+    const results: SearchResult[] = [];
+
+    // Search multilingual content
+    const multilingualResults = this.searchMultilingualContent(searchTerms, language, type);
+    results.push(...multilingualResults);
+
+    // TODO: Add search for courses, careers, and other content types
+    // const courseResults = await this.searchCourses(searchTerms, language, type);
+    // const careerResults = await this.searchCareers(searchTerms, language, type);
+    // results.push(...courseResults, ...careerResults);
+
+    // Sort by relevance and limit results
+    return results
+      .sort((a, b) => b.relevance - a.relevance)
+      .slice(0, limit);
+  }
+
+  /**
+   * Search multilingual content
+   */
+  private searchMultilingualContent(
+    searchTerms: string[], 
+    language?: string, 
+    type?: string
+  ): SearchResult[] {
+    const results: SearchResult[] = [];
+    
+    let content = this.getMultilingualContent();
+    
+    // Filter by language if specified
+    if (language) {
+      content = content.filter(item => item.language === language);
+    }
+    
+    // Filter by type if specified
+    if (type) {
+      content = content.filter(item => item.type === type);
     }
 
-    // Add tag suggestions
-    item.tags?.forEach(tag => {
-      if (tag.toLowerCase().includes(searchTerm)) {
-        suggestions.add(tag);
+    for (const item of content) {
+      let relevance = 0;
+      const titleLower = item.title.toLowerCase();
+      const descriptionLower = (item.description || '').toLowerCase();
+      const contentLower = item.content.toLowerCase();
+
+      // Calculate relevance score
+      for (const term of searchTerms) {
+        // Title matches get highest weight
+        if (titleLower.includes(term)) {
+          relevance += 10;
+        }
+        
+        // Description matches get medium weight
+        if (descriptionLower.includes(term)) {
+          relevance += 5;
+        }
+        
+        // Content matches get lower weight
+        if (contentLower.includes(term)) {
+          relevance += 1;
+        }
       }
-    });
-  });
 
-  return Array.from(suggestions).slice(0, 5);
-};
+      if (relevance > 0) {
+        // Generate excerpt
+        const excerpt = this.generateExcerpt(item.content, searchTerms);
+        
+        results.push({
+          id: item.id,
+          title: item.title,
+          description: item.description || '',
+          content: item.content,
+          language: item.language,
+          type: item.type,
+          slug: item.slug,
+          url: `/content/${item.language}/${item.type}/${item.slug}`,
+          relevance,
+          excerpt,
+          metadata: {
+            readingTime: this.calculateReadingTime(item.content),
+            category: item.type.replace('-', ' '),
+            tags: this.extractTags(item.content)
+          }
+        });
+      }
+    }
 
-// Get popular searches
-export const getPopularSearches = (): string[] => {
-  return [
-    'AI Companion',
-    'Create Course',
-    'Student Portal',
-    'Dashboard',
-    'IT Courses',
-    'Business Courses',
-    'Health Courses',
-    'Language Courses',
-    'Authoring Tool',
-    'Quiz Builder'
-  ];
-};
+    return results;
+  }
 
-// Get recent searches (this would typically come from localStorage or user preferences)
-export const getRecentSearches = (): string[] => {
-  try {
-    const recent = localStorage.getItem('oponmeta-recent-searches');
-    return recent ? JSON.parse(recent) : [];
-  } catch {
+  /**
+   * Generate a relevant excerpt from content
+   */
+  private generateExcerpt(content: string, searchTerms: string[]): string {
+    const maxLength = 200;
+    let excerpt = content.replace(/\s+/g, ' ').trim();
+    
+    // Try to find a sentence containing search terms
+    const sentences = excerpt.split(/[.!?]+/);
+    for (const sentence of sentences) {
+      const sentenceLower = sentence.toLowerCase();
+      if (searchTerms.some(term => sentenceLower.includes(term))) {
+        excerpt = sentence.trim();
+        break;
+      }
+    }
+    
+    // Truncate if too long
+    if (excerpt.length > maxLength) {
+      excerpt = excerpt.substring(0, maxLength) + '...';
+    }
+    
+    return excerpt;
+  }
+
+  /**
+   * Calculate reading time
+   */
+  private calculateReadingTime(content: string): string {
+    const wordsPerMinute = 200;
+    const words = content.split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes} min read`;
+  }
+
+  /**
+   * Extract tags from content
+   */
+  private extractTags(content: string): string[] {
+    // Simple tag extraction - look for capitalized words and common terms
+    const words = content.split(/\s+/);
+    const tags = new Set<string>();
+    
+    for (const word of words) {
+      const cleanWord = word.replace(/[^\w]/g, '').toLowerCase();
+      if (cleanWord.length > 3 && /^[A-Z]/.test(word)) {
+        tags.add(cleanWord);
+      }
+    }
+    
+    return Array.from(tags).slice(0, 5); // Limit to 5 tags
+  }
+
+  /**
+   * Get search suggestions based on query
+   */
+  async getSuggestions(query: string, limit: number = 5): Promise<string[]> {
+    if (!query.trim()) return [];
+    
+    const suggestions = new Set<string>();
+    const queryLower = query.toLowerCase();
+    
+    // Get suggestions from titles
+    for (const item of this.getMultilingualContent()) {
+      const titleWords = item.title.toLowerCase().split(/\s+/);
+      for (const word of titleWords) {
+        if (word.startsWith(queryLower) && word.length > query.length) {
+          suggestions.add(word);
+        }
+      }
+    }
+    
+    return Array.from(suggestions).slice(0, limit);
+  }
+
+  /**
+   * Get search suggestions (alias for getSuggestions)
+   */
+  async getSearchSuggestions(query: string, limit: number = 5): Promise<string[]> {
+    return this.getSuggestions(query, limit);
+  }
+
+  /**
+   * Get recent searches from localStorage
+   */
+  async getRecentSearches(limit: number = 5): Promise<string[]> {
+    try {
+      const recent = localStorage.getItem('recentSearches');
+      if (recent) {
+        const searches = JSON.parse(recent);
+        return searches.slice(0, limit);
+      }
+    } catch (error) {
+      console.warn('Failed to load recent searches:', error);
+    }
     return [];
   }
-};
 
-// Save search to recent searches
-export const saveSearch = (query: string): void => {
-  try {
-    const recent = getRecentSearches();
-    const updated = [query, ...recent.filter(q => q !== query)].slice(0, 10);
-    localStorage.setItem('oponmeta-recent-searches', JSON.stringify(updated));
-  } catch {
-    // Ignore localStorage errors
+  /**
+   * Save a search query to recent searches
+   */
+  async saveSearch(query: string): Promise<void> {
+    try {
+      const recent = await this.getRecentSearches(10);
+      const updated = [query, ...recent.filter(q => q !== query)];
+      localStorage.setItem('recentSearches', JSON.stringify(updated.slice(0, 10)));
+    } catch (error) {
+      console.warn('Failed to save search:', error);
+    }
   }
-}; 
+
+  /**
+   * Get popular search terms
+   */
+  async getPopularSearches(limit: number = 10): Promise<string[]> {
+    // This could be enhanced with analytics data
+    return [
+      'AI course creator',
+      'LMS platform',
+      'online learning',
+      'certificate programs',
+      'training resources',
+      'educational technology',
+      'virtual classroom',
+      'course management',
+      'student portal',
+      'instructor tools'
+    ].slice(0, limit);
+  }
+
+  /**
+   * Get search statistics
+   */
+  async getSearchStats(): Promise<{
+    totalContent: number;
+    languages: string[];
+    types: string[];
+    totalWords: number;
+  }> {
+    const languages = [...new Set(this.getMultilingualContent().map(item => item.language))];
+    const types = [...new Set(this.getMultilingualContent().map(item => item.type))];
+    const totalWords = this.getMultilingualContent().reduce((sum, item) => 
+      sum + item.content.split(/\s+/).length, 0
+    );
+
+    return {
+      totalContent: this.getMultilingualContent().length,
+      languages,
+      types,
+      totalWords
+    };
+  }
+}
+
+export const searchService = new SearchService(); 

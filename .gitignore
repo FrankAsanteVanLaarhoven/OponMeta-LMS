@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Exclude unwanted folders
+OponMeta-Ai-rewrite/
+oponmeta-pro/
+sentry-example-page/

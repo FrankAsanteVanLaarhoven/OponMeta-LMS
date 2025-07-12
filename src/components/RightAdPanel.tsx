@@ -257,7 +257,7 @@ const RightAdPanel: React.FC<AdPanelProps> = ({
   }
 
   return (
-    <div className="fixed right-4 top-20 w-80 z-40 mt-32">
+    <div className="fixed right-4 top-20 w-56 z-40 mt-32">
       <Card className="shadow-lg border-2 border-[#11204a] min-h-[600px] h-full flex flex-col justify-between p-6 bg-[#16203a]">
         <CardHeader className="mb-4">
           <CardTitle className="text-lg font-bold text-cyan-300">Sponsored</CardTitle>

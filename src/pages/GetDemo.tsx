@@ -86,7 +86,7 @@ const GetDemo = () => {
               <CardContent className="p-8 text-center">
                 <h3 className="text-xl font-bold text-white mb-4">Ready to Get Started?</h3>
                 <p className="text-blue-100 mb-6">
-                  Discover why organizations worldwide trust OPONMETA for their learning needs
+                  Discover why organizations worldwide trust our platform for their learning needs
                 </p>
                 <Button className="bg-white text-purple-900 hover:bg-gray-100">
                   <ArrowRight className="h-4 w-4 mr-2" />

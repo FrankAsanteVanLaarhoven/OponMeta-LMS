@@ -363,7 +363,7 @@ const ChatbotTrainer: React.FC = () => {
         <CardContent className="space-y-4">
           <div>
             <Label htmlFor="bot-name">{t('botName')}</Label>
-            <Input id="bot-name" defaultValue="OponMeta Assistant" />
+            <Input id="bot-name" defaultValue="AI Assistant" />
           </div>
           
           <div>

@@ -19,7 +19,7 @@ const CaseStudies = () => {
         satisfaction: "4.8/5"
       },
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
-      testimonial: "OPONMETA transformed how we train our global development teams. The AI recommendations are spot-on.",
+      testimonial: "Our platform transformed how we train our global development teams. The AI recommendations are spot-on.",
       speaker: "Sarah Chen, Head of Engineering"
     },
     {
@@ -88,7 +88,7 @@ const CaseStudies = () => {
             Global Success Stories
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Discover how organizations around the world are transforming learning and development with OPONMETA
+            Discover how organizations around the world are transforming learning and development with our platform
           </p>
         </div>
 
@@ -196,7 +196,7 @@ const CaseStudies = () => {
             <CardContent className="p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">Ready to Write Your Success Story?</h2>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Join global industry leaders and see what OPONMETA can do for your organization
+                Join global industry leaders and see what our platform can do for your organization
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">

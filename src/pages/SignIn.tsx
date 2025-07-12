@@ -120,8 +120,8 @@ const SignIn = () => {
             </div>
 
             <div className="mt-6 text-center">
-              <p className="text-[#16203a] dark:text-cyan-300">
-                New to OponMeta?{' '}
+              <p className="text-gray-600 text-center">
+                New to our platform?{' '}
                 <a href="/signup" className="text-[#0a1834] dark:text-white font-medium hover:underline">
                   Create an account
                 </a>

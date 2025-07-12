@@ -13,9 +13,9 @@ const Hero = memo(() => {
   return (
     <section className="relative py-20 px-4 overflow-hidden bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-0 items-center">
+        <div className="flex flex-col lg:flex-row items-end gap-0">
           {/* Left Content - Text */}
-          <div className="text-center lg:text-left p-0 m-0">
+          <div className="text-center lg:text-left p-0 m-0 flex-1">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl">
               Unlock Your Potential with{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-300 dark:from-cyan-300 dark:to-white to-cyan-600">
@@ -55,7 +55,7 @@ const Hero = memo(() => {
           </div>
 
           {/* Right Content - Video Showcase */}
-          <div className="flex justify-center lg:justify-end p-0 m-0">
+          <div className="flex justify-center lg:justify-end p-0 m-0 flex-shrink-0">
             <div className="relative group p-0 m-0">
               <div className="w-full max-w-md aspect-video bg-[#0a1834] dark:bg-[#0a1834] rounded-2xl shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border-4 border-[#11204a] dark:border-[#11204a]">
                 <video 

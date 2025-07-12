@@ -13,6 +13,7 @@ import {
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { LineChart, Line, ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid } from "recharts";
 import DashboardBackButton from "@/components/ui/DashboardBackButton";
+import RecommendedForYou from "@/components/RecommendedForYou";
 
 const Overview = () => {
   const [coursePending] = useState(0);
@@ -205,6 +206,13 @@ const Overview = () => {
         </Card>
       </div>
 
+      {/* Recommended For You */}
+      <Card className="bg-white dark:bg-[#16203a] border-[#e5e7eb] dark:border-[#22305a] hover:bg-[#f0f4fa] dark:hover:bg-[#22305a] transition-all duration-300">
+        <CardContent className="p-6">
+          <RecommendedForYou title="Recommended for You" maxItems={3} showActions={true} />
+        </CardContent>
+      </Card>
+
       {/* Course Status Overview */}
       <Card className="hover:shadow-lg transition-shadow">
         <CardContent className="p-6">
@@ -391,6 +399,9 @@ const Overview = () => {
           ))}
         </CardContent>
       </Card>
+
+      {/* Recommended For You */}
+      <RecommendedForYou />
     </div>
   );
 };

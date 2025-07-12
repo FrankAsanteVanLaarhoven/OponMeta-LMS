@@ -48,7 +48,7 @@ interface BrandingSettings {
   termsOfService: string;
   customCSS: string;
   enableWhiteLabel: boolean;
-  removeOponMetaBranding: boolean;
+  removePlatformBranding: boolean;
   customFooter: string;
 }
 
@@ -71,7 +71,7 @@ const WhiteLabelBranding: React.FC = () => {
     termsOfService: '',
     customCSS: '',
     enableWhiteLabel: false,
-    removeOponMetaBranding: false,
+    removePlatformBranding: false,
     customFooter: '',
   });
 
@@ -477,12 +477,12 @@ const WhiteLabelBranding: React.FC = () => {
 
           <div className="flex items-center justify-between">
             <div>
-              <Label className="text-base font-medium">{t('removeOponMetaBranding')}</Label>
-              <p className="text-sm text-gray-600">{t('removeOponMetaBrandingDescription')}</p>
+              <Label className="text-base font-medium">{t('removePlatformBranding')}</Label>
+              <p className="text-sm text-gray-600">{t('removePlatformBrandingDescription')}</p>
             </div>
             <Switch
-              checked={settings.removeOponMetaBranding}
-              onCheckedChange={(checked) => handleSettingChange('removeOponMetaBranding', checked)}
+              checked={settings.removePlatformBranding}
+              onCheckedChange={(checked) => handleSettingChange('removePlatformBranding', checked)}
             />
           </div>
         </CardContent>

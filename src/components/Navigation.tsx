@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Sun, Moon, Laptop, Globe, DollarSign, CloudSun, Users, BookOpen, Briefcase, Megaphone, Sparkles, UserCog, Layers, UserPlus, UserCheck, User, LogIn, LogOut, PlusCircle, FileText, FilePlus, FileCheck, FileBarChart2, FileSignature, FileSearch, FileInput, FileOutput, FileEdit, FileLock, FileUnlock, FileX, FileMinus, FilePlus2, FileStack, FileText as FileTextIcon, FileBarChart, FilePieChart, FileSpreadsheet, FileQuestion, FileCheck2, FileWarning, FileCloud, FileCloudDrizzle, FileCloudLightning, FileCloudRain, FileCloudSnow, FileCloudSun, FileCloudMoon, FileCloudFog, FileCloudWind, FileCloudy, FileCloudy2, FileCloudyDay, FileCloudyNight, FileCloudyRain, FileCloudySnow, FileCloudySun, FileCloudyMoon, FileCloudyFog, FileCloudyWind, FileCloudyLightning, FileCloudyDrizzle, Search, Play, Target, TrendingUp, Award, Heart, Star, Zap, BarChart3, Shield, Home, Wrench, CreditCard, Gift, Calendar } from "lucide-react";
+import { Menu, X, ChevronDown, Sun, Moon, Laptop, Globe, CloudSun, CloudDrizzle, CloudLightning, CloudRain, CloudSnow, CloudMoon, CloudFog, Users, BookOpen, Briefcase, Megaphone, Sparkles, UserCog, Layers, UserPlus, UserCheck, User, LogIn, LogOut, PlusCircle, FileText, FilePlus, FileCheck, FileBarChart2, FileSignature, FileSearch, FileInput, FileOutput, FileEdit, FileLock, FileX, FileMinus, FilePlus2, FileStack, FileText as FileTextIcon, FileBarChart, FilePieChart, FileSpreadsheet, FileQuestion, FileCheck2, FileWarning, Search, Play, Target, TrendingUp, Award, Heart, Star, Zap, BarChart3, Shield, Home, Wrench, CreditCard, Gift, Calendar, Truck, Music } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -21,36 +22,66 @@ import GlobalSearch from './GlobalSearch';
 // Alison-style menu data structures and helpers from MegaMenuNavbar
 
 const COURSE_CATEGORIES = [
-  { icon: <BookOpen className="w-5 h-5 text-blue-500" />, name: 'IT', count: 1254, sub: [
-    'Network Security', 'Programming', 'Information Systems', 'Management', 'Engineering', 'Data Science', 'Databases', 'Administration', 'AWS', 'Business Management', 'CCNA', 'Comptia', 'Computer Networking'
+  { icon: <Laptop className="w-5 h-5 text-blue-600" />, name: 'IT', slug: 'it', count: 1254, sub: [
+    'Network Security', 'Programming', 'Information Systems', 'Management', 'Engineering', 'Data Science', 'Databases', 'Administration', 'AWS', 'Business Management', 'CCNA', 'Comptia', 'Computer Networking', 'Web Development', 'Cloud Computing', 'IT Support', 'Software Engineering', 'Cybersecurity', 'DevOps', 'Linux', 'Microsoft', 'Google', 'Apple', 'Mobile Development', 'Game Development', 'AI & Machine Learning', 'Blockchain', 'IoT', 'Other'
   ] },
-  { icon: <Heart className="w-5 h-5 text-green-500" />, name: 'Health', count: 1005, sub: [
-    'Mental Health', 'Healthcare', 'Nursing', 'Caregiving', 'Nutrition', 'Food Safety', 'Pharmacology', 'Dementia', 'Disability', 'Health And Fitness', 'Hygiene', 'Management', 'Physical Therapy'
+  { icon: <Heart className="w-5 h-5 text-green-600" />, name: 'Health', slug: 'health', count: 1005, sub: [
+    'Nursing', 'Public Health', 'Healthcare Management', 'Mental Health', 'Nutrition', 'Fitness', 'Medical Technology', 'Pharmacy', 'Dentistry', 'First Aid', 'Health & Safety', 'Medical Research', 'Therapy', 'Alternative Medicine', 'Other'
   ] },
-  { icon: <Globe className="w-5 h-5 text-yellow-500" />, name: 'Language', count: 314, sub: [
-    'English Language', 'Spanish Language', 'German Language', 'Irish Language', 'French Language', 'Chinese Language', 'Swedish Language', 'Japanese Language', 'Business English', 'English Conversation', 'English For Stem', 'English Literature', 'English Pronunciation'
+  { icon: <Globe className="w-5 h-5 text-blue-500" />, name: 'Language', slug: 'language', count: 314, sub: [
+    'English', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Italian', 'Portuguese', 'Russian', 'Arabic', 'Other'
   ] },
-  { icon: <Briefcase className="w-5 h-5 text-purple-500" />, name: 'Business', count: 1704, sub: [
-    'Human Resources', 'Operations', 'Supply Chain Management', 'Customer Service', 'Manufacturing', 'Health And Safety', 'Quality Management', 'E-commerce', 'Management', 'Sales', 'Accounting', 'Hospitality', 'Communication Skills'
+  { icon: <Briefcase className="w-5 h-5 text-purple-500" />, name: 'Business', slug: 'business', count: 1704, sub: [
+    'Entrepreneurship', 'Finance', 'Accounting', 'Marketing', 'Sales', 'Human Resources', 'Operations', 'Strategy', 'Project Management', 'Business Law', 'Economics', 'Leadership', 'E-Commerce', 'Supply Chain', 'Other'
   ] },
-  { icon: <Users className="w-5 h-5 text-pink-500" />, name: 'Management', count: 1033, sub: [
-    'Operations', 'Accounting', 'Supervision', 'Auditing', 'Health and Safety', 'Human Resources', 'ISO', 'Lean', 'Manufacturing', 'Motivation', 'Nursing', 'Productivity', 'Project Management'
+  { icon: <UserCog className="w-5 h-5 text-blue-700" />, name: 'Management', slug: 'management', count: 1033, sub: [
+    'Leadership', 'Project Management', 'Operations', 'HR Management', 'Change Management', 'Risk Management', 'Strategic Management', 'Other'
   ] },
-  { icon: <Target className="w-5 h-5 text-orange-500" />, name: 'Personal Development', count: 1300, sub: [
-    'Fitness', 'Psychology', 'Finance', 'Music', 'Photography', 'Anxiety', 'Communication Skills', 'Depression', 'Diet', 'DSLR', 'Health', 'Mental Health', 'Mindset'
+  { icon: <User className="w-5 h-5 text-gray-700" />, name: 'Personal Development', slug: 'personal-development', count: 1300, sub: [
+    'Productivity', 'Mindfulness', 'Communication', 'Time Management', 'Emotional Intelligence', 'Personal Finance', 'Career Development', 'Other'
   ] },
-  { icon: <TrendingUp className="w-5 h-5 text-fuchsia-500" />, name: 'Sales & Marketing', count: 433, sub: [
-    'Entrepreneurship', 'Management', 'Digital Marketing', 'Advertising', 'Amazon', 'Content Marketing', 'Data Security', 'Ethics', 'Market Research', 'Marketing Strategy', 'Presentation Skills', 'Product Marketing', 'Retail'
+  { icon: <Megaphone className="w-5 h-5 text-pink-600" />, name: 'Sales & Marketing', slug: 'sales-marketing', count: 433, sub: [
+    'Sales', 'Digital Marketing', 'Branding', 'Advertising', 'Market Research', 'Public Relations', 'SEO', 'Content Marketing', 'Social Media', 'Other'
   ] },
-  { icon: <Zap className="w-5 h-5 text-lime-500" />, name: 'Engineering & Construction', count: 806, sub: [
-    'Risk Management', 'Construction', 'Electrical Engineering', 'Carpentry', 'Automotive Engineering', 'Operations', 'Auditing', 'Compliance', 'Engineering', 'Health And Safety', 'ISO', 'Kaizen', 'Kanban'
+  { icon: <Zap className="w-5 h-5 text-lime-500" />, name: 'Engineering & Construction', slug: 'engineering-construction', count: 806, sub: [
+    'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Construction Management', 'Architecture', 'Surveying', 'Project Management', 'Safety', 'Other'
   ] },
-  { icon: <Award className="w-5 h-5 text-amber-500" />, name: 'Teaching & Academics', count: 1600, sub: [
-    'Science', 'History', 'Geography', 'Law', 'Journalism', 'Economics', 'Mathematics', 'Literature', 'Adult Education', 'Architecture', 'Classroom Management', 'Climate Change', 'Educational Psychology'
+  { icon: <BookOpen className="w-5 h-5 text-blue-500" />, name: 'Teaching & Academics', slug: 'teaching-academics', count: 1600, sub: [
+    'K-12', 'Higher Education', 'Adult Education', 'Special Education', 'Curriculum Development', 'Instructional Design', 'Education Technology', 'Assessment', 'Other'
   ] },
+  { icon: <CreditCard className="w-5 h-5 text-green-700" />, name: 'Pricing', slug: 'pricing', count: 0, pricing: true },
+  // --- New categories (if not already present) ---
+  { icon: <BookOpen className="w-5 h-5 text-blue-500" />, name: 'Technology and Digital Skills', slug: 'technology-and-digital-skills', count: 0 },
+  { icon: <BarChart3 className="w-5 h-5 text-cyan-500" />, name: 'Data and Analytics', slug: 'data-and-analytics', count: 0 },
+  { icon: <Heart className="w-5 h-5 text-green-500" />, name: 'Health and Healthcare Innovation', slug: 'health-and-healthcare-innovation', count: 0 },
+  { icon: <CloudSun className="w-5 h-5 text-blue-400" />, name: 'Cleaning and Sanitation Services', slug: 'cleaning-and-sanitation-services', count: 0 },
+  { icon: <CloudSun className="w-5 h-5 text-green-400" />, name: 'Environment and Sustainability', slug: 'environment-and-sustainability', count: 0 },
+  { icon: <Zap className="w-5 h-5 text-lime-500" />, name: 'Engineering and Construction', slug: 'engineering-and-construction', count: 0 },
+  { icon: <Users className="w-5 h-5 text-cyan-500" />, name: 'Leadership and Management', slug: 'leadership-and-management', count: 0 },
+  { icon: <Briefcase className="w-5 h-5 text-purple-500" />, name: 'Business, Strategy and Innovation', slug: 'business-strategy-and-innovation', count: 0 },
+  { icon: <Globe className="w-5 h-5 text-green-500" />, name: 'Agriculture and Food System', slug: 'agriculture-and-food-system', count: 0 },
+  { icon: <Target className="w-5 h-5 text-orange-500" />, name: 'Professional Development and Leadership', slug: 'professional-development-and-leadership', count: 0 },
+  { icon: <Music className="w-5 h-5 text-pink-500" />, name: 'Music and Sound Production', slug: 'music-and-sound-production', count: 0 },
+  { icon: <Sparkles className="w-5 h-5 text-purple-400" />, name: 'Art Design and Creative Media', slug: 'art-design-and-creative-media', count: 0 },
+  { icon: <Award className="w-5 h-5 text-yellow-400" />, name: 'Drama, Theatre and Performance', slug: 'drama-theatre-and-performance', count: 0 },
+  { icon: <UserPlus className="w-5 h-5 text-green-500" />, name: 'Mentorship & Career Readiness', slug: 'mentorship-career-readiness', count: 0 },
+  { icon: <Layers className="w-5 h-5 text-purple-500" />, name: 'Specialized Industry Tracks', slug: 'specialized-industry-tracks', count: 0 },
+  { icon: <Home className="w-5 h-5 text-yellow-500" />, name: 'Real Estate and Estate Management', slug: 'real-estate-and-estate-management', count: 0 },
+  { icon: <Award className="w-5 h-5 text-yellow-400" />, name: 'Hospitality, Tourism and Events', slug: 'hospitality-tourism-and-events', count: 0 },
+  { icon: <Shield className="w-5 h-5 text-red-500" />, name: 'Public Safety and Emergency Services', slug: 'public-safety-and-emergency-services', count: 0 },
+  { icon: <Heart className="w-5 h-5 text-red-400" />, name: 'Sports, Fitness and Wellness', slug: 'sports-fitness-and-wellness', count: 0 },
+  { icon: <Wrench className="w-5 h-5 text-gray-500" />, name: 'Vocational and Technical Training', slug: 'vocational-and-technical-training', count: 0 },
+  { icon: <Heart className="w-5 h-5 text-pink-500" />, name: 'Social Care and Community Support', slug: 'social-care-and-community-support', count: 0 },
+  { icon: <Users className="w-5 h-5 text-blue-400" />, name: 'Childhood Studies and Early Year Education', slug: 'childhood-studies-and-early-year-education', count: 0 },
 ];
 
 const CAREER_CATEGORIES = [
+  { icon: <Users className="w-5 h-5 text-cyan-500" />, name: 'Leadership and Management', count: 0 },
+  { icon: <UserPlus className="w-5 h-5 text-green-500" />, name: 'Mentorship & Career Readiness', count: 0 },
+  { icon: <Layers className="w-5 h-5 text-purple-500" />, name: 'Specialized Industry Tracks', count: 0 },
+  { icon: <Home className="w-5 h-5 text-yellow-500" />, name: 'Real Estate and Estate Management', count: 0 },
+  { icon: <Shield className="w-5 h-5 text-red-500" />, name: 'Public Safety and Emergency Services', count: 0 },
+  { icon: <Heart className="w-5 h-5 text-pink-500" />, name: 'Social Care and Community Support', count: 0 },
   { icon: <Heart className="w-5 h-5 text-green-500" />, name: 'Health Science', count: 162 },
   { icon: <CreditCard className="w-5 h-5 text-yellow-500" />, name: 'Finance', count: 62 },
   { icon: <BookOpen className="w-5 h-5 text-blue-500" />, name: 'Information Technology', count: 57 },
@@ -62,7 +93,15 @@ const CAREER_CATEGORIES = [
 ];
 
 const MORE_MENU = [
-  { icon: <Home className="w-6 h-6 text-gray-500" />, label: 'Download the OponMeta App', desc: 'Learn anywhere, anytime for free' },
+  { icon: <CreditCard className="w-6 h-6 text-blue-500" />, label: 'Pricing', desc: 'Flexible plans for every learner', to: '/pricing' },
+  { icon: <Award className="w-6 h-6 text-blue-500" />, label: 'Graduate Profile Certificates', desc: 'View certificates and awards earned by graduates', to: '/graduate-certificates' },
+  { icon: <Globe className="w-6 h-6 text-green-500" />, label: 'Multilingual Content Library', desc: 'Explore content in 10+ languages', to: '/multilingual-content', badge: 'New' },
+  { icon: <BookOpen className="w-6 h-6 text-red-500" />, label: 'RTO Course Library', desc: 'Registered Training Organization courses and qualifications', to: '/rto-courses', badge: 'New' },
+  { icon: <BarChart3 className="w-6 h-6 text-indigo-500" />, label: 'Analytics Dashboard', desc: 'Advanced user behavior analytics and insights', to: '/analytics-dashboard', badge: 'Advanced' },
+  { icon: <Users className="w-6 h-6 text-purple-500" />, label: 'Social Feed', desc: 'Connect with learners and share experiences', to: '/social-feed', badge: 'Social' },
+  { icon: <Zap className="w-6 h-6 text-yellow-500" />, label: 'Advanced Features Demo', desc: 'Experience next-gen AI-powered learning features', to: '/advanced-features-demo', badge: 'New' },
+  { icon: <BookOpen className="w-6 h-6 text-red-500" />, label: 'Blogs', desc: 'News, insights, tips and stories from our platform' },
+  { icon: <Home className="w-6 h-6 text-gray-500" />, label: 'Download the App', desc: 'Learn anywhere, anytime for free' },
   { icon: <Users className="w-6 h-6 text-green-500" />, label: 'Résumé Builder', desc: 'Create your professional résumé', badge: 'New' },
   { icon: <Target className="w-6 h-6 text-orange-500" />, label: 'Career Ready Plan', desc: 'Plan to achieve your career goals', badge: 'New' },
   { icon: <Star className="w-6 h-6 text-pink-500" />, label: 'Aptitude Test', desc: 'Assess your skills and abilities' },
@@ -72,10 +111,8 @@ const MORE_MENU = [
   { icon: <Play className="w-6 h-6 text-cyan-500" />, label: 'Webinars', desc: 'Register for upcoming webinars' },
   { icon: <FileSearch className="w-6 h-6 text-red-500" />, label: 'Plagiarism Checker', desc: 'Premium AI-powered plagiarism detection', badge: 'Premium' },
   { icon: <FileCheck className="w-6 h-6 text-green-500" />, label: 'Grammar Checker', desc: 'Free AI grammar and style checker' },
-  { icon: <Award className="w-6 h-6 text-yellow-500" />, label: 'Get OponMeta Premium', desc: 'Remove ads' },
-  { icon: <Gift className="w-6 h-6 text-purple-500" />, label: 'Gift Cards', desc: 'Purchase a certificate for others', badge: 'New' },
-  { icon: <Users className="w-6 h-6 text-green-500" />, label: 'OponMeta Graduate Profiles', desc: 'Read graduate success stories' },
-  { icon: <BookOpen className="w-6 h-6 text-red-500" />, label: 'Blogs', desc: 'News, insights, tips and stories from OponMeta' },
+  { icon: <Award className="w-6 h-6 text-yellow-500" />, label: 'Get Premium', desc: 'Remove ads' },
+  { icon: <Users className="w-6 h-6 text-green-500" />, label: 'Graduate Profiles', desc: 'Read graduate success stories' },
 ];
 
 const PLATFORM_MENU = [
@@ -261,12 +298,12 @@ const Navigation = () => {
   return (
     <nav className="bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
       <div className="w-full bg-[#f0f4fa] dark:bg-[#11204a] shadow z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
+        <div className="w-full flex items-center justify-between px-6 py-2">
           {/* Logo and main nav */}
           <div className="flex items-center space-x-8">
             <a href="/" className="flex items-center space-x-2">
-              <img src="/logo.png" alt="OponMeta Logo" className="h-10 w-10 animate-swivel mr-2" />
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-300 to-[#0a1834] dark:from-cyan-300 dark:to-white bg-clip-text text-transparent">OPONMETA</span>
+              <img src="/logo.svg" alt="Platform Logo" className="h-10 w-10 animate-swivel mr-2" />
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">OUR PLATFORM</span>
             </a>
             <nav className="flex items-center space-x-6">
               {/* Explore Courses Dropdown */}
@@ -292,18 +329,100 @@ const Navigation = () => {
                           onMouseEnter={() => setActiveSubCategory(cat.name)}
                           onMouseLeave={() => setActiveSubCategory(null)}>
                           {cat.icon}
-                          <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{cat.name} <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Courses)</span></span>
-                          <ChevronDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform" />
-                          {/* Submenu */}
-                          {activeSubCategory === cat.name && (
+                          <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">
+                            {cat.pricing ? (
+                              <span className="cursor-pointer">{cat.name}</span>
+                            ) : (
+                              <Link to={`/category/${cat.slug}`}>{cat.name}</Link>
+                            )}
+                            <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Courses)</span>
+                          </span>
+                          {!cat.pricing && <ChevronDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform" />}
+                          {/* Pricing Mega Menu */}
+                          {cat.pricing && activeSubCategory === cat.name && (
+                            <div className="absolute left-full top-0 z-50 bg-white dark:bg-[#16203a] shadow-xl border border-[#f0f4fa] dark:border-[#11204a] rounded-lg mt-0 min-w-[600px] pointer-events-auto p-6"
+                              onMouseEnter={() => setActiveSubCategory(cat.name)}
+                              onMouseLeave={() => setActiveSubCategory(null)}>
+                              <h3 className="text-xl font-bold mb-4 text-center">Flexible Plans for Every Learner—From Curious Beginners to Career Climbers</h3>
+                              <div className="overflow-x-auto">
+                                <table className="min-w-full text-sm text-left border-collapse">
+                                  <thead>
+                                    <tr>
+                                      <th className="p-3 font-bold">Plan Name</th>
+                                      <th className="p-3 font-bold">Price (Monthly)</th>
+                                      <th className="p-3 font-bold">Features</th>
+                                      <th className="p-3 font-bold">CTA</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr className="border-t">
+                                      <td className="p-3 font-semibold">Starter Tier</td>
+                                      <td className="p-3 font-semibold">Free</td>
+                                      <td className="p-3">
+                                        <ul className="list-disc ml-4">
+                                          <li>Access to selected digital courses</li>
+                                          <li>Community forum participation</li>
+                                          <li>Monthly newsletter and event invites</li>
+                                        </ul>
+                                      </td>
+                                      <td className="p-3"><button className="bg-cyan-600 text-white px-4 py-2 rounded">Join Free</button></td>
+                                    </tr>
+                                    <tr className="border-t">
+                                      <td className="p-3 font-semibold">Professional Tier</td>
+                                      <td className="p-3 font-semibold">$</td>
+                                      <td className="p-3">
+                                        <ul className="list-disc ml-4">
+                                          <li>Full access to all learning modules</li>
+                                          <li>Join live and recorded workshops</li>
+                                          <li>Mentorship programme access</li>
+                                          <li>Course completion certificates</li>
+                                        </ul>
+                                      </td>
+                                      <td className="p-3"><button className="bg-blue-600 text-white px-4 py-2 rounded">Start Professional</button></td>
+                                    </tr>
+                                    <tr className="border-t">
+                                      <td className="p-3 font-semibold">Premium Tier</td>
+                                      <td className="p-3 font-semibold">$</td>
+                                      <td className="p-3">
+                                        <ul className="list-disc ml-4">
+                                          <li>1-on-1 mentorship sessions</li>
+                                          <li>Personalized learning path</li>
+                                          <li>Career coaching and resume reviews</li>
+                                          <li>Access to exclusive partner opportunities</li>
+                                        </ul>
+                                      </td>
+                                      <td className="p-3"><button className="bg-purple-600 text-white px-4 py-2 rounded">Go Premium</button></td>
+                                    </tr>
+                                    <tr className="border-t">
+                                      <td className="p-3 font-semibold">Enterprise Tier</td>
+                                      <td className="p-3 font-semibold">Custom</td>
+                                      <td className="p-3">
+                                        <ul className="list-disc ml-4">
+                                          <li>Team onboarding and admin dashboard</li>
+                                          <li>Progress tracking and analytics</li>
+                                          <li>Custom workshops and branded content</li>
+                                        </ul>
+                                      </td>
+                                      <td className="p-3"><button className="bg-gray-700 text-white px-4 py-2 rounded">Contact Sales</button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div className="mt-4 text-xs text-center text-gray-500">
+                                Annual billing discounts available. Students and early-career professionals get 20% off.
+                              </div>
+                            </div>
+                          )}
+                          {/* Submenu for categories with subcategories */}
+                          {activeSubCategory === cat.name && "sub" in cat && Array.isArray(cat.sub) && (
                             <div className="absolute left-full top-0 z-50 bg-white dark:bg-[#16203a] shadow-xl border border-[#f0f4fa] dark:border-[#11204a] rounded-lg mt-0 min-w-[260px] pointer-events-auto"
                               onMouseEnter={() => setActiveSubCategory(cat.name)}
                               onMouseLeave={() => setActiveSubCategory(null)}>
                               <div className="p-4">
                                 <h4 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">View Top {cat.name} Courses</h4>
                                 <ul className="space-y-1">
-                                  {cat.sub.map((sub) => (
-                                    <li key={sub} className="text-sm text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 cursor-pointer">{sub}</li>
+                                  {"sub" in cat && Array.isArray(cat.sub) && cat.sub.map((sub) => (
+                                    <li key={sub} className="text-sm text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 cursor-pointer"><Link to={`/category/${cat.slug}/${sub.toLowerCase().replace(/\s+/g, '-')}`}>{sub}</Link></li>
                                   ))}
                                 </ul>
                               </div>
@@ -335,10 +454,17 @@ const Navigation = () => {
                     <div className="p-4">
                       <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">EXPLORE CAREER CATEGORIES</h3>
                       {CAREER_CATEGORIES.map((cat) => (
-                        <div key={cat.name} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
-                          {cat.icon}
-                          <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{cat.name} <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Careers)</span></span>
-                        </div>
+                        cat.count > 0 ? (
+                          <Link key={cat.name} to={`/careers/${cat.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
+                            {cat.icon}
+                            <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{cat.name} <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Careers)</span></span>
+                          </Link>
+                        ) : (
+                          <div key={cat.name} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
+                            {cat.icon}
+                            <span className="ml-2 font-medium flex-1">{cat.name} <span className="text-xs ml-1">({cat.count} Careers)</span></span>
+                          </div>
+                        )
                       ))}
                     </div>
                   </div>
@@ -364,10 +490,17 @@ const Navigation = () => {
                     <div className="p-4">
                       <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">QUICK ACCESS</h3>
                       {PLATFORM_MENU.map((item) => (
-                        <a key={item.label} href={item.to} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
-                          {item.icon}
-                          <span className="ml-2 font-medium text-[#0a1834] dark:text-white">{item.label}</span>
-                        </a>
+                        item.to ? (
+                          <Link key={item.label} to={item.to} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
+                            {item.icon}
+                            <span className="ml-2 font-medium text-[#0a1834] dark:text-white">{item.label}</span>
+                          </Link>
+                        ) : (
+                          <div key={item.label} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
+                            {item.icon}
+                            <span className="ml-2 font-medium">{item.label}</span>
+                          </div>
+                        )
                       ))}
                     </div>
                   </div>
@@ -392,19 +525,26 @@ const Navigation = () => {
                     {/* Dropdown content here */}
                     <div className="p-4">
                       {MORE_MENU.map((item) => (
-                        <div key={item.label} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
-                          {item.icon}
-                          <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{item.label}</span>
-                          {item.badge && <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{item.badge}</span>}
-                          <span className="ml-2 text-xs text-cyan-600 dark:text-cyan-300">{item.desc}</span>
-                        </div>
+                        item.to ? (
+                          <Link key={item.label} to={item.to} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
+                            {item.icon}
+                            <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{item.label}</span>
+                            {item.badge && <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{item.badge}</span>}
+                            <span className="ml-2 text-xs text-cyan-600 dark:text-cyan-300">{item.desc}</span>
+                          </Link>
+                        ) : (
+                          <div key={item.label} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
+                            {item.icon}
+                            <span className="ml-2 font-medium flex-1">{item.label}</span>
+                            {item.badge && <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{item.badge}</span>}
+                            <span className="ml-2 text-xs">{item.desc}</span>
+                          </div>
+                        )
                       ))}
                     </div>
                   </div>
                 )}
               </div>
-              <a href="/free-lms" className="ml-4 px-3 py-2 rounded border border-white text-white hover:bg-white/10 font-semibold transition">FREE LMS</a>
-              <button className="ml-2 px-2 py-2 rounded border border-white text-white hover:bg-white/10 transition">$</button>
             </nav>
           </div>
           {/* Search and right controls */}
@@ -623,7 +763,6 @@ const Navigation = () => {
                 >
                   {/* Currency Calculator */}
                   <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center gap-2">
-                    <DollarSign size={18} className="mr-2 text-blue-500" />
                     <span className="font-semibold text-gray-700 dark:text-gray-200">Currency</span>
                   </div>
                   <div className="px-4 py-2">

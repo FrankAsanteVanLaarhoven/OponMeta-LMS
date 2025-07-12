@@ -49,7 +49,7 @@ const About = () => (
     <section className="py-16 px-4 bg-[#f0f4fa] dark:bg-[#0a1834] text-center">
       <h1 className="text-5xl lg:text-6xl font-bold text-[#0a1834] dark:text-white mb-6">
         Empowering Global Learning<br />
-        Through <span className="bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">OPONMETA</span>
+        Through <span className="bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">our platform</span>
       </h1>
     </section>
 
@@ -57,12 +57,14 @@ const About = () => (
     <section className="py-12 px-4 bg-white dark:bg-[#16203a] text-[#0a1834] dark:text-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-4">About Us</h2>
-        <p className="mb-6 text-lg text-[#16203a] dark:text-cyan-300">
-          OponMeta is a global EdTech powerhouse pioneering the future of digital learning. We craft transformative experiences in professional development and technical education, equipping today's learners and tomorrow's workforce with the tools to thrive in a rapidly evolving world. From immersive training modules to scalable learning platforms, OponMeta empowers institutions and individuals to unlock their full potential—redefining what learning can achieve across borders and industries.
+        <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+          Through <span className="bg-gradient-to-r from-cyan-300 to-cyan-500 bg-clip-text text-transparent">our platform</span>
         </p>
-        <h3 className="text-2xl font-semibold mt-8 mb-2">Mission</h3>
-        <p className="mb-6 text-lg text-[#16203a] dark:text-cyan-300">
-          To create a dynamic, accessible, and innovative platform where professionals can gain technical expertise, strengthen leadership skills, and drive industry progress through lifelong learning. By fostering a culture of excellence and innovation, OponMeta supports professionals in unlocking their full potential and shaping the future of global industries.
+        <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+          We are a global EdTech powerhouse pioneering the future of digital learning. We craft transformative experiences in professional development and technical education, equipping today's learners and tomorrow's leaders with cutting-edge skills and knowledge. From interactive learning modules to scalable learning platforms, we empower institutions and individuals to unlock their full potential—redefining what learning can achieve across borders and industries.
+        </p>
+        <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+          Our mission is to democratize access to world-class education through innovative technology and personalized learning experiences. By fostering a culture of excellence and innovation, we support professionals in unlocking their full potential and shaping the future of global industries.
         </p>
         <h3 className="text-2xl font-semibold mt-8 mb-2">Vision</h3>
         <p className="text-lg text-[#16203a] dark:text-cyan-300">

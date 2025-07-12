@@ -1,337 +1,401 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
-import { Search, Filter, SortAsc, SortDesc, BookOpen, Users, Briefcase, Zap, Star, Clock, TrendingUp } from 'lucide-react';
-import { searchContent, SearchResult } from '@/services/searchService';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { useSearchParams, Link } from 'react-router-dom';
+import { searchService, SearchResult, SearchOptions } from '../services/searchService';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Skeleton } from '../components/ui/skeleton';
+import { Search, Globe, FileText, BookOpen, GraduationCap, Clock, Tag, TrendingUp } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
-const SearchResults: React.FC = () => {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
+export default function SearchResults() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
-  
+  const language = searchParams.get('lang') || '';
+  const type = searchParams.get('type') || '';
+
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectedType, setSelectedType] = useState<string>('all');
-  const [sortBy, setSortBy] = useState<'relevance' | 'title' | 'type'>('relevance');
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+  const [loading, setLoading] = useState(false);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [popularSearches, setPopularSearches] = useState<string[]>([]);
+  const [stats, setStats] = useState<any>(null);
+
+  const [searchQuery, setSearchQuery] = useState(query);
+  const [selectedLanguage, setSelectedLanguage] = useState(language);
+  const [selectedType, setSelectedType] = useState(type);
 
   useEffect(() => {
     if (query) {
-      setIsLoading(true);
-      const searchResults = searchContent(query);
+      performSearch();
+    }
+    loadSuggestions();
+    loadPopularSearches();
+    loadStats();
+  }, [query, language, type]);
+
+  const performSearch = async () => {
+    if (!query.trim()) return;
+
+    setLoading(true);
+    try {
+      const searchOptions: SearchOptions = {
+        query,
+        language: selectedLanguage || undefined,
+        type: selectedType as any || undefined,
+        limit: 50,
+        includeContent: true
+      };
+
+      const searchResults = await searchService.search(searchOptions);
       setResults(searchResults);
-      setFilteredResults(searchResults);
-      setIsLoading(false);
-    }
-  }, [query]);
-
-  useEffect(() => {
-    let filtered = results;
-
-    // Filter by type
-    if (selectedType !== 'all') {
-      filtered = filtered.filter(result => result.type === selectedType);
-    }
-
-    // Sort results
-    filtered.sort((a, b) => {
-      let comparison = 0;
-      
-      switch (sortBy) {
-        case 'relevance':
-          comparison = b.relevance - a.relevance;
-          break;
-        case 'title':
-          comparison = a.title.localeCompare(b.title);
-          break;
-        case 'type':
-          comparison = a.type.localeCompare(b.type);
-          break;
-      }
-
-      return sortOrder === 'desc' ? -comparison : comparison;
-    });
-
-    setFilteredResults(filtered);
-  }, [results, selectedType, sortBy, sortOrder]);
-
-  const getTypeIcon = (type: string) => {
-    switch (type) {
-      case 'course':
-        return <BookOpen className="w-5 h-5 text-blue-500" />;
-      case 'page':
-        return <Star className="w-5 h-5 text-purple-500" />;
-      case 'tool':
-        return <Zap className="w-5 h-5 text-orange-500" />;
-      case 'companion':
-        return <Users className="w-5 h-5 text-green-500" />;
-      case 'category':
-        return <Briefcase className="w-5 h-5 text-indigo-500" />;
-      default:
-        return <Star className="w-5 h-5 text-gray-500" />;
+    } catch (error) {
+      console.error('Search error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const getTypeLabel = (type: string) => {
-    switch (type) {
-      case 'course':
-        return 'Course';
-      case 'page':
-        return 'Page';
-      case 'tool':
-        return 'Tool';
-      case 'companion':
-        return 'AI Companion';
-      case 'category':
-        return 'Category';
-      default:
-        return type;
+  const loadSuggestions = async () => {
+    if (query) {
+      const suggestions = await searchService.getSuggestions(query);
+      setSuggestions(suggestions);
     }
   };
 
-  const typeFilters = [
-    { value: 'all', label: 'All Results' },
-    { value: 'course', label: 'Courses' },
-    { value: 'page', label: 'Pages' },
-    { value: 'tool', label: 'Tools' },
-    { value: 'companion', label: 'AI Companions' },
-    { value: 'category', label: 'Categories' }
-  ];
+  const loadPopularSearches = async () => {
+    const popular = await searchService.getPopularSearches();
+    setPopularSearches(popular);
+  };
 
-  const sortOptions = [
-    { value: 'relevance', label: 'Relevance' },
-    { value: 'title', label: 'Title' },
-    { value: 'type', label: 'Type' }
-  ];
+  const loadStats = async () => {
+    const searchStats = await searchService.getSearchStats();
+    setStats(searchStats);
+  };
 
-  if (!query) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600">
-        <Navigation />
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-3xl font-bold text-white mb-4">Search</h1>
-          <p className="text-white/80">Enter a search term to get started</p>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newSearchParams = new URLSearchParams();
+    newSearchParams.set('q', searchQuery);
+    if (selectedLanguage) newSearchParams.set('lang', selectedLanguage);
+    if (selectedType) newSearchParams.set('type', selectedType);
+    setSearchParams(newSearchParams);
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchQuery(suggestion);
+    const newSearchParams = new URLSearchParams();
+    newSearchParams.set('q', suggestion);
+    if (selectedLanguage) newSearchParams.set('lang', selectedLanguage);
+    if (selectedType) newSearchParams.set('type', selectedType);
+    setSearchParams(newSearchParams);
+  };
+
+  const getTypeIcon = (contentType: string) => {
+    switch (contentType) {
+      case 'page': return <FileText className="w-4 h-4" />;
+      case 'blog': return <BookOpen className="w-4 h-4" />;
+      case 'rto-qualification': return <GraduationCap className="w-4 h-4" />;
+      default: return <FileText className="w-4 h-4" />;
+    }
+  };
+
+  const getTypeColor = (contentType: string) => {
+    switch (contentType) {
+      case 'page': return 'bg-blue-100 text-blue-800';
+      case 'blog': return 'bg-green-100 text-green-800';
+      case 'rto-qualification': return 'bg-purple-100 text-purple-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600">
-      <Navigation />
-      
-      <div className="container mx-auto px-4 py-8">
-        {/* Search Header */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <div className="flex items-center mb-4">
-            <Search className="w-6 h-6 text-blue-500 mr-3" />
-            <h1 className="text-2xl font-bold text-gray-900">
-              Search Results for "{query}"
+    <>
+      <Helmet>
+        <title>{query ? `Search: ${query}` : 'Search'} | Our Platform</title>
+        <meta name="description" content={`Search results for "${query}" across our multilingual content library`} />
+      </Helmet>
+
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-7xl mx-auto p-6">
+          {/* Search Header */}
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              {query ? `Search Results for "${query}"` : 'Search Content'}
             </h1>
-          </div>
-          
-          {isLoading ? (
-            <div className="text-center py-8">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto"></div>
-              <p className="mt-2 text-gray-600">Searching...</p>
-            </div>
-          ) : (
-            <div className="flex items-center justify-between">
-              <p className="text-gray-600">
-                {filteredResults.length} result{filteredResults.length !== 1 ? 's' : ''} found
+            {stats && (
+              <p className="text-lg text-gray-600">
+                Searching across {stats.totalContent} pieces of content in {stats.languages.length} languages
               </p>
-              
-              {/* Filters and Sort */}
-              <div className="flex items-center space-x-4">
-                {/* Type Filter */}
-                <div className="flex items-center space-x-2">
-                  <Filter className="w-4 h-4 text-gray-500" />
-                  <select
-                    value={selectedType}
-                    onChange={(e) => setSelectedType(e.target.value)}
-                    className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    {typeFilters.map(filter => (
-                      <option key={filter.value} value={filter.value}>
-                        {filter.label}
-                      </option>
-                    ))}
-                  </select>
+            )}
+          </div>
+
+          {/* Search Form */}
+          <div className="bg-white rounded-lg shadow-sm border p-6 mb-8">
+            <form onSubmit={handleSearch} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {/* Search Input */}
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Search Query
+                  </label>
+                  <div className="flex gap-2">
+                    <Input
+                      type="text"
+                      placeholder="Search titles, descriptions, or content..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="flex-1"
+                    />
+                    <Button type="submit" disabled={loading}>
+                      <Search className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
 
-                {/* Sort */}
-                <div className="flex items-center space-x-2">
-                  {sortOrder === 'asc' ? (
-                    <SortAsc className="w-4 h-4 text-gray-500" />
-                  ) : (
-                    <SortDesc className="w-4 h-4 text-gray-500" />
-                  )}
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
-                    className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    {sortOptions.map(option => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-                    className="px-2"
-                  >
-                    {sortOrder === 'asc' ? '↑' : '↓'}
-                  </Button>
+                {/* Language Filter */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Language
+                  </label>
+                  <Select value={selectedLanguage || 'all'} onValueChange={(value) => setSelectedLanguage(value === 'all' ? undefined : value)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="All languages" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All languages</SelectItem>
+                      <SelectItem value="en">English</SelectItem>
+                      <SelectItem value="de">German</SelectItem>
+                      <SelectItem value="fr">French</SelectItem>
+                      <SelectItem value="es">Spanish</SelectItem>
+                      <SelectItem value="it">Italian</SelectItem>
+                      <SelectItem value="pt">Portuguese</SelectItem>
+                      <SelectItem value="zh">Chinese</SelectItem>
+                      <SelectItem value="ja">Japanese</SelectItem>
+                      <SelectItem value="ko">Korean</SelectItem>
+                      <SelectItem value="nl">Dutch</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Type Filter */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Content Type
+                  </label>
+                  <Select value={selectedType || 'all'} onValueChange={(value) => setSelectedType(value === 'all' ? undefined : value)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="All types" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All types</SelectItem>
+                      <SelectItem value="page">Pages</SelectItem>
+                      <SelectItem value="blog">Blog Posts</SelectItem>
+                      <SelectItem value="rto-qualification">RTO Qualifications</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
-            </div>
-          )}
-        </div>
+            </form>
 
-        {/* Results */}
-        {!isLoading && (
-          <div className="space-y-4">
-            {filteredResults.length > 0 ? (
-              filteredResults.map((result) => (
-                <Card key={result.id} className="hover:shadow-lg transition-shadow cursor-pointer">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        {getTypeIcon(result.type)}
-                      </div>
-                      
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                            {result.title}
-                          </h3>
-                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                            {getTypeLabel(result.type)}
-                          </span>
-                          {result.category && (
-                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                              {result.category}
-                            </span>
-                          )}
-                        </div>
-                        
-                        <p className="text-gray-600 mb-3">
-                          {result.description}
-                        </p>
-                        
-                        {result.tags && result.tags.length > 0 && (
-                          <div className="flex flex-wrap gap-1 mb-3">
-                            {result.tags.slice(0, 5).map((tag, index) => (
-                              <span
-                                key={index}
-                                className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                            {result.tags.length > 5 && (
-                              <span className="text-xs text-gray-500">
-                                +{result.tags.length - 5} more
-                              </span>
-                            )}
-                          </div>
-                        )}
-                        
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-4 text-sm text-gray-500">
-                            <span>Relevance: {result.relevance}</span>
-                          </div>
-                          
-                          <Button
-                            onClick={() => navigate(result.url)}
-                            className="bg-blue-600 hover:bg-blue-700 text-white"
-                          >
-                            View
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
+            {/* Search Suggestions */}
+            {suggestions.length > 0 && (
+              <div className="mt-4 pt-4 border-t">
+                <p className="text-sm text-gray-600 mb-2">Suggestions:</p>
+                <div className="flex flex-wrap gap-2">
+                  {suggestions.map((suggestion, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      className="text-xs"
+                    >
+                      {suggestion}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Results */}
+          {loading ? (
+            <div className="space-y-6">
+              {[...Array(6)].map((_, i) => (
+                <Card key={i}>
+                  <CardHeader>
+                    <Skeleton className="h-6 w-3/4" />
+                    <Skeleton className="h-4 w-1/2" />
+                  </CardHeader>
+                  <CardContent>
+                    <Skeleton className="h-4 w-full mb-2" />
+                    <Skeleton className="h-4 w-2/3" />
                   </CardContent>
                 </Card>
-              ))
-            ) : (
-              <Card className="text-center py-12">
-                <CardContent>
-                  <Search className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+              ))}
+            </div>
+          ) : query ? (
+            <div>
+              {/* Results Header */}
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  {results.length} results found
+                </h2>
+                {results.length > 0 && (
+                  <p className="text-sm text-gray-600">
+                    Sorted by relevance
+                  </p>
+                )}
+              </div>
+
+              {/* Results List */}
+              {results.length > 0 ? (
+                <div className="space-y-6">
+                  {results.map((result) => (
+                    <Card key={result.id} className="hover:shadow-lg transition-shadow">
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Badge className={getTypeColor(result.type)}>
+                                <div className="flex items-center gap-1">
+                                  {getTypeIcon(result.type)}
+                                  {result.type.replace('-', ' ')}
+                                </div>
+                              </Badge>
+                              <Badge variant="outline">
+                                <div className="flex items-center gap-1">
+                                  <Globe className="w-3 h-3" />
+                                  {result.language.toUpperCase()}
+                                </div>
+                              </Badge>
+                              {result.metadata?.readingTime && (
+                                <div className="flex items-center gap-1 text-sm text-gray-500">
+                                  <Clock className="w-3 h-3" />
+                                  {result.metadata.readingTime}
+                                </div>
+                              )}
+                            </div>
+                            <CardTitle className="text-xl mb-2">
+                              <Link 
+                                to={result.url}
+                                className="text-blue-600 hover:text-blue-800 hover:underline"
+                              >
+                                {result.title}
+                              </Link>
+                            </CardTitle>
+                            <CardDescription className="text-base">
+                              {result.description}
+                            </CardDescription>
+                          </div>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-700 mb-4">
+                          {result.excerpt}
+                        </p>
+                        
+                        {/* Tags */}
+                        {result.metadata?.tags && result.metadata.tags.length > 0 && (
+                          <div className="flex items-center gap-2 mb-4">
+                            <Tag className="w-4 h-4 text-gray-400" />
+                            <div className="flex flex-wrap gap-1">
+                              {result.metadata.tags.map((tag, index) => (
+                                <Badge key={index} variant="secondary" className="text-xs">
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm text-gray-500">
+                            Relevance: {Math.round(result.relevance * 10) / 10}
+                          </div>
+                          <Link 
+                            to={result.url}
+                            className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                          >
+                            Read Full Content →
+                          </Link>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <div className="text-gray-400 mb-4">
+                    <Search className="w-16 h-16 mx-auto" />
+                  </div>
                   <h3 className="text-lg font-medium text-gray-900 mb-2">
                     No results found for "{query}"
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Try different keywords or browse our categories
+                    Try adjusting your search terms or filters
                   </p>
                   
-                  <div className="flex flex-wrap justify-center gap-2">
-                    <Button
-                      onClick={() => navigate('/courses')}
-                      variant="outline"
-                      className="flex items-center space-x-2"
-                    >
-                      <BookOpen className="w-4 h-4" />
-                      <span>Browse Courses</span>
-                    </Button>
-                    <Button
-                      onClick={() => navigate('/companion')}
-                      variant="outline"
-                      className="flex items-center space-x-2"
-                    >
-                      <Users className="w-4 h-4" />
-                      <span>AI Companion</span>
-                    </Button>
-                    <Button
-                      onClick={() => navigate('/dashboard')}
-                      variant="outline"
-                      className="flex items-center space-x-2"
-                    >
-                      <Star className="w-4 h-4" />
-                      <span>Dashboard</span>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        )}
-
-        {/* Search Suggestions */}
-        {!isLoading && filteredResults.length > 0 && (
-          <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Related Searches
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {['AI Companion', 'Create Course', 'Student Portal', 'Dashboard', 'Authoring Tool'].map((suggestion) => (
-                <Button
-                  key={suggestion}
-                  variant="outline"
-                  size="sm"
-                  onClick={() => navigate(`/search?q=${encodeURIComponent(suggestion)}`)}
-                  className="flex items-center space-x-2"
-                >
-                  <Search className="w-3 h-3" />
-                  <span>{suggestion}</span>
-                </Button>
-              ))}
+                  {/* Popular Searches */}
+                  {popularSearches.length > 0 && (
+                    <div>
+                      <p className="text-sm text-gray-600 mb-3">Popular searches:</p>
+                      <div className="flex flex-wrap justify-center gap-2">
+                        {popularSearches.map((search, index) => (
+                          <Button
+                            key={index}
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleSuggestionClick(search)}
+                          >
+                            <TrendingUp className="w-3 h-3 mr-1" />
+                            {search}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          </div>
-        )}
+          ) : (
+            /* Empty State */
+            <div className="text-center py-12">
+              <div className="text-gray-400 mb-4">
+                <Search className="w-16 h-16 mx-auto" />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                Start searching
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Enter a search term to find content across our multilingual library
+              </p>
+              
+              {/* Popular Searches */}
+              {popularSearches.length > 0 && (
+                <div>
+                  <p className="text-sm text-gray-600 mb-3">Popular searches:</p>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {popularSearches.map((search, index) => (
+                      <Button
+                        key={index}
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handleSuggestionClick(search)}
+                      >
+                        <TrendingUp className="w-3 h-3 mr-1" />
+                        {search}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
-      
-      <Footer />
-    </div>
+    </>
   );
-};
-
-export default SearchResults; 
+} 

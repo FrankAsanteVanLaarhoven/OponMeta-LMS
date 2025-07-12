@@ -335,7 +335,7 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Meet OponMeta AI – Your Intelligent Learning Assistant</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Meet Our AI – Your Intelligent Learning Assistant</h2>
             <p className="text-xl text-slate-800 font-bold max-w-3xl mx-auto">
               Experience next-generation online learning with AI-powered video, instant coaching, and personalized support.
             </p>
@@ -1218,7 +1218,7 @@ const Index = () => {
                     OLYMPIAD TESTER
                   </div>
                   <p className="text-gray-700">
-                    Olympiad Tester leads the way with OponMeta's global learning tools
+                    Olympiad Tester leads the way with our global learning tools
                   </p>
                 </div>
               </CardContent>
