@@ -12,12 +12,8 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <a href="/">
-                <img
-                  src="/logo.png"
-                  alt="OponMeta Logo"
-                  className="h-8 w-8 mr-2"
-                />
-                <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
+                <img src="/branding/logo-symbol.png" alt="OponMeta Globe Logo" className="h-8 w-8 mr-2 animate-swivel" />
+                <img src="/branding/logo-oponmeta.png" alt="OponMeta Logo with Text" className="h-8" />
               </a>
               <div className="flex flex-col">
                 <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
