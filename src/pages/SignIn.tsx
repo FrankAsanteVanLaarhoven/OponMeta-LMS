@@ -24,7 +24,7 @@ const SignIn = () => {
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-[#0a1834] dark:text-white mb-2">Welcome Back</h1>
-              <p className="text-[#16203a] dark:text-cyan-300">Sign in to access your personalized learning experience</p>
+              <p className="text-[#16203a] dark:text-cyan-300">Sign in to access your personalised learning experience</p>
             </div>
 
             <form className="space-y-6">

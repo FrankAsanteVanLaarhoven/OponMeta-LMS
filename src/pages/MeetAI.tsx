@@ -36,7 +36,7 @@ const MeetAI = () => {
     },
     {
       icon: Calendar,
-      title: 'Personalized Career Planning',
+      title: 'Personalised Career Planning',
       description: 'Career plans customized to your unique goals and aspirations',
       demo: 'career-plans'
     }
@@ -212,7 +212,7 @@ const MeetAI = () => {
           <div className="bg-gradient-to-br from-purple-50 to-pink-100 rounded-lg p-6">
             <div className="space-y-4">
               <div className="bg-white rounded-lg p-4 shadow-sm">
-                <h4 className="font-medium mb-2">Your Personalized Career Plan</h4>
+                <h4 className="font-medium mb-2">Your Personalised Career Plan</h4>
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <Check className="w-4 h-4 text-green-600 mr-2" />
@@ -255,7 +255,7 @@ const MeetAI = () => {
               Video Calling Powered by AI Agents
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Experience the future of online learning with AI-powered video calls, real-time coaching, and personalized learning assistance.
+              Experience the future of online learning with AI-powered video calls, real-time coaching, and personalised learning assistance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">

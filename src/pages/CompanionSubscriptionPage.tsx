@@ -53,7 +53,7 @@ const CompanionSubscriptionPage = () => {
 
   const features = [
     { icon: <Mic className="w-5 h-5" />, title: 'Voice-Driven Learning', description: 'Real-time voice interactions with AI companions' },
-    { icon: <Brain className="w-5 h-5" />, title: 'Personalized Paths', description: 'AI adapts to your learning style and pace' },
+    { icon: <Brain className="w-5 h-5" />, title: 'Personalised Paths', description: 'AI adapts to your learning style and pace' },
     { icon: <Globe className="w-5 h-5" />, title: 'Multi-language Support', description: 'Learn in 10+ languages with native speakers' },
     { icon: <Clock className="w-5 h-5" />, title: 'Progress Tracking', description: 'Detailed analytics and session history' },
     { icon: <Shield className="w-5 h-5" />, title: 'Unlimited Sessions', description: 'No limits on learning time or sessions' },
@@ -88,7 +88,7 @@ const CompanionSubscriptionPage = () => {
             </h1>
           </div>
           <p className="text-xl text-cyan-300 max-w-2xl mx-auto">
-            Experience personalized, voice-driven learning with AI companions that adapt to your pace and style. 
+            Experience personalised, voice-driven learning with AI companions that adapt to your pace and style. 
             Join thousands of learners worldwide.
           </p>
         </div>

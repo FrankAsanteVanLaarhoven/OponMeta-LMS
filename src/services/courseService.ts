@@ -1,409 +1,476 @@
-import { Course } from '../types/course';
+import { Course, Lesson, Quiz, Assignment, Question, Resource } from '@/data/coursesData';
 
-// Mock database for courses
-let courses: Course[] = [
-  {
-    id: '1',
-    title: 'Complete Web Development Bootcamp',
-    description: 'Learn HTML, CSS, JavaScript, React, Node.js and become a full-stack developer',
-    instructor: {
-      id: 'instructor1',
-      name: 'Dr. Angela Yu',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face',
-      rating: 4.8,
-      students: 125000
-    },
-    category: 'Programming',
-    sector: 'Technology',
-    language: 'English',
-    level: 'Beginner',
-    duration: 44,
-    price: 89.99,
-    originalPrice: 199.99,
-    rating: 4.8,
-    reviews: 12543,
-    students: 125000,
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
-    tags: ['Web Development', 'JavaScript', 'React', 'Node.js'],
-    isFeatured: true,
-    isNew: false,
-    isBestseller: true,
-    certificate: true,
-    lastUpdated: '2024-01-15',
-    lessons: 185,
-    quizzes: 45,
-    projects: 12,
-    status: 'published',
-    createdAt: '2023-12-01',
-    updatedAt: '2024-01-15'
-  },
-  {
-    id: '2',
-    title: 'Data Science and Machine Learning',
-    description: 'Master Python, pandas, numpy, scikit-learn and build ML models',
-    instructor: {
-      id: 'instructor2',
-      name: 'Jose Portilla',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-      rating: 4.7,
-      students: 89000
-    },
-    category: 'Data Science',
-    sector: 'Technology',
-    language: 'English',
-    level: 'Intermediate',
-    duration: 22,
-    price: 94.99,
-    originalPrice: 189.99,
-    rating: 4.7,
-    reviews: 8921,
-    students: 89000,
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-    tags: ['Python', 'Machine Learning', 'Data Analysis', 'AI'],
-    isFeatured: true,
-    isNew: false,
-    isBestseller: true,
-    certificate: true,
-    lastUpdated: '2024-01-10',
-    lessons: 156,
-    quizzes: 38,
-    projects: 8,
-    status: 'published',
-    createdAt: '2023-11-15',
-    updatedAt: '2024-01-10'
-  }
-];
+// Local storage keys
+const COURSES_STORAGE_KEY = 'oponmeta_courses';
+const DRAFTS_STORAGE_KEY = 'oponmeta_course_drafts';
+const SALES_STORAGE_KEY = 'oponmeta_course_sales';
 
-// Mock database for student enrollments
-let enrollments: { studentId: string; courseId: string; enrolledAt: string; progress: number }[] = [];
-
-// Mock database for course purchases
-let purchases: { studentId: string; courseId: string; purchasedAt: string; amount: number; status: string }[] = [];
-
-export interface CreateCourseData {
+export interface CourseFormData {
   title: string;
   description: string;
-  category: string;
-  sector: string;
-  language: string;
-  level: 'Beginner' | 'Intermediate' | 'Advanced';
-  duration: number;
-  price: number;
-  originalPrice?: number;
-  image: string;
+  objectives: string[];
   tags: string[];
+  category: string;
+  level: string;
+  price: number;
+  language: string;
+  image: string;
+  duration: string;
+  lessonsCount: number;
   certificate: boolean;
-  lessons: number;
-  quizzes: number;
-  projects: number;
-  instructorId: string;
-  instructorName: string;
-  instructorAvatar: string;
+  accessType: 'free' | 'paid' | 'subscription';
+  enrollmentLimit?: number;
+  content?: {
+    lessons: Lesson[];
+    quizzes: Quiz[];
+    assignments: Assignment[];
+  };
 }
 
-export interface CourseFilters {
-  category?: string;
-  sector?: string;
-  language?: string;
-  level?: string;
-  priceRange?: [number, number];
-  rating?: number;
-  duration?: string;
-  features?: string[];
-  search?: string;
-}
-
-export interface CourseSort {
-  field: 'popular' | 'rating' | 'newest' | 'price-low' | 'price-high';
-  direction: 'asc' | 'desc';
+export interface CourseSale {
+  id: string;
+  courseId: number;
+  studentId: string;
+  studentName: string;
+  studentEmail: string;
+  amount: number;
+  currency: string;
+  paymentMethod: string;
+  transactionId: string;
+  purchaseDate: string;
+  status: 'completed' | 'pending' | 'refunded';
 }
 
 class CourseService {
+  // Get all courses from local storage
+  private getCourses(): Course[] {
+    try {
+      const courses = localStorage.getItem(COURSES_STORAGE_KEY);
+      const storedCourses = courses ? JSON.parse(courses) : [];
+      
+      // Add demo courses if none exist
+      if (storedCourses.length === 0) {
+        const demoCourses = [
+          {
+            id: 1,
+            title: "Complete Web Development Bootcamp",
+            description: "Learn web development from scratch with HTML, CSS, JavaScript, React, and Node.js. Build real-world projects and become a full-stack developer.",
+            instructor: "Sarah Johnson",
+            instructorId: "instructor-1",
+            price: 149,
+            originalPrice: 199,
+            rating: 4.8,
+            studentsEnrolled: 1247,
+            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            category: "Technology and Digital Skills",
+            level: "Beginner",
+            duration: "40-50 hours",
+            lessonsCount: 25,
+            certificate: true,
+            isPublished: true,
+            status: "published",
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            slug: "complete-web-development-bootcamp",
+            language: "en",
+            tags: ["web development", "javascript", "react", "node.js", "full-stack"],
+            objectives: [
+              "Master HTML5 and CSS3 fundamentals",
+              "Learn JavaScript ES6+ and modern programming concepts",
+              "Build responsive websites and web applications",
+              "Develop full-stack applications with React and Node.js",
+              "Deploy applications to production environments"
+            ],
+            currentEnrollments: 1247,
+            revenue: 185803,
+            accessType: "paid"
+          },
+          {
+            id: 2,
+            title: "Data Science Masterclass",
+            description: "Master data science with Python, machine learning, and statistical analysis. Learn to extract insights from data and build predictive models.",
+            instructor: "Dr. Michael Chen",
+            instructorId: "instructor-2",
+            price: 199,
+            originalPrice: 249,
+            rating: 4.9,
+            studentsEnrolled: 892,
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            category: "Data and Analytics",
+            level: "Intermediate",
+            duration: "60-80 hours",
+            lessonsCount: 35,
+            certificate: true,
+            isPublished: true,
+            status: "published",
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            slug: "data-science-masterclass",
+            language: "en",
+            tags: ["data science", "python", "machine learning", "statistics", "analytics"],
+            objectives: [
+              "Master Python for data analysis",
+              "Learn statistical analysis and hypothesis testing",
+              "Build machine learning models",
+              "Create data visualizations and dashboards",
+              "Deploy machine learning models to production"
+            ],
+            currentEnrollments: 892,
+            revenue: 177508,
+            accessType: "paid"
+          },
+          {
+            id: 3,
+            title: "Digital Marketing Strategy",
+            description: "Learn comprehensive digital marketing strategies including SEO, social media, content marketing, and paid advertising.",
+            instructor: "Emma Rodriguez",
+            instructorId: "instructor-3",
+            price: 99,
+            originalPrice: 149,
+            rating: 4.7,
+            studentsEnrolled: 2156,
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80",
+            category: "Marketing and Sales",
+            level: "Beginner",
+            duration: "25-35 hours",
+            lessonsCount: 18,
+            certificate: true,
+            isPublished: true,
+            status: "published",
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            slug: "digital-marketing-strategy",
+            language: "en",
+            tags: ["digital marketing", "seo", "social media", "content marketing", "advertising"],
+            objectives: [
+              "Understand digital marketing fundamentals",
+              "Master SEO and content optimization",
+              "Create effective social media strategies",
+              "Develop paid advertising campaigns",
+              "Measure and analyze marketing performance"
+            ],
+            currentEnrollments: 2156,
+            revenue: 213444,
+            accessType: "paid"
+          }
+        ];
+        
+        localStorage.setItem(COURSES_STORAGE_KEY, JSON.stringify(demoCourses));
+        return demoCourses;
+      }
+      
+      return storedCourses;
+    } catch (error) {
+      console.error('Error loading courses:', error);
+      return [];
+    }
+  }
+
+  // Save courses to local storage
+  private saveCourses(courses: Course[]): void {
+    try {
+      localStorage.setItem(COURSES_STORAGE_KEY, JSON.stringify(courses));
+    } catch (error) {
+      console.error('Error saving courses:', error);
+    }
+  }
+
+  // Get course drafts
+  private getDrafts(): CourseFormData[] {
+    try {
+      const drafts = localStorage.getItem(DRAFTS_STORAGE_KEY);
+      return drafts ? JSON.parse(drafts) : [];
+    } catch (error) {
+      console.error('Error loading drafts:', error);
+      return [];
+    }
+  }
+
+  // Save course drafts
+  private saveDrafts(drafts: CourseFormData[]): void {
+    try {
+      localStorage.setItem(DRAFTS_STORAGE_KEY, JSON.stringify(drafts));
+    } catch (error) {
+      console.error('Error saving drafts:', error);
+    }
+  }
+
+  // Get course sales
+  private getSales(): CourseSale[] {
+    try {
+      const sales = localStorage.getItem(SALES_STORAGE_KEY);
+      return sales ? JSON.parse(sales) : [];
+    } catch (error) {
+      console.error('Error loading sales:', error);
+      return [];
+    }
+  }
+
+  // Save course sales
+  private saveSales(sales: CourseSale[]): void {
+    try {
+      localStorage.setItem(SALES_STORAGE_KEY, JSON.stringify(sales));
+    } catch (error) {
+      console.error('Error saving sales:', error);
+    }
+  }
+
   // Create a new course
-  async createCourse(courseData: CreateCourseData): Promise<Course> {
+  async createCourse(courseData: CourseFormData, creatorId: string): Promise<Course> {
+    const courses = this.getCourses();
     const newCourse: Course = {
-      id: Date.now().toString(),
-      ...courseData,
-      instructor: {
-        id: courseData.instructorId,
-        name: courseData.instructorName,
-        avatar: courseData.instructorAvatar,
-        rating: 0,
-        students: 0
-      },
+      id: Date.now(), // Simple ID generation
+      title: courseData.title,
+      instructor: 'Current User', // This should come from user context
+      price: courseData.price,
       rating: 0,
-      reviews: 0,
       students: 0,
-      isFeatured: false,
-      isNew: true,
-      isBestseller: false,
-      lastUpdated: new Date().toISOString().split('T')[0],
+      image: courseData.image || 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+      category: courseData.category,
+      duration: courseData.duration,
+      level: courseData.level,
+      lessonsCount: courseData.lessonsCount,
+      description: courseData.description,
+      lastUpdated: new Date().toISOString(),
+      language: courseData.language,
+      hasSubtitles: true,
+      slug: this.generateSlug(courseData.title),
+      objectives: courseData.objectives,
+      tags: courseData.tags,
+      content: courseData.content,
       status: 'draft',
-      createdAt: new Date().toISOString().split('T')[0],
-      updatedAt: new Date().toISOString().split('T')[0]
+      isPublished: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      creatorId,
+      salesCount: 0,
+      revenue: 0,
+      certificate: courseData.certificate,
+      accessType: courseData.accessType,
+      enrollmentLimit: courseData.enrollmentLimit,
+      currentEnrollments: 0,
     };
 
     courses.push(newCourse);
+    this.saveCourses(courses);
     return newCourse;
   }
 
-  // Get all courses for marketplace
-  async getCourses(filters?: CourseFilters, sort?: CourseSort): Promise<Course[]> {
-    let filteredCourses = courses.filter(course => course.status === 'published');
-
-    if (filters) {
-      if (filters.search) {
-        const searchLower = filters.search.toLowerCase();
-        filteredCourses = filteredCourses.filter(course =>
-          course.title.toLowerCase().includes(searchLower) ||
-          course.description.toLowerCase().includes(searchLower) ||
-          course.instructor.name.toLowerCase().includes(searchLower) ||
-          course.tags.some(tag => tag.toLowerCase().includes(searchLower))
-        );
-      }
-
-      if (filters.category && filters.category !== 'All Categories') {
-        filteredCourses = filteredCourses.filter(course => course.category === filters.category);
-      }
-
-      if (filters.sector && filters.sector !== 'All Sectors') {
-        filteredCourses = filteredCourses.filter(course => course.sector === filters.sector);
-      }
-
-      if (filters.language && filters.language !== 'All Languages') {
-        filteredCourses = filteredCourses.filter(course => course.language === filters.language);
-      }
-
-      if (filters.level && filters.level !== 'All Levels') {
-        filteredCourses = filteredCourses.filter(course => course.level === filters.level);
-      }
-
-      if (filters.priceRange) {
-        filteredCourses = filteredCourses.filter(course =>
-          course.price >= filters.priceRange![0] && course.price <= filters.priceRange![1]
-        );
-      }
-
-      if (filters.rating && filters.rating > 0) {
-        filteredCourses = filteredCourses.filter(course => course.rating >= filters.rating!);
-      }
-
-      if (filters.duration) {
-        switch (filters.duration) {
-          case '0-5':
-            filteredCourses = filteredCourses.filter(course => course.duration <= 5);
-            break;
-          case '5-10':
-            filteredCourses = filteredCourses.filter(course => course.duration > 5 && course.duration <= 10);
-            break;
-          case '10-20':
-            filteredCourses = filteredCourses.filter(course => course.duration > 10 && course.duration <= 20);
-            break;
-          case '20+':
-            filteredCourses = filteredCourses.filter(course => course.duration > 20);
-            break;
-        }
-      }
-
-      if (filters.features && filters.features.length > 0) {
-        filteredCourses = filteredCourses.filter(course => {
-          if (filters.features!.includes('Certificate') && !course.certificate) return false;
-          if (filters.features!.includes('Quizzes') && course.quizzes === 0) return false;
-          if (filters.features!.includes('Projects') && course.projects === 0) return false;
-          return true;
-        });
-      }
-    }
-
-    // Sort courses
-    if (sort) {
-      switch (sort.field) {
-        case 'popular':
-          filteredCourses.sort((a, b) => b.students - a.students);
-          break;
-        case 'rating':
-          filteredCourses.sort((a, b) => b.rating - a.rating);
-          break;
-        case 'newest':
-          filteredCourses.sort((a, b) => new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime());
-          break;
-        case 'price-low':
-          filteredCourses.sort((a, b) => a.price - b.price);
-          break;
-        case 'price-high':
-          filteredCourses.sort((a, b) => b.price - a.price);
-          break;
-      }
-    } else {
-      // Default sort by popularity
-      filteredCourses.sort((a, b) => b.students - a.students);
-    }
-
-    return filteredCourses;
-  }
-
-  // Get featured courses for landing page
-  async getFeaturedCourses(limit: number = 19): Promise<Course[]> {
-    return courses
-      .filter(course => course.status === 'published' && course.isFeatured)
-      .sort((a, b) => b.students - a.students)
-      .slice(0, limit);
-  }
-
-  // Get courses by instructor
-  async getCoursesByInstructor(instructorId: string): Promise<Course[]> {
-    return courses.filter(course => course.instructor.id === instructorId);
-  }
-
-  // Get course by ID
-  async getCourseById(courseId: string): Promise<Course | null> {
-    return courses.find(course => course.id === courseId) || null;
-  }
-
-  // Purchase a course
-  async purchaseCourse(studentId: string, courseId: string, amount: number): Promise<boolean> {
-    const course = courses.find(c => c.id === courseId);
-    if (!course) return false;
-
-    // Check if already purchased
-    const existingPurchase = purchases.find(p => p.studentId === studentId && p.courseId === courseId);
-    if (existingPurchase) return false;
-
-    // Add purchase record
-    purchases.push({
-      studentId,
-      courseId,
-      purchasedAt: new Date().toISOString(),
-      amount,
-      status: 'completed'
-    });
-
-    // Add enrollment
-    enrollments.push({
-      studentId,
-      courseId,
-      enrolledAt: new Date().toISOString(),
-      progress: 0
-    });
-
-    // Update course stats
-    course.students += 1;
-    course.instructor.students += 1;
-
-    return true;
-  }
-
-  // Get enrolled courses for a student
-  async getEnrolledCourses(studentId: string): Promise<Course[]> {
-    const enrolledCourseIds = enrollments
-      .filter(enrollment => enrollment.studentId === studentId)
-      .map(enrollment => enrollment.courseId);
-
-    return courses.filter(course => enrolledCourseIds.includes(course.id));
-  }
-
-  // Get course progress for a student
-  async getCourseProgress(studentId: string, courseId: string): Promise<number> {
-    const enrollment = enrollments.find(e => e.studentId === studentId && e.courseId === courseId);
-    return enrollment ? enrollment.progress : 0;
-  }
-
-  // Update course progress
-  async updateCourseProgress(studentId: string, courseId: string, progress: number): Promise<void> {
-    const enrollment = enrollments.find(e => e.studentId === studentId && e.courseId === courseId);
-    if (enrollment) {
-      enrollment.progress = Math.min(100, Math.max(0, progress));
-    }
-  }
-
-  // Publish a course
-  async publishCourse(courseId: string): Promise<boolean> {
-    const course = courses.find(c => c.id === courseId);
-    if (!course) return false;
-
-    course.status = 'published';
-    course.updatedAt = new Date().toISOString().split('T')[0];
-    return true;
-  }
-
-  // Update course
-  async updateCourse(courseId: string, updates: Partial<Course>): Promise<Course | null> {
+  // Update an existing course
+  async updateCourse(courseId: number, updates: Partial<Course>): Promise<Course | null> {
+    const courses = this.getCourses();
     const courseIndex = courses.findIndex(c => c.id === courseId);
+    
     if (courseIndex === -1) return null;
 
     courses[courseIndex] = {
       ...courses[courseIndex],
       ...updates,
-      updatedAt: new Date().toISOString().split('T')[0]
+      updatedAt: new Date().toISOString(),
     };
 
+    this.saveCourses(courses);
     return courses[courseIndex];
   }
 
-  // Delete course
-  async deleteCourse(courseId: string): Promise<boolean> {
+  // Publish a course
+  async publishCourse(courseId: number): Promise<Course | null> {
+    return this.updateCourse(courseId, {
+      status: 'published',
+      isPublished: true,
+    });
+  }
+
+  // Unpublish a course
+  async unpublishCourse(courseId: number): Promise<Course | null> {
+    return this.updateCourse(courseId, {
+      status: 'draft',
+      isPublished: false,
+    });
+  }
+
+  // Delete a course
+  async deleteCourse(courseId: number): Promise<boolean> {
+    const courses = this.getCourses();
+    const filteredCourses = courses.filter(c => c.id !== courseId);
+    
+    if (filteredCourses.length === courses.length) return false;
+    
+    this.saveCourses(filteredCourses);
+    return true;
+  }
+
+  // Get all courses
+  async getAllCourses(): Promise<Course[]> {
+    return this.getCourses();
+  }
+
+  // Get published courses
+  async getPublishedCourses(): Promise<Course[]> {
+    const courses = this.getCourses();
+    return courses.filter(c => c.isPublished);
+  }
+
+  // Get courses by creator
+  async getCoursesByCreator(creatorId: string): Promise<Course[]> {
+    const courses = this.getCourses();
+    return courses.filter(c => c.creatorId === creatorId);
+  }
+
+  // Get course by ID
+  async getCourseById(courseId: number): Promise<Course | null> {
+    const courses = this.getCourses();
+    return courses.find(c => c.id === courseId) || null;
+  }
+
+  // Save course draft
+  async saveDraft(draftData: CourseFormData, draftId?: string): Promise<string> {
+    const drafts = this.getDrafts();
+    const draftIdToUse = draftId || `draft_${Date.now()}`;
+    
+    const existingDraftIndex = drafts.findIndex(d => d.id === draftIdToUse);
+    
+    if (existingDraftIndex !== -1) {
+      drafts[existingDraftIndex] = { ...draftData, id: draftIdToUse };
+    } else {
+      drafts.push({ ...draftData, id: draftIdToUse });
+    }
+    
+    this.saveDrafts(drafts);
+    return draftIdToUse;
+  }
+
+  // Get course draft
+  async getDraft(draftId: string): Promise<CourseFormData | null> {
+    const drafts = this.getDrafts();
+    return drafts.find(d => d.id === draftId) || null;
+  }
+
+  // Delete course draft
+  async deleteDraft(draftId: string): Promise<boolean> {
+    const drafts = this.getDrafts();
+    const filteredDrafts = drafts.filter(d => d.id !== draftId);
+    
+    if (filteredDrafts.length === drafts.length) return false;
+    
+    this.saveDrafts(filteredDrafts);
+    return true;
+  }
+
+  // Process course purchase
+  async processPurchase(
+    courseId: number,
+    studentData: {
+      id: string;
+      name: string;
+      email: string;
+    },
+    paymentData: {
+      amount: number;
+      currency: string;
+      paymentMethod: string;
+      transactionId: string;
+    }
+  ): Promise<CourseSale> {
+    const sale: CourseSale = {
+      id: `sale_${Date.now()}`,
+      courseId,
+      studentId: studentData.id,
+      studentName: studentData.name,
+      studentEmail: studentData.email,
+      amount: paymentData.amount,
+      currency: paymentData.currency,
+      paymentMethod: paymentData.paymentMethod,
+      transactionId: paymentData.transactionId,
+      purchaseDate: new Date().toISOString(),
+      status: 'completed',
+    };
+
+    // Save the sale
+    const sales = this.getSales();
+    sales.push(sale);
+    this.saveSales(sales);
+
+    // Update course statistics
+    const courses = this.getCourses();
     const courseIndex = courses.findIndex(c => c.id === courseId);
-    if (courseIndex === -1) return false;
+    
+    if (courseIndex !== -1) {
+      courses[courseIndex].salesCount = (courses[courseIndex].salesCount || 0) + 1;
+      courses[courseIndex].revenue = (courses[courseIndex].revenue || 0) + paymentData.amount;
+      courses[courseIndex].currentEnrollments = (courses[courseIndex].currentEnrollments || 0) + 1;
+      this.saveCourses(courses);
+    }
 
-    courses.splice(courseIndex, 1);
-    return true;
+    return sale;
   }
 
-  // Get course categories
-  async getCategories(): Promise<string[]> {
-    return [...new Set(courses.map(course => course.category))];
+  // Get course sales
+  async getCourseSales(courseId?: number): Promise<CourseSale[]> {
+    const sales = this.getSales();
+    if (courseId) {
+      return sales.filter(s => s.courseId === courseId);
+    }
+    return sales;
   }
 
-  // Get course sectors
-  async getSectors(): Promise<string[]> {
-    return [...new Set(courses.map(course => course.sector))];
+  // Get course analytics
+  async getCourseAnalytics(courseId: number): Promise<{
+    totalSales: number;
+    totalRevenue: number;
+    averageRating: number;
+    enrollmentTrend: any[];
+  }> {
+    const sales = this.getSales().filter(s => s.courseId === courseId);
+    const course = await this.getCourseById(courseId);
+    
+    return {
+      totalSales: sales.length,
+      totalRevenue: sales.reduce((sum, sale) => sum + sale.amount, 0),
+      averageRating: course?.rating || 0,
+      enrollmentTrend: [], // This would be calculated based on sales data over time
+    };
   }
 
-  // Get course languages
-  async getLanguages(): Promise<string[]> {
-    return [...new Set(courses.map(course => course.language))];
-  }
-
-  // Add course review
-  async addReview(courseId: string, studentId: string, rating: number, review: string): Promise<boolean> {
-    const course = courses.find(c => c.id === courseId);
-    if (!course) return false;
-
-    // Update course rating (simplified calculation)
-    const currentTotal = course.rating * course.reviews;
-    course.reviews += 1;
-    course.rating = (currentTotal + rating) / course.reviews;
-
-    return true;
-  }
-
-  // Get trending courses
-  async getTrendingCourses(limit: number = 10): Promise<Course[]> {
-    return courses
-      .filter(course => course.status === 'published')
-      .sort((a, b) => {
-        // Simple trending algorithm based on recent enrollments and ratings
-        const aScore = (a.students * 0.7) + (a.rating * 1000 * 0.3);
-        const bScore = (b.students * 0.7) + (b.rating * 1000 * 0.3);
-        return bScore - aScore;
-      })
-      .slice(0, limit);
+  // Generate slug from title
+  private generateSlug(title: string): string {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
   }
 
   // Search courses
-  async searchCourses(query: string, limit: number = 20): Promise<Course[]> {
-    const searchLower = query.toLowerCase();
-    return courses
-      .filter(course => 
-        course.status === 'published' &&
-        (course.title.toLowerCase().includes(searchLower) ||
-         course.description.toLowerCase().includes(searchLower) ||
-         course.instructor.name.toLowerCase().includes(searchLower) ||
-         course.tags.some(tag => tag.toLowerCase().includes(searchLower)))
-      )
-      .slice(0, limit);
+  async searchCourses(query: string, filters?: {
+    category?: string;
+    level?: string;
+    priceRange?: { min: number; max: number };
+    language?: string;
+  }): Promise<Course[]> {
+    const courses = this.getPublishedCourses();
+    
+    return courses.filter(course => {
+      // Text search
+      const searchText = query.toLowerCase();
+      const matchesSearch = 
+        course.title.toLowerCase().includes(searchText) ||
+        course.description.toLowerCase().includes(searchText) ||
+        course.tags?.some(tag => tag.toLowerCase().includes(searchText)) ||
+        course.objectives?.some(obj => obj.toLowerCase().includes(searchText));
+
+      if (!matchesSearch) return false;
+
+      // Apply filters
+      if (filters?.category && course.category !== filters.category) return false;
+      if (filters?.level && course.level !== filters.level) return false;
+      if (filters?.language && course.language !== filters.language) return false;
+      if (filters?.priceRange) {
+        if (course.price < filters.priceRange.min || course.price > filters.priceRange.max) return false;
+      }
+
+      return true;
+    });
   }
 }
 
-export const courseService = new CourseService();
-export default courseService; 
+export const courseService = new CourseService(); 

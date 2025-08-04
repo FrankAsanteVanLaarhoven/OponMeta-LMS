@@ -149,7 +149,7 @@ const RecommendedForYou: React.FC<RecommendedForYouProps> = ({
         <h2 className="text-xl font-semibold">{title}</h2>
         {userActivity.allActivity.length > 0 && (
           <Badge variant="secondary" className="text-xs">
-            Personalized
+            Personalised
           </Badge>
         )}
       </div>
@@ -169,7 +169,7 @@ const RecommendedForYou: React.FC<RecommendedForYouProps> = ({
           <Sparkles className="mx-auto h-12 w-12 text-gray-400 mb-4" />
           <h3 className="text-lg font-medium text-gray-900 mb-2">No recommendations yet</h3>
           <p className="text-gray-600">
-            Start exploring courses to get personalized recommendations.
+            Start exploring courses to get personalised recommendations.
           </p>
         </div>
       )}

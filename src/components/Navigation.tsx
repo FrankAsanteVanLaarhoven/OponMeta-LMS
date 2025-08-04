@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Sun, Moon, Laptop, Globe, CloudSun, CloudDrizzle, CloudLightning, CloudRain, CloudSnow, CloudMoon, CloudFog, Users, BookOpen, Briefcase, Megaphone, Sparkles, UserCog, Layers, UserPlus, UserCheck, User, LogIn, LogOut, PlusCircle, FileText, FilePlus, FileCheck, FileBarChart2, FileSignature, FileSearch, FileInput, FileOutput, FileEdit, FileLock, FileX, FileMinus, FilePlus2, FileStack, FileText as FileTextIcon, FileBarChart, FilePieChart, FileSpreadsheet, FileQuestion, FileCheck2, FileWarning, Search, Play, Target, TrendingUp, Award, Heart, Star, Zap, BarChart3, Shield, Home, Wrench, CreditCard, Gift, Calendar, Truck, Music } from "lucide-react";
+import { Menu, X, ChevronDown, Sun, Moon, Laptop, Globe, CloudSun, CloudDrizzle, CloudLightning, CloudRain, CloudSnow, CloudMoon, CloudFog, Users, BookOpen, Briefcase, Megaphone, Sparkles, UserCog, Layers, UserPlus, UserCheck, User, LogIn, LogOut, PlusCircle, FileText, FilePlus, FileCheck, FileBarChart2, FileSignature, FileSearch, FileInput, FileOutput, FileEdit, FileLock, FileX, FileMinus, FilePlus2, FileStack, FileText as FileTextIcon, FileBarChart, FilePieChart, FileSpreadsheet, FileQuestion, FileCheck2, FileWarning, Search, Play, Target, TrendingUp, Award, Heart, Star, Zap, BarChart3, Shield, Home, Wrench, CreditCard, Gift, Calendar, Truck, Music, Video, Handshake } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
@@ -22,36 +22,7 @@ import GlobalSearch from './GlobalSearch';
 // Alison-style menu data structures and helpers from MegaMenuNavbar
 
 const COURSE_CATEGORIES = [
-  { icon: <Laptop className="w-5 h-5 text-blue-600" />, name: 'IT', slug: 'it', count: 1254, sub: [
-    'Network Security', 'Programming', 'Information Systems', 'Management', 'Engineering', 'Data Science', 'Databases', 'Administration', 'AWS', 'Business Management', 'CCNA', 'Comptia', 'Computer Networking', 'Web Development', 'Cloud Computing', 'IT Support', 'Software Engineering', 'Cybersecurity', 'DevOps', 'Linux', 'Microsoft', 'Google', 'Apple', 'Mobile Development', 'Game Development', 'AI & Machine Learning', 'Blockchain', 'IoT', 'Other'
-  ] },
-  { icon: <Heart className="w-5 h-5 text-green-600" />, name: 'Health', slug: 'health', count: 1005, sub: [
-    'Nursing', 'Public Health', 'Healthcare Management', 'Mental Health', 'Nutrition', 'Fitness', 'Medical Technology', 'Pharmacy', 'Dentistry', 'First Aid', 'Health & Safety', 'Medical Research', 'Therapy', 'Alternative Medicine', 'Other'
-  ] },
-  { icon: <Globe className="w-5 h-5 text-blue-500" />, name: 'Language', slug: 'language', count: 314, sub: [
-    'English', 'Spanish', 'French', 'German', 'Chinese', 'Japanese', 'Italian', 'Portuguese', 'Russian', 'Arabic', 'Other'
-  ] },
-  { icon: <Briefcase className="w-5 h-5 text-purple-500" />, name: 'Business', slug: 'business', count: 1704, sub: [
-    'Entrepreneurship', 'Finance', 'Accounting', 'Marketing', 'Sales', 'Human Resources', 'Operations', 'Strategy', 'Project Management', 'Business Law', 'Economics', 'Leadership', 'E-Commerce', 'Supply Chain', 'Other'
-  ] },
-  { icon: <UserCog className="w-5 h-5 text-blue-700" />, name: 'Management', slug: 'management', count: 1033, sub: [
-    'Leadership', 'Project Management', 'Operations', 'HR Management', 'Change Management', 'Risk Management', 'Strategic Management', 'Other'
-  ] },
-  { icon: <User className="w-5 h-5 text-gray-700" />, name: 'Personal Development', slug: 'personal-development', count: 1300, sub: [
-    'Productivity', 'Mindfulness', 'Communication', 'Time Management', 'Emotional Intelligence', 'Personal Finance', 'Career Development', 'Other'
-  ] },
-  { icon: <Megaphone className="w-5 h-5 text-pink-600" />, name: 'Sales & Marketing', slug: 'sales-marketing', count: 433, sub: [
-    'Sales', 'Digital Marketing', 'Branding', 'Advertising', 'Market Research', 'Public Relations', 'SEO', 'Content Marketing', 'Social Media', 'Other'
-  ] },
-  { icon: <Zap className="w-5 h-5 text-lime-500" />, name: 'Engineering & Construction', slug: 'engineering-construction', count: 806, sub: [
-    'Civil Engineering', 'Mechanical Engineering', 'Electrical Engineering', 'Construction Management', 'Architecture', 'Surveying', 'Project Management', 'Safety', 'Other'
-  ] },
-  { icon: <BookOpen className="w-5 h-5 text-blue-500" />, name: 'Teaching & Academics', slug: 'teaching-academics', count: 1600, sub: [
-    'K-12', 'Higher Education', 'Adult Education', 'Special Education', 'Curriculum Development', 'Instructional Design', 'Education Technology', 'Assessment', 'Other'
-  ] },
-  { icon: <CreditCard className="w-5 h-5 text-green-700" />, name: 'Pricing', slug: 'pricing', count: 0, pricing: true },
-  // --- New categories (if not already present) ---
-  { icon: <BookOpen className="w-5 h-5 text-blue-500" />, name: 'Technology and Digital Skills', slug: 'technology-and-digital-skills', count: 0 },
+  { icon: <Laptop className="w-5 h-5 text-blue-600" />, name: 'Technology and Digital Skills', slug: 'technology-and-digital-skills', count: 0 },
   { icon: <BarChart3 className="w-5 h-5 text-cyan-500" />, name: 'Data and Analytics', slug: 'data-and-analytics', count: 0 },
   { icon: <Heart className="w-5 h-5 text-green-500" />, name: 'Health and Healthcare Innovation', slug: 'health-and-healthcare-innovation', count: 0 },
   { icon: <CloudSun className="w-5 h-5 text-blue-400" />, name: 'Cleaning and Sanitation Services', slug: 'cleaning-and-sanitation-services', count: 0 },
@@ -73,12 +44,16 @@ const COURSE_CATEGORIES = [
   { icon: <Wrench className="w-5 h-5 text-gray-500" />, name: 'Vocational and Technical Training', slug: 'vocational-and-technical-training', count: 0 },
   { icon: <Heart className="w-5 h-5 text-pink-500" />, name: 'Social Care and Community Support', slug: 'social-care-and-community-support', count: 0 },
   { icon: <Users className="w-5 h-5 text-blue-400" />, name: 'Childhood Studies and Early Year Education', slug: 'childhood-studies-and-early-year-education', count: 0 },
+  // OTHER section
+  { icon: <BookOpen className="w-5 h-5 text-blue-500" />, name: 'Courses', slug: 'courses', count: 0 },
+  { icon: <Users className="w-5 h-5 text-green-500" />, name: 'Workshops', slug: 'workshops', count: 0 },
+  { icon: <UserPlus className="w-5 h-5 text-purple-500" />, name: 'Mentorship', slug: 'mentorship', count: 0 },
 ];
 
 const CAREER_CATEGORIES = [
   { icon: <Users className="w-5 h-5 text-cyan-500" />, name: 'Leadership and Management', count: 0 },
   { icon: <UserPlus className="w-5 h-5 text-green-500" />, name: 'Mentorship & Career Readiness', count: 0 },
-  { icon: <Layers className="w-5 h-5 text-purple-500" />, name: 'Specialized Industry Tracks', count: 0 },
+  { icon: <Layers className="w-5 h-5 text-purple-500" />, name: 'Specialised Industry Tracks', count: 0 },
   { icon: <Home className="w-5 h-5 text-yellow-500" />, name: 'Real Estate and Estate Management', count: 0 },
   { icon: <Shield className="w-5 h-5 text-red-500" />, name: 'Public Safety and Emergency Services', count: 0 },
   { icon: <Heart className="w-5 h-5 text-pink-500" />, name: 'Social Care and Community Support', count: 0 },
@@ -93,13 +68,11 @@ const CAREER_CATEGORIES = [
 ];
 
 const MORE_MENU = [
-  { icon: <CreditCard className="w-6 h-6 text-blue-500" />, label: 'Pricing', desc: 'Flexible plans for every learner', to: '/pricing' },
-  { icon: <Award className="w-6 h-6 text-blue-500" />, label: 'Graduate Profile Certificates', desc: 'View certificates and awards earned by graduates', to: '/graduate-certificates' },
-  { icon: <Globe className="w-6 h-6 text-green-500" />, label: 'Multilingual Content Library', desc: 'Explore content in 10+ languages', to: '/multilingual-content', badge: 'New' },
-  { icon: <BookOpen className="w-6 h-6 text-red-500" />, label: 'RTO Course Library', desc: 'Registered Training Organization courses and qualifications', to: '/rto-courses', badge: 'New' },
-  { icon: <BarChart3 className="w-6 h-6 text-indigo-500" />, label: 'Analytics Dashboard', desc: 'Advanced user behavior analytics and insights', to: '/analytics-dashboard', badge: 'Advanced' },
-  { icon: <Users className="w-6 h-6 text-purple-500" />, label: 'Social Feed', desc: 'Connect with learners and share experiences', to: '/social-feed', badge: 'Social' },
-  { icon: <Zap className="w-6 h-6 text-yellow-500" />, label: 'Advanced Features Demo', desc: 'Experience next-gen AI-powered learning features', to: '/advanced-features-demo', badge: 'New' },
+  { icon: <BookOpen className="w-6 h-6 text-purple-500" />, label: 'Creators Portal', desc: 'Manage your courses and track performance', to: '/creators-portal', badge: 'New' },
+  { icon: <Video className="w-6 h-6 text-blue-500" />, label: 'Meet AI Video Calling Powered by AI Agents', desc: 'Experience AI-powered learning', to: '/ai-video-calling', badge: 'New' },
+  { icon: <Globe className="w-6 h-6 text-green-500" />, label: 'Share Your Knowledge Globally', desc: 'Inspire learners worldwide and grow your teaching career with our global platform', to: '/instructor-application', badge: 'New' },
+  { icon: <UserPlus className="w-6 h-6 text-purple-500" />, label: 'Become an Instructor', desc: 'Share your knowledge and earn revenue', to: '/instructor-application', badge: 'New' },
+  { icon: <Users className="w-6 h-6 text-blue-500" />, label: 'Instructor Portal', desc: 'Access your instructor dashboard and tools', to: '/instructor-portal', badge: 'New' },
   { icon: <BookOpen className="w-6 h-6 text-red-500" />, label: 'Blogs', desc: 'News, insights, tips and stories from our platform' },
   { icon: <Home className="w-6 h-6 text-gray-500" />, label: 'Download the App', desc: 'Learn anywhere, anytime for free' },
   { icon: <Users className="w-6 h-6 text-green-500" />, label: 'Résumé Builder', desc: 'Create your professional résumé', badge: 'New' },
@@ -113,19 +86,24 @@ const MORE_MENU = [
   { icon: <FileCheck className="w-6 h-6 text-green-500" />, label: 'Grammar Checker', desc: 'Free AI grammar and style checker' },
   { icon: <Award className="w-6 h-6 text-yellow-500" />, label: 'Get Premium', desc: 'Remove ads' },
   { icon: <Users className="w-6 h-6 text-green-500" />, label: 'Graduate Profiles', desc: 'Read graduate success stories' },
+  { icon: <Award className="w-6 h-6 text-purple-500" />, label: 'Certification', desc: 'View and verify course certificates', to: '/certification', badge: 'New' },
+  { icon: <Target className="w-6 h-6 text-purple-500" />, label: 'How to Build a Growth Mindset', desc: 'Practical strategies for lifelong learning and personal development' },
+  { icon: <Users className="w-6 h-6 text-blue-500" />, label: 'Community', desc: 'Connect with learners and share experiences' },
 ];
 
 const PLATFORM_MENU = [
-  { icon: <Star className="w-5 h-5 text-blue-600" />, label: 'Dashboard', to: '/dashboard' },
-  { icon: <Briefcase className="w-5 h-5 text-purple-600" />, label: 'Vendor Portal', to: '/vendor-portal' },
-  { icon: <Users className="w-5 h-5 text-green-600" />, label: 'Student Portal', to: '/student-portal' },
-  { icon: <Users className="w-5 h-5 text-fuchsia-600" />, label: 'AI Mentor/Companion', to: '/companion' },
-  { icon: <BookOpen className="w-5 h-5 text-yellow-600" />, label: 'Authoring Tool', to: '/authoring-tool' },
-  { icon: <BarChart3 className="w-5 h-5 text-indigo-600" />, label: 'Course Creator Dashboard', to: '/dashboard/course-creator' },
-  { icon: <BarChart3 className="w-5 h-5 text-orange-600" />, label: 'Analytics', to: '/dashboard/analytics' },
-  { icon: <CreditCard className="w-5 h-5 text-pink-600" />, label: 'Subscription Management', to: '/companion-subscribe' },
-  { icon: <Calendar className="w-5 h-5 text-emerald-600" />, label: '1:1 Booking', to: '/one-to-one-booking' },
-  { icon: <Target className="w-5 h-5 text-teal-600" />, label: 'Goal', to: '/goals' },
+  { name: 'Course Library', href: '/courses', description: 'Browse our extensive course collection' },
+  { name: 'AI Course Creator', href: '/dashboard/ai-course-creator', description: 'Create courses with AI assistance' },
+  { name: 'Course Authoring Tool', href: '/course-authoring', description: 'Drag-and-drop course builder with templates' },
+  { name: 'AI Video Calling', href: '/ai-video-calling', description: 'Connect with AI tutors and experts' },
+  { name: 'Companion Library', href: '/companions', description: 'AI learning companions for personalised support' },
+  { name: 'Whiteboard', href: '/whiteboard', description: 'Interactive whiteboard for collaborative learning' },
+  { name: 'Quiz Builder', href: '/quiz-builder', description: 'Create interactive assessments and quizzes' },
+  { name: 'Virtual Classroom', href: '/virtual-classroom', description: 'Real-time virtual learning environment' },
+  { name: 'Student Portal', href: '/student-portal', description: 'Access your learning dashboard and progress' },
+  { name: 'Instructor Dashboard', href: '/instructor-portal', description: 'Manage your courses and students' },
+  { name: 'Analytics Dashboard', href: '/dashboard/analytics', description: 'Track learning progress and performance' },
+  { name: 'Advanced Features', href: '/advanced-features', description: 'Explore advanced learning tools and features' }
 ];
 
 const renderStars = (rating) => {
@@ -313,7 +291,7 @@ const Navigation = () => {
                 onMouseLeave={() => { setActiveCategory(null); setActiveSubCategory(null); }}
               >
                 <button className="flex items-center text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 px-3 py-2 text-base font-medium transition-colors">
-                  Explore Courses <ChevronDown className="ml-1 w-4 h-4" />
+                  PROGRAMMES <ChevronDown className="ml-1 w-4 h-4" />
                 </button>
                 {activeCategory === 'courses' && (
                   <div
@@ -323,111 +301,33 @@ const Navigation = () => {
                     onMouseLeave={() => { setActiveCategory(null); setActiveSubCategory(null); }}
                   >
                     <div className="p-4 relative">
-                      <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">COURSE CATEGORIES</h3>
-                      {COURSE_CATEGORIES.map((cat) => (
+                      {/* CATEGORIES Section */}
+                      <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">CATEGORIES</h3>
+                      {COURSE_CATEGORIES.slice(0, 22).map((cat) => (
                         <div key={cat.name} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer group relative"
                           onMouseEnter={() => setActiveSubCategory(cat.name)}
                           onMouseLeave={() => setActiveSubCategory(null)}>
                           {cat.icon}
                           <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">
-                            {cat.pricing ? (
-                              <span className="cursor-pointer">{cat.name}</span>
-                            ) : (
-                              <Link to={`/category/${cat.slug}`}>{cat.name}</Link>
-                            )}
+                            <Link to={`/category/${cat.slug}`}>{cat.name}</Link>
                             <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Courses)</span>
                           </span>
-                          {!cat.pricing && <ChevronDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform" />}
-                          {/* Pricing Mega Menu */}
-                          {cat.pricing && activeSubCategory === cat.name && (
-                            <div className="absolute left-full top-0 z-50 bg-white dark:bg-[#16203a] shadow-xl border border-[#f0f4fa] dark:border-[#11204a] rounded-lg mt-0 min-w-[600px] pointer-events-auto p-6"
-                              onMouseEnter={() => setActiveSubCategory(cat.name)}
-                              onMouseLeave={() => setActiveSubCategory(null)}>
-                              <h3 className="text-xl font-bold mb-4 text-center">Flexible Plans for Every Learner—From Curious Beginners to Career Climbers</h3>
-                              <div className="overflow-x-auto">
-                                <table className="min-w-full text-sm text-left border-collapse">
-                                  <thead>
-                                    <tr>
-                                      <th className="p-3 font-bold">Plan Name</th>
-                                      <th className="p-3 font-bold">Price (Monthly)</th>
-                                      <th className="p-3 font-bold">Features</th>
-                                      <th className="p-3 font-bold">CTA</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr className="border-t">
-                                      <td className="p-3 font-semibold">Starter Tier</td>
-                                      <td className="p-3 font-semibold">Free</td>
-                                      <td className="p-3">
-                                        <ul className="list-disc ml-4">
-                                          <li>Access to selected digital courses</li>
-                                          <li>Community forum participation</li>
-                                          <li>Monthly newsletter and event invites</li>
-                                        </ul>
-                                      </td>
-                                      <td className="p-3"><button className="bg-cyan-600 text-white px-4 py-2 rounded">Join Free</button></td>
-                                    </tr>
-                                    <tr className="border-t">
-                                      <td className="p-3 font-semibold">Professional Tier</td>
-                                      <td className="p-3 font-semibold">$</td>
-                                      <td className="p-3">
-                                        <ul className="list-disc ml-4">
-                                          <li>Full access to all learning modules</li>
-                                          <li>Join live and recorded workshops</li>
-                                          <li>Mentorship programme access</li>
-                                          <li>Course completion certificates</li>
-                                        </ul>
-                                      </td>
-                                      <td className="p-3"><button className="bg-blue-600 text-white px-4 py-2 rounded">Start Professional</button></td>
-                                    </tr>
-                                    <tr className="border-t">
-                                      <td className="p-3 font-semibold">Premium Tier</td>
-                                      <td className="p-3 font-semibold">$</td>
-                                      <td className="p-3">
-                                        <ul className="list-disc ml-4">
-                                          <li>1-on-1 mentorship sessions</li>
-                                          <li>Personalized learning path</li>
-                                          <li>Career coaching and resume reviews</li>
-                                          <li>Access to exclusive partner opportunities</li>
-                                        </ul>
-                                      </td>
-                                      <td className="p-3"><button className="bg-purple-600 text-white px-4 py-2 rounded">Go Premium</button></td>
-                                    </tr>
-                                    <tr className="border-t">
-                                      <td className="p-3 font-semibold">Enterprise Tier</td>
-                                      <td className="p-3 font-semibold">Custom</td>
-                                      <td className="p-3">
-                                        <ul className="list-disc ml-4">
-                                          <li>Team onboarding and admin dashboard</li>
-                                          <li>Progress tracking and analytics</li>
-                                          <li>Custom workshops and branded content</li>
-                                        </ul>
-                                      </td>
-                                      <td className="p-3"><button className="bg-gray-700 text-white px-4 py-2 rounded">Contact Sales</button></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                              <div className="mt-4 text-xs text-center text-gray-500">
-                                Annual billing discounts available. Students and early-career professionals get 20% off.
-                              </div>
-                            </div>
-                          )}
-                          {/* Submenu for categories with subcategories */}
-                          {activeSubCategory === cat.name && "sub" in cat && Array.isArray(cat.sub) && (
-                            <div className="absolute left-full top-0 z-50 bg-white dark:bg-[#16203a] shadow-xl border border-[#f0f4fa] dark:border-[#11204a] rounded-lg mt-0 min-w-[260px] pointer-events-auto"
-                              onMouseEnter={() => setActiveSubCategory(cat.name)}
-                              onMouseLeave={() => setActiveSubCategory(null)}>
-                              <div className="p-4">
-                                <h4 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">View Top {cat.name} Courses</h4>
-                                <ul className="space-y-1">
-                                  {"sub" in cat && Array.isArray(cat.sub) && cat.sub.map((sub) => (
-                                    <li key={sub} className="text-sm text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 cursor-pointer"><Link to={`/category/${cat.slug}/${sub.toLowerCase().replace(/\s+/g, '-')}`}>{sub}</Link></li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          )}
+                          <ChevronDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform" />
+                        </div>
+                      ))}
+                      
+                      {/* OTHER Section */}
+                      <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2 mt-4">OTHER</h3>
+                      {COURSE_CATEGORIES.slice(22).map((cat) => (
+                        <div key={cat.name} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer group relative"
+                          onMouseEnter={() => setActiveSubCategory(cat.name)}
+                          onMouseLeave={() => setActiveSubCategory(null)}>
+                          {cat.icon}
+                          <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">
+                            <Link to={`/category/${cat.slug}`}>{cat.name}</Link>
+                            <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Courses)</span>
+                          </span>
+                          <ChevronDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform" />
                         </div>
                       ))}
                     </div>
@@ -453,6 +353,28 @@ const Navigation = () => {
                     {/* Dropdown content here */}
                     <div className="p-4">
                       <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">EXPLORE CAREER CATEGORIES</h3>
+                      
+                      {/* About Us Link at the top */}
+                      <Link to="/about" className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer mb-3 border-b border-gray-200 dark:border-gray-700 pb-3">
+                        <Target className="w-5 h-5 text-blue-600" />
+                        <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">About Us</span>
+                        <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">(Company Info)</span>
+                      </Link>
+                      
+                      {/* Workshops Link */}
+                      <Link to="/workshops" className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer mb-3 border-b border-gray-200 dark:border-gray-700 pb-3">
+                        <Users className="w-5 h-5 text-blue-600" />
+                        <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">Workshops</span>
+                        <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">(Live Sessions)</span>
+                      </Link>
+                      
+                      {/* Partners Link */}
+                      <Link to="/partners" className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer mb-3 border-b border-gray-200 dark:border-gray-700 pb-3">
+                        <Handshake className="w-5 h-5 text-green-600" />
+                        <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">Our Partners</span>
+                        <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">(Collaborations)</span>
+                      </Link>
+                      
                       {CAREER_CATEGORIES.map((cat) => (
                         cat.count > 0 ? (
                           <Link key={cat.name} to={`/careers/${cat.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
@@ -462,7 +384,7 @@ const Navigation = () => {
                         ) : (
                           <div key={cat.name} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
                             {cat.icon}
-                            <span className="ml-2 font-medium flex-1">{cat.name} <span className="text-xs ml-1">({cat.count} Careers)</span></span>
+                            <span className="ml-2 font-medium text-gray-400 flex-1">{cat.name} <span className="text-xs ml-1">({cat.count} Careers)</span></span>
                           </div>
                         )
                       ))}
@@ -490,15 +412,17 @@ const Navigation = () => {
                     <div className="p-4">
                       <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">QUICK ACCESS</h3>
                       {PLATFORM_MENU.map((item) => (
-                        item.to ? (
-                          <Link key={item.label} to={item.to} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
-                            {item.icon}
-                            <span className="ml-2 font-medium text-[#0a1834] dark:text-white">{item.label}</span>
+                        item.href ? (
+                          <Link key={item.name} to={item.href} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
+                            {item.name === 'Course Authoring Tool' ? <BookOpen className="w-5 h-5 text-blue-600" /> : item.name === 'AI Video Calling' ? <Video className="w-5 h-5 text-blue-600" /> : item.name === 'Companion Library' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Whiteboard' ? <Wrench className="w-5 h-5 text-blue-600" /> : item.name === 'Quiz Builder' ? <Sparkles className="w-5 h-5 text-blue-600" /> : item.name === 'Virtual Classroom' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Student Portal' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Instructor Dashboard' ? <Briefcase className="w-5 h-5 text-blue-600" /> : item.name === 'Analytics Dashboard' ? <BarChart3 className="w-5 h-5 text-blue-600" /> : item.name === 'Advanced Features' ? <Sparkles className="w-5 h-5 text-blue-600" /> : null}
+                            <span className="ml-2 font-medium text-[#0a1834] dark:text-white">{item.name}</span>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.description}</p>
                           </Link>
                         ) : (
-                          <div key={item.label} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
-                            {item.icon}
-                            <span className="ml-2 font-medium">{item.label}</span>
+                          <div key={item.name} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
+                            {item.name === 'Course Authoring Tool' ? <BookOpen className="w-5 h-5 text-blue-600" /> : item.name === 'AI Video Calling' ? <Video className="w-5 h-5 text-blue-600" /> : item.name === 'Companion Library' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Whiteboard' ? <Wrench className="w-5 h-5 text-blue-600" /> : item.name === 'Quiz Builder' ? <Sparkles className="w-5 h-5 text-blue-600" /> : item.name === 'Virtual Classroom' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Student Portal' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Instructor Dashboard' ? <Briefcase className="w-5 h-5 text-blue-600" /> : item.name === 'Analytics Dashboard' ? <BarChart3 className="w-5 h-5 text-blue-600" /> : item.name === 'Advanced Features' ? <Sparkles className="w-5 h-5 text-blue-600" /> : null}
+                            <span className="ml-2 font-medium">{item.name}</span>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.description}</p>
                           </div>
                         )
                       ))}
@@ -513,7 +437,7 @@ const Navigation = () => {
                 onMouseLeave={() => setActiveCategory(null)}
               >
                 <button className="flex items-center text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 px-3 py-2 text-base font-medium transition-colors">
-                  More <ChevronDown className="ml-1 w-4 h-4" />
+                  Resources <ChevronDown className="ml-1 w-4 h-4" />
                 </button>
                 {activeCategory === 'more' && (
                   <div
@@ -578,7 +502,7 @@ const Navigation = () => {
               </button>
             </div>
             <a
-              href="/login"
+              href="/signin"
               className="ml-4 px-4 py-2 rounded font-bold text-blue-700 bg-white hover:bg-blue-100 shadow transition border border-blue-700"
               style={{ minWidth: 80, textAlign: 'center' }}
             >

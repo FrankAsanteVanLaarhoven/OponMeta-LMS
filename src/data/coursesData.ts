@@ -17,6 +17,75 @@ export interface Course {
   lastUpdated: string;
   language: string;
   hasSubtitles: boolean;
+  slug?: string;
+  // New fields for course creation and management
+  objectives?: string[];
+  tags?: string[];
+  content?: {
+    lessons: Lesson[];
+    quizzes: Quiz[];
+    assignments: Assignment[];
+  };
+  status?: 'draft' | 'published' | 'archived';
+  isPublished?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+  creatorId?: string;
+  salesCount?: number;
+  revenue?: number;
+  certificate?: boolean;
+  accessType?: 'free' | 'paid' | 'subscription';
+  enrollmentLimit?: number;
+  currentEnrollments?: number;
+}
+
+export interface Lesson {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  videoUrl?: string;
+  duration: number; // in minutes
+  order: number;
+  resources?: Resource[];
+}
+
+export interface Quiz {
+  id: string;
+  title: string;
+  description: string;
+  questions: Question[];
+  timeLimit?: number; // in minutes
+  passGrade: number;
+  order: number;
+}
+
+export interface Question {
+  id: string;
+  question: string;
+  type: 'multiple-choice' | 'true-false' | 'short-answer';
+  options?: string[];
+  correctAnswer: string | string[];
+  points: number;
+}
+
+export interface Assignment {
+  id: string;
+  title: string;
+  description: string;
+  instructions: string;
+  wordCount: number;
+  passGrade: number;
+  dueDate?: string;
+  order: number;
+}
+
+export interface Resource {
+  id: string;
+  name: string;
+  type: 'pdf' | 'video' | 'link' | 'file';
+  url: string;
+  description?: string;
 }
 
 export const coursesData: Course[] = [
@@ -164,5 +233,85 @@ export const coursesData: Course[] = [
     lastUpdated: "2024-01-30",
     language: "English",
     hasSubtitles: true
+  },
+  {
+    id: 9,
+    title: "AI & Machine Learning Course",
+    instructor: "Dr. Elena Rodriguez",
+    price: 599,
+    originalPrice: 799,
+    rating: 4.9,
+    students: 3421,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    category: "Technology",
+    duration: "30+ hours",
+    level: "Advanced",
+    lessonsCount: 65,
+    description: "Dive into the future with comprehensive AI and machine learning training. Learn neural networks, deep learning, and real-world applications.",
+    isBestseller: true,
+    lastUpdated: "2024-03-15",
+    language: "English",
+    hasSubtitles: true,
+    slug: "ai-machine-learning"
+  },
+  {
+    id: 10,
+    title: "Film Production Masterclass",
+    instructor: "Marcus Thompson",
+    price: 449,
+    originalPrice: 599,
+    rating: 4.8,
+    students: 2156,
+    image: "https://images.unsplash.com/photo-1489599435384-2330488477d8",
+    category: "Opontainment",
+    duration: "25+ hours",
+    level: "Intermediate",
+    lessonsCount: 42,
+    description: "Learn professional film-making techniques from script to screen. Master cinematography, editing, and storytelling.",
+    isBestseller: true,
+    lastUpdated: "2024-03-20",
+    language: "English",
+    hasSubtitles: true,
+    slug: "film-production-masterclass"
+  },
+  {
+    id: 11,
+    title: "Music Production & Sound Design",
+    instructor: "Sophie Williams",
+    price: 399,
+    originalPrice: 549,
+    rating: 4.7,
+    students: 1892,
+    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    category: "Opontainment",
+    duration: "20+ hours",
+    level: "Intermediate",
+    lessonsCount: 38,
+    description: "Create professional music and sound effects. Learn digital audio workstations, mixing, and mastering techniques.",
+    isBestseller: false,
+    lastUpdated: "2024-03-18",
+    language: "English",
+    hasSubtitles: true,
+    slug: "music-production-sound-design"
+  },
+  {
+    id: 12,
+    title: "Screenwriting for Film & Television",
+    instructor: "David Mitchell",
+    price: 349,
+    originalPrice: 449,
+    rating: 4.6,
+    students: 1247,
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a",
+    category: "Opontainment",
+    duration: "15+ hours",
+    level: "Beginner",
+    lessonsCount: 28,
+    description: "Master the art of screenwriting. Learn story structure, character development, and dialogue writing for film and TV.",
+    isBestseller: false,
+    lastUpdated: "2024-03-12",
+    language: "English",
+    hasSubtitles: true,
+    slug: "screenwriting-film-television"
   }
 ];

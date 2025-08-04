@@ -63,7 +63,7 @@ export const WhiteboardTemplates = ({ onSelectTemplate }: WhiteboardTemplatesPro
     {
       id: "meeting",
       name: "Meeting Notes",
-      description: "Organized layout for meeting discussions",
+      description: "Organised layout for meeting discussions",
       icon: Users,
       category: "Meeting",
       data: {

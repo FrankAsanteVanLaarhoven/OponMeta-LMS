@@ -162,6 +162,68 @@ const MOCK_ADS: Ad[] = [
     priority: 'low',
     createdAt: '2024-01-20T00:00:00Z',
     updatedAt: '2024-01-20T00:00:00Z'
+  },
+  {
+    id: '4',
+    title: 'Master Python Programming',
+    description: 'Learn Python from scratch with hands-on projects and real-world applications.',
+    image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=300&h=200&fit=crop',
+    link: '/courses/python-programming',
+    cta: 'Start Learning',
+    status: 'active',
+    type: 'banner',
+    targetAudience: ['technology', 'beginners', 'programming'],
+    schedule: {
+      startDate: '2024-01-01',
+      endDate: '2024-12-31',
+      daysOfWeek: [1, 2, 3, 4, 5, 6, 7],
+      timeSlots: ['09:00', '14:00', '19:00']
+    },
+    metrics: {
+      impressions: 12340,
+      clicks: 987,
+      ctr: 8.0,
+      spend: 345.67
+    },
+    budget: {
+      daily: 40,
+      total: 800,
+      spent: 345.67
+    },
+    priority: 'high',
+    createdAt: '2024-01-10T00:00:00Z',
+    updatedAt: '2024-01-25T10:30:00Z'
+  },
+  {
+    id: '5',
+    title: 'Film Production Masterclass',
+    description: 'Create stunning films with professional techniques. From script to screen.',
+    image: 'https://images.unsplash.com/photo-1489599435384-2330488477d8?w=300&h=200&fit=crop',
+    link: '/courses/film-production-masterclass',
+    cta: 'Watch Preview',
+    status: 'active',
+    type: 'video',
+    targetAudience: ['opontainment', 'creative', 'film'],
+    schedule: {
+      startDate: '2024-01-01',
+      endDate: '2024-12-31',
+      daysOfWeek: [1, 2, 3, 4, 5, 6],
+      timeSlots: ['10:00', '15:00', '20:00']
+    },
+    metrics: {
+      impressions: 8760,
+      clicks: 654,
+      ctr: 7.5,
+      spend: 298.45
+    },
+    budget: {
+      daily: 35,
+      total: 600,
+      spent: 298.45
+    },
+    priority: 'medium',
+    createdAt: '2024-01-15T00:00:00Z',
+    updatedAt: '2024-01-22T14:15:00Z'
   }
 ];
 
@@ -339,16 +401,16 @@ const RightAdPanel: React.FC<AdPanelProps> = ({
 
                   {/* Ad Content */}
                   <div className="space-y-2">
-                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-semibold text-white group-hover:text-blue-400 transition-colors">
                       {ads[currentAdIndex].title}
                     </h3>
-                    <p className="text-sm text-gray-600 line-clamp-2">
+                    <p className="text-sm text-gray-300 line-clamp-2">
                       {ads[currentAdIndex].description}
                     </p>
                     
                     {/* Metrics (Admin/Advertiser only) */}
                     {isAdminOrAdvertiser && (
-                      <div className="grid grid-cols-2 gap-2 text-xs text-gray-500 pt-2 border-t">
+                      <div className="grid grid-cols-2 gap-2 text-xs text-gray-300 pt-2 border-t">
                         <div className="flex items-center">
                           <Eye className="w-3 h-3 mr-1" />
                           {formatNumber(ads[currentAdIndex].metrics.impressions)}
@@ -362,11 +424,11 @@ const RightAdPanel: React.FC<AdPanelProps> = ({
 
                     {/* CTA Button */}
                     <Button 
-                      className="w-full mt-3 bg-blue-600 hover:bg-blue-700"
-                      size="sm"
+                      className="w-full mt-3 bg-blue-600 hover:bg-blue-700 py-3 px-4 text-sm font-medium"
+                      size="default"
                     >
                       {ads[currentAdIndex].cta}
-                      <ExternalLink className="w-3 h-3 ml-1" />
+                      <ExternalLink className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
                 </div>

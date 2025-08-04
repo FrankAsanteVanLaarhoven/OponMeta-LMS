@@ -42,7 +42,7 @@ const ContactForm = () => {
           </h1>
           
           <p className="text-xl text-gray-200 leading-relaxed">
-            Share your idea and our team will connect with you to discuss your goals and provide a personalized estimate.
+            Share your idea and our team will connect with you to discuss your goals and provide a personalised estimate.
           </p>
 
           {/* Customer Service Image */}
@@ -149,7 +149,7 @@ const ContactForm = () => {
                   type="submit"
                   className="w-full h-14 bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white font-bold text-lg rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105"
                 >
-                  Get My Personalized Add-Ons
+                  Get My Personalised Add-Ons
                 </Button>
 
                 {/* Privacy Notice */}

@@ -235,7 +235,7 @@ const CompanionsLibrary = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-8">
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-2">Learning Companions</h1>
-            <p className="text-lg text-gray-600">Discover AI-powered learning companions for personalized education</p>
+            <p className="text-lg text-gray-600">Discover AI-powered learning companions for personalised education</p>
           </div>
           
           <div className="flex items-center gap-4">

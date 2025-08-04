@@ -16,15 +16,15 @@ const CAREER_CATEGORIES = {
   },
   'mentorship-career-readiness': {
     name: 'Mentorship & Career Readiness',
-    description: 'Prepare for the workforce with mentorship, internships, and career readiness programs.',
+    description: 'Prepare for the workforce with mentorship, internships, and career readiness programmes.',
     careers: [
       { name: 'Career Coach', desc: 'Guide individuals in their career development and job search.', salary: 70000, traits: ['SOCIAL', 'ENTERPRISING'], img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&h=300&q=80' },
       { name: 'Internship Coordinator', desc: 'Connect students with valuable internship opportunities.', salary: 60000, traits: ['SOCIAL', 'CONVENTIONAL'], img: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&h=300&q=80' },
     ],
   },
-  'specialized-industry-tracks': {
-    name: 'Specialized Industry Tracks',
-    description: 'Focus on niche industries and develop expertise in specialized fields.',
+  'specialised-industry-tracks': {
+      name: 'Specialised Industry Tracks',
+      description: 'Focus on niche industries and develop expertise in specialised fields.',
     careers: [
       { name: 'Aerospace Engineer', desc: 'Design and test aircraft, spacecraft, and satellites.', salary: 115000, traits: ['INVESTIGATIVE', 'REALISTIC'], img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=300&q=80' },
       { name: 'Biotech Researcher', desc: 'Advance science in biotechnology and pharmaceuticals.', salary: 98000, traits: ['INVESTIGATIVE', 'CONVENTIONAL'], img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=300&q=80' },
@@ -80,7 +80,7 @@ const CAREER_CATEGORIES = {
   },
   'education-training': {
     name: 'Education & Training',
-    description: 'Teach, train, and develop educational programs.',
+    description: 'Teach, train, and develop educational programmes.',
     careers: [
       { name: 'Teacher', desc: 'Educate students in schools or colleges.', salary: 60000, traits: ['SOCIAL', 'CONVENTIONAL'], img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&h=300&q=80' },
       { name: 'Corporate Trainer', desc: 'Develop and deliver training for employees.', salary: 65000, traits: ['SOCIAL', 'ENTERPRISING'], img: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&h=300&q=80' },

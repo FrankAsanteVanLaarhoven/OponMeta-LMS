@@ -72,7 +72,7 @@ const VendorCard = ({ vendor }: VendorCardProps) => {
                 <BookOpen className="h-4 w-4" />
                 <span className="text-white font-medium text-sm">{vendor.totalCourses}</span>
               </div>
-              <p className="text-blue-100 text-xs">Programs</p>
+                              <p className="text-blue-100 text-xs">Programmes</p>
             </div>
           </div>
 

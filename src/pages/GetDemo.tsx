@@ -32,7 +32,7 @@ const GetDemo = () => {
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Book Your Personalized Demo
+            Book Your Personalised Demo
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
             Experience OPONMETA in action with a demonstration tailored to your organization's unique needs
@@ -76,7 +76,7 @@ const GetDemo = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Users className="h-5 w-5 text-blue-400" />
-                    <span>Personalized to your use case</span>
+                    <span>Personalised to your use case</span>
                   </div>
                 </div>
               </CardContent>

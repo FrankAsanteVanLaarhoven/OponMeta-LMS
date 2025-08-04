@@ -64,7 +64,7 @@ const CaseStudies = () => {
         satisfaction: "4.6/5"
       },
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-      testimonial: "Students stayed engaged despite remote learning. The AI tutoring made personalized education scalable.",
+      testimonial: "Students stayed engaged despite remote learning. The AI tutoring made personalised education scalable.",
       speaker: "Prof. James Wilson, Dean of Digital Learning"
     }
   ];

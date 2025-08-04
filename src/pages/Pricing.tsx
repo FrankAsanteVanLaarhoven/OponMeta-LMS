@@ -27,7 +27,7 @@ const plans = [
     price: '$',
     features: [
       '1-on-1 mentorship sessions',
-      'Personalized learning path',
+      'Personalised learning path',
       'Career coaching and resume reviews',
       'Access to exclusive partner opportunities',
     ],

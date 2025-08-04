@@ -387,7 +387,7 @@ const CoursesManagement = () => {
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-2">
               <span className="text-2xl">📱</span>
             </div>
-            <CardTitle className="text-lg">Mobile Optimized</CardTitle>
+            <CardTitle className="text-lg">Mobile Optimised</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">

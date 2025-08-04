@@ -36,7 +36,7 @@ const MULTILINGUAL_EXAMPLES = {
       { label: 'Application', points: 20, description: 'Applies knowledge to practical scenarios.' },
       { label: 'Critical Thinking', points: 20, description: 'Analyzes and evaluates information effectively.' },
       { label: 'Creativity', points: 20, description: 'Shows originality and creative problem-solving.' },
-      { label: 'Organization and Clarity', points: 20, description: 'Presents ideas in a clear and organized manner.' },
+      { label: 'Organisation and Clarity', points: 20, description: 'Presents ideas in a clear and organised manner.' },
     ],
   },
   // ...add more languages as needed

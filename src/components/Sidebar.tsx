@@ -4,15 +4,15 @@ import { BookOpen, Calendar, Star, Trophy, CreditCard, MessageCircle, Settings, 
 
 const navItems = [
   { key: 'dashboard', label: 'Dashboard', icon: <Home />, to: '/student-portal' },
-  { key: 'courses', label: 'My Courses', icon: <BookOpen />, to: '/student-portal/courses' },
-  { key: 'marketplace', label: 'Course Marketplace', icon: <ShoppingBag />, to: '/student-portal/marketplace' },
-  { key: 'bookings', label: 'Bookings', icon: <Calendar />, to: '/student-portal/bookings' },
-  { key: 'progress', label: 'Progress', icon: <Star />, to: '/student-portal/progress' },
-  { key: 'achievements', label: 'Achievements', icon: <Trophy />, to: '/student-portal/achievements' },
-  { key: 'wallet', label: 'Wallet', icon: <CreditCard />, to: '/student-portal/wallet' },
-  { key: 'social', label: 'Social', icon: <MessageCircle />, to: '/student-portal/social' },
-  { key: 'companions', label: 'AI Companions', icon: <Bot />, to: '/companion' },
-  { key: 'settings', label: 'Settings', icon: <Settings />, to: '/student-portal/settings' },
+  { key: 'my-courses', label: 'My Courses', icon: <BookOpen />, to: '/student-portal' },
+  { key: 'marketplace', label: 'Course Marketplace', icon: <ShoppingBag />, to: '/student-portal' },
+  { key: 'bookings', label: 'Bookings', icon: <Calendar />, to: '/student-portal' },
+  { key: 'progress', label: 'Progress', icon: <Star />, to: '/student-portal' },
+  { key: 'achievements', label: 'Achievements', icon: <Trophy />, to: '/student-portal' },
+  { key: 'wallet', label: 'Wallet', icon: <CreditCard />, to: '/student-portal' },
+  { key: 'social', label: 'Social', icon: <MessageCircle />, to: '/student-portal' },
+  { key: 'ai-companions', label: 'AI Companions', icon: <Bot />, to: '/student-portal' },
+  { key: 'settings', label: 'Settings', icon: <Settings />, to: '/student-portal' },
 ];
 
 const instructorItems = [
@@ -22,37 +22,45 @@ const instructorItems = [
   { key: 'become-instructor', label: 'Become Instructor', icon: <Users />, to: '/become-instructor' },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+  activeTab?: string;
+  onTabChange?: (tab: string) => void;
+}
+
+export default function Sidebar({ activeTab = 'dashboard', onTabChange }: SidebarProps) {
+  const handleTabClick = (tabKey: string) => {
+    if (onTabChange) {
+      onTabChange(tabKey);
+    }
+  };
+
   return (
-    <aside className="bg-white min-h-screen w-64 flex flex-col shadow-lg border-r">
-      <div className="p-6 font-bold text-xl">Student Portal</div>
+    <aside className="bg-gray-900 min-h-screen w-64 flex flex-col shadow-lg border-r border-gray-800">
+      <div className="p-6 font-bold text-xl text-white">Student Portal</div>
       
       {/* Main Navigation */}
       <nav className="flex-1 mt-4">
         <div className="px-4 mb-4">
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Learning</h3>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Learning</h3>
         </div>
         {navItems.map(item => (
-          <NavLink
+          <button
             key={item.key}
-            to={item.to}
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-6 py-3 rounded-lg mb-2 transition-colors cursor-pointer text-base font-medium
-              ${isActive ? 'bg-blue-600 text-white font-bold' : 'text-gray-900 hover:bg-blue-50 hover:text-blue-700'}`
-            }
-            end={item.to === '/student-portal'}
+            onClick={() => handleTabClick(item.key)}
+            className={`flex items-center gap-3 px-6 py-3 rounded-lg mb-2 transition-colors cursor-pointer text-base font-medium w-full text-left
+              ${activeTab === item.key ? 'bg-blue-600 text-white font-bold' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}`}
             title={item.label}
           >
             {item.icon}
             <span>{item.label}</span>
-          </NavLink>
+          </button>
         ))}
       </nav>
 
       {/* Instructor Section */}
-      <div className="border-t border-gray-200 pt-4">
+      <div className="border-t border-gray-800 pt-4">
         <div className="px-4 mb-4">
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Instructor Tools</h3>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Instructor Tools</h3>
         </div>
         {instructorItems.map(item => (
           <NavLink
@@ -60,7 +68,7 @@ export default function Sidebar() {
             to={item.to}
             className={({ isActive }) =>
               `flex items-center gap-3 px-6 py-3 rounded-lg mb-2 transition-colors cursor-pointer text-base font-medium
-              ${isActive ? 'bg-green-600 text-white font-bold' : 'text-gray-900 hover:bg-green-50 hover:text-green-700'}`
+              ${isActive ? 'bg-green-600 text-white font-bold' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}`
             }
             title={item.label}
           >

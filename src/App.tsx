@@ -16,6 +16,10 @@ import CompanionAnalytics from './pages/CompanionAnalytics';
 import CompanionSettings from './pages/CompanionSettings';
 import CompanionCreator from './pages/CompanionCreator';
 import CompanionSubscriptionPage from './pages/CompanionSubscriptionPage';
+import AIVideoCalling from './pages/AIVideoCalling';
+import CreatorsPortal from './pages/dashboard/CreatorsPortal';
+import PaymentSuccess from './pages/PaymentSuccess';
+import PaymentAnalytics from './pages/dashboard/PaymentAnalytics';
 import VendorSubscription from './pages/VendorSubscription';
 import VendorDashboard from './pages/VendorDashboard';
 import Navigation from './components/Navigation';
@@ -32,9 +36,17 @@ import RTOCourseLibrary from './pages/RTOCourseLibrary';
 import AnalyticsDashboard from './components/AnalyticsDashboard';
 import SocialFeed from './components/SocialFeed';
 import AdvancedFeaturesDemo from './pages/AdvancedFeaturesDemo';
-import StudentPortal, { StudentDashboard } from './pages/StudentPortal';
+import StudentPortal from './pages/StudentPortal';
+import InstructorPortal from './pages/InstructorPortal';
+import AdvancedFeatures from './pages/AdvancedFeatures';
 import Settings from './pages/dashboard/Settings';
 import CourseMarketplace from './pages/dashboard/CourseMarketplace';
+import CourseAuthoringTool from '@/pages/CourseAuthoringTool';
+import CourseAuthoringLanding from '@/pages/CourseAuthoringLanding';
+import CourseWorkspace from '@/pages/CourseWorkspace';
+import Workshops from '@/pages/Workshops';
+import Partners from '@/pages/Partners';
+import Certification from '@/pages/Certification';
 
 // Lazy load all page components for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -97,6 +109,11 @@ const PlagiarismChecker = lazy(() => import('./components/PlagiarismChecker'));
 const GrammarChecker = lazy(() => import('./components/GrammarChecker'));
 const OneToOneBooking = lazy(() => import('./pages/OneToOneBooking'));
 const SearchResults = lazy(() => import('./pages/SearchResults'));
+const InstructorApplication = lazy(() => import('./pages/InstructorApplication'));
+const InstructorApplicationSuccess = lazy(() => import('./pages/InstructorApplicationSuccess'));
+const InstructorManagement = lazy(() => import('./pages/dashboard/InstructorManagement'));
+const InstructorOnboarding = lazy(() => import('./pages/dashboard/InstructorOnboarding'));
+
 
 // Student portal subpages
 const StudentCourses = () => {
@@ -1787,10 +1804,11 @@ const isCompanionSubscribed = () => {
 };
 
 function RequireCompanionSubscription({ children }) {
-  if (!isCompanionSubscribed()) {
-    window.location.href = '/companion-subscribe';
-    return null;
-  }
+  // Temporarily disable subscription requirement for testing
+  // if (!isCompanionSubscribed()) {
+  //   window.location.href = '/companion-subscribe';
+  //   return null;
+  // }
   return children;
 }
 
@@ -1850,6 +1868,7 @@ function App() {
                         <Routes>
                       <Route path="/" element={<Index />} />
                       <Route path="/courses" element={<Courses />} />
+                      <Route path="/courses/:courseId" element={<Courses />} />
                       <Route path="/vendors" element={<Vendors />} />
                       <Route path="/features" element={<Features />} />
                       <Route path="/about" element={<About />} />
@@ -1945,11 +1964,14 @@ function App() {
                       <Route path="/dashboard/ai-lesson-generator" element={<AILessonGenerator />} />
                       <Route path="/dashboard/ai-quiz-generator" element={<AIQuizGenerator />} />
                       <Route path="/dashboard/ai-video-generator" element={<AIVideoGenerator />} />
-                      <Route path="/dashboard/ai-assessment-generator" element={<AIAssessmentGenerator />} />
-                      <Route path="/dashboard/interactive-content-designer" element={<InteractiveContentDesigner />} />
-                      <Route path="/dashboard/chatbot-trainer" element={<ChatbotTrainer />} />
-                      <Route path="/dashboard/white-label-branding" element={<WhiteLabelBranding />} />
-                      <Route path="/dashboard/scorm-export" element={<SCORMExport />} />
+                                      <Route path="/dashboard/ai-assessment-generator" element={<AIAssessmentGenerator />} />
+                <Route path="/dashboard/interactive-content-designer" element={<InteractiveContentDesigner />} />
+                <Route path="/dashboard/chatbot-trainer" element={<ChatbotTrainer />} />
+                <Route path="/dashboard/white-label-branding" element={<WhiteLabelBranding />} />
+                <Route path="/dashboard/scorm-export" element={<SCORMExport />} />
+                <Route path="/dashboard/instructor-management" element={<InstructorManagement />} />
+                <Route path="/dashboard/instructor-onboarding" element={<InstructorOnboarding />} />
+                
                       <Route path="/companion" element={
                         <RequireCompanionSubscription>
                           <CompanionsLibrary />
@@ -1978,6 +2000,10 @@ function App() {
                       <Route path="/companions" element={<Navigate to="/companion" replace />} />
                       <Route path="/companions/create" element={<Navigate to="/companion/create" replace />} />
                       <Route path="/companion-subscribe" element={<CompanionSubscriptionPage />} />
+        <Route path="/ai-video-calling" element={<AIVideoCalling />} />
+                        <Route path="/creators-portal" element={<CreatorsPortal />} />
+                <Route path="/payment-success" element={<PaymentSuccess />} />
+                <Route path="/dashboard/payment-analytics" element={<PaymentAnalytics />} />
                       <Route path="/meet-ai" element={<MeetAI />} />
                       <Route path="/course-library" element={<CourseLibrary />} />
                       <Route path="/virtual-classroom" element={<VirtualClassroom />} />
@@ -1994,17 +2020,11 @@ function App() {
                       <Route path="/become-instructor" element={<BecomeInstructor />} />
                       <Route path="/career-guidance" element={<CareerGuidance />} />
                       <Route path="/create-course" element={<CreateCourse />} />
-                      <Route path="/student-portal" element={<StudentPortal />}>
-                        <Route index element={<StudentDashboard />} />
-                        <Route path="courses" element={<StudentCourses />} />
-                        <Route path="bookings" element={<StudentBookings />} />
-                        <Route path="progress" element={<StudentProgress />} />
-                        <Route path="achievements" element={<StudentAchievements />} />
-                        <Route path="wallet" element={<StudentWallet />} />
-                        <Route path="social" element={<StudentSocial />} />
-                        <Route path="settings" element={<StudentSettings />} />
-                        <Route path="marketplace" element={<StudentMarketplace />} />
-                      </Route>
+                      <Route path="/student-portal" element={<StudentPortal />} />
+                      <Route path="/student-portal/:tab" element={<StudentPortal />} />
+                      <Route path="/instructor-portal" element={<InstructorPortal />} />
+                      <Route path="/instructor-portal/:tab" element={<InstructorPortal />} />
+                      <Route path="/advanced-features" element={<AdvancedFeatures />} />
                       <Route path="/course-viewer/:courseId" element={<CourseViewer />} />
                       <Route path="/vendor-portal" element={<VendorPortal />} />
                       <Route path="/advertiser-portal" element={<AdvertiserPortal />} />
@@ -2041,6 +2061,16 @@ function App() {
                           <SearchResults />
                         </Suspense>
                       } />
+                      <Route path="/instructor-application" element={
+                        <Suspense fallback={<PageLoader />}>
+                          <InstructorApplication />
+                        </Suspense>
+                      } />
+                      <Route path="/instructor-application-success" element={
+                        <Suspense fallback={<PageLoader />}>
+                          <InstructorApplicationSuccess />
+                        </Suspense>
+                      } />
                       <Route path="/graduate-certificates" element={<GraduateCertificatesPage />} />
                       <Route path="/category/:categorySlug" element={<CategoryPage />} />
                       <Route path="/careers/:categorySlug" element={<CareerCategoryPage />} />
@@ -2074,6 +2104,12 @@ function App() {
                         </Suspense>
                       } />
                       
+                      <Route path="/course-authoring" element={<CourseAuthoringLanding />} />
+                      <Route path="/course-authoring/editor" element={<CourseAuthoringTool />} />
+                      <Route path="/course-workspace/:courseId" element={<CourseWorkspace />} />
+                      <Route path="/workshops" element={<Workshops />} />
+                      <Route path="/partners" element={<Partners />} />
+                      <Route path="/certification" element={<Certification />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </Suspense>

@@ -158,7 +158,7 @@ const COMPANIONS_DATA = {
     expertise: "Health & Wellness",
     rating: 4.6,
     sessions: 945,
-    personality: "Supportive and holistic, Vita focuses on sustainable health practices and personalized wellness strategies.",
+    personality: "Supportive and holistic, Vita focuses on sustainable health practices and personalised wellness strategies.",
     specialties: ["Nutrition Science", "Fitness Planning", "Mental Health", "Lifestyle Medicine"],
     sessionTopics: [
       "Nutrition Fundamentals",

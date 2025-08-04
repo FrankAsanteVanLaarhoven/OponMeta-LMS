@@ -167,7 +167,7 @@ const OneToOneBooking = () => {
       name: '1:1 Consultation',
       duration: '60 min',
       price: 150,
-      description: 'Personalized guidance and consultation on your learning journey',
+      description: 'Personalised guidance and consultation on your learning journey',
     },
     {
       id: 'mentoring',

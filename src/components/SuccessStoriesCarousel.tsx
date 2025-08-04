@@ -56,7 +56,7 @@ const SuccessStoriesCarousel = () => {
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978",
       alt: "Team collaboration",
       title: "Salesforce accelerates growth across continents",
-      description: "A CRM leader boosted engagement with personalized learning journeys."
+      description: "A CRM leader boosted engagement with personalised learning journeys."
     },
     {
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",

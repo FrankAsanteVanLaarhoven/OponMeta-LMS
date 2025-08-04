@@ -11,7 +11,7 @@ const features = [
     desc: 'Reach learners worldwide with seamless language switching and culturally adaptive content. Our platform supports 10+ languages and growing.'
   },
   {
-    icon: <Users className="w-8 h-8 text-purple-600" />, title: 'Personalized Learning Companions',
+    icon: <Users className="w-8 h-8 text-purple-600" />, title: 'Personalised Learning Companions',
     desc: 'AI companions guide, motivate, and adapt to each learner’s journey. Unlock premium features with subscription plans.'
   },
   {

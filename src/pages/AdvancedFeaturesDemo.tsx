@@ -564,7 +564,7 @@ const AdvancedFeaturesDemo: React.FC = () => {
                     AI-Generated Learning Path
                   </CardTitle>
                   <CardDescription>
-                    Personalized learning journey created by AI based on your goals and preferences
+                    Personalised learning journey created by AI based on your goals and preferences
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">

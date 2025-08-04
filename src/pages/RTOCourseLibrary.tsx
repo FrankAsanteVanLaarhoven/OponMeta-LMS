@@ -83,7 +83,7 @@ const RTOCourseLibrary: React.FC = () => {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover comprehensive Registered Training Organization (RTO) courses and qualifications. 
-            Find nationally recognized training programs for vocational education and compliance.
+            Find nationally recognised training programmes for vocational education and compliance.
           </p>
         </div>
 

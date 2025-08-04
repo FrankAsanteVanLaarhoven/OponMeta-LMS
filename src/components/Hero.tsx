@@ -13,7 +13,7 @@ const Hero = memo(() => {
   return (
     <section className="relative py-20 px-4 overflow-hidden bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-end gap-0">
+        <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Left Content - Text */}
           <div className="text-center lg:text-left p-0 m-0 flex-1">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl">
@@ -57,15 +57,17 @@ const Hero = memo(() => {
           {/* Right Content - Video Showcase */}
           <div className="flex justify-center lg:justify-end p-0 m-0 flex-shrink-0">
             <div className="relative group p-0 m-0">
-              <div className="w-full max-w-md aspect-video bg-[#0a1834] dark:bg-[#0a1834] rounded-2xl shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border-4 border-[#11204a] dark:border-[#11204a]">
+              <div className="w-full max-w-sm aspect-[9/16] bg-[#0a1834] rounded-2xl shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500 border-4 border-[#11204a]">
                 <video 
                   className="w-full h-full object-cover rounded-2xl" 
                   controls
                   poster="/branding/logo.png"
                 >
-                  <source src="/demo-video.mp4" type="video/mp4" />
+                  <source src="/Quick Avatar Video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                
+
               </div>
             </div>
           </div>

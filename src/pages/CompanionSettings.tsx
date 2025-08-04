@@ -65,7 +65,7 @@ interface SettingsData {
   dataCollection: boolean;
   analyticsSharing: boolean;
   sessionRecording: boolean;
-  personalizedAds: boolean;
+  personalisedAds: boolean;
   
   // Accessibility
   highContrast: boolean;
@@ -91,7 +91,7 @@ const CompanionSettings = () => {
       'Voice-driven Lessons',
       'Progress Tracking',
       'Session History',
-      'Personalized Learning Paths',
+      'Personalised Learning Paths',
       'Multi-language Support'
     ]
   });
@@ -136,7 +136,7 @@ const CompanionSettings = () => {
     dataCollection: true,
     analyticsSharing: true,
     sessionRecording: false,
-    personalizedAds: false,
+    personalisedAds: false,
     
     // Accessibility
     highContrast: false,
@@ -557,10 +557,10 @@ const CompanionSettings = () => {
             />
             
             <ToggleSetting
-              label="Personalized Ads"
-              value={settings.personalizedAds}
-              onChange={(value: boolean) => updateSetting('personalizedAds', value)}
-              description="Show personalized advertisements based on learning interests"
+              label="Personalised Ads"
+              value={settings.personalisedAds}
+              onChange={(value: boolean) => updateSetting('personalisedAds', value)}
+              description="Show personalised advertisements based on learning interests"
             />
           </div>
         </SettingSection>

@@ -106,7 +106,7 @@ const StartLearning = () => {
     },
     {
       icon: Target,
-      title: "Personalized",
+      title: "Personalised",
       description: "AI-powered learning recommendations"
     }
   ];

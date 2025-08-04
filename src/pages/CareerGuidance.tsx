@@ -173,7 +173,7 @@ const CareerGuidance = () => {
             <GraduationCap className="h-16 w-16 text-yellow-300 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-white mb-4">Not Sure Which Path to Choose?</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Take our personalized assessment to discover the best learning path for your global career goals
+              Take our personalised assessment to discover the best learning path for your global career goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
@@ -192,7 +192,7 @@ const CareerGuidance = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <Link to="/careers/leadership-and-management" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Leadership and Management</Link>
             <Link to="/careers/mentorship-career-readiness" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Mentorship & Career Readiness</Link>
-            <Link to="/careers/specialized-industry-tracks" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Specialized Industry Tracks</Link>
+            <Link to="/careers/specialised-industry-tracks" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Specialised Industry Tracks</Link>
             <Link to="/careers/real-estate-and-estate-management" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Real Estate and Estate Management</Link>
             <Link to="/careers/public-safety-and-emergency-services" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Public Safety and Emergency Services</Link>
             <Link to="/careers/social-care-and-community-support" className="block p-4 bg-blue-50 rounded hover:bg-blue-100 text-center font-semibold">Social Care and Community Support</Link>

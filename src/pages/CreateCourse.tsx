@@ -52,7 +52,7 @@ const CreateCourse = () => {
     },
     {
       icon: BookOpen,
-      title: "Certification Programs",
+      title: "Certification Programmes",
       description: "Guide learners through structured certification journeys",
       popular: false
     }

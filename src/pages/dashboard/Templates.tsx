@@ -163,7 +163,7 @@ const Templates = () => {
         <p className="text-gray-600 mb-8">
           Choose from a vast library of beautifully crafted online training templates to create highly engaging courses. 
           These templates are built using the latest trends in aesthetic design and typography. Give your course a 
-          personalized touch by adding your brand logos and images. Share your courses, and track your learners' performance on the go.
+          personalised touch by adding your brand logos and images. Share your courses, and track your learners' performance on the go.
         </p>
         
         <div className="flex items-center justify-center space-x-2 mb-8">

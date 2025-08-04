@@ -1,19 +1,54 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Users, Globe, Star, ChevronRight, Play, CreditCard } from "lucide-react";
+import { BookOpen, Users, Globe, Star, ChevronRight, Play, CreditCard, Music, Video, Edit3 } from "lucide-react";
 import Hero from "@/components/Hero";
 import CourseCard from "@/components/CourseCard";
 import Footer from "@/components/Footer";
+import { OpontainmentDemo } from "@/components/OpontainmentDemo";
 
 import TrustedByCarousel from "@/components/TrustedByCarousel";
 import SuccessStoriesCarousel from "@/components/SuccessStoriesCarousel";
 import TeamCarousel from "@/components/TeamCarousel";
 import { useTranslation } from 'react-i18next';
 import { LampContainer } from "@/components/ui/lamp";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 const Index = () => {
   const { t } = useTranslation();
+
+  // Animation variants for section titles
+  const titleVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -50,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
+  // Custom hook for scroll-triggered animations
+  const useScrollAnimation = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { 
+      once: true, 
+      margin: "-100px 0px -100px 0px",
+      amount: 0.3
+    });
+    return { ref, isInView };
+  };
 
   const featuredCourses = [
     {
@@ -77,37 +112,30 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
       <Hero />
-      <div className="mt-24" />
 
-      {/* CTA Lamp Section */}
-      <LampContainer>
-        <motion.h1
-          initial={{ opacity: 0.5, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-          className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl dark:from-cyan-300 dark:to-white"
-        >
-          Ready to Shape Your Future?<br />
-          <span className="block text-2xl md:text-4xl font-normal text-[#0a1834] dark:text-white drop-shadow-lg mt-4">
-            Join thousands of learners advancing their careers with our global education platform.
-          </span>
-        </motion.h1>
-        <div className="mt-10 flex justify-center">
-          <Button size="lg" className="bg-[#0a1834] text-white font-bold shadow-lg hover:bg-[#11204a] px-8 py-4 text-xl dark:bg-white dark:text-[#0a1834] dark:hover:bg-slate-200">
-            Start Learning Now
-          </Button>
-        </div>
-      </LampContainer>
 
       {/* AI Learning Companion Featured Section */}
       <section className="py-16 px-4 bg-white dark:bg-[#0a1834]">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-[#f5f7fa] dark:bg-[#16203a] rounded-3xl shadow-xl p-8 md:p-12 border border-[#22305a] dark:border-[#22305a]">
           <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1834] dark:text-white mb-4">Meet Your AI Learning Companion</h2>
-            <p className="text-lg text-[#22305a] dark:text-slate-200 mb-6">Personalized, voice-driven, and always available—your AI Companion helps you learn at your pace, track your progress, and get instant feedback. Unlock interactive sessions, bookmarking, session history, and more!</p>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-3xl md:text-4xl font-bold text-[#0a1834] dark:text-white mb-4"
+                >
+                  Meet Your AI Learning Companion
+                </motion.h2>
+              );
+            })()}
+            <p className="text-lg text-[#22305a] dark:text-slate-200 mb-6">Personalised, voice-driven, and always available—your AI Companion helps you learn at your pace, track your progress, and get instant feedback. Unlock interactive sessions, bookmarking, session history, and more!</p>
             <ul className="text-[#22305a] dark:text-slate-200 mb-6 space-y-2">
               <li>• Real-time voice-driven lessons</li>
-              <li>• Personalized learning paths</li>
+              <li>• Personalised learning paths</li>
               <li>• Progress tracking & session history</li>
               <li>• Feedback, quizzes, and interactive chat</li>
               <li>• Available on all devices</li>
@@ -141,7 +169,7 @@ const Index = () => {
             <Button size="lg" className="bg-slate-800 text-white hover:bg-slate-700" onClick={() => window.open('/career-guidance', '_self')}>
               Explore New Career Paths
             </Button>
-            <Button size="lg" variant="outline" className="border-slate-800 text-slate-800 hover:bg-slate-50" onClick={() => window.open('/career-guidance', '_self')}>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('/career-guidance', '_self')}>
               Advance in My Current Role
             </Button>
           </div>
@@ -153,7 +181,7 @@ const Index = () => {
               <div className="text-xs text-blue-100">Top picks for global learners</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">Diploma Programs</div>
+              <div className="text-2xl font-bold text-white">Diploma Programmes</div>
               <div className="text-xs text-blue-100">Accredited learning tracks</div>
             </div>
             <div className="text-center">
@@ -162,7 +190,7 @@ const Index = () => {
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white">Latest Courses</div>
-              <div className="text-xs text-blue-100">Recently added programs</div>
+              <div className="text-xs text-blue-100">Recently added programmes</div>
             </div>
           </div>
           
@@ -197,7 +225,7 @@ const Index = () => {
             <Card className="bg-[#16203a] border-[#22305a] text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-white mb-2">5,500+</div>
-                <div className="text-blue-100">Free Learning Programs</div>
+                <div className="text-blue-100">Free Learning Programmes</div>
                 <div className="text-xs text-blue-200">No-cost access</div>
               </CardContent>
             </Card>
@@ -210,7 +238,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Information Technology</h3>
-                    <p className="text-blue-100">1,246 Programs</p>
+                    <p className="text-blue-100">1,246 Programmes</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-blue-400" />
                 </div>
@@ -222,7 +250,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Business & Leadership</h3>
-                    <p className="text-blue-100">1,025 Programs</p>
+                    <p className="text-blue-100">1,025 Programmes</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-green-400" />
                 </div>
@@ -234,7 +262,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Education & Teaching</h3>
-                    <p className="text-blue-100">1,588 Programs</p>
+                    <p className="text-blue-100">1,588 Programmes</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-purple-400" />
                 </div>
@@ -246,7 +274,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Personal Development</h3>
-                    <p className="text-blue-100">1,292 Programs</p>
+                    <p className="text-blue-100">1,292 Programmes</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-yellow-400" />
                 </div>
@@ -258,7 +286,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Health & Wellness</h3>
-                    <p className="text-blue-100">991 Programs</p>
+                    <p className="text-blue-100">991 Programmes</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-pink-400" />
                 </div>
@@ -270,7 +298,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Engineering & Construction</h3>
-                    <p className="text-blue-100">798 Programs</p>
+                    <p className="text-blue-100">798 Programmes</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-orange-400" />
                 </div>
@@ -282,7 +310,7 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Sales & Marketing</h3>
-                    <p className="text-blue-100">432 Programs</p>
+                    <p className="text-blue-100">432 Programmes</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-cyan-400" />
                 </div>
@@ -294,12 +322,88 @@ const Index = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Languages</h3>
-                    <p className="text-blue-100">312 Programs</p>
+                                        <p className="text-blue-100">312 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-indigo-400" />
                   </div>
-                  <BookOpen className="h-8 w-8 text-indigo-400" />
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=opontainment', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Opontainment</h3>
+                      <p className="text-blue-100">156 Programmes</p>
+                    </div>
+                    <Music className="h-8 w-8 text-purple-400" />
+                  </div>
+                </CardContent>
+              </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Opontainment Section */}
+      <section className="py-20 px-4 bg-[#0a1834]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-4"
+                >
+                  Opontainment - Creative Media & Entertainment
+                </motion.h2>
+              );
+            })()}
+            <p className="text-xl text-purple-200 max-w-3xl mx-auto">
+              Discover the art of film-making, music production, and creative storytelling. Learn from industry professionals and create stunning visual and audio content.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4">
+                <div className="bg-purple-500 rounded-full p-3">
+                  <Video className="h-6 w-6 text-white" />
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Film Production</h3>
+                  <p className="text-purple-200">Master cinematography, editing, and storytelling techniques</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="bg-blue-500 rounded-full p-3">
+                  <Music className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Music Production</h3>
+                  <p className="text-purple-200">Create professional music and sound effects</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="bg-indigo-500 rounded-full p-3">
+                  <Edit3 className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Screenwriting</h3>
+                  <p className="text-purple-200">Learn story structure and character development</p>
+                </div>
+              </div>
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white" onClick={() => window.open('/courses?category=opontainment', '_self')}>
+                Explore Opontainment
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+            <div>
+              <OpontainmentDemo />
+            </div>
           </div>
         </div>
       </section>
@@ -309,9 +413,22 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Featured Learning Opportunities</h2>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-4"
+                >
+                  Featured Learning Opportunities
+                </motion.h2>
+              );
+            })()}
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Explore top-rated programs from trusted educators and international partners.
+              Explore top-rated programmes from trusted educators and international partners.
             </p>
           </div>
           
@@ -323,7 +440,7 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <Button size="lg" className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/20" onClick={() => window.open('/courses', '_self')}>
-              See All Programs
+              See All Programmes
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -338,9 +455,22 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Meet Our AI – Your Intelligent Learning Assistant</h2>
-            <p className="text-xl text-slate-800 font-bold max-w-3xl mx-auto">
-              Experience next-generation online learning with AI-powered video, instant coaching, and personalized support.
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-4"
+                >
+                  Meet Our AI – Your Intelligent Learning Assistant
+                </motion.h2>
+              );
+            })()}
+            <p className="text-xl text-gray-300 font-bold max-w-3xl mx-auto">
+              Experience next-generation online learning with AI-powered video, instant coaching, and personalised support.
             </p>
           </div>
           
@@ -356,7 +486,7 @@ const Index = () => {
             <div className="space-y-10">
               <div className="mb-6">
                 <h2 className="text-3xl font-bold text-white mb-2">AI-Powered Learning Support</h2>
-                <p className="text-cyan-300 text-lg max-w-2xl">Unlock your full potential with instant AI coaching, live expert sessions, and personalized career roadmaps—all designed to accelerate your learning journey.</p>
+                <p className="text-cyan-300 text-lg max-w-2xl">Unlock your full potential with instant AI coaching, live expert sessions, and personalised career roadmaps—all designed to accelerate your learning journey.</p>
               </div>
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
@@ -374,7 +504,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white mb-1">Live Interactive Sessions</h3>
-                    <p className="text-cyan-200 text-base font-medium">Join live sessions with AI-powered tutors, career coaches, and global experts. Collaborate, ask questions, and get personalized advice in real time.</p>
+                    <p className="text-cyan-200 text-base font-medium">Join live sessions with AI-powered tutors, career coaches, and global experts. Collaborate, ask questions, and get personalised advice in real time.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -382,8 +512,8 @@ const Index = () => {
                     <Star className="h-6 w-6 text-[#0a1834]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Personalized Career Roadmaps</h3>
-                    <p className="text-cyan-200 text-base font-medium">Answer a few questions and receive a step-by-step, personalized roadmap to achieve your learning and career goals—crafted just for you by AI.</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Personalised Career Roadmaps</h3>
+                    <p className="text-cyan-200 text-base font-medium">Answer a few questions and receive a step-by-step, personalised roadmap to achieve your learning and career goals—crafted just for you by AI.</p>
                   </div>
                 </div>
               </div>
@@ -466,7 +596,7 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <p className="text-blue-100">
-              Have questions? <span className="text-white underline cursor-pointer">Book a demo for personalized support.</span>
+              Have questions? <span className="text-white underline cursor-pointer">Book a demo for personalised support.</span>
             </p>
           </div>
         </div>
@@ -479,20 +609,20 @@ const Index = () => {
             <CardContent className="p-12">
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">50,000+</div>
-                  <div className="text-slate-800 font-semibold">Active Learners</div>
+                  <div className="text-4xl font-bold text-white mb-2">50,000+</div>
+                  <div className="text-white font-semibold">Active Learners</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">1,200+</div>
-                  <div className="text-slate-800 font-semibold">Expert Educators</div>
+                  <div className="text-4xl font-bold text-white mb-2">1,200+</div>
+                  <div className="text-white font-semibold">Expert Educators</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">5,000+</div>
-                  <div className="text-slate-800 font-semibold">Learning Programs</div>
+                  <div className="text-4xl font-bold text-white mb-2">5,000+</div>
+                  <div className="text-white font-semibold">Learning Programmes</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-2">54</div>
-                  <div className="text-slate-800 font-semibold">Countries Served</div>
+                  <div className="text-4xl font-bold text-white mb-2">54</div>
+                  <div className="text-white font-semibold">Countries Served</div>
                   <div className="text-xs text-blue-200">Worldwide reach</div>
                 </div>
               </div>
@@ -506,14 +636,14 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Create & Monetize Online Courses</h2>
-            <p className="text-xl text-gray-600">Easily create and sell your online courses with our global eLearning platform</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Create & Monetize Online Courses</h2>
+            <p className="text-xl text-gray-300">Easily create and sell your online courses with our global eLearning platform</p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content - Media Screen */}
             <div className="relative">
-              <div className="w-full h-96 bg-[#0a1834] border-4 border-[#11204a] rounded-2xl shadow-2xl overflow-hidden">
+              <div className="w-full h-96 bg-[#0a1834] border-4 border-[#11204a] rounded-2xl shadow-2xl overflow-hidden relative">
                 <video 
                   className="w-full h-full object-cover" 
                   autoPlay 
@@ -524,6 +654,15 @@ const Index = () => {
                   <source src="https://storage.googleapis.com/coursebox-video-file/prod-coursebox/courseVideoFileStorage/133197/eda47a8a-5dd4-49d4-971a-a52e046801a2.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                
+                {/* Overlay to cover the light blue bar */}
+                <div className="absolute top-0 left-0 w-1/2 h-full bg-[#0a1834] z-10 flex items-center justify-center">
+                  <img 
+                    src="/branding/oponmeta-logo.png" 
+                    alt="OponMeta Logo" 
+                    className="w-32 h-20 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
@@ -534,43 +673,43 @@ const Index = () => {
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Design and deliver online courses & training</span>
-                  <span className="text-xs text-gray-400">Flexible authoring tools</span>
+                  <span className="text-lg text-white">Design and deliver online courses & training</span>
+                  <span className="text-xs text-gray-300">Flexible authoring tools</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Monetize your online courses & training</span>
-                  <span className="text-xs text-gray-400">Global marketplace access</span>
+                  <span className="text-lg text-white">Monetize your online courses & training</span>
+                  <span className="text-xs text-gray-300">Global marketplace access</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Grow your audience in our marketplace</span>
+                  <span className="text-lg text-white">Grow your audience in our marketplace</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-lg text-gray-700">Quick setup—start selling in minutes</span>
+                  <span className="text-lg text-white">Quick setup—start selling in minutes</span>
                 </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 w-full max-w-md mx-auto">
-                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 w-full sm:w-auto">
+                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 w-full sm:w-auto" onClick={() => window.open('/signin', '_self')}>
                   Get Started Free
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 w-full sm:w-auto" onClick={() => window.open('/get-demo', '_self')}>
                   Get a Demo →
                 </Button>
               </div>
               
-              <p className="text-sm text-gray-500">✓ No credit card required.</p>
+              <p className="text-sm text-gray-300">✓ No credit card required.</p>
             </div>
           </div>
         </div>
@@ -580,8 +719,21 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Video Tutorials</h2>
-            <p className="text-xl text-gray-600">Learn from our expert-led video guides</p>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-6"
+                >
+                  Video Tutorials
+                </motion.h2>
+              );
+            })()}
+            <p className="text-xl text-gray-300">Learn from our expert-led video guides</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -603,7 +755,7 @@ const Index = () => {
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">How to Choose the Best Corporate Training Platform</h3>
+                <h3 className="font-semibold text-white mb-2">How to Choose the Best Corporate Training Platform</h3>
               </CardContent>
             </Card>
             
@@ -625,7 +777,7 @@ const Index = () => {
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">How to Set Up Your Virtual Classroom</h3>
+                <h3 className="font-semibold text-white mb-2">How to Set Up Your Virtual Classroom</h3>
               </CardContent>
             </Card>
             
@@ -647,7 +799,7 @@ const Index = () => {
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">How to Choose the Best LMS for Employee Training</h3>
+                <h3 className="font-semibold text-white mb-2">How to Choose the Best LMS for Employee Training</h3>
               </CardContent>
             </Card>
           </div>
@@ -658,8 +810,21 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">We Are Experts in Course Development</h2>
-            <p className="text-xl text-gray-600 mb-12">
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-6"
+                >
+                  We Are Experts in Course Development
+                </motion.h2>
+              );
+            })()}
+            <p className="text-xl text-gray-300 mb-12">
               With hundreds of courses built and millions of learners trained, we know how to deliver impactful education.
             </p>
           </div>
@@ -667,15 +832,15 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <div className="text-5xl font-bold text-orange-500 mb-2">100,000+</div>
-              <div className="text-gray-600">Courses & Assessments Created</div>
+              <div className="text-white">Courses & Assessments Created</div>
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-orange-500 mb-2">4,000,000+</div>
-              <div className="text-gray-600">Global Learners</div>
+              <div className="text-white">Global Learners</div>
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-orange-500 mb-2">100</div>
-              <div className="text-gray-600">Year Vision</div>
+              <div className="text-white">Year Vision</div>
             </div>
           </div>
           
@@ -693,10 +858,21 @@ const Index = () => {
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4 text-center">
-                Steps in Our Custom eLearning Development Process
-              </h3>
-              <p className="text-gray-600 text-center mb-6 sm:mb-12 text-base sm:text-lg">
+              {(() => {
+                const { ref, isInView } = useScrollAnimation();
+                return (
+                  <motion.h3 
+                    ref={ref}
+                    variants={titleVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4 text-center"
+                  >
+                    Steps in Our Custom eLearning Development Process
+                  </motion.h3>
+                );
+              })()}
+              <p className="text-gray-700 text-center mb-6 sm:mb-12 text-base sm:text-lg">
                 Our instructional design team follows these proven steps:
               </p>
               
@@ -707,7 +883,7 @@ const Index = () => {
                   <div className="relative overflow-x-auto">
                     <div className="flex justify-between min-w-[600px] sm:min-w-0 mb-2 px-2 sm:px-0">
                       {[1, 2, 3, 4, 5, 6].map((step) => (
-                        <div key={step} className="text-xs sm:text-sm font-medium text-gray-500 whitespace-nowrap">
+                        <div key={step} className="text-xs sm:text-sm font-medium text-gray-300 whitespace-nowrap">
                           Step {step}
                         </div>
                       ))}
@@ -791,7 +967,7 @@ const Index = () => {
                             <span className="text-xl sm:text-2xl">{step.icon}</span>
                           </div>
                           <div className="text-center mt-2">
-                            <span className="text-xs sm:text-sm font-semibold text-gray-600">Step {step.number}</span>
+                            <span className="text-xs sm:text-sm font-semibold text-gray-700">Step {step.number}</span>
                           </div>
                         </div>
                         
@@ -800,7 +976,7 @@ const Index = () => {
                           <h4 className="font-bold text-gray-900 mb-2 sm:mb-3 text-base sm:text-lg group-hover:text-blue-600 transition-colors duration-300">
                             {step.title}
                           </h4>
-                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                             {step.description}
                           </p>
                           
@@ -809,7 +985,7 @@ const Index = () => {
                             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                               <div className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                                <span className="text-xs text-gray-500">Interactive Demo Available</span>
+                                <span className="text-xs text-gray-600">Interactive Demo Available</span>
                               </div>
                               <button className="text-xs bg-white/50 px-3 py-1 rounded-full hover:bg-white/80 transition-colors">
                                 Learn More →
@@ -843,7 +1019,7 @@ const Index = () => {
                 {/* Call to Action */}
                 <div className="text-center mt-8 sm:mt-12 p-4 sm:p-6 bg-white/70 backdrop-blur-sm rounded-xl border border-blue-200">
                   <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-4">Ready to Build Your Custom Course?</h4>
-                  <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Let our experts guide you through a proven, effective process.</p>
+                                      <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">Let our experts guide you through a proven, effective process.</p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <button 
                       className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto"
@@ -869,11 +1045,24 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Custom eLearning Solutions</h2>
-            <p className="text-xl text-gray-600 mb-4">
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-6"
+                >
+                  Custom eLearning Solutions
+                </motion.h2>
+              );
+            })()}
+            <p className="text-xl text-gray-300 mb-4">
               Access all the resources and tools you need for world-class eLearning in one place.
             </p>
-            <p className="text-lg text-gray-500 max-w-4xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-4xl mx-auto">
               Our all-in-one platform empowers you to create, deliver, and manage exceptional online learning experiences.
             </p>
           </div>
@@ -891,8 +1080,8 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Premium Learning Library</h3>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Browse a library of <strong>500+ premium programs</strong> on in-demand topics, fully customizable and ready to use. 
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Browse a library of <strong>500+ premium programmes</strong> on in-demand topics, fully customizable and ready to use. 
                   Topics include AI, Data Science, Digital Marketing, Leadership, and more.
                 </p>
                 <div className="mb-6">
@@ -904,21 +1093,21 @@ const Index = () => {
                   />
                 </div>
                 <div className="space-y-2 mb-6">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    500+ Professional Programs
+                    500+ Professional Programmes
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                     Fully Customizable Content
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                     Multi-Language Support
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    Mobile-Optimized Learning
+                    Mobile-Optimised Learning
                   </div>
                 </div>
                 <div className="text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center">
@@ -940,7 +1129,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Virtual Classrooms</h3>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed">
                   Take charge of all online learning activities using our centralized and secure 
                   <strong> virtual classroom platform</strong>. Support up to 1000 concurrent learners with HD video.
                 </p>
@@ -953,19 +1142,19 @@ const Index = () => {
                   />
                 </div>
                 <div className="space-y-2 mb-6">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Live HD Video Streaming
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Interactive Whiteboard
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Screen Sharing & Recording
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Breakout Rooms Support
                   </div>
@@ -989,7 +1178,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">Quizzes & Feedback</h3>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed">
                   Assess knowledge retention through engaging quizzes with <strong>15+ interactive question types</strong>. 
                   Create feedback surveys with advanced analytics and AI-powered insights.
                 </p>
@@ -1002,19 +1191,19 @@ const Index = () => {
                   />
                 </div>
                 <div className="space-y-2 mb-6">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                     15+ Interactive Question Types
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                     Real-time Analytics Dashboard
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                     Automated Grading System
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                     AI-Powered Question Bank
                   </div>
@@ -1038,8 +1227,8 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">eLearning Authoring Suite</h3>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Take advantage of the world's easiest authoring suite. Develop engaging online programs and assessments in minutes 
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Take advantage of the world's easiest authoring suite. Develop engaging online programmes and assessments in minutes 
                   with our <strong>drag-and-drop interface</strong> and 100+ professional templates.
                 </p>
                 <div className="mb-6">
@@ -1051,19 +1240,19 @@ const Index = () => {
                   />
                 </div>
                 <div className="space-y-2 mb-6">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                     Drag-and-Drop Course Builder
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                     100+ Professional Templates
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                     SCORM & xAPI Compliance
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-gray-700">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                     Multi-Media Support
                   </div>
@@ -1079,8 +1268,21 @@ const Index = () => {
           {/* End-to-End Process Section */}
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-16">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Comprehensive End-to-End Learning Platform</h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              {(() => {
+                const { ref, isInView } = useScrollAnimation();
+                return (
+                  <motion.h3 
+                    ref={ref}
+                    variants={titleVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="text-3xl font-bold text-gray-900 mb-4"
+                  >
+                    Comprehensive End-to-End Learning Platform
+                  </motion.h3>
+                );
+              })()}
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                 From content creation to learner engagement, our platform supports every step of your eLearning journey.
               </p>
             </div>
@@ -1091,7 +1293,7 @@ const Index = () => {
                   <span className="text-2xl font-bold text-white">1</span>
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Create Engaging Content</h4>
-                <p className="text-gray-600 text-sm">Use our authoring suite or select from the premium learning library</p>
+                <p className="text-gray-700 text-sm">Use our authoring suite or select from the premium learning library</p>
               </div>
               
               <div className="text-center">
@@ -1099,7 +1301,7 @@ const Index = () => {
                   <span className="text-2xl font-bold text-white">2</span>
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Deliver Seamless Learning</h4>
-                <p className="text-gray-600 text-sm">Host live sessions in virtual classrooms or offer self-paced programs</p>
+                                  <p className="text-gray-700 text-sm">Host live sessions in virtual classrooms or offer self-paced programmes</p>
               </div>
               
               <div className="text-center">
@@ -1107,7 +1309,7 @@ const Index = () => {
                   <span className="text-2xl font-bold text-white">3</span>
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Assess & Analyze Progress</h4>
-                <p className="text-gray-600 text-sm">Track learning with quizzes, feedback, and advanced analytics</p>
+                <p className="text-gray-700 text-sm">Track learning with quizzes, feedback, and advanced analytics</p>
               </div>
               
               <div className="text-center">
@@ -1115,19 +1317,32 @@ const Index = () => {
                   <span className="text-2xl font-bold text-white">4</span>
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Scale & Optimize Globally</h4>
-                <p className="text-gray-600 text-sm">Leverage AI insights to enhance programs and expand your reach</p>
+                                  <p className="text-gray-700 text-sm">Leverage AI insights to enhance programmes and expand your reach</p>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready to Elevate Your Learning Experience?</h3>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h3 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-2xl font-bold text-white mb-6"
+                >
+                  Ready to Elevate Your Learning Experience?
+                </motion.h3>
+              );
+            })()}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+              <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700" onClick={() => window.open('/signin', '_self')}>
                 Begin Free Trial
               </Button>
-              <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50" onClick={() => window.open('/get-demo', '_self')}>
                 Book a Demo
               </Button>
             </div>
@@ -1139,7 +1354,20 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Platform Features</h2>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-6"
+                >
+                  Platform Features
+                </motion.h2>
+              );
+            })()}
           </div>
           
           <div className="grid md:grid-cols-3 gap-12">
@@ -1147,9 +1375,9 @@ const Index = () => {
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <BookOpen className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Expert Course Design</h3>
-              <p className="text-gray-600">
-                Design or update eLearning programs with guidance from industry experts who follow global best practices.
+              <h3 className="text-xl font-bold text-white mb-4">Expert Course Design</h3>
+              <p className="text-gray-300">
+                Design or update eLearning programmes with guidance from industry experts who follow global best practices.
               </p>
             </div>
             
@@ -1157,9 +1385,9 @@ const Index = () => {
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <Globe className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile-Optimized</h3>
-              <p className="text-gray-600">
-                Deliver a single version of a program across all devices and platforms, hassle-free.
+              <h3 className="text-xl font-bold text-white mb-4">Mobile-Optimised</h3>
+              <p className="text-gray-300">
+                Deliver a single version of a programme across all devices and platforms, hassle-free.
               </p>
             </div>
             
@@ -1167,8 +1395,8 @@ const Index = () => {
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <Star className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Always Up-to-Date</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-white mb-4">Always Up-to-Date</h3>
+              <p className="text-gray-300">
                 Benefit from our team's commitment to staying current with the latest eLearning trends.
               </p>
             </div>
@@ -1177,8 +1405,8 @@ const Index = () => {
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-blue-200 transition-colors">
                 <BookOpen className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Curriculum Development</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-white mb-4">Curriculum Development</h3>
+              <p className="text-gray-300">
                 Align your learning needs with desired outcomes. Our designers select the best topics, media, and interactive elements for your audience.
               </p>
             </div>
@@ -1187,9 +1415,9 @@ const Index = () => {
               <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-red-200 transition-colors">
                 <Users className="h-8 w-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Storyboarding Services</h3>
-              <p className="text-gray-600">
-                Receive custom storyboards that serve as blueprints for effective learning programs tailored to your learners.
+              <h3 className="text-xl font-bold text-white mb-4">Storyboarding Services</h3>
+              <p className="text-gray-300">
+                Receive custom storyboards that serve as blueprints for effective learning programmes tailored to your learners.
               </p>
             </div>
             
@@ -1197,8 +1425,8 @@ const Index = () => {
               <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 hover:bg-yellow-200 transition-colors">
                 <Users className="h-8 w-8 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Full-Service Delivery</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-white mb-4">Full-Service Delivery</h3>
+              <p className="text-gray-300">
                 Take advantage of our end-to-end instructional design services—from audience analysis to development and evaluation.
               </p>
             </div>
@@ -1210,7 +1438,20 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Success Stories</h2>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-6"
+                >
+                  Success Stories
+                </motion.h2>
+              );
+            })()}
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -1266,7 +1507,7 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-slate-800">Our Global Team</h3>
+            <h3 className="text-2xl font-bold text-white">Our Global Team</h3>
           </div>
           <TeamCarousel />
         </div>
@@ -1276,16 +1517,29 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Common Questions</h2>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-6"
+                >
+                  Common Questions
+                </motion.h2>
+              );
+            })()}
           </div>
           
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   What is instructional design for online learning?
                 </h3>
-                <p className="text-slate-800 font-bold">
+                <p className="text-gray-300 font-bold">
                   Instructional design for online learning is the structured process of creating and developing digital courses. 
                   Instructional designers assess the needs of learners and design content to achieve clear learning outcomes. The goal is to build engaging, effective online learning experiences.
                 </p>
@@ -1294,10 +1548,10 @@ const Index = () => {
             
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   How long does it take to build a custom online course?
                 </h3>
-                <p className="text-slate-800 font-bold">
+                <p className="text-gray-300 font-bold">
                   The timeline depends on course complexity, content length, and requirements. 
                   Typically, a standard course takes 4–8 weeks from initial consultation to launch.
                 </p>
@@ -1306,10 +1560,10 @@ const Index = () => {
             
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   What content formats are supported?
                 </h3>
-                <p className="text-slate-800 font-bold">
+                <p className="text-gray-300 font-bold">
                   We support a wide range of formats including videos, interactive presentations, documents, quizzes, 
                   assessments, and SCORM-compliant packages for compatibility with any LMS.
                 </p>
@@ -1323,7 +1577,20 @@ const Index = () => {
       <section className="py-20 px-4 bg-[#0a1834]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Access Your Learning Hub</h2>
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-4xl font-bold text-white mb-4"
+                >
+                  Access Your Learning Hub
+                </motion.h2>
+              );
+            })()}
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               Manage your learning journey, track progress, and unlock premium features with our comprehensive student portal and subscription management.
             </p>
@@ -1336,10 +1603,10 @@ const Index = () => {
                 <div className="bg-green-500 rounded-lg p-3 mr-4">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Student Portal</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Student Portal</h3>
               </div>
               <p className="text-blue-100 mb-6">
-                Access your personalized dashboard, track course progress, manage certificates, and connect with your learning community.
+                Access your personalised dashboard, track course progress, manage certificates, and connect with your learning community.
               </p>
               <div className="space-y-2 mb-6">
                 <div className="flex items-center text-sm text-blue-200">
@@ -1400,6 +1667,75 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Social Media Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            ref={useScrollAnimation().ref}
+            initial="hidden"
+            animate={useScrollAnimation().isInView ? "visible" : "hidden"}
+            variants={titleVariants}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Connect With OponMeta
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Follow us on social media for the latest updates, educational content, and community engagement.
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <SocialMediaLinks variant="default" showLabels={true} />
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-center mt-12"
+          >
+            <p className="text-gray-600 mb-4">
+              Stay updated with the latest in AI-powered education
+            </p>
+            <div className="flex justify-center space-x-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600">50K+</div>
+                <div className="text-sm text-gray-600">Followers</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-600">100+</div>
+                <div className="text-sm text-gray-600">Daily Posts</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-600">24/7</div>
+                <div className="text-sm text-gray-600">Community Support</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Lamp Section */}
+      <LampContainer>
+        <motion.h1
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+          className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl dark:from-cyan-300 dark:to-white"
+        >
+          Ready to Shape Your Future?<br />
+          <span className="block text-2xl md:text-4xl font-normal text-[#0a1834] dark:text-white drop-shadow-lg mt-4">
+            Join thousands of learners advancing their careers with our global education platform.
+          </span>
+        </motion.h1>
+        <div className="mt-10 flex justify-center">
+          <Button size="lg" className="bg-[#0a1834] text-white font-bold shadow-lg hover:bg-[#11204a] px-8 py-4 text-xl dark:bg-white dark:text-[#0a1834] dark:hover:bg-slate-200" onClick={() => window.open('/signin', '_self')}>
+            Start Learning Now
+          </Button>
+        </div>
+      </LampContainer>
 
       {/* Footer */}
       <Footer />

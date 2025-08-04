@@ -61,7 +61,7 @@
 
   .dark {
     /* Deep Blue Theme - Unified Brand Color */
-    --background: #252533; /* #0a1834 */
+    --background: #0a1834; /* Consistent blue background */
     --foreground: 220 100% 97%;
 
     --card: 230 60% 7%;

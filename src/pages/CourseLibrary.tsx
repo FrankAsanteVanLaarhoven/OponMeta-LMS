@@ -214,7 +214,7 @@ const CourseLibrary = () => {
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Build Your Custom Learning Program?
+            Ready to Build Your Custom Learning Programme?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
             Start with our premium course library and customize content to match your organization's needs.

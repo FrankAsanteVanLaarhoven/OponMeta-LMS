@@ -43,7 +43,7 @@ const Recommendations = () => {
             <Sparkles className="h-8 w-8 text-cyan-300" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-cyan-300">Personalized Learning Recommendations</h1>
+            <h1 className="text-3xl font-bold text-cyan-300">Personalised Learning Recommendations</h1>
             <p className="text-gray-600 mt-1">
               Fill in your details to receive AI-powered course recommendations tailored to your learning journey.
             </p>
