@@ -115,7 +115,7 @@ const Index = () => {
 
 
       {/* AI Learning Companion Featured Section */}
-      <section className="py-16 section-full-width bg-white dark:bg-[#0a1834]">
+      <section className="py-16 bg-white dark:bg-[#0a1834]">
         <div className="container-fluid">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-[#f5f7fa] dark:bg-[#16203a] rounded-3xl shadow-xl p-8 md:p-12 border border-[#22305a] dark:border-[#22305a]">
           <div className="flex-1">
@@ -161,7 +161,7 @@ const Index = () => {
       <TrustedByCarousel />
       
       {/* Career Advancement Section */}
-      <section className="py-20 section-full-width bg-[#0a1834]">
+      <section className="py-20 bg-[#0a1834]">
         <div className="container-fluid">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6">Advance Your Career with In-Demand Skills</h2>
@@ -205,7 +205,7 @@ const Index = () => {
       </section>
 
       {/* Course Statistics Section */}
-      <section className="py-20 section-full-width bg-[#0a1834]">
+      <section className="py-20 bg-[#0a1834]">
         <div className="container-fluid">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -316,7 +316,7 @@ const Index = () => {
       </section>
 
       {/* Opontainment Section */}
-      <section className="py-20 section-full-width bg-[#0a1834]">
+      <section className="py-20 bg-[#0a1834]">
         <div className="container-fluid">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -415,7 +415,7 @@ const Index = () => {
 
       
       {/* Featured Courses Section */}
-      <section className="py-20 section-full-width bg-[#0a1834]">
+      <section className="py-20 bg-[#0a1834]">
         <div className="container-fluid">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -459,7 +459,7 @@ const Index = () => {
 
 
       {/* AI-Powered Features Section */}
-      <section className="py-20 section-full-width bg-[#0a1834]">
+      <section className="py-20 bg-[#0a1834]">
         <div className="container-fluid">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">

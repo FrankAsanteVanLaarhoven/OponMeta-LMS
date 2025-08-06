@@ -1861,7 +1861,7 @@ function App() {
                     isVisible={adPanelVisible}
                     onToggle={() => setAdPanelVisible(!adPanelVisible)}
                   />
-                  <main className="w-full">
+                  <main className={`w-full flex-1 transition-all duration-300 ${adPanelVisible ? 'lg:mr-80' : ''}`}>
                       <ResponsiveTest />
                       <Toaster />
                       <Sonner />

@@ -366,6 +366,7 @@ const RightAdPanel: React.FC<AdPanelProps> = ({
           ${isCollapsed ? 'w-16' : 'w-80'}
           ${isMobileExpanded ? 'lg:w-80' : 'lg:w-80'}
         `}
+        style={{ zIndex: 1000 }}
       >
         <Card className={`
           shadow-xl border-2 border-[#11204a] bg-[#16203a] transition-all duration-300
