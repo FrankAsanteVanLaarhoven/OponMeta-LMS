@@ -11,6 +11,7 @@ import i18n from './i18n';
 import { AppProvider } from './context/AppContext';
 import { UserProvider } from './context/UserContext';
 import FloatingNavigation from './components/FloatingNavigation';
+import ResponsiveTest from './components/ResponsiveTest';
 import CompanionsLibrary from './pages/CompanionsLibrary';
 import CompanionSession from './pages/CompanionSession';
 import CompanionAnalytics from './pages/CompanionAnalytics';
@@ -1861,6 +1862,7 @@ function App() {
                     onToggle={() => setAdPanelVisible(!adPanelVisible)}
                   />
                   <main className="w-full">
+                      <ResponsiveTest />
                       <Toaster />
                       <Sonner />
                       <FloatingNavigation />

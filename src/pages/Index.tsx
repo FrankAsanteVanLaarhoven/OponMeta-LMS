@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Users, Globe, Star, ChevronRight, Play, CreditCard, Music, Video, Edit3 } from "lucide-react";
+import { BookOpen, Users, Globe, Star, ChevronRight, Play, CreditCard, Music, Video, Edit3, Briefcase, Heart, Palette, TrendingUp, GraduationCap } from "lucide-react";
 import Hero from "@/components/Hero";
 import CourseCard from "@/components/CourseCard";
 import Footer from "@/components/Footer";
@@ -164,40 +164,40 @@ const Index = () => {
       <section className="py-20 section-full-width bg-[#0a1834]">
         <div className="container-fluid">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">Advance Your Career with In-Demand Skills</h2>
-            <p className="text-xl text-blue-100 font-bold mb-8 max-w-3xl mx-auto">
+            <h2 className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6">Advance Your Career with In-Demand Skills</h2>
+            <p className="text-fluid-lg md:text-fluid-xl text-blue-100 font-bold mb-8 max-w-3xl mx-auto">
               Grow your expertise in analytics, healthcare, design, management, and more—anytime, anywhere in the world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="bg-slate-800 text-white hover:bg-slate-700" onClick={() => window.open('/career-guidance', '_self')}>
+              <Button size="lg" className="bg-slate-800 text-white hover:bg-slate-700 text-fluid-base" onClick={() => window.open('/career-guidance', '_self')}>
                 Explore New Career Paths
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('/career-guidance', '_self')}>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-fluid-base" onClick={() => window.open('/career-guidance', '_self')}>
                 Advance in My Current Role
               </Button>
             </div>
             
-            {/* Course Categories */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">Featured Courses</div>
-                <div className="text-xs text-blue-100">Top picks for global learners</div>
+            {/* Course Categories - Enhanced Responsive Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
+              <div className="text-center p-4">
+                <div className="text-fluid-xl md:text-fluid-2xl font-bold text-white">Featured Courses</div>
+                <div className="text-fluid-xs md:text-fluid-sm text-blue-100">Top picks for global learners</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">Diploma Programmes</div>
-                <div className="text-xs text-blue-100">Accredited learning tracks</div>
+              <div className="text-center p-4">
+                <div className="text-fluid-xl md:text-fluid-2xl font-bold text-white">Diploma Programmes</div>
+                <div className="text-fluid-xs md:text-fluid-sm text-blue-100">Accredited learning tracks</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">Professional Certificates</div>
-                <div className="text-xs text-blue-100">Industry-recognized credentials</div>
+              <div className="text-center p-4">
+                <div className="text-fluid-xl md:text-fluid-2xl font-bold text-white">Professional Certificates</div>
+                <div className="text-fluid-xs md:text-fluid-sm text-blue-100">Industry-recognized credentials</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">Latest Courses</div>
-                <div className="text-xs text-blue-100">Recently added programmes</div>
+              <div className="text-center p-4">
+                <div className="text-fluid-xl md:text-fluid-2xl font-bold text-white">Latest Courses</div>
+                <div className="text-fluid-xs md:text-fluid-sm text-blue-100">Recently added programmes</div>
               </div>
             </div>
             
-            <Button size="lg" className="bg-[#16203a] text-white hover:bg-[#22305a]" onClick={() => window.open('/courses', '_self')}>
+            <Button size="lg" className="bg-[#16203a] text-white hover:bg-[#22305a] text-fluid-base" onClick={() => window.open('/courses', '_self')}>
               Browse All Courses
             </Button>
           </div>
@@ -209,139 +209,104 @@ const Index = () => {
         <div className="container-fluid">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Access 5,500+ Free Online Courses</h2>
-              <p className="text-xl text-blue-100">Learn from Global Experts</p>
+              <h2 className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-4">Access 5,500+ Free Online Courses</h2>
+              <p className="text-fluid-lg md:text-fluid-xl text-blue-100">Learn from Global Experts</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Enhanced Responsive Statistics Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
               <Card className="bg-[#16203a] border-[#22305a] text-center">
-                <CardContent className="p-8">
-                  <div className="text-4xl font-bold text-white mb-2">10 Million+</div>
-                  <div className="text-blue-100">Learners</div>
+                <CardContent className="p-6 md:p-8">
+                  <div className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-2">10 Million+</div>
+                  <div className="text-fluid-base md:text-fluid-lg text-blue-100">Learners</div>
                 </CardContent>
               </Card>
               <Card className="bg-[#16203a] border-[#22305a] text-center">
-                <CardContent className="p-8">
-                  <div className="text-4xl font-bold text-white mb-2">193</div>
-                  <div className="text-blue-100">Countries Represented</div>
-                  <div className="text-xs text-blue-200">Worldwide reach</div>
+                <CardContent className="p-6 md:p-8">
+                  <div className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-2">193</div>
+                  <div className="text-fluid-base md:text-fluid-lg text-blue-100">Countries Represented</div>
+                  <div className="text-fluid-xs md:text-fluid-sm text-blue-200">Worldwide reach</div>
                 </CardContent>
               </Card>
               <Card className="bg-[#16203a] border-[#22305a] text-center">
-                <CardContent className="p-8">
-                  <div className="text-4xl font-bold text-white mb-2">5,500+</div>
-                  <div className="text-blue-100">Free Learning Programmes</div>
-                  <div className="text-xs text-blue-200">No-cost access</div>
+                <CardContent className="p-6 md:p-8">
+                  <div className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-2">5,500+</div>
+                  <div className="text-fluid-base md:text-fluid-lg text-blue-100">Free Learning Programmes</div>
+                  <div className="text-fluid-xs md:text-fluid-sm text-blue-200">No-cost access</div>
                 </CardContent>
               </Card>
             </div>
             
-            {/* Course Categories Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Enhanced Responsive Course Categories Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=it', '_blank')}>
-                <CardContent className="p-6">
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Information Technology</h3>
-                      <p className="text-blue-100">1,246 Programmes</p>
+                      <h3 className="text-fluid-lg md:text-fluid-xl font-semibold text-white mb-2">Information Technology</h3>
+                      <p className="text-fluid-sm md:text-fluid-base text-blue-100">1,246 Programmes</p>
                     </div>
-                    <BookOpen className="h-8 w-8 text-blue-400" />
+                    <BookOpen className="h-6 w-6 md:h-8 md:w-8 text-blue-400" />
                   </div>
                 </CardContent>
               </Card>
               
               <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=business', '_blank')}>
-                <CardContent className="p-6">
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Business & Leadership</h3>
-                      <p className="text-blue-100">1,025 Programmes</p>
+                      <h3 className="text-fluid-lg md:text-fluid-xl font-semibold text-white mb-2">Business & Leadership</h3>
+                      <p className="text-fluid-sm md:text-fluid-base text-blue-100">1,025 Programmes</p>
                     </div>
-                    <BookOpen className="h-8 w-8 text-green-400" />
+                    <Briefcase className="h-6 w-6 md:h-8 md:w-8 text-green-400" />
                   </div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=teaching', '_blank')}>
-                <CardContent className="p-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=healthcare', '_blank')}>
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Education & Teaching</h3>
-                      <p className="text-blue-100">1,588 Programmes</p>
+                      <h3 className="text-fluid-lg md:text-fluid-xl font-semibold text-white mb-2">Healthcare & Nursing</h3>
+                      <p className="text-fluid-sm md:text-fluid-base text-blue-100">892 Programmes</p>
                     </div>
-                    <BookOpen className="h-8 w-8 text-purple-400" />
+                    <Heart className="h-6 w-6 md:h-8 md:w-8 text-red-400" />
                   </div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=personal-development', '_blank')}>
-                <CardContent className="p-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=design', '_blank')}>
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Personal Development</h3>
-                      <p className="text-blue-100">1,292 Programmes</p>
+                      <h3 className="text-fluid-lg md:text-fluid-xl font-semibold text-white mb-2">Design & Creative Arts</h3>
+                      <p className="text-fluid-sm md:text-fluid-base text-blue-100">756 Programmes</p>
                     </div>
-                    <BookOpen className="h-8 w-8 text-yellow-400" />
+                    <Palette className="h-6 w-6 md:h-8 md:w-8 text-purple-400" />
                   </div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=health', '_blank')}>
-                <CardContent className="p-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=marketing', '_blank')}>
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Health & Wellness</h3>
-                      <p className="text-blue-100">991 Programmes</p>
+                      <h3 className="text-fluid-lg md:text-fluid-xl font-semibold text-white mb-2">Marketing & Sales</h3>
+                      <p className="text-fluid-sm md:text-fluid-base text-blue-100">634 Programmes</p>
                     </div>
-                    <BookOpen className="h-8 w-8 text-pink-400" />
+                    <TrendingUp className="h-6 w-6 md:h-8 md:w-8 text-yellow-400" />
                   </div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=engineering', '_blank')}>
-                <CardContent className="p-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=education', '_blank')}>
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Engineering & Construction</h3>
-                      <p className="text-blue-100">798 Programmes</p>
+                      <h3 className="text-fluid-lg md:text-fluid-xl font-semibold text-white mb-2">Education & Training</h3>
+                      <p className="text-fluid-sm md:text-fluid-base text-blue-100">521 Programmes</p>
                     </div>
-                    <BookOpen className="h-8 w-8 text-orange-400" />
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=sales-marketing', '_blank')}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Sales & Marketing</h3>
-                      <p className="text-blue-100">432 Programmes</p>
-                    </div>
-                    <BookOpen className="h-8 w-8 text-cyan-400" />
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=language', '_blank')}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Languages</h3>
-                                        <p className="text-blue-100">312 Programmes</p>
-                    </div>
-                    <BookOpen className="h-8 w-8 text-indigo-400" />
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=opontainment', '_blank')}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Opontainment</h3>
-                      <p className="text-blue-100">156 Programmes</p>
-                    </div>
-                    <Music className="h-8 w-8 text-purple-400" />
+                    <GraduationCap className="h-6 w-6 md:h-8 md:w-8 text-indigo-400" />
                   </div>
                 </CardContent>
               </Card>
@@ -363,64 +328,64 @@ const Index = () => {
                     variants={titleVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+                    className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6 leading-tight"
                   >
                     Opontainment - Creative Media & Entertainment
                   </motion.h2>
                 );
               })()}
-              <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+              <p className="text-fluid-lg md:text-fluid-xl text-white max-w-3xl mx-auto leading-relaxed">
                 Discover the art of film-making, music production, and creative storytelling. Learn from industry professionals and create stunning visual and audio content.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-16">
               {/* Left Section - Educational Programs */}
-              <div className="space-y-8">
-                <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
+              <div className="space-y-6 md:space-y-8">
+                <div className="flex items-center space-x-4 p-4 md:p-6 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
                   <div className="bg-purple-600 rounded-lg p-3 shadow-lg">
-                    <Video className="h-6 w-6 text-white" />
+                    <Video className="h-5 w-5 md:h-6 md:w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Film Production</h3>
-                    <p className="text-white opacity-90">Master cinematography, editing, and storytelling techniques</p>
+                    <h3 className="text-fluid-lg md:text-fluid-xl font-bold text-white mb-1">Film Production</h3>
+                    <p className="text-fluid-sm md:text-fluid-base text-white opacity-90">Master cinematography, editing, and storytelling techniques</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
+                <div className="flex items-center space-x-4 p-4 md:p-6 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
                   <div className="bg-blue-600 rounded-lg p-3 shadow-lg">
-                    <Music className="h-6 w-6 text-white" />
+                    <Music className="h-5 w-5 md:h-6 md:w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Music Production</h3>
-                    <p className="text-white opacity-90">Create professional music and sound effects</p>
+                    <h3 className="text-fluid-lg md:text-fluid-xl font-bold text-white mb-1">Music Production</h3>
+                    <p className="text-fluid-sm md:text-fluid-base text-white opacity-90">Create professional music and sound effects</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
+                <div className="flex items-center space-x-4 p-4 md:p-6 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
                   <div className="bg-indigo-600 rounded-lg p-3 shadow-lg">
-                    <Edit3 className="h-6 w-6 text-white" />
+                    <Edit3 className="h-5 w-5 md:h-6 md:w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Screenwriting</h3>
-                    <p className="text-white opacity-90">Learn story structure and character development</p>
+                    <h3 className="text-fluid-lg md:text-fluid-xl font-bold text-white mb-1">Screenwriting</h3>
+                    <p className="text-fluid-sm md:text-fluid-base text-white opacity-90">Learn story structure and character development</p>
                   </div>
                 </div>
                 
                 <Button 
                   size="lg" 
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105" 
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-6 md:px-8 py-3 md:py-4 text-fluid-base md:text-fluid-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105" 
                   onClick={() => window.open('/courses?category=opontainment', '_self')}
                 >
                   Explore Opontainment
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                  <ChevronRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </Button>
               </div>
               
               {/* Right Section - Creative Services Grid */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-white mb-6 text-center">Creative Services</h3>
-                <div className="grid grid-cols-3 gap-3">
+                <h3 className="text-fluid-xl md:text-fluid-2xl font-bold text-white mb-6 text-center">Creative Services</h3>
+                <div className="grid grid-cols-3 gap-2 md:gap-3">
                   {[
                     { name: 'Merch', bg: 'bg-[#11204a]' },
                     { name: 'Interactive', bg: 'bg-[#11204a]' },
@@ -434,11 +399,11 @@ const Index = () => {
                   ].map((service, index) => (
                     <div 
                       key={index}
-                      className={`${service.bg} border border-[#1e3a8a] rounded-lg p-4 text-center hover:bg-[#16203a] transition-all duration-300 cursor-pointer group`}
+                      className={`${service.bg} border border-[#1e3a8a] rounded-lg p-3 md:p-4 text-center hover:bg-[#16203a] transition-all duration-300 cursor-pointer group`}
                     >
-                      <span className="text-white font-medium text-sm italic group-hover:text-purple-300 transition-colors duration-300">
+                      <div className="text-fluid-xs md:text-fluid-sm font-medium text-white group-hover:text-purple-300 transition-colors">
                         {service.name}
-                      </span>
+                      </div>
                     </div>
                   ))}
                 </div>

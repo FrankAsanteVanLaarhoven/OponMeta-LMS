@@ -284,9 +284,9 @@ const Navigation = () => {
                 onMouseEnter={() => setActiveCategory('courses')}
                 onMouseLeave={() => { setActiveCategory(null); setActiveSubCategory(null); }}
               >
-                                  <button className="flex items-center text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 px-3 py-2 text-fluid-base nav-text transition-colors">
-                    PROGRAMMES <ChevronDown className="ml-1 w-4 h-4" />
-                  </button>
+                <button className="flex items-center text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 px-3 py-2 text-fluid-base nav-text transition-colors">
+                  PROGRAMMES <ChevronDown className="ml-1 w-4 h-4" />
+                </button>
                 {activeCategory === 'courses' && (
                   <div
                     className="absolute left-0 top-full z-50 bg-white dark:bg-[#16203a] shadow-lg rounded-xl mt-2 w-80 p-4 pointer-events-auto"
@@ -357,30 +357,24 @@ const Navigation = () => {
                       
                       {/* Workshops Link */}
                       <Link to="/workshops" className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer mb-3 border-b border-gray-200 dark:border-gray-700 pb-3">
-                        <Users className="w-5 h-5 text-blue-600" />
+                        <Users className="w-5 h-5 text-green-500" />
                         <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">Workshops</span>
                         <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">(Live Sessions)</span>
                       </Link>
                       
                       {/* Partners Link */}
                       <Link to="/partners" className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer mb-3 border-b border-gray-200 dark:border-gray-700 pb-3">
-                        <Handshake className="w-5 h-5 text-green-600" />
+                        <Handshake className="w-5 h-5 text-purple-500" />
                         <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">Our Partners</span>
                         <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">(Collaborations)</span>
                       </Link>
                       
                       {CAREER_CATEGORIES.map((cat) => (
-                        cat.count > 0 ? (
-                          <Link key={cat.name} to={`/careers/${cat.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
-                            {cat.icon}
-                            <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{cat.name} <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Careers)</span></span>
-                          </Link>
-                        ) : (
-                          <div key={cat.name} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
-                            {cat.icon}
-                            <span className="ml-2 font-medium text-gray-400 flex-1">{cat.name} <span className="text-xs ml-1">({cat.count} Careers)</span></span>
-                          </div>
-                        )
+                        <div key={cat.name} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
+                          {cat.icon}
+                          <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{cat.name}</span>
+                          <span className="text-xs text-cyan-600 dark:text-cyan-300 ml-1">({cat.count} Courses)</span>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -398,71 +392,60 @@ const Navigation = () => {
                 </button>
                 {activeCategory === 'platform' && (
                   <div
-                    className="absolute left-0 top-full z-50 bg-white dark:bg-[#16203a] shadow-lg rounded-xl mt-2 w-96 p-6 pointer-events-auto"
+                    className="absolute left-0 top-full z-50 bg-white dark:bg-[#16203a] shadow-lg rounded-xl mt-2 w-80 p-4 pointer-events-auto"
                     style={{ marginTop: '-2px' }}
                     onMouseEnter={() => setActiveCategory('platform')}
                     onMouseLeave={() => setActiveCategory(null)}
                   >
                     <div className="p-4">
-                      <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">QUICK ACCESS</h3>
+                      <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">PLATFORM FEATURES</h3>
+                      
                       {PLATFORM_MENU.map((item) => (
-                        item.href ? (
-                          <Link key={item.name} to={item.href} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
-                            {item.name === 'Course Authoring Tool' ? <BookOpen className="w-5 h-5 text-blue-600" /> : item.name === 'AI Video Calling' ? <Video className="w-5 h-5 text-blue-600" /> : item.name === 'Companion Library' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Whiteboard' ? <Wrench className="w-5 h-5 text-blue-600" /> : item.name === 'Quiz Builder' ? <Sparkles className="w-5 h-5 text-blue-600" /> : item.name === 'Virtual Classroom' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Student Portal' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Instructor Dashboard' ? <Briefcase className="w-5 h-5 text-blue-600" /> : item.name === 'Analytics Dashboard' ? <BarChart3 className="w-5 h-5 text-blue-600" /> : item.name === 'Advanced Features' ? <Sparkles className="w-5 h-5 text-blue-600" /> : null}
-                            <span className="ml-2 font-medium text-[#0a1834] dark:text-white">{item.name}</span>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.description}</p>
-                          </Link>
-                        ) : (
-                          <div key={item.name} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
-                            {item.name === 'Course Authoring Tool' ? <BookOpen className="w-5 h-5 text-blue-600" /> : item.name === 'AI Video Calling' ? <Video className="w-5 h-5 text-blue-600" /> : item.name === 'Companion Library' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Whiteboard' ? <Wrench className="w-5 h-5 text-blue-600" /> : item.name === 'Quiz Builder' ? <Sparkles className="w-5 h-5 text-blue-600" /> : item.name === 'Virtual Classroom' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Student Portal' ? <Users className="w-5 h-5 text-blue-600" /> : item.name === 'Instructor Dashboard' ? <Briefcase className="w-5 h-5 text-blue-600" /> : item.name === 'Analytics Dashboard' ? <BarChart3 className="w-5 h-5 text-blue-600" /> : item.name === 'Advanced Features' ? <Sparkles className="w-5 h-5 text-blue-600" /> : null}
-                            <span className="ml-2 font-medium">{item.name}</span>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.description}</p>
-                          </div>
-                        )
+                        <Link key={item.name} to={item.href} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
+                          <span className="font-medium text-[#0a1834] dark:text-white flex-1">{item.name}</span>
+                          <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">{item.description}</span>
+                        </Link>
                       ))}
                     </div>
                   </div>
                 )}
               </div>
               
-              {/* More Dropdown */}
+              {/* Resources Dropdown */}
               <div
                 className="relative group"
-                onMouseEnter={() => setActiveCategory('more')}
+                onMouseEnter={() => setActiveCategory('resources')}
                 onMouseLeave={() => setActiveCategory(null)}
               >
                 <button className="flex items-center text-[#0a1834] dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300 px-3 py-2 text-fluid-base nav-text transition-colors">
                   Resources <ChevronDown className="ml-1 w-4 h-4" />
                 </button>
-                {activeCategory === 'more' && (
+                {activeCategory === 'resources' && (
                   <div
-                    className="absolute left-0 top-full z-50 bg-white dark:bg-[#16203a] shadow-lg rounded-xl mt-2 w-96 p-6 pointer-events-auto"
+                    className="absolute left-0 top-full z-50 bg-white dark:bg-[#16203a] shadow-lg rounded-xl mt-2 w-96 p-4 pointer-events-auto"
                     style={{ marginTop: '-2px' }}
-                    onMouseEnter={() => setActiveCategory('more')}
+                    onMouseEnter={() => setActiveCategory('resources')}
                     onMouseLeave={() => setActiveCategory(null)}
                   >
                     <div className="p-4">
-                      {MORE_MENU.map((item) => {
-                        if (item.to) {
-                          return (
-                            <Link key={item.label} to={item.to} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
-                              {item.icon}
-                              <span className="ml-2 font-medium text-[#0a1834] dark:text-white flex-1">{item.label}</span>
-                              {item.badge && <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{item.badge}</span>}
-                              <span className="ml-2 text-xs text-cyan-600 dark:text-cyan-300">{item.desc}</span>
-                            </Link>
-                          );
-                        } else {
-                          return (
-                            <div key={item.label} className="flex items-center px-2 py-2 text-gray-400 cursor-not-allowed">
-                              {item.icon}
-                              <span className="ml-2 font-medium flex-1">{item.label}</span>
-                              {item.badge && <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{item.badge}</span>}
-                              <span className="ml-2 text-xs">{item.desc}</span>
+                      <h3 className="text-xs font-semibold text-cyan-600 dark:text-cyan-300 mb-2">RESOURCES & TOOLS</h3>
+                      
+                      {MORE_MENU.map((item) => (
+                        <Link key={item.label} to={item.to || '#'} className="flex items-center px-2 py-2 hover:bg-[#f0f4fa] dark:hover:bg-[#11204a] rounded cursor-pointer">
+                          {item.icon}
+                          <div className="ml-3 flex-1">
+                            <div className="flex items-center">
+                              <span className="font-medium text-[#0a1834] dark:text-white">{item.label}</span>
+                              {item.badge && (
+                                <span className="ml-2 px-2 py-1 text-xs bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 rounded-full">
+                                  {item.badge}
+                                </span>
+                              )}
                             </div>
-                          );
-                        }
-                      })}
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.desc}</p>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 )}
@@ -470,64 +453,29 @@ const Navigation = () => {
             </nav>
           </div>
           
-          {/* Search and right controls */}
-          <div className="flex items-center space-x-2">
-            {/* Collapsible Search Bar */}
-            <div className="hidden md:flex items-center">
-              {!isSearchExpanded ? (
-                <button
-                  onClick={() => setIsSearchExpanded(true)}
-                  className="flex items-center bg-white dark:bg-[#16203a] rounded-lg px-2 py-2 shadow-sm hover:shadow-md transition-all duration-200 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
-                >
-                  <Search className="w-4 h-4 mr-1" />
-                  <span className="text-fluid-sm">Search...</span>
-                  <div className="flex items-center space-x-1 ml-1 text-xs">
-                    <span className="px-1 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">⌘</span>
-                    <span className="px-1 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">K</span>
-                  </div>
-                </button>
-              ) : (
-                <div className="flex items-center bg-white dark:bg-[#16203a] rounded-lg px-2 py-2 shadow-sm transition-all duration-200">
-                  <Search className="w-4 h-4 text-gray-400 mr-1" />
-                  <input
-                    type="text"
-                    placeholder="Search courses, tools, features..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="bg-transparent outline-none text-gray-800 dark:text-white w-40 lg:w-48 placeholder-gray-400"
-                    autoFocus
-                    onBlur={() => setIsSearchExpanded(false)}
-                  />
-                  <button
-                    onClick={() => setIsSearchExpanded(false)}
-                    className="ml-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                </div>
-              )}
-            </div>
+          {/* Right side - Search, Language, Theme, User */}
+          <div className="flex items-center space-x-2 lg:space-x-4">
+            {/* Search Button */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 rounded-md text-[#0a1834] dark:text-white hover:bg-white/10 transition-colors"
+            >
+              <Search className="w-5 h-5" />
+            </button>
             
             {/* Language Selector */}
-            <div className="hidden md:flex items-center relative">
+            <div className="relative" ref={langMenuRef}>
               <button
                 ref={langBtnRef}
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className="flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-white/10 transition-colors text-[#0a1834] dark:text-white"
-                aria-label="Select language"
+                className="flex items-center space-x-1 p-2 rounded-md text-[#0a1834] dark:text-white hover:bg-white/10 transition-colors"
               >
                 <Globe className="w-4 h-4" />
-                <span className="text-fluid-sm font-medium">
-                  {languages.find(lang => lang.code === i18n.language)?.label || 'EN'}
-                </span>
-                <ChevronDown className="w-3 h-3" />
+                <span className="hidden sm:block text-sm">{languages.find(lang => lang.code === i18n.language)?.flag}</span>
               </button>
               
               {isLangOpen && (
-                <div
-                  ref={langMenuRef}
-                  className="absolute top-full right-0 mt-1 w-48 bg-white dark:bg-[#16203a] border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50"
-                >
+                <div className="absolute right-0 top-full mt-2 bg-white dark:bg-[#16203a] shadow-lg rounded-lg py-2 min-w-[200px] z-50">
                   {languages.map((language) => (
                     <button
                       key={language.code}
@@ -535,54 +483,36 @@ const Navigation = () => {
                         i18n.changeLanguage(language.code);
                         setIsLangOpen(false);
                       }}
-                      className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-[#1a2a4a] transition-colors first:rounded-t-lg last:rounded-b-lg"
+                      className={`w-full flex items-center space-x-3 px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-[#1a2a4a] transition-colors ${
+                        i18n.language === language.code
+                          ? 'bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
+                          : 'text-[#0a1834] dark:text-white'
+                      }`}
                     >
                       <span className="text-lg">{language.flag}</span>
-                      <div className="flex-1">
-                        <div className="text-sm font-medium text-[#0a1834] dark:text-white">
-                          {language.name}
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          {language.label}
-                        </div>
-                      </div>
+                      <span className="text-sm">{language.name}</span>
                     </button>
                   ))}
                 </div>
               )}
             </div>
-
-            {/* Theme Toggle */}
-            <div className="hidden md:flex items-center">
-              <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-lg hover:bg-white/10 transition-colors text-[#0a1834] dark:text-white"
-                aria-label="Toggle dark mode"
-              >
-                {theme === 'dark' ? <Sun className="w-5 h-5 text-yellow-500" /> : <Moon className="w-5 h-5 text-gray-700" />}
-              </button>
-            </div>
             
-            {/* Auth Buttons */}
-            <div className="flex items-center space-x-1">
-              <Link
-                to="/signin"
-                className="px-2 py-2 rounded-lg text-[#0a1834] dark:text-white bg-white dark:bg-[#16203a] hover:bg-gray-100 dark:hover:bg-[#1a2a4a] shadow transition-colors border border-gray-200 dark:border-gray-600 text-fluid-sm truncate btn-text"
-              >
-                Sign In
-              </Link>
-              <Link
-                to="/signup"
-                className="px-2 py-2 rounded-lg text-white bg-[#0a1834] dark:bg-[#11204a] hover:bg-[#1a2a4a] dark:hover:bg-[#1a2a4a] shadow transition-colors text-fluid-sm truncate btn-text"
-              >
-                Get Started
-              </Link>
-            </div>
+            {/* Theme Toggle */}
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-md text-[#0a1834] dark:text-white hover:bg-white/10 transition-colors"
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            
+            {/* User Profile */}
+            <UserProfileDropdown />
             
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-md text-[#0a1834] dark:text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden p-2 rounded-md text-[#0a1834] dark:text-white hover:bg-white/10 transition-colors mobile-nav-toggle"
+              aria-label="Toggle mobile menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -596,11 +526,11 @@ const Navigation = () => {
         onClose={() => setIsSearchOpen(false)} 
       />
 
-      {/* Mobile Navigation */}
+      {/* Enhanced Mobile Navigation */}
       {isMenuOpen && (
         <div className="lg:hidden bg-[#f0f4fa] dark:bg-[#11204a] border-t border-gray-200 dark:border-gray-700 mobile-menu-content">
           <div className="px-4 py-6 space-y-4">
-            {/* Mobile Search */}
+            {/* Enhanced Mobile Search */}
             <div className="flex items-center bg-white dark:bg-[#16203a] rounded-lg px-4 py-3 shadow-sm">
               <Search className="w-5 h-5 text-gray-400 mr-3" />
               <input
@@ -608,7 +538,7 @@ const Navigation = () => {
                 placeholder="Search courses, tools, features..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent outline-none text-gray-800 dark:text-white w-full placeholder-gray-400 text-base"
+                className="bg-transparent outline-none text-gray-800 dark:text-white w-full placeholder-gray-400 text-base mobile-input"
                 onFocus={() => setIsSearchExpanded(true)}
               />
               {isSearchExpanded && (
@@ -621,7 +551,7 @@ const Navigation = () => {
               )}
             </div>
             
-            {/* Mobile Navigation Links */}
+            {/* Enhanced Mobile Navigation Links */}
             <div className="space-y-3">
               <Link to="/" className="block px-4 py-3 text-[#0a1834] dark:text-white hover:bg-white/10 rounded-lg transition-colors text-fluid-base font-medium">
                 Home
@@ -655,7 +585,7 @@ const Navigation = () => {
               </Link>
             </div>
             
-            {/* Mobile Language Selector */}
+            {/* Enhanced Mobile Language Selector */}
             <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
               <div className="px-4 py-3">
                 <span className="text-sm text-[#0a1834] dark:text-white font-semibold">Language</span>
@@ -681,7 +611,7 @@ const Navigation = () => {
               </div>
             </div>
 
-            {/* Mobile Theme Toggle */}
+            {/* Enhanced Mobile Theme Toggle */}
             <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between px-4 py-3">
                 <span className="text-sm text-[#0a1834] dark:text-white font-semibold">Theme</span>
