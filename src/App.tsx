@@ -1844,7 +1844,7 @@ const queryClient = new QueryClient({
 const StudentMarketplace = () => <CourseMarketplace />;
 
 function App() {
-  const [adPanelVisible, setAdPanelVisible] = useState(true);
+  const [adPanelVisible, setAdPanelVisible] = useState(false);
   const [userRole, setUserRole] = useState<'student' | 'instructor' | 'admin' | 'advertiser'>('student');
 
   return (
