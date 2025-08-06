@@ -115,8 +115,9 @@ const Index = () => {
 
 
       {/* AI Learning Companion Featured Section */}
-      <section className="py-16 px-4 bg-white dark:bg-[#0a1834]">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-[#f5f7fa] dark:bg-[#16203a] rounded-3xl shadow-xl p-8 md:p-12 border border-[#22305a] dark:border-[#22305a]">
+      <section className="py-16 section-full-width bg-white dark:bg-[#0a1834]">
+        <div className="container-fluid">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-[#f5f7fa] dark:bg-[#16203a] rounded-3xl shadow-xl p-8 md:p-12 border border-[#22305a] dark:border-[#22305a]">
           <div className="flex-1">
             {(() => {
               const { ref, isInView } = useScrollAnimation();
@@ -159,169 +160,172 @@ const Index = () => {
       <TrustedByCarousel />
       
       {/* Career Advancement Section */}
-      <section className="py-20 px-4 bg-[#0a1834]">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Advance Your Career with In-Demand Skills</h2>
-          <p className="text-xl text-blue-100 font-bold mb-8 max-w-3xl mx-auto">
-            Grow your expertise in analytics, healthcare, design, management, and more—anytime, anywhere in the world.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-slate-800 text-white hover:bg-slate-700" onClick={() => window.open('/career-guidance', '_self')}>
-              Explore New Career Paths
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('/career-guidance', '_self')}>
-              Advance in My Current Role
+      <section className="py-20 section-full-width bg-[#0a1834]">
+        <div className="container-fluid">
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">Advance Your Career with In-Demand Skills</h2>
+            <p className="text-xl text-blue-100 font-bold mb-8 max-w-3xl mx-auto">
+              Grow your expertise in analytics, healthcare, design, management, and more—anytime, anywhere in the world.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button size="lg" className="bg-slate-800 text-white hover:bg-slate-700" onClick={() => window.open('/career-guidance', '_self')}>
+                Explore New Career Paths
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('/career-guidance', '_self')}>
+                Advance in My Current Role
+              </Button>
+            </div>
+            
+            {/* Course Categories */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">Featured Courses</div>
+                <div className="text-xs text-blue-100">Top picks for global learners</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">Diploma Programmes</div>
+                <div className="text-xs text-blue-100">Accredited learning tracks</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">Professional Certificates</div>
+                <div className="text-xs text-blue-100">Industry-recognized credentials</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">Latest Courses</div>
+                <div className="text-xs text-blue-100">Recently added programmes</div>
+              </div>
+            </div>
+            
+            <Button size="lg" className="bg-[#16203a] text-white hover:bg-[#22305a]" onClick={() => window.open('/courses', '_self')}>
+              Browse All Courses
             </Button>
           </div>
-          
-          {/* Course Categories */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">Featured Courses</div>
-              <div className="text-xs text-blue-100">Top picks for global learners</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">Diploma Programmes</div>
-              <div className="text-xs text-blue-100">Accredited learning tracks</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">Professional Certificates</div>
-              <div className="text-xs text-blue-100">Industry-recognized credentials</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">Latest Courses</div>
-              <div className="text-xs text-blue-100">Recently added programmes</div>
-            </div>
-          </div>
-          
-          <Button size="lg" className="bg-[#16203a] text-white hover:bg-[#22305a]" onClick={() => window.open('/courses', '_self')}>
-            Browse All Courses
-          </Button>
         </div>
       </section>
 
       {/* Course Statistics Section */}
-      <section className="py-20 px-4 bg-[#0a1834]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Access 5,500+ Free Online Courses</h2>
-            <p className="text-xl text-blue-100">Learn from Global Experts</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-[#16203a] border-[#22305a] text-center">
-              <CardContent className="p-8">
-                <div className="text-4xl font-bold text-white mb-2">10 Million+</div>
-                <div className="text-blue-100">Learners</div>
-              </CardContent>
-            </Card>
-            <Card className="bg-[#16203a] border-[#22305a] text-center">
-              <CardContent className="p-8">
-                <div className="text-4xl font-bold text-white mb-2">193</div>
-                <div className="text-blue-100">Countries Represented</div>
-                <div className="text-xs text-blue-200">Worldwide reach</div>
-              </CardContent>
-            </Card>
-            <Card className="bg-[#16203a] border-[#22305a] text-center">
-              <CardContent className="p-8">
-                <div className="text-4xl font-bold text-white mb-2">5,500+</div>
-                <div className="text-blue-100">Free Learning Programmes</div>
-                <div className="text-xs text-blue-200">No-cost access</div>
-              </CardContent>
-            </Card>
-          </div>
-          
-          {/* Course Categories Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=it', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Information Technology</h3>
-                    <p className="text-blue-100">1,246 Programmes</p>
-                  </div>
-                  <BookOpen className="h-8 w-8 text-blue-400" />
-                </div>
-              </CardContent>
-            </Card>
+      <section className="py-20 section-full-width bg-[#0a1834]">
+        <div className="container-fluid">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">Access 5,500+ Free Online Courses</h2>
+              <p className="text-xl text-blue-100">Learn from Global Experts</p>
+            </div>
             
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=business', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Business & Leadership</h3>
-                    <p className="text-blue-100">1,025 Programmes</p>
-                  </div>
-                  <BookOpen className="h-8 w-8 text-green-400" />
-                </div>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <Card className="bg-[#16203a] border-[#22305a] text-center">
+                <CardContent className="p-8">
+                  <div className="text-4xl font-bold text-white mb-2">10 Million+</div>
+                  <div className="text-blue-100">Learners</div>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#16203a] border-[#22305a] text-center">
+                <CardContent className="p-8">
+                  <div className="text-4xl font-bold text-white mb-2">193</div>
+                  <div className="text-blue-100">Countries Represented</div>
+                  <div className="text-xs text-blue-200">Worldwide reach</div>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#16203a] border-[#22305a] text-center">
+                <CardContent className="p-8">
+                  <div className="text-4xl font-bold text-white mb-2">5,500+</div>
+                  <div className="text-blue-100">Free Learning Programmes</div>
+                  <div className="text-xs text-blue-200">No-cost access</div>
+                </CardContent>
+              </Card>
+            </div>
             
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=teaching', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Education & Teaching</h3>
-                    <p className="text-blue-100">1,588 Programmes</p>
+            {/* Course Categories Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=it', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Information Technology</h3>
+                      <p className="text-blue-100">1,246 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-blue-400" />
                   </div>
-                  <BookOpen className="h-8 w-8 text-purple-400" />
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=personal-development', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Personal Development</h3>
-                    <p className="text-blue-100">1,292 Programmes</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=business', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Business & Leadership</h3>
+                      <p className="text-blue-100">1,025 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-green-400" />
                   </div>
-                  <BookOpen className="h-8 w-8 text-yellow-400" />
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=health', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Health & Wellness</h3>
-                    <p className="text-blue-100">991 Programmes</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=teaching', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Education & Teaching</h3>
+                      <p className="text-blue-100">1,588 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-purple-400" />
                   </div>
-                  <BookOpen className="h-8 w-8 text-pink-400" />
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=engineering', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Engineering & Construction</h3>
-                    <p className="text-blue-100">798 Programmes</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=personal-development', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Personal Development</h3>
+                      <p className="text-blue-100">1,292 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-yellow-400" />
                   </div>
-                  <BookOpen className="h-8 w-8 text-orange-400" />
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=sales-marketing', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Sales & Marketing</h3>
-                    <p className="text-blue-100">432 Programmes</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=health', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Health & Wellness</h3>
+                      <p className="text-blue-100">991 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-pink-400" />
                   </div>
-                  <BookOpen className="h-8 w-8 text-cyan-400" />
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=language', '_blank')}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Languages</h3>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=engineering', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Engineering & Construction</h3>
+                      <p className="text-blue-100">798 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-orange-400" />
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=sales-marketing', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Sales & Marketing</h3>
+                      <p className="text-blue-100">432 Programmes</p>
+                    </div>
+                    <BookOpen className="h-8 w-8 text-cyan-400" />
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all cursor-pointer hover:scale-105 hover:shadow-xl" onClick={() => window.open('/courses?category=language', '_blank')}>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">Languages</h3>
                                         <p className="text-blue-100">312 Programmes</p>
                     </div>
                     <BookOpen className="h-8 w-8 text-indigo-400" />
@@ -442,39 +446,41 @@ const Index = () => {
 
       
       {/* Featured Courses Section */}
-      <section className="py-20 px-4 bg-[#0a1834]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            {(() => {
-              const { ref, isInView } = useScrollAnimation();
-              return (
-                <motion.h2 
-                  ref={ref}
-                  variants={titleVariants}
-                  initial="hidden"
-                  animate={isInView ? "visible" : "hidden"}
-                  className="text-4xl font-bold text-white mb-4"
-                >
-                  Featured Learning Opportunities
-                </motion.h2>
-              );
-            })()}
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Explore top-rated programmes from trusted educators and international partners.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredCourses.map((course) => (
-              <CourseCard key={course.id} course={course} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button size="lg" className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/20" onClick={() => window.open('/courses', '_self')}>
-              See All Programmes
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Button>
+      <section className="py-20 section-full-width bg-[#0a1834]">
+        <div className="container-fluid">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              {(() => {
+                const { ref, isInView } = useScrollAnimation();
+                return (
+                  <motion.h2 
+                    ref={ref}
+                    variants={titleVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="text-4xl font-bold text-white mb-4"
+                  >
+                    Featured Learning Opportunities
+                  </motion.h2>
+                );
+              })()}
+              <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+                Explore top-rated programmes from trusted educators and international partners.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredCourses.map((course) => (
+                <CourseCard key={course.id} course={course} />
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Button size="lg" className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/20" onClick={() => window.open('/courses', '_self')}>
+                See All Programmes
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -484,68 +490,70 @@ const Index = () => {
 
 
       {/* AI-Powered Features Section */}
-      <section className="py-20 px-4 bg-[#0a1834]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            {(() => {
-              const { ref, isInView } = useScrollAnimation();
-              return (
-                <motion.h2 
-                  ref={ref}
-                  variants={titleVariants}
-                  initial="hidden"
-                  animate={isInView ? "visible" : "hidden"}
-                  className="text-4xl font-bold text-white mb-4"
-                >
-                  Meet Our AI – Your Intelligent Learning Assistant
-                </motion.h2>
-              );
-            })()}
-            <p className="text-xl text-gray-300 font-bold max-w-3xl mx-auto">
-              Experience next-generation online learning with AI-powered video, instant coaching, and personalised support.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img 
-                src="https://tse2.mm.bing.net/th?id=OIP.b2TGJlmxEdjYI39ZFNzPKwHaHa&pid=Api&P=0&h=180" 
-                alt="AI-Powered Learning"
-                className="w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-4xl hover:brightness-110 cursor-pointer transform hover:-translate-y-4 hover:rotate-1 hover:z-10 relative"
-                loading="lazy"
-              />
+      <section className="py-20 section-full-width bg-[#0a1834]">
+        <div className="container-fluid">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              {(() => {
+                const { ref, isInView } = useScrollAnimation();
+                return (
+                  <motion.h2 
+                    ref={ref}
+                    variants={titleVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="text-4xl font-bold text-white mb-4"
+                  >
+                    Meet Our AI – Your Intelligent Learning Assistant
+                  </motion.h2>
+                );
+              })()}
+              <p className="text-xl text-gray-300 font-bold max-w-3xl mx-auto">
+                Experience next-generation online learning with AI-powered video, instant coaching, and personalised support.
+              </p>
             </div>
-            <div className="space-y-10">
-              <div className="mb-6">
-                <h2 className="text-3xl font-bold text-white mb-2">AI-Powered Learning Support</h2>
-                <p className="text-cyan-300 text-lg max-w-2xl">Unlock your full potential with instant AI coaching, live expert sessions, and personalised career roadmaps—all designed to accelerate your learning journey.</p>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://tse2.mm.bing.net/th?id=OIP.b2TGJlmxEdjYI39ZFNzPKwHaHa&pid=Api&P=0&h=180" 
+                  alt="AI-Powered Learning"
+                  className="w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-4xl hover:brightness-110 cursor-pointer transform hover:-translate-y-4 hover:rotate-1 hover:z-10 relative"
+                  loading="lazy"
+                />
               </div>
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-cyan-300 rounded-full p-2">
-                    <Play className="h-6 w-6 text-[#0a1834]" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Instant AI Coaching</h3>
-                    <p className="text-cyan-200 text-base font-medium">Get real-time feedback and guidance from AI agents tailored to your unique learning needs. Progress faster with actionable insights and support, anytime.</p>
-                  </div>
+              <div className="space-y-10">
+                <div className="mb-6">
+                  <h2 className="text-3xl font-bold text-white mb-2">AI-Powered Learning Support</h2>
+                  <p className="text-cyan-300 text-lg max-w-2xl">Unlock your full potential with instant AI coaching, live expert sessions, and personalised career roadmaps—all designed to accelerate your learning journey.</p>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-400 rounded-full p-2">
-                    <Users className="h-6 w-6 text-[#0a1834]" />
+                <div className="space-y-8">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-cyan-300 rounded-full p-2">
+                      <Play className="h-6 w-6 text-[#0a1834]" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">Instant AI Coaching</h3>
+                      <p className="text-cyan-200 text-base font-medium">Get real-time feedback and guidance from AI agents tailored to your unique learning needs. Progress faster with actionable insights and support, anytime.</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Live Interactive Sessions</h3>
-                    <p className="text-cyan-200 text-base font-medium">Join live sessions with AI-powered tutors, career coaches, and global experts. Collaborate, ask questions, and get personalised advice in real time.</p>
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-green-400 rounded-full p-2">
+                      <Users className="h-6 w-6 text-[#0a1834]" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">Live Interactive Sessions</h3>
+                      <p className="text-cyan-200 text-base font-medium">Join live sessions with AI-powered tutors, career coaches, and global experts. Collaborate, ask questions, and get personalised advice in real time.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-400 rounded-full p-2">
-                    <Star className="h-6 w-6 text-[#0a1834]" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">Personalised Career Roadmaps</h3>
-                    <p className="text-cyan-200 text-base font-medium">Answer a few questions and receive a step-by-step, personalised roadmap to achieve your learning and career goals—crafted just for you by AI.</p>
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-purple-400 rounded-full p-2">
+                      <Star className="h-6 w-6 text-[#0a1834]" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">Personalised Career Roadmaps</h3>
+                      <p className="text-cyan-200 text-base font-medium">Answer a few questions and receive a step-by-step, personalised roadmap to achieve your learning and career goals—crafted just for you by AI.</p>
+                    </div>
                   </div>
                 </div>
               </div>

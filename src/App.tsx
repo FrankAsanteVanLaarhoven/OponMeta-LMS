@@ -668,7 +668,7 @@ const StudentBookings = () => {
                   Session Notes
                 </label>
                 <textarea
-                  rows="3"
+                  rows={3}
                   placeholder="What would you like to focus on in this session?"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 ></textarea>
@@ -1860,8 +1860,7 @@ function App() {
                     isVisible={adPanelVisible}
                     onToggle={() => setAdPanelVisible(!adPanelVisible)}
                   />
-                  <div className="flex">
-                    <main className="flex-1">
+                  <main className="w-full">
                       <Toaster />
                       <Sonner />
                       <FloatingNavigation />
@@ -2116,15 +2115,14 @@ function App() {
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </Suspense>
-                        </main>
-                      </div>
-                  </div>
-                </UserProvider>
-              </AppProvider>
-            </TooltipProvider>
-          </QueryClientProvider>
-        </I18nextProvider>
-      </HelmetProvider>
+                </main>
+              </div>
+            </UserProvider>
+          </AppProvider>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </I18nextProvider>
+  </HelmetProvider>
     );
   }
 
