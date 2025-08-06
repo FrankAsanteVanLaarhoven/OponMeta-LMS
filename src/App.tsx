@@ -1854,14 +1854,14 @@ function App() {
           <TooltipProvider>
             <AppProvider>
               <UserProvider>
-                <div className="relative min-h-screen app-container">
+                <div className="relative min-h-screen app-container full-screen-container">
                   <Navigation />
                   <RightAdPanel 
                     userRole={userRole}
                     isVisible={adPanelVisible}
                     onToggle={() => setAdPanelVisible(!adPanelVisible)}
                   />
-                  <main className={`w-full flex-1 transition-all duration-300 ${adPanelVisible ? 'lg:mr-80' : ''}`}>
+                  <main className={`w-full flex-1 full-screen-container transition-all duration-300 ${adPanelVisible ? 'lg:mr-80' : ''}`}>
                       <ResponsiveTest />
                       <Toaster />
                       <Sonner />
