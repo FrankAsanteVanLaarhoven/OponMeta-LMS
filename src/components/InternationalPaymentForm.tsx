@@ -53,6 +53,9 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
   const [paymentGateway, setPaymentGateway] = useState<string>('stripe');
   const [email, setEmail] = useState('');
   const [showPaymentForm, setShowPaymentForm] = useState(false);
+  const [couponCode, setCouponCode] = useState('');
+  const [couponApplied, setCouponApplied] = useState(false);
+  const [couponError, setCouponError] = useState('');
 
   useEffect(() => {
     const detectLocation = async () => {
@@ -87,6 +90,24 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
     setPaymentGateway(getGatewayForCurrency(currency));
   };
 
+  const handleApplyCoupon = () => {
+    setCouponError('');
+    if (couponCode.trim().toUpperCase() === 'OPONMETA2025') {
+      setCouponApplied(true);
+      toast.success('Coupon applied! Your course is now free!');
+    } else {
+      setCouponError('Invalid coupon code. Please try again.');
+      setCouponApplied(false);
+    }
+  };
+
+  const handleRemoveCoupon = () => {
+    setCouponApplied(false);
+    setCouponCode('');
+    setCouponError('');
+    toast.info('Coupon removed');
+  };
+
   const handlePaymentSuccess = async (paymentResult: any) => {
     try {
       // Process the purchase
@@ -98,9 +119,9 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
           email: email,
         },
         {
-          amount: localizedPrice,
+          amount: couponApplied ? 0 : localizedPrice,
           currency: selectedCurrency,
-          paymentMethod: paymentGateway,
+          paymentMethod: couponApplied ? 'coupon' : paymentGateway,
           transactionId: paymentResult.transactionId || paymentResult.id,
         }
       );
@@ -128,6 +149,7 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
   const pricingStrategy = getPricingStrategy();
   const currencyConfig = CURRENCIES[selectedCurrency];
   const gatewayConfig = PAYMENT_GATEWAYS[paymentGateway];
+  const finalPrice = couponApplied ? 0 : localizedPrice;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -169,10 +191,18 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
                       <span className="text-gray-300">Original Price:</span>
                       <span className="line-through text-gray-400">{formatPrice(course.price, 'GBP')}</span>
                     </div>
+                    {couponApplied && (
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300">Coupon Discount:</span>
+                        <Badge variant="destructive" className="bg-red-600 text-white">
+                          -100%
+                        </Badge>
+                      </div>
+                    )}
                     <div className="flex justify-between items-center">
                       <span className="text-lg font-semibold text-white">Total:</span>
                       <span className="text-2xl font-bold text-green-400">
-                        {formatPrice(localizedPrice, selectedCurrency)}
+                        {formatPrice(finalPrice, selectedCurrency)}
                       </span>
                     </div>
                     
@@ -290,6 +320,50 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
                     </p>
                   </div>
 
+                  {/* Coupon Code Section */}
+                  <div>
+                    <label className="text-sm font-medium text-white">Have a coupon code?</label>
+                    <div className="flex gap-2 mt-1">
+                      <Input
+                        type="text"
+                        placeholder="Enter coupon code"
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        className="flex-1 bg-gray-700 border-gray-600 text-white placeholder-gray-400"
+                        disabled={couponApplied}
+                      />
+                      {couponApplied ? (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={handleRemoveCoupon}
+                          className="text-red-400 border-red-400 hover:bg-red-900"
+                        >
+                          Remove
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={handleApplyCoupon}
+                          disabled={!couponCode.trim()}
+                          className="border-gray-600 text-white hover:bg-gray-700"
+                        >
+                          Apply
+                        </Button>
+                      )}
+                    </div>
+                    {couponError && (
+                      <p className="text-sm text-red-400 mt-1">{couponError}</p>
+                    )}
+                    {couponApplied && (
+                      <div className="flex items-center gap-2 text-sm text-green-400 mt-1">
+                        <CheckCircle className="w-4 h-4" />
+                        Coupon applied! Course is now free.
+                      </div>
+                    )}
+                  </div>
+
                   {/* Payment Gateway Info */}
                   <div className="p-4 border border-gray-600 rounded-lg bg-gray-700">
                     <div className="flex items-center justify-between mb-2">
@@ -317,7 +391,7 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
                     <div className="border-t pt-4">
                       {paymentGateway === 'stripe' && (
                         <StripePaymentForm
-                          amount={localizedPrice}
+                          amount={finalPrice}
                           currency={selectedCurrency}
                           onSuccess={handlePaymentSuccess}
                           onError={handlePaymentError}
@@ -327,7 +401,7 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
                       )}
                       {paymentGateway === 'paystack' && (
                         <PaystackPaymentForm
-                          amount={localizedPrice}
+                          amount={finalPrice}
                           currency={selectedCurrency}
                           email={email}
                           onSuccess={handlePaymentSuccess}
@@ -338,7 +412,7 @@ const InternationalPaymentForm: React.FC<InternationalPaymentFormProps> = ({
                       )}
                       {paymentGateway === 'flutterwave' && (
                         <FlutterwavePaymentForm
-                          amount={localizedPrice}
+                          amount={finalPrice}
                           currency={selectedCurrency}
                           email={email}
                           onSuccess={handlePaymentSuccess}

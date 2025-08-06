@@ -356,53 +356,85 @@ const Index = () => {
                   variants={titleVariants}
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
-                  className="text-4xl font-bold text-white mb-4"
+                  className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
                 >
                   Opontainment - Creative Media & Entertainment
                 </motion.h2>
               );
             })()}
-            <p className="text-xl text-purple-200 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
               Discover the art of film-making, music production, and creative storytelling. Learn from industry professionals and create stunning visual and audio content.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="bg-purple-500 rounded-full p-3">
+            {/* Left Section - Educational Programs */}
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
+                <div className="bg-purple-600 rounded-lg p-3 shadow-lg">
                   <Video className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Film Production</h3>
-                  <p className="text-purple-200">Master cinematography, editing, and storytelling techniques</p>
+                  <h3 className="text-xl font-bold text-white mb-1">Film Production</h3>
+                  <p className="text-white opacity-90">Master cinematography, editing, and storytelling techniques</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="bg-blue-500 rounded-full p-3">
+              
+              <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
+                <div className="bg-blue-600 rounded-lg p-3 shadow-lg">
                   <Music className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Music Production</h3>
-                  <p className="text-purple-200">Create professional music and sound effects</p>
+                  <h3 className="text-xl font-bold text-white mb-1">Music Production</h3>
+                  <p className="text-white opacity-90">Create professional music and sound effects</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="bg-indigo-500 rounded-full p-3">
+              
+              <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#11204a] border border-[#1e3a8a] hover:bg-[#16203a] transition-all duration-300">
+                <div className="bg-indigo-600 rounded-lg p-3 shadow-lg">
                   <Edit3 className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Screenwriting</h3>
-                  <p className="text-purple-200">Learn story structure and character development</p>
+                  <h3 className="text-xl font-bold text-white mb-1">Screenwriting</h3>
+                  <p className="text-white opacity-90">Learn story structure and character development</p>
                 </div>
               </div>
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white" onClick={() => window.open('/courses?category=opontainment', '_self')}>
+              
+              <Button 
+                size="lg" 
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105" 
+                onClick={() => window.open('/courses?category=opontainment', '_self')}
+              >
                 Explore Opontainment
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
-            <div>
-              <OpontainmentDemo />
+            
+            {/* Right Section - Creative Services Grid */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">Creative Services</h3>
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { name: 'Merch', bg: 'bg-[#11204a]' },
+                  { name: 'Interactive', bg: 'bg-[#11204a]' },
+                  { name: 'Posters', bg: 'bg-[#11204a]' },
+                  { name: 'Web Design', bg: 'bg-[#11204a]' },
+                  { name: 'Logo', bg: 'bg-[#11204a]' },
+                  { name: 'Animation', bg: 'bg-[#11204a]' },
+                  { name: 'Communication', bg: 'bg-[#11204a]' },
+                  { name: 'Art Direction', bg: 'bg-[#11204a]' },
+                  { name: 'Product Video', bg: 'bg-[#11204a]' }
+                ].map((service, index) => (
+                  <div 
+                    key={index}
+                    className={`${service.bg} border border-[#1e3a8a] rounded-lg p-4 text-center hover:bg-[#16203a] transition-all duration-300 cursor-pointer group`}
+                  >
+                    <span className="text-white font-medium text-sm italic group-hover:text-purple-300 transition-colors duration-300">
+                      {service.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

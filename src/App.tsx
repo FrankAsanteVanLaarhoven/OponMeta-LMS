@@ -10,6 +10,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import i18n from './i18n';
 import { AppProvider } from './context/AppContext';
 import { UserProvider } from './context/UserContext';
+import FloatingNavigation from './components/FloatingNavigation';
 import CompanionsLibrary from './pages/CompanionsLibrary';
 import CompanionSession from './pages/CompanionSession';
 import CompanionAnalytics from './pages/CompanionAnalytics';
@@ -43,7 +44,7 @@ import Settings from './pages/dashboard/Settings';
 import CourseMarketplace from './pages/dashboard/CourseMarketplace';
 import CourseAuthoringTool from '@/pages/CourseAuthoringTool';
 import CourseAuthoringLanding from '@/pages/CourseAuthoringLanding';
-import CourseWorkspace from '@/pages/CourseWorkspace';
+import CourseWorkspace from '@/components/CourseWorkspace';
 import Workshops from '@/pages/Workshops';
 import Partners from '@/pages/Partners';
 import Certification from '@/pages/Certification';
@@ -1852,7 +1853,7 @@ function App() {
           <TooltipProvider>
             <AppProvider>
               <UserProvider>
-                <div className="relative min-h-screen bg-gray-50">
+                <div className="relative min-h-screen app-container">
                   <Navigation />
                   <RightAdPanel 
                     userRole={userRole}
@@ -1863,6 +1864,7 @@ function App() {
                     <main className="flex-1">
                       <Toaster />
                       <Sonner />
+                      <FloatingNavigation />
                       
                       <Suspense fallback={<PageLoader />}>
                         <Routes>
@@ -2106,6 +2108,7 @@ function App() {
                       
                       <Route path="/course-authoring" element={<CourseAuthoringLanding />} />
                       <Route path="/course-authoring/editor" element={<CourseAuthoringTool />} />
+                      <Route path="/course/:courseId/workspace" element={<CourseWorkspace />} />
                       <Route path="/course-workspace/:courseId" element={<CourseWorkspace />} />
                       <Route path="/workshops" element={<Workshops />} />
                       <Route path="/partners" element={<Partners />} />

@@ -91,6 +91,7 @@ const InstructorPortal = () => {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [settingsTab, setSettingsTab] = useState('profile');
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Handle URL parameters for direct navigation
   useEffect(() => {
@@ -444,7 +445,12 @@ const InstructorPortal = () => {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-white">My Students</h2>
         <div className="flex space-x-2">
-          <Input placeholder="Search students..." className="w-64 bg-gray-800 border-gray-700 text-white" />
+          <Input 
+            placeholder="Search students..." 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-64 bg-gray-800 border-gray-700 text-white" 
+          />
           <Button className="bg-blue-600 hover:bg-blue-700 text-white">
             <Search className="w-4 h-4 mr-2" />
             Search

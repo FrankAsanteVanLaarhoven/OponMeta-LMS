@@ -10,6 +10,16 @@ import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Collaboration = () => {
   const navigate = useNavigate();
+  
+  const [channelForm, setChannelForm] = useState({
+    name: "",
+    description: ""
+  });
+  
+  const [discussionForm, setDiscussionForm] = useState({
+    title: "",
+    category: ""
+  });
 
   const handleStartMeeting = () => {
     // Navigate to internal meeting page instead of external service
@@ -349,11 +359,21 @@ const Collaboration = () => {
                     <div className="space-y-3">
                       <div>
                         <Label htmlFor="channelName">Channel Name</Label>
-                        <Input id="channelName" placeholder="e.g., study-group-1" />
+                        <Input 
+                          id="channelName" 
+                          placeholder="e.g., study-group-1" 
+                          value={channelForm.name}
+                          onChange={(e) => setChannelForm({...channelForm, name: e.target.value})}
+                        />
                       </div>
                       <div>
                         <Label htmlFor="channelDesc">Description</Label>
-                        <Input id="channelDesc" placeholder="What's this channel about?" />
+                        <Input 
+                          id="channelDesc" 
+                          placeholder="What's this channel about?" 
+                          value={channelForm.description}
+                          onChange={(e) => setChannelForm({...channelForm, description: e.target.value})}
+                        />
                       </div>
                       <Button className="w-full">Create Channel</Button>
                     </div>
@@ -366,11 +386,21 @@ const Collaboration = () => {
                     <div className="space-y-3">
                       <div>
                         <Label htmlFor="topicTitle">Topic Title</Label>
-                        <Input id="topicTitle" placeholder="What do you want to discuss?" />
+                        <Input 
+                          id="topicTitle" 
+                          placeholder="What do you want to discuss?" 
+                          value={discussionForm.title}
+                          onChange={(e) => setDiscussionForm({...discussionForm, title: e.target.value})}
+                        />
                       </div>
                       <div>
                         <Label htmlFor="topicCategory">Category</Label>
-                        <Input id="topicCategory" placeholder="General, Assignment, Project..." />
+                        <Input 
+                          id="topicCategory" 
+                          placeholder="General, Assignment, Project..." 
+                          value={discussionForm.category}
+                          onChange={(e) => setDiscussionForm({...discussionForm, category: e.target.value})}
+                        />
                       </div>
                       <Button className="w-full">Start Discussion</Button>
                     </div>

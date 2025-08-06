@@ -24,6 +24,14 @@ import {
 import DashboardBackButton from "@/components/ui/DashboardBackButton";
 
 const Meetings = () => {
+  const [meetingForm, setMeetingForm] = useState({
+    title: "",
+    date: "",
+    description: "",
+    duration: "",
+    participants: ""
+  });
+  
   const upcomingMeetings = [
     {
       id: 1,
@@ -219,7 +227,12 @@ const Meetings = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="meetingTitle">Meeting Title</Label>
-                  <Input id="meetingTitle" placeholder="Enter meeting title" />
+                  <Input 
+                    id="meetingTitle" 
+                    placeholder="Enter meeting title" 
+                    value={meetingForm.title}
+                    onChange={(e) => setMeetingForm({...meetingForm, title: e.target.value})}
+                  />
                 </div>
                 <div>
                   <Label htmlFor="meetingDate">Date & Time</Label>

@@ -46,6 +46,9 @@ const CoursePurchase: React.FC<CoursePurchaseProps> = ({
 }) => {
   const [loading, setLoading] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'paypal' | 'googlepay' | 'applepay'>('card');
+  const [couponCode, setCouponCode] = useState('');
+  const [couponApplied, setCouponApplied] = useState(false);
+  const [couponError, setCouponError] = useState('');
   const [formData, setFormData] = useState({
     cardNumber: '',
     expiryDate: '',
@@ -57,6 +60,24 @@ const CoursePurchase: React.FC<CoursePurchaseProps> = ({
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleApplyCoupon = () => {
+    setCouponError('');
+    if (couponCode.trim().toUpperCase() === 'OPONMETA2025') {
+      setCouponApplied(true);
+      toast.success('Coupon applied! Your course is now free!');
+    } else {
+      setCouponError('Invalid coupon code. Please try again.');
+      setCouponApplied(false);
+    }
+  };
+
+  const handleRemoveCoupon = () => {
+    setCouponApplied(false);
+    setCouponCode('');
+    setCouponError('');
+    toast.info('Coupon removed');
   };
 
   const formatCardNumber = (value: string) => {
@@ -107,9 +128,9 @@ const CoursePurchase: React.FC<CoursePurchaseProps> = ({
           email: formData.email,
         },
         {
-          amount: course.price,
+          amount: finalPrice,
           currency: 'GBP',
-          paymentMethod: paymentMethod === 'card' ? 'credit_card' : 'paypal',
+          paymentMethod: couponApplied ? 'coupon' : (paymentMethod === 'card' ? 'credit_card' : 'paypal'),
           transactionId: 'txn_' + Date.now(),
         }
       );
@@ -125,8 +146,11 @@ const CoursePurchase: React.FC<CoursePurchaseProps> = ({
   };
 
   const originalPrice = course.originalPrice || course.price;
-  const discount = originalPrice > course.price ? originalPrice - course.price : 0;
-  const discountPercentage = discount > 0 ? Math.round((discount / originalPrice) * 100) : 0;
+  const baseDiscount = originalPrice > course.price ? originalPrice - course.price : 0;
+  const couponDiscount = couponApplied ? course.price : 0;
+  const totalDiscount = baseDiscount + couponDiscount;
+  const finalPrice = couponApplied ? 0 : course.price;
+  const discountPercentage = totalDiscount > 0 ? Math.round((totalDiscount / originalPrice) * 100) : 0;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -168,7 +192,7 @@ const CoursePurchase: React.FC<CoursePurchaseProps> = ({
                       <span className="text-gray-600">Original Price:</span>
                       <span className="text-gray-900 line-through">£{originalPrice}</span>
                     </div>
-                    {discount > 0 && (
+                    {totalDiscount > 0 && (
                       <div className="flex items-center justify-between">
                         <span className="text-gray-600">Discount:</span>
                         <Badge variant="destructive">-{discountPercentage}%</Badge>
@@ -176,7 +200,7 @@ const CoursePurchase: React.FC<CoursePurchaseProps> = ({
                     )}
                     <div className="flex items-center justify-between font-semibold text-lg">
                       <span>Total:</span>
-                      <span className="text-green-600">£{course.price}</span>
+                      <span className="text-green-600">£{finalPrice}</span>
                     </div>
                   </div>
 
@@ -248,6 +272,49 @@ const CoursePurchase: React.FC<CoursePurchaseProps> = ({
                   <CardTitle className="text-lg">Payment Information</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  {/* Coupon Code Section */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">Have a coupon code?</label>
+                    <div className="flex gap-2">
+                      <Input
+                        type="text"
+                        placeholder="Enter coupon code"
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        className="flex-1"
+                        disabled={couponApplied}
+                      />
+                      {couponApplied ? (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={handleRemoveCoupon}
+                          className="text-red-600 border-red-600 hover:bg-red-50"
+                        >
+                          Remove
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={handleApplyCoupon}
+                          disabled={!couponCode.trim()}
+                        >
+                          Apply
+                        </Button>
+                      )}
+                    </div>
+                    {couponError && (
+                      <p className="text-sm text-red-600">{couponError}</p>
+                    )}
+                    {couponApplied && (
+                      <div className="flex items-center gap-2 text-sm text-green-600">
+                        <CheckCircle className="w-4 h-4" />
+                        Coupon applied! Course is now free.
+                      </div>
+                    )}
+                  </div>
+
                   {/* Payment Method Selection */}
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700">Payment Method</label>

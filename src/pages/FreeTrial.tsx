@@ -41,7 +41,7 @@ const FreeTrial = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
+    <div className="min-h-screen bg-[#0a1834]">
       
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
@@ -49,14 +49,14 @@ const FreeTrial = () => {
             <img src="/branding/logo.png" alt="OponMeta Symbol Logo" className="h-14 w-14 animate-swivel" />
             <span className="text-3xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
           </div>
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+          <div className="inline-flex items-center space-x-2 bg-[#11204a] rounded-full px-4 py-2 mb-6">
             <Zap className="h-4 w-4 text-yellow-400" />
             <span className="text-white font-medium">No Payment Details Needed</span>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
             Begin Your 14-Day Free Trial
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl mx-auto">
             Discover the full capabilities of our platform with unrestricted access to every feature. 
             Cancel anytime, no commitment required.
           </p>
@@ -64,7 +64,7 @@ const FreeTrial = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Trial Sign Up Form */}
-          <Card className="bg-white/10 backdrop-blur-md border-white/20">
+          <Card className="bg-[#11204a] border-[#16203a]">
             <CardContent className="p-8">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center space-x-2 bg-green-500/20 rounded-full px-4 py-2 mb-4">
@@ -72,7 +72,7 @@ const FreeTrial = () => {
                   <span className="text-green-300 font-medium">14 Days Free</span>
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-2">Create Your Account</h2>
-                <p className="text-blue-100">Sign up for immediate access to all features</p>
+                <p className="text-white">Sign up for immediate access to all features</p>
               </div>
               
               <form className="space-y-6">
@@ -81,7 +81,7 @@ const FreeTrial = () => {
                     <Label htmlFor="firstName" className="text-white">First Name</Label>
                     <Input 
                       id="firstName"
-                      className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
+                      className="mt-2 bg-[#16203a] border-[#1a2a4a] text-white placeholder-gray-300"
                       placeholder="John"
                     />
                   </div>
@@ -89,7 +89,7 @@ const FreeTrial = () => {
                     <Label htmlFor="lastName" className="text-white">Last Name</Label>
                     <Input 
                       id="lastName"
-                      className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
+                      className="mt-2 bg-[#16203a] border-[#1a2a4a] text-white placeholder-gray-300"
                       placeholder="Doe"
                     />
                   </div>
@@ -100,7 +100,7 @@ const FreeTrial = () => {
                   <Input 
                     id="email"
                     type="email"
-                    className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
+                    className="mt-2 bg-[#16203a] border-[#1a2a4a] text-white placeholder-gray-300"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -109,7 +109,7 @@ const FreeTrial = () => {
                   <Label htmlFor="company" className="text-white">Company</Label>
                   <Input 
                     id="company"
-                    className="mt-2 bg-white/10 border-white/20 text-white placeholder-gray-300"
+                    className="mt-2 bg-[#16203a] border-[#1a2a4a] text-white placeholder-gray-300"
                     placeholder="Your Company Name"
                   />
                 </div>
@@ -117,10 +117,10 @@ const FreeTrial = () => {
                 <div>
                   <Label htmlFor="role" className="text-white">What best describes your role?</Label>
                   <Select>
-                    <SelectTrigger className="mt-2 bg-white/10 border-white/20 text-white">
+                    <SelectTrigger className="mt-2 bg-[#16203a] border-[#1a2a4a] text-white">
                       <SelectValue placeholder="Select your role" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-[#16203a] border-[#1a2a4a]">
                       <SelectItem value="l&d">Learning & Development</SelectItem>
                       <SelectItem value="hr">Human Resources</SelectItem>
                       <SelectItem value="manager">Team Manager</SelectItem>
@@ -135,10 +135,10 @@ const FreeTrial = () => {
                 <div>
                   <Label htmlFor="teamSize" className="text-white">Team Size</Label>
                   <Select>
-                    <SelectTrigger className="mt-2 bg-white/10 border-white/20 text-white">
+                    <SelectTrigger className="mt-2 bg-[#16203a] border-[#1a2a4a] text-white">
                       <SelectValue placeholder="How many people will use this?" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-[#16203a] border-[#1a2a4a]">
                       <SelectItem value="just-me">Just me</SelectItem>
                       <SelectItem value="2-10">2-10 people</SelectItem>
                       <SelectItem value="11-50">11-50 people</SelectItem>
@@ -159,10 +159,10 @@ const FreeTrial = () => {
               </form>
 
               <div className="mt-6 text-center space-y-2">
-                <p className="text-sm text-blue-200">
+                <p className="text-sm text-white">
                   ✓ No payment required • ✓ Cancel anytime • ✓ Unlimited access
                 </p>
-                <p className="text-xs text-blue-300">
+                <p className="text-xs text-gray-300">
                   By registering, you agree to our Terms of Service and Privacy Policy
                 </p>
               </div>
@@ -171,7 +171,7 @@ const FreeTrial = () => {
 
           {/* Trial Benefits */}
           <div className="space-y-8">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#11204a] border-[#16203a]">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
                   <Shield className="h-8 w-8 text-green-400" />
@@ -181,14 +181,14 @@ const FreeTrial = () => {
                   {trialFeatures.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
-                      <span className="text-blue-100">{feature}</span>
+                      <span className="text-white">{feature}</span>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#11204a] border-[#16203a]">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
                   <Users className="h-8 w-8 text-blue-400" />
@@ -202,10 +202,10 @@ const FreeTrial = () => {
                           <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
                         ))}
                       </div>
-                      <p className="text-blue-100 mb-3">"{testimonial.text}"</p>
+                      <p className="text-white mb-3">"{testimonial.text}"</p>
                       <div className="text-sm">
                         <p className="text-white font-medium">{testimonial.name}</p>
-                        <p className="text-blue-200">{testimonial.role} at {testimonial.company}</p>
+                        <p className="text-gray-300">{testimonial.role} at {testimonial.company}</p>
                       </div>
                     </div>
                   ))}
@@ -213,13 +213,13 @@ const FreeTrial = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-md border-white/20">
+            <Card className="bg-[#11204a] border-[#16203a]">
               <CardContent className="p-8 text-center">
                 <h3 className="text-xl font-bold text-white mb-4">Need Enterprise Features?</h3>
-                <p className="text-blue-100 mb-6">
+                <p className="text-white mb-6">
                   Custom branding, SSO, advanced analytics, and dedicated support
                 </p>
-                <Button variant="outline" className="border-[#11204a] text-[#11204a] hover:bg-[#11204a]/10">
+                <Button variant="outline" className="border-white text-white hover:bg-white/10">
                   Contact Sales
                 </Button>
               </CardContent>

@@ -13,7 +13,7 @@ const Contact = () => {
       icon: Mail,
       title: "Email Support",
       description: "Get help via email",
-      contact: "support@example.com",
+      contact: "info@oponmeta.com",
       available: "24/7 response within 2 hours"
     },
     {
@@ -44,35 +44,35 @@ const Contact = () => {
       icon: Mail,
       title: "General Inquiries",
       description: "Questions about our platform and services",
-      email: "contact@example.com",
+      email: "info@oponmeta.com",
       color: "text-blue-400"
     },
     {
       icon: Headphones,
       title: "Customer Service",
       description: "Technical support and account assistance",
-      email: "support@example.com",
+      email: "info@oponmeta.com",
       color: "text-green-400"
     },
     {
       icon: Users,
       title: "Partnerships",
       description: "Business collaborations and partnerships",
-      email: "partnerships@example.com",
+      email: "info@oponmeta.com",
       color: "text-purple-400"
     },
     {
       icon: Briefcase,
       title: "Career Opportunities",
       description: "Job inquiries and career information",
-      email: "careers@example.com",
+      email: "info@oponmeta.com",
       color: "text-orange-400"
     },
     {
       icon: Shield,
       title: "Administrative",
       description: "Internal management and administrative matters",
-      email: "admin@example.com",
+      email: "info@oponmeta.com",
       color: "text-red-400"
     }
   ];
@@ -105,7 +105,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-500">
+    <div className="min-h-screen bg-[#0a1834]">
       {/* Header */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -121,20 +121,20 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 pb-20">
         {/* Website and General Contact Info */}
         <div className="mb-12">
-          <Card className="bg-white/10 backdrop-blur-md border-white/20">
+          <Card className="bg-[#11204a] border-[#16203a]">
             <CardContent className="p-8 text-center">
               <div className="flex items-center justify-center mb-4">
                 <Globe className="h-8 w-8 text-blue-400 mr-3" />
                 <h2 className="text-2xl font-bold text-white">Visit Our Website</h2>
               </div>
-              <p className="text-blue-100 mb-4">Explore our platform and discover all we have to offer</p>
+              <p className="text-white mb-4">Explore our platform and discover all we have to offer</p>
               <a 
-                href="https://example.com" 
+                href="https://oponmeta.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-2xl font-bold text-blue-200 hover:text-white transition-colors duration-300"
               >
-                www.example.com
+                oponmeta.com
               </a>
             </CardContent>
           </Card>
@@ -144,10 +144,10 @@ const Contact = () => {
           
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="bg-white/10 backdrop-blur-md border-white/20">
+            <Card className="bg-[#11204a] border-[#16203a]">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
-                <p className="text-blue-100 mb-4">We respond promptly to all inquiries.</p>
+                <p className="text-white mb-4">We respond promptly to all inquiries.</p>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>

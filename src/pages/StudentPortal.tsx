@@ -86,6 +86,7 @@ const StudentPortal = () => {
   const [settingsTab, setSettingsTab] = useState('profile');
   const [activeWidget, setActiveWidget] = useState<string | null>(null);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Handle URL parameters for direct navigation
   useEffect(() => {
@@ -599,7 +600,12 @@ const StudentPortal = () => {
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Course Marketplace</h2>
                   <div className="flex space-x-2">
-                    <Input placeholder="Search courses..." className="w-64 bg-gray-800 border-gray-700 text-white" />
+                    <Input 
+                      placeholder="Search courses..." 
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-64 bg-gray-800 border-gray-700 text-white" 
+                    />
                     <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                       <Search className="w-4 h-4 mr-2" />
                       Search

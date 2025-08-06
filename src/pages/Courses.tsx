@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { BookOpen, BarChart3, Heart, CloudSun, Zap, Briefcase, Globe, Target, Music, Sparkles, Award, Wrench, Users, Truck, DollarSign, Laptop, UserCog, User, Megaphone } from 'lucide-react';
 import CourseCard from '@/components/CourseCard';
 import { coursesData } from '@/data/coursesData';
@@ -39,6 +39,7 @@ const COURSE_CATEGORIES = [
 
 export default function CoursesPage() {
   const { courseId } = useParams();
+  const navigate = useNavigate();
   const [publishedCourses, setPublishedCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -113,9 +114,18 @@ export default function CoursesPage() {
                     <span className="text-green-600 font-bold">{course.price}</span>
                   </div>
                 </div>
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg mt-6">
-                  Enroll Now
-                </button>
+                {course.accessType === 'free' ? (
+                  <button 
+                    onClick={() => navigate(`/course/${course.id}/workspace`)}
+                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg mt-6 font-semibold"
+                  >
+                    Start Learning Free
+                  </button>
+                ) : (
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg mt-6">
+                    Enroll Now - ${course.price}
+                  </button>
+                )}
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Users, Clock, Play, Heart, Bookmark, ThumbsUp, ShoppingCart } from "lucide-react";
 import { Course } from "@/data/coursesData";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { 
   toggleFavorite, 
   isFavorite, 
@@ -21,6 +22,7 @@ interface CourseCardProps {
 }
 
 const CourseCard = ({ course }: CourseCardProps) => {
+  const navigate = useNavigate();
   const [favorited, setFavorited] = useState(false);
   const [wishlisted, setWishlisted] = useState(false);
   const [liked, setLiked] = useState(false);
@@ -72,10 +74,15 @@ const CourseCard = ({ course }: CourseCardProps) => {
           alt={course.title}
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-4 left-4 flex gap-2">
           <Badge className="bg-primary text-primary-foreground">
             {course.category}
           </Badge>
+          {course.accessType === 'free' && (
+            <Badge className="bg-green-500 text-white font-semibold">
+              FREE
+            </Badge>
+          )}
         </div>
         
         {/* Action buttons overlay */}
@@ -189,23 +196,40 @@ const CourseCard = ({ course }: CourseCardProps) => {
           {/* Price and Action */}
           <div className="flex items-center justify-between pt-2">
             <div className="flex flex-col">
-              <div className="flex items-center space-x-2">
-                <span className="text-2xl font-bold text-gray-900">${course.price}</span>
-                {course.originalPrice && (
-                  <span className="text-sm text-gray-500 line-through">${course.originalPrice}</span>
-                )}
-              </div>
-              {course.originalPrice && (
-                <span className="text-xs text-green-600">
-                  Save ${course.originalPrice - course.price}
-                </span>
+              {course.accessType === 'free' ? (
+                <div className="flex items-center space-x-2">
+                  <span className="text-2xl font-bold text-green-600">FREE</span>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-2xl font-bold text-gray-900">${course.price}</span>
+                    {course.originalPrice && (
+                      <span className="text-sm text-gray-500 line-through">${course.originalPrice}</span>
+                    )}
+                  </div>
+                  {course.originalPrice && (
+                    <span className="text-xs text-green-600">
+                      Save ${course.originalPrice - course.price}
+                    </span>
+                  )}
+                </>
               )}
             </div>
             <Button 
-              className="bg-blue-600 text-white hover:bg-blue-700"
-              onClick={handlePurchase}
+              className={course.accessType === 'free' 
+                ? 'bg-green-600 text-white hover:bg-green-700' 
+                : 'bg-blue-600 text-white hover:bg-blue-700'
+              }
+              onClick={course.accessType === 'free' 
+                ? () => navigate(`/course/${course.id}/workspace`)
+                : handlePurchase
+              }
             >
-              {course.progress !== undefined ? 'Resume Learning' : 'Buy Now'}
+              {course.accessType === 'free' 
+                ? 'Start Learning' 
+                : course.progress !== undefined ? 'Resume Learning' : 'Buy Now'
+              }
             </Button>
           </div>
         </div>

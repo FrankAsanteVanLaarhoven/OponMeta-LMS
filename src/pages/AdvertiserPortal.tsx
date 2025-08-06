@@ -30,6 +30,24 @@ import { useTranslation } from 'react-i18next';
 const AdvertiserPortal = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("overview");
+  
+  // Campaign form state
+  const [campaignForm, setCampaignForm] = useState({
+    name: "",
+    adType: "",
+    targetAudience: "",
+    budget: "",
+    content: ""
+  });
+  
+  // Account settings state
+  const [accountSettings, setAccountSettings] = useState({
+    companyName: "",
+    businessEmail: "",
+    industry: "",
+    monthlyBudget: "",
+    targetReach: ""
+  });
 
   const adStats = {
     totalCampaigns: 8,
@@ -362,7 +380,12 @@ const AdvertiserPortal = () => {
                   <div className="space-y-4">
                     <div>
                       <label className="text-sm font-medium text-cyan-300 block mb-2">Campaign Name</label>
-                      <Input placeholder="Enter a campaign name" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
+                      <Input 
+                        placeholder="Enter a campaign name" 
+                        value={campaignForm.name}
+                        onChange={(e) => setCampaignForm({...campaignForm, name: e.target.value})}
+                        className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" 
+                      />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-cyan-300 block mb-2">Ad Type</label>
@@ -394,7 +417,13 @@ const AdvertiserPortal = () => {
                     </div>
                     <div>
                       <label className="text-sm font-medium text-cyan-300 block mb-2">Budget (USD)</label>
-                      <Input type="number" placeholder="0.00" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
+                      <Input 
+                        type="number" 
+                        placeholder="0.00" 
+                        value={campaignForm.budget}
+                        onChange={(e) => setCampaignForm({...campaignForm, budget: e.target.value})}
+                        className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" 
+                      />
                     </div>
                   </div>
                   <div className="space-y-4">
@@ -402,6 +431,8 @@ const AdvertiserPortal = () => {
                       <label className="text-sm font-medium text-cyan-300 block mb-2">Ad Content</label>
                       <Textarea 
                         placeholder="Write your ad copy here..." 
+                        value={campaignForm.content}
+                        onChange={(e) => setCampaignForm({...campaignForm, content: e.target.value})}
                         className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400 min-h-32"
                       />
                     </div>
@@ -446,11 +477,22 @@ const AdvertiserPortal = () => {
                 <CardContent className="space-y-4">
                   <div>
                     <label className="text-sm font-medium text-cyan-300 block mb-2">Company Name</label>
-                    <Input placeholder="Your Company Name" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
+                    <Input 
+                      placeholder="Your Company Name" 
+                      value={accountSettings.companyName}
+                      onChange={(e) => setAccountSettings({...accountSettings, companyName: e.target.value})}
+                      className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" 
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-cyan-300 block mb-2">Business Email</label>
-                    <Input type="email" placeholder="business@company.com" className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" />
+                    <Input 
+                      type="email" 
+                      placeholder="business@company.com" 
+                      value={accountSettings.businessEmail}
+                      onChange={(e) => setAccountSettings({...accountSettings, businessEmail: e.target.value})}
+                      className="bg-[#11204a] border-[#16203a] text-white placeholder:text-gray-400" 
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-cyan-300 block mb-2">Industry</label>
