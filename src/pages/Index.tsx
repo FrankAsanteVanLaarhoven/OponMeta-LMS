@@ -135,216 +135,208 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white text-[#0a1834] dark:bg-[#0a1834] dark:text-white">
-      {/* Hero Section - Professional Full-Screen Design */}
-      <section className="relative min-h-screen full-screen-section bg-gradient-to-br from-[#0a1834] via-[#16203a] to-[#22305a] overflow-hidden">
-        <div className="full-screen-container">
-          <div className="content-container">
-            <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
-              {/* Video Background */}
-              <div className="absolute inset-0 w-full h-full">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover opacity-20"
+      {/* Hero Section - Professional Full-Width Design */}
+      <section className="w-full full-screen-section bg-gradient-to-br from-[#0a1834] via-[#16203a] to-[#22305a] text-white relative min-h-screen overflow-hidden">
+        <div className="content-container">
+          <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+            {/* Video Background */}
+            <div className="absolute inset-0 w-full h-full">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover opacity-20"
+              >
+                <source src="https://tse2.mm.bing.net/th?id=OIP.b2TGJlmxEdjYI39ZFNzPKwHaHa&pid=Api&P=0&h=180" type="video/mp4" />
+              </video>
+              {/* Overlay to cover the light blue area */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0a1834] via-[#16203a] to-[#22305a] opacity-80"></div>
+            </div>
+
+            {/* Hero Content */}
+            <div className="relative z-20 max-w-6xl mx-auto px-4">
+              {(() => {
+                const { ref, isInView } = useScrollAnimation();
+                return (
+                  <motion.div
+                    ref={ref}
+                    variants={titleVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="space-y-8"
+                  >
+                    <div className="flex justify-center mb-8">
+                      <img
+                        src="/branding/oponmeta-logo.png"
+                        alt="OponMeta"
+                        className="w-24 h-24 object-contain"
+                      />
+                    </div>
+                    <h1 className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6 leading-tight">
+                      Welcome to OponMeta
+                      <br />
+                      <span className="text-cyan-300">Your Gateway to Global Learning</span>
+                    </h1>
+                    <p className="text-fluid-lg md:text-fluid-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
+                      Discover a world of knowledge with our comprehensive LMS platform. 
+                      From AI-powered learning to international certifications, unlock your potential with OponMeta.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 text-lg font-semibold" onClick={() => window.open('/courses', '_self')}>
+                        Start Learning
+                        <ChevronRight className="ml-2 h-5 w-5" />
+                      </Button>
+                      <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold" onClick={() => window.open('/about', '_self')}>
+                        Learn More
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
+                    </div>
+                  </motion.div>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Learning Companion Section - Professional Full-Width with Bounded Content */}
+      <section className="w-full full-screen-section bg-white dark:bg-[#0a1834] text-[#0a1834] dark:text-white py-20 px-0 relative">
+        <div className="content-container">
+          <div className="flex-responsive items-center gap-8">
+            <div className="flex-1">
+              {(() => {
+                const { ref, isInView } = useScrollAnimation();
+                return (
+                  <motion.h2 
+                    ref={ref}
+                    variants={titleVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="text-3xl md:text-4xl font-bold text-[#0a1834] dark:text-white mb-4"
+                  >
+                    Meet Your AI Learning Companion
+                  </motion.h2>
+                );
+              })()}
+              <p className="text-lg text-[#22305a] dark:text-slate-200 mb-6">Personalised, voice-driven, and always available—your AI Companion helps you learn at your pace, track your progress, and get instant feedback. Unlock interactive sessions, bookmarking, session history, and more!</p>
+              <ul className="text-[#22305a] dark:text-slate-200 mb-6 space-y-2">
+                <li>• Real-time voice-driven lessons</li>
+                <li>• Personalised learning paths</li>
+                <li>• Progress tracking & session history</li>
+                <li>• Feedback, quizzes, and interactive chat</li>
+                <li>• Available on all devices</li>
+              </ul>
+              <Button size="lg" className="bg-[#0a1834] text-white hover:bg-[#11204a] font-bold shadow-lg dark:bg-slate-100 dark:text-[#0a1834] dark:hover:bg-slate-200" onClick={() => window.open('/companion', '_self')}>
+                Try Now
+              </Button>
+            </div>
+            <div className="flex-1 flex justify-center items-center">
+              <div className="flex items-center space-x-4">
+                <img src="/branding/logo.png" alt="OponMeta Symbol Logo" className="h-40 w-40 animate-swivel" />
+                <span className="text-6xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Career Advancement Section - Professional Full-Width with Bounded Content */}
+      <section className="w-full full-screen-section bg-[#0a1834] text-white py-20 px-0 relative">
+        <div className="content-container">
+          <div className="text-center mb-16">
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6"
                 >
-                  <source src="https://tse2.mm.bing.net/th?id=OIP.b2TGJlmxEdjYI39ZFNzPKwHaHa&pid=Api&P=0&h=180" type="video/mp4" />
-                </video>
-                {/* Overlay to cover the light blue area */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0a1834] via-[#16203a] to-[#22305a] opacity-80"></div>
-              </div>
-
-              {/* Hero Content */}
-              <div className="relative z-20 max-w-6xl mx-auto px-4">
-                {(() => {
-                  const { ref, isInView } = useScrollAnimation();
-                  return (
-                    <motion.div
-                      ref={ref}
-                      variants={titleVariants}
-                      initial="hidden"
-                      animate={isInView ? "visible" : "hidden"}
-                      className="space-y-8"
-                    >
-                      <div className="flex justify-center mb-8">
-                        <img
-                          src="/branding/oponmeta-logo.png"
-                          alt="OponMeta"
-                          className="w-24 h-24 object-contain"
-                        />
-                      </div>
-                      <h1 className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6 leading-tight">
-                        Welcome to OponMeta
-                        <br />
-                        <span className="text-cyan-300">Your Gateway to Global Learning</span>
-                      </h1>
-                      <p className="text-fluid-lg md:text-fluid-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
-                        Discover a world of knowledge with our comprehensive LMS platform. 
-                        From AI-powered learning to international certifications, unlock your potential with OponMeta.
-                      </p>
-                      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 text-lg font-semibold" onClick={() => window.open('/courses', '_self')}>
-                          Start Learning
-                          <ChevronRight className="ml-2 h-5 w-5" />
-                        </Button>
-                        <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold" onClick={() => window.open('/about', '_self')}>
-                          Learn More
-                          <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
-                      </div>
-                    </motion.div>
-                  );
-                })()}
-              </div>
-            </div>
+                  Advance Your Career with OponMeta
+                </motion.h2>
+              );
+            })()}
+            <p className="text-fluid-lg md:text-fluid-xl text-blue-100 max-w-3xl mx-auto">
+              Join millions of learners worldwide who have transformed their careers with our comprehensive learning platform.
+            </p>
+          </div>
+          
+          <div className="responsive-grid responsive-grid-4">
+            {(() => {
+              const { isInView } = useScrollAnimation();
+              return careerStats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center card-responsive p-6"
+                >
+                  <div className="text-fluid-3xl md:text-fluid-4xl font-bold text-cyan-300 mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-fluid-base md:text-fluid-lg text-blue-100">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ));
+            })()}
           </div>
         </div>
       </section>
 
-      {/* AI Learning Companion Section - Professional Content Container */}
-      <section className="space-responsive full-screen-section bg-white dark:bg-[#0a1834]">
-        <div className="full-screen-container">
-          <div className="content-container">
-            <div className="flex-responsive items-center gap-8">
-              <div className="flex-1">
-                {(() => {
-                  const { ref, isInView } = useScrollAnimation();
-                  return (
-                    <motion.h2 
-                      ref={ref}
-                      variants={titleVariants}
-                      initial="hidden"
-                      animate={isInView ? "visible" : "hidden"}
-                      className="text-3xl md:text-4xl font-bold text-[#0a1834] dark:text-white mb-4"
-                    >
-                      Meet Your AI Learning Companion
-                    </motion.h2>
-                  );
-                })()}
-                <p className="text-lg text-[#22305a] dark:text-slate-200 mb-6">Personalised, voice-driven, and always available—your AI Companion helps you learn at your pace, track your progress, and get instant feedback. Unlock interactive sessions, bookmarking, session history, and more!</p>
-                <ul className="text-[#22305a] dark:text-slate-200 mb-6 space-y-2">
-                  <li>• Real-time voice-driven lessons</li>
-                  <li>• Personalised learning paths</li>
-                  <li>• Progress tracking & session history</li>
-                  <li>• Feedback, quizzes, and interactive chat</li>
-                  <li>• Available on all devices</li>
-                </ul>
-                <Button size="lg" className="bg-[#0a1834] text-white hover:bg-[#11204a] font-bold shadow-lg dark:bg-slate-100 dark:text-[#0a1834] dark:hover:bg-slate-200" onClick={() => window.open('/companion', '_self')}>
-                  Try Now
-                </Button>
-              </div>
-              <div className="flex-1 flex justify-center items-center">
-                <div className="flex items-center space-x-4">
-                  <img src="/branding/logo.png" alt="OponMeta Symbol Logo" className="h-40 w-40 animate-swivel" />
-                  <span className="text-6xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">OponMeta</span>
-                </div>
-              </div>
-            </div>
+      {/* Course Categories Section - Professional Full-Width with Bounded Content */}
+      <section className="w-full full-screen-section bg-[#0a1834] text-white py-20 px-0 relative">
+        <div className="content-container">
+          <div className="text-center mb-16">
+            {(() => {
+              const { ref, isInView } = useScrollAnimation();
+              return (
+                <motion.h2 
+                  ref={ref}
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6"
+                >
+                  Explore Our Course Categories
+                </motion.h2>
+              );
+            })()}
+            <p className="text-fluid-lg md:text-fluid-xl text-blue-100 max-w-3xl mx-auto">
+              Discover a wide range of courses designed to meet your learning needs and career goals.
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* Career Advancement Section - Professional Grid Layout */}
-      <section className="space-responsive full-screen-section bg-[#0a1834]">
-        <div className="full-screen-container">
-          <div className="content-container">
-            <div className="text-center mb-16">
-              {(() => {
-                const { ref, isInView } = useScrollAnimation();
-                return (
-                  <motion.h2 
-                    ref={ref}
-                    variants={titleVariants}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6"
-                  >
-                    Advance Your Career with OponMeta
-                  </motion.h2>
-                );
-              })()}
-              <p className="text-fluid-lg md:text-fluid-xl text-blue-100 max-w-3xl mx-auto">
-                Join millions of learners worldwide who have transformed their careers with our comprehensive learning platform.
-              </p>
-            </div>
-            
-            <div className="responsive-grid responsive-grid-4">
-              {(() => {
-                const { isInView } = useScrollAnimation();
-                return careerStats.map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    variants={cardVariants}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-center card-responsive p-6"
-                  >
-                    <div className="text-fluid-3xl md:text-fluid-4xl font-bold text-cyan-300 mb-2">
-                      {stat.value}
+          
+          <div className="responsive-grid responsive-grid-6">
+            {(() => {
+              const { isInView } = useScrollAnimation();
+              return courseCategories.map((category, index) => (
+                <motion.div
+                  key={category.name}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  transition={{ delay: index * 0.05 }}
+                  className="text-center group cursor-pointer card-responsive p-6"
+                  onClick={() => window.open(`/courses?category=${category.name.toLowerCase()}`, '_self')}
+                >
+                  <div className="bg-white/10 backdrop-blur-md p-6 mb-4 group-hover:bg-white/20 transition-all duration-300">
+                    <category.icon className="h-8 w-8 mx-auto text-cyan-300 mb-2" />
+                    <div className="text-fluid-sm md:text-fluid-base font-semibold text-white">
+                      {category.name}
                     </div>
-                    <div className="text-fluid-base md:text-fluid-lg text-blue-100">
-                      {stat.label}
+                    <div className="text-fluid-xs md:text-fluid-sm text-blue-200">
+                      {category.count} courses
                     </div>
-                  </motion.div>
-                ));
-              })()}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Course Categories Section - Professional Responsive Grid */}
-      <section className="space-responsive full-screen-section bg-[#0a1834]">
-        <div className="full-screen-container">
-          <div className="content-container">
-            <div className="text-center mb-16">
-              {(() => {
-                const { ref, isInView } = useScrollAnimation();
-                return (
-                  <motion.h2 
-                    ref={ref}
-                    variants={titleVariants}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    className="text-fluid-3xl md:text-fluid-4xl font-bold text-white mb-6"
-                  >
-                    Explore Our Course Categories
-                  </motion.h2>
-                );
-              })()}
-              <p className="text-fluid-lg md:text-fluid-xl text-blue-100 max-w-3xl mx-auto">
-                Discover a wide range of courses designed to meet your learning needs and career goals.
-              </p>
-            </div>
-            
-            <div className="responsive-grid responsive-grid-6">
-              {(() => {
-                const { isInView } = useScrollAnimation();
-                return courseCategories.map((category, index) => (
-                  <motion.div
-                    key={category.name}
-                    variants={cardVariants}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    transition={{ delay: index * 0.05 }}
-                    className="text-center group cursor-pointer card-responsive p-6"
-                    onClick={() => window.open(`/courses?category=${category.name.toLowerCase()}`, '_self')}
-                  >
-                    <div className="bg-white/10 backdrop-blur-md p-6 mb-4 group-hover:bg-white/20 transition-all duration-300">
-                      <category.icon className="h-8 w-8 mx-auto text-cyan-300 mb-2" />
-                      <div className="text-fluid-sm md:text-fluid-base font-semibold text-white">
-                        {category.name}
-                      </div>
-                      <div className="text-fluid-xs md:text-fluid-sm text-blue-200">
-                        {category.count} courses
-                      </div>
-                    </div>
-                  </motion.div>
-                ));
-              })()}
-            </div>
+                  </div>
+                </motion.div>
+              ));
+            })()}
           </div>
         </div>
       </section>
